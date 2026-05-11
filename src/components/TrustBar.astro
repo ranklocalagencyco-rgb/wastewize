@@ -1,0 +1,51 @@
+---
+// src/components/TrustBar.astro
+// Accreditation logo cloud — sits below Hero or above Footer
+// Replace text badges with real <Image /> logos when available
+
+const badges = [
+  { label: 'SafeContractor',     sub: 'Approved Contractor' },
+  { label: 'EA Licensed',        sub: 'Environment Agency' },
+  { label: 'CIWM Member',        sub: 'Waste Management Inst.' },
+  { label: 'FORS Accredited',    sub: 'Fleet Operator Recognition' },
+];
+---
+
+<div class="bg-brand-dark-card border-y border-white/8 py-8">
+  <div class="container mx-auto px-4">
+
+    <div class="flex flex-col sm:flex-row items-center gap-6">
+
+      <!-- Label -->
+      <p class="text-xs font-semibold tracking-widest uppercase text-white/40
+                shrink-0 whitespace-nowrap">
+        Accredited by
+      </p>
+
+      <!-- Divider (desktop) -->
+      <div class="hidden sm:block w-px h-8 bg-white/10 shrink-0" aria-hidden="true"/>
+
+      <!-- Badge scroll row -->
+      <div class="flex flex-wrap justify-center sm:justify-start items-center gap-3">
+        {badges.map(({ label, sub }) => (
+          <div
+            class="flex items-center gap-2 bg-brand-dark-elevated border border-white/10
+                   rounded-[8px] px-3.5 py-2 shadow-sm"
+          >
+            <svg class="w-4 h-4 text-brand-lime shrink-0" fill="currentColor"
+                 viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"/>
+            </svg>
+            <div class="leading-none">
+              <p class="text-[12px] font-semibold text-white/90">{label}</p>
+              <p class="text-[10px] text-white/40 mt-0.5">{sub}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</div>

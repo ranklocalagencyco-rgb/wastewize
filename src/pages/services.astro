@@ -1,0 +1,380 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { services } from '../data/services';
+
+const filters = [
+  { cat: 'all',          label: 'All services' },
+  { cat: 'clearance',    label: 'Clearance' },
+  { cat: 'construction', label: 'Construction' },
+  { cat: 'specialist',   label: 'Specialist' },
+  { cat: 'materials',    label: 'Materials' },
+];
+---
+
+<Layout
+  title="Our Services | WasteWize UK — Commercial Waste Management"
+  description="Ten specialist waste services covering clearance, construction, hazardous, and materials streams. EA licensed, duty-of-care documentation included. London & Home Counties."
+>
+
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home",     "item": "https://wastewize.co.uk/" },
+        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://wastewize.co.uk/services" }
+      ]
+    })} />
+  </Fragment>
+
+  <section
+    id="services"
+    class="py-20 lg:py-28 bg-brand-dark"
+    aria-labelledby="services-heading"
+  >
+    <div class="container mx-auto px-4">
+
+      <!-- Page header -->
+      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
+        <div class="max-w-xl">
+          <span class="text-xs font-semibold tracking-widest uppercase text-brand-lime block mb-3">
+            What We Do
+          </span>
+          <h1
+            id="services-heading"
+            class="font-display text-3xl lg:text-4xl font-bold text-white leading-tight mb-3"
+          >
+            Our Services
+          </h1>
+          <p class="text-[15px] text-white/60 leading-relaxed">
+            Ten specialist services covering clearance, construction, hazardous, and materials
+            streams — each backed by full EA licensing and duty-of-care documentation.
+          </p>
+        </div>
+
+        <!-- Live count badge -->
+        <div
+          id="svc-count"
+          class="shrink-0 flex items-center gap-2 bg-brand-lime/10 border border-brand-lime/30
+                 rounded-full px-4 py-2 text-sm font-semibold text-brand-lime self-start lg:self-auto"
+          aria-live="polite"
+          aria-atomic="true"
+        >
+          <span class="w-2 h-2 rounded-full bg-brand-lime" aria-hidden="true"/>
+          Showing all 10 services
+        </div>
+      </div>
+
+      <!-- Filter tabs -->
+      <div
+        class="flex flex-wrap gap-2 mb-8"
+        role="group"
+        aria-label="Filter services by category"
+      >
+        {filters.map(({ cat, label }) => (
+          <button
+            type="button"
+            data-cat={cat}
+            class={[
+              'filter-tab px-4 py-2 rounded-[8px] text-sm font-semibold border transition-all duration-200',
+              cat === 'all'
+                ? 'bg-brand-forest text-white border-brand-forest'
+                : 'bg-brand-dark-card text-white/70 border-white/15 hover:border-brand-lime hover:text-brand-lime hover:bg-brand-lime/10',
+            ].join(' ')}
+            aria-pressed={cat === 'all' ? 'true' : 'false'}
+          >
+            {label}
+          </button>
+        ))}
+      </div>
+
+      <!-- 4-column responsive service grid -->
+      <div
+        id="svc-grid"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
+        role="list"
+      >
+        {services.map((svc) => (
+          <article
+            id={`card-${svc.id}`}
+            data-id={svc.id}
+            data-cat={svc.cat}
+            role="listitem"
+            tabindex="0"
+            aria-expanded="false"
+            class="svc-card group bg-brand-dark-card border border-white/10 rounded-[12px] p-6
+                   flex flex-col gap-4 cursor-pointer relative overflow-hidden
+                   transition-all duration-300 hover:border-brand-lime/50 hover:shadow-card
+                   hover:-translate-y-1 focus-visible:outline focus-visible:outline-2
+                   focus-visible:outline-brand-lime focus-visible:outline-offset-2"
+          >
+            <!-- Top accent bar -->
+            <div
+              class="absolute top-0 left-0 right-0 h-[3px] bg-brand-lime rounded-t-[12px]
+                     scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300
+                     card-accent"
+              aria-hidden="true"
+            />
+
+            <!-- Icon -->
+            <div
+              class="w-12 h-12 rounded-[10px] bg-brand-lime/10 flex items-center justify-center
+                     shrink-0 transition-colors duration-300 group-hover:bg-brand-lime/20 card-icon-wrap"
+            >
+              <svg
+                class="w-6 h-6 text-brand-lime group-hover:text-white
+                       transition-colors duration-300 card-icon"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" d={svc.icon}/>
+              </svg>
+            </div>
+
+            <!-- Title + short description -->
+            <div class="flex flex-col gap-1.5 flex-1">
+              <h2
+                class="text-[15px] font-semibold text-white leading-snug
+                       group-hover:text-brand-lime transition-colors duration-200"
+              >
+                {svc.title}
+              </h2>
+              <p class="text-[13px] leading-relaxed text-white/50">
+                {svc.shortDesc}
+              </p>
+            </div>
+
+            <!-- Category pill + chevron -->
+            <div class="flex items-center justify-between">
+              <span
+                class="text-[11px] font-semibold tracking-wide uppercase px-2.5 py-1
+                       rounded-full bg-brand-lime/15 text-brand-lime border border-brand-lime/30"
+              >
+                {svc.catLabel}
+              </span>
+              <svg
+                class="w-4 h-4 text-white/30 group-hover:text-brand-lime
+                       transition-all duration-300 card-chevron"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <!-- Expand-in-place detail panel -->
+      <div
+        id="detail-panel"
+        class="hidden mt-5 bg-brand-dark-card border border-white/10 rounded-[16px] overflow-hidden"
+        aria-live="polite"
+      >
+        <div class="p-6 lg:p-8 flex flex-col sm:flex-row gap-6">
+
+          <!-- Icon (large) -->
+          <div
+            id="detail-icon"
+            class="w-14 h-14 rounded-[12px] bg-brand-dark-elevated border border-white/10
+                   flex items-center justify-center shrink-0"
+          >
+            <svg class="w-7 h-7" fill="none" stroke="#8BC34A" stroke-width="1.7"
+                 viewBox="0 0 24 24" id="detail-icon-svg" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" id="detail-icon-path" d=""/>
+            </svg>
+          </div>
+
+          <!-- Body -->
+          <div class="flex-1 min-w-0">
+            <h2 id="detail-title"
+                class="font-display text-xl font-bold text-brand-lime mb-2"></h2>
+            <p id="detail-desc"
+               class="text-[14px] text-white/60 leading-relaxed mb-4"></p>
+            <div id="detail-pills" class="flex flex-wrap gap-2 mb-5"></div>
+            <div class="flex flex-wrap gap-3">
+              <a
+                id="detail-link"
+                href="#"
+                class="inline-flex items-center gap-2 bg-brand-forest text-white px-5 py-2.5
+                       rounded-[8px] text-sm font-semibold hover:bg-brand-forest-dark
+                       hover:shadow-cta transition-all duration-200"
+              >
+                Learn more
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"
+                     viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+                </svg>
+              </a>
+              <a
+                href="/contact#quote"
+                class="inline-flex items-center gap-2 border-2 border-brand-lime/50 text-brand-lime
+                       px-5 py-2.5 rounded-[8px] text-sm font-semibold hover:bg-brand-lime/10
+                       transition-all duration-200"
+              >
+                Get a quote for this service
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Page footer -->
+      <div class="mt-10 flex flex-col sm:flex-row items-center justify-between gap-4
+                  border-t border-white/10 pt-8">
+        <p class="text-sm text-white/50 text-center sm:text-left">
+          Need something not listed here?
+          <a href="/contact" class="text-brand-lime font-semibold hover:underline ml-1">
+            Contact our team — we handle bespoke enquiries.
+          </a>
+        </p>
+        <a
+          href="/contact#quote"
+          class="inline-flex items-center gap-2 bg-brand-forest text-white px-6 py-3
+                 rounded-[8px] text-sm font-semibold shrink-0 hover:bg-brand-forest-dark
+                 hover:shadow-cta hover:-translate-y-0.5 transition-all duration-200"
+        >
+          Get a free quote
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"
+               viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+</Layout>
+
+<script>
+  const SERVICES = [
+    { id:'strip-out',            title:'Strip out & Demolition',  cat:'clearance',    catLabel:'Clearance',    icon:'M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16',                                                                                                                                                               desc:'Full strip-out and soft demolition of commercial and residential interiors. Our experienced crews remove fixtures, fittings, partitions, raised floors, and all non-structural elements safely and efficiently. Every job includes full waste-transfer documentation, duty-of-care records, and EA-licensed disposal — with same-week availability across London and the Home Counties.',                 pills:['EA Licensed','Duty of care','Same-week availability'],                href:'/services/strip-out-demolition' },
+    { id:'commercial-clearance', title:'Commercial Clearance',    cat:'clearance',    catLabel:'Clearance',    icon:'M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4',                                                                                                                                                                                                                               desc:'End-of-tenancy and office clearance for retail units, warehouses, offices, and commercial premises of any size. We remove furniture, IT equipment, racking, and all general debris — leaving the space clean and ready for handover. Fully insured, EA licensed, and available at short notice with flexible scheduling to minimise disruption to your business.',                            pills:['Office & retail','Fully insured','Flexible scheduling'],              href:'/services/commercial-clearance' },
+    { id:'residential-waste',    title:'Residential Waste',       cat:'clearance',    catLabel:'Clearance',    icon:'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6',                                                                                                                                               desc:'House clearances, bulky item collections, and domestic waste removal handled with care and professionalism. From single-item pickups to full property clearances after bereavement, relocation, or renovation — we work quickly and sensitively, leaving the property clean. All waste is disposed of responsibly with full duty-of-care documentation provided.',                                  pills:['House clearance','Bulky items','Short-notice bookings'],              href:'/services/residential-waste' },
+    { id:'garden-refuse',        title:'Garden Refuse',           cat:'clearance',    catLabel:'Clearance',    icon:'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z',                                                                                                                                                                                      desc:'Collection and responsible composting of all garden waste including grass cuttings, hedge trimmings, branches, logs, soil, and general green waste. Suitable for domestic gardens, housing estates, schools, and commercial landscaping projects. We offer one-off clearances and regular scheduled collections, diverting all material from landfill through certified composting facilities.',                      pills:['Green waste','Composted responsibly','Seasonal surge capacity'],      href:'/services/garden-refuse' },
+    { id:'building-construction',title:'Building & Construction', cat:'construction', catLabel:'Construction', icon:'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4',                                                                                                                                                  desc:'On-site waste management for construction, refurbishment, and fit-out projects of all scales. We supply segregated skips for timber, hardcore, plasterboard, and mixed loads, alongside muck-away and excavation waste services. Every collection comes with full site compliance documentation, waste transfer notes, and duty-of-care records to keep your project audit-ready and EA compliant.',                       pills:['On-site segregation','Muck-away','Site compliance docs'],             href:'/services/building-construction' },
+    { id:'electrical-equipment', title:'Electrical Equipment',    cat:'specialist',   catLabel:'Specialist',   icon:'M13 10V3L4 14h7v7l9-11h-7z',                                                                                                                                                                                                                                                                    desc:'WEEE-compliant collection and recycling of electrical and electronic equipment from offices, warehouses, and industrial sites. We handle computers, servers, monitors, white goods, and all other e-waste. Official WEEE transfer notes are issued for every collection, ensuring full compliance with UK WEEE Regulations. Certified data destruction is also available on request.',                                 pills:['WEEE compliant','Transfer notes issued','Data destruction available'], href:'/services/electrical-equipment' },
+    { id:'confidential-waste',   title:'Confidential Waste',      cat:'specialist',   catLabel:'Specialist',   icon:'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',                                                                                                                                                                                        desc:'Secure collection and certified destruction of confidential documents, sensitive media, hard drives, and data-bearing devices. A certificate of destruction is issued for every single collection, giving you a complete audit trail for regulatory purposes. Fully GDPR and DPA 2018 compliant, with on-site shredding available for organisations with the highest security requirements.',                      pills:['Certificate of destruction','GDPR compliant','On-site shredding available'], href:'/services/confidential-waste' },
+    { id:'asbestos-removal',     title:'Asbestos Removal',        cat:'specialist',   catLabel:'Specialist',   icon:'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',                                                                                                desc:'Licensed asbestos surveying, encapsulation, and full removal carried out by HSE-licensed contractors with extensive experience across commercial, residential, and industrial sites. We conduct comprehensive air monitoring throughout the project, provide an independent analyst sign-off on completion, and issue all required waste consignment notes — covering you fully for compliance and insurance purposes.',                            pills:['HSE licensed','Air monitoring','Waste consignment notes'],            href:'/services/asbestos-removal' },
+    { id:'hardcore-wood',        title:'Hardcore & Wood',         cat:'materials',    catLabel:'Materials',    icon:'M12 3a9 9 0 100 18A9 9 0 0012 3zM12 8a4 4 0 110 8 4 4 0 010-8zM12 12h.01',                                                                                                                                                                                                                                                               desc:'Segregated collection of hardcore, rubble, concrete, bricks, timber, and wood waste from construction and demolition sites across London and the Home Counties. All hardcore is crushed and processed for recycling as secondary aggregate, diverting material from landfill. Wood waste is chipped and processed for biomass energy. Segregated loads are preferred to maximise recovery rates.',                    pills:['Crushed & recycled','Biomass wood chip','Segregated loads preferred'], href:'/services/hardcore-wood' },
+    { id:'scrap-metal',          title:'Scrap Metal',             cat:'materials',    catLabel:'Materials',    icon:'M6 3v9a6 6 0 0012 0V3M6 3h3m6 0h3M6 3v3m12-3v3',                                                                                                                                                                                                                                               desc:'Collection and responsible recycling of ferrous and non-ferrous scrap metal from commercial, industrial, and construction sources. We handle structural steel, copper cabling, aluminium, stainless steel, and mixed metals — offering competitive rates for large volumes. Full waste transfer notes are included with every collection, ensuring your duty-of-care obligations are fully met.',        pills:['Ferrous & non-ferrous','Competitive rates','Transfer notes included'], href:'/services/scrap-metal' },
+  ];
+
+  let activeCat: string       = 'all';
+  let activeId:  string | null = null;
+
+  const grid        = document.getElementById('svc-grid')!;
+  const panel       = document.getElementById('detail-panel')!;
+  const countEl     = document.getElementById('svc-count')!;
+  const detailTitle = document.getElementById('detail-title')!;
+  const detailDesc  = document.getElementById('detail-desc')!;
+  const detailPills = document.getElementById('detail-pills')!;
+  const detailLink  = document.getElementById('detail-link') as HTMLAnchorElement;
+  const detailPath  = document.getElementById('detail-icon-path')!;
+
+  document.querySelectorAll<HTMLButtonElement>('.filter-tab').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      activeCat = btn.dataset.cat!;
+      activeId  = null;
+
+      document.querySelectorAll('.filter-tab').forEach((b) => {
+        const isActive = (b as HTMLButtonElement).dataset.cat === activeCat;
+        b.setAttribute('aria-pressed', String(isActive));
+        b.classList.toggle('bg-brand-forest',    isActive);
+        b.classList.toggle('text-white',          isActive);
+        b.classList.toggle('border-brand-forest', isActive);
+        b.classList.toggle('bg-brand-dark-card',  !isActive);
+        b.classList.toggle('text-white/70',       !isActive);
+        b.classList.toggle('border-white/15',     !isActive);
+      });
+
+      applyFilter();
+      closePanel();
+    });
+  });
+
+  function applyFilter() {
+    const cards = grid.querySelectorAll<HTMLElement>('.svc-card');
+    let visible = 0;
+    cards.forEach((card) => {
+      const show = activeCat === 'all' || card.dataset.cat === activeCat;
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    const total = SERVICES.length;
+    countEl.innerHTML = `<span class="w-2 h-2 rounded-full bg-brand-lime inline-block mr-2" aria-hidden="true"></span>${
+      visible === total ? `Showing all ${total} services` : `Showing ${visible} of ${total} services`
+    }`;
+  }
+
+  function bindCards() {
+    grid.querySelectorAll<HTMLElement>('.svc-card').forEach((card) => {
+      card.addEventListener('click',   () => toggleCard(card.dataset.id!));
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleCard(card.dataset.id!); }
+      });
+    });
+  }
+
+  function toggleCard(id: string) {
+    const wasOpen = activeId === id;
+    resetCardStyles();
+    activeId = wasOpen ? null : id;
+    if (activeId) { openCard(activeId); openPanel(activeId); }
+    else          { closePanel(); }
+  }
+
+  function resetCardStyles() {
+    grid.querySelectorAll<HTMLElement>('.svc-card').forEach((c) => {
+      c.setAttribute('aria-expanded', 'false');
+      c.classList.remove('border-brand-lime', 'bg-brand-dark-elevated', 'shadow-card', '-translate-y-1');
+      const accent  = c.querySelector<HTMLElement>('.card-accent');
+      const chevron = c.querySelector<HTMLElement>('.card-chevron');
+      if (accent)  accent.style.transform = '';
+      if (chevron) chevron.style.transform = '';
+    });
+  }
+
+  function openCard(id: string) {
+    const card = grid.querySelector<HTMLElement>(`[data-id="${id}"]`);
+    if (!card) return;
+    card.setAttribute('aria-expanded', 'true');
+    card.classList.add('border-brand-lime', 'bg-brand-dark-elevated', 'shadow-card', '-translate-y-1');
+    const accent  = card.querySelector<HTMLElement>('.card-accent');
+    const chevron = card.querySelector<HTMLElement>('.card-chevron');
+    if (accent)  accent.style.transform = 'scaleX(1)';
+    if (chevron) chevron.style.transform = 'rotate(180deg)';
+  }
+
+  function openPanel(id: string) {
+    const svc = SERVICES.find((s) => s.id === id);
+    if (!svc) return;
+
+    detailTitle.textContent = svc.title;
+    detailDesc.textContent  = svc.desc;
+    detailPath.setAttribute('d', svc.icon);
+    detailLink.href         = svc.href;
+    detailPills.innerHTML   = svc.pills
+      .map((p) => `<span class="text-xs font-semibold px-3 py-1 rounded-full bg-brand-dark-elevated border border-brand-lime/20 text-white/60">${p}</span>`)
+      .join('');
+
+    panel.classList.remove('hidden');
+    panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  function closePanel() {
+    panel.classList.add('hidden');
+  }
+
+  bindCards();
+</script>

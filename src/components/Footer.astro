@@ -1,0 +1,143 @@
+---
+// src/components/Footer.astro
+const currentYear = new Date().getFullYear();
+
+const footerLinks = {
+  Services: [
+    { label: 'Strip out & Demolition',  href: '/services' },
+    { label: 'Commercial Clearance',    href: '/services' },
+    { label: 'Residential Waste',       href: '/services' },
+    { label: 'Garden Refuse',           href: '/services' },
+    { label: 'Building & Construction', href: '/services' },
+    { label: 'Electrical Equipment',    href: '/services' },
+    { label: 'Confidential Waste',      href: '/services' },
+    { label: 'Asbestos Removal',        href: '/services' },
+    { label: 'Hardcore & Wood',         href: '/services' },
+    { label: 'Scrap Metal',             href: '/services' },
+  ],
+  Company: [
+    { label: 'About Us',          href: '/about' },
+    { label: 'Sustainability',    href: '/sustainability' },
+    { label: 'Case Studies',      href: '/case-studies' },
+    { label: 'Areas',             href: '/areas' },
+    { label: 'Contact',           href: '/contact' },
+  ],
+  Legal: [
+    { label: 'Privacy Policy',    href: '/privacy' },
+    { label: 'Cookie Policy',     href: '/cookies' },
+    { label: 'Terms of Service',  href: '/terms' },
+    { label: 'Duty of Care',      href: '/duty-of-care' },
+  ],
+};
+---
+
+<footer class="bg-brand-slate text-white" aria-label="WasteWize UK site footer">
+
+  <!-- Main footer body -->
+  <div class="container mx-auto px-4 pt-16 pb-10">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-10">
+
+      <!-- Brand column (spans 2 on lg) -->
+      <div class="lg:col-span-2 flex flex-col gap-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2.5 w-fit" aria-label="WasteWize UK home">
+          <img src="/Wastewize-logo.png" alt="" class="h-11 w-auto object-contain" aria-hidden="true" />
+          <div class="leading-none">
+            <span class="block font-semibold text-[16px]">
+              <span class="text-brand-lime">Waste</span>Wize
+            </span>
+            <span class="block text-[9px] tracking-[0.12em] uppercase text-white/40 mt-0.5">
+              London &amp; Home Counties
+            </span>
+          </div>
+        </a>
+
+        <p class="text-sm leading-relaxed text-white/60 max-w-xs">
+          End-to-end commercial waste management, recycling, and compliance services — helping
+          UK businesses achieve net zero and cut costs since 2018.
+        </p>
+
+        <!-- Contact details -->
+        <ul class="flex flex-col gap-2.5 text-sm text-white/70">
+          <li>
+            <a href="tel:+447929771954"
+               class="flex items-center gap-2 hover:text-brand-lime transition-colors">
+              <svg class="w-4 h-4 shrink-0 text-brand-lime" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+              </svg>
+              07929 771954
+            </a>
+          </li>
+          <li>
+            <a href="mailto:info@wastewize.co.uk"
+               class="flex items-center gap-2 hover:text-brand-lime transition-colors">
+              <svg class="w-4 h-4 shrink-0 text-brand-lime" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+              </svg>
+              info@wastewize.co.uk
+            </a>
+          </li>
+          <li class="flex items-start gap-2 text-white/70">
+            <svg class="w-4 h-4 shrink-0 text-brand-lime mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+            </svg>
+            <address class="not-italic leading-snug">
+              9 Cordelia Court, Burns Lane<br />London, NW7 2GB
+            </address>
+          </li>
+        </ul>
+
+        <!-- Social icons -->
+        <div class="flex items-center gap-4">
+          <a href="https://www.facebook.com/people/WastewizeLtd/61586085284705/" target="_blank" rel="noopener" aria-label="Facebook"
+             class="text-white/40 hover:text-brand-lime transition-colors">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/wastewizeltd" target="_blank" rel="noopener" aria-label="Instagram"
+             class="text-white/40 hover:text-brand-lime transition-colors">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Link columns -->
+      {Object.entries(footerLinks).map(([heading, links]) => (
+        <div>
+          <h3 class="text-xs font-semibold tracking-widest uppercase text-brand-lime mb-5">
+            {heading}
+          </h3>
+          <ul class="flex flex-col gap-2.5">
+            {links.map(({ label, href }) => (
+              <li>
+                <a
+                  href={href}
+                  class="text-sm text-white/60 hover:text-white hover:translate-x-0.5
+                         transition-all duration-150 inline-block"
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="border-t border-white/10">
+    <div class="container mx-auto px-4 py-5 flex flex-col sm:flex-row items-center
+                justify-between gap-3 text-xs text-white/40">
+      <p>&copy; {currentYear} WasteWize UK Ltd. All rights reserved.</p>
+      <p>This site is powered by <a href="https://www.ranklocalagency.co" target="_blank" rel="noopener" class="hover:text-white transition-colors underline underline-offset-2">Ranklocalagency</a></p>
+      <p>EA Licence No: CBDU335711 · Registered in England &amp; Wales No: 11181115</p>
+    </div>
+  </div>
+
+</footer>

@@ -1,0 +1,421 @@
+---
+// src/pages/contact.astro
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Contact Us | WasteWize UK — London & Home Counties"
+  description="Get in touch with WasteWize UK for a free waste management quote. Call 07929 771954 or send us an enquiry. Same-week availability across London and the Home Counties."
+>
+
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home",    "item": "https://wastewize.co.uk/" },
+        { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://wastewize.co.uk/contact" }
+      ]
+    })} />
+  </Fragment>
+
+  <!-- ── Page hero ── -->
+  <section class="bg-brand-dark py-12 sm:py-16 lg:py-20 border-b border-white/8">
+    <div class="container mx-auto px-4 sm:px-6">
+      <div class="max-w-2xl">
+        <span class="text-xs font-semibold tracking-widest uppercase text-brand-lime mb-3 block">
+          Get In Touch
+        </span>
+        <h1 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
+          Contact Us
+        </h1>
+        <p class="text-base sm:text-[17px] leading-relaxed text-white/60 max-w-xl">
+          Ready to simplify your waste management? Call us directly or fill in the form
+          and we'll get back to you within 2 hours during business hours.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Main content ── -->
+  <section class="py-12 sm:py-16 lg:py-20 bg-brand-dark">
+    <div class="container mx-auto px-4 sm:px-6">
+      <div class="grid lg:grid-cols-3 gap-8 lg:gap-10">
+
+        <!-- ── LEFT: Contact details ── -->
+        <div class="lg:col-span-1 flex flex-col gap-6">
+
+          <!-- Quick contact cards -->
+          <div class="flex flex-col gap-3">
+
+            <a
+              href="tel:+447929771954"
+              class="group flex items-center gap-4 bg-brand-dark-card border border-white/10
+                     rounded-[12px] p-5 hover:border-brand-lime/40 hover:shadow-card
+                     transition-all duration-300"
+            >
+              <div class="w-11 h-11 rounded-[10px] bg-brand-lime/10 flex items-center justify-center
+                          shrink-0 group-hover:bg-brand-lime/20 transition-colors">
+                <svg class="w-5 h-5 text-brand-lime" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="text-xs text-white/40 uppercase tracking-wide font-medium mb-0.5">Call Us</p>
+                <p class="text-white font-semibold group-hover:text-brand-lime transition-colors">07929 771954</p>
+              </div>
+            </a>
+
+            <a
+              href="tel:+447498363345"
+              class="group flex items-center gap-4 bg-brand-dark-card border border-white/10
+                     rounded-[12px] p-5 hover:border-brand-lime/40 hover:shadow-card
+                     transition-all duration-300"
+            >
+              <div class="w-11 h-11 rounded-[10px] bg-brand-lime/10 flex items-center justify-center
+                          shrink-0 group-hover:bg-brand-lime/20 transition-colors">
+                <svg class="w-5 h-5 text-brand-lime" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="text-xs text-white/40 uppercase tracking-wide font-medium mb-0.5">Call Us</p>
+                <p class="text-white font-semibold group-hover:text-brand-lime transition-colors">07498 363345</p>
+              </div>
+            </a>
+
+            <a
+              href="mailto:info@wastewize.co.uk"
+              class="group flex items-center gap-4 bg-brand-dark-card border border-white/10
+                     rounded-[12px] p-5 hover:border-brand-lime/40 hover:shadow-card
+                     transition-all duration-300"
+            >
+              <div class="w-11 h-11 rounded-[10px] bg-brand-lime/10 flex items-center justify-center
+                          shrink-0 group-hover:bg-brand-lime/20 transition-colors">
+                <svg class="w-5 h-5 text-brand-lime" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="text-xs text-white/40 uppercase tracking-wide font-medium mb-0.5">Email Us</p>
+                <p class="text-white font-semibold group-hover:text-brand-lime transition-colors">info@wastewize.co.uk</p>
+              </div>
+            </a>
+
+            <div class="flex items-center gap-4 bg-brand-dark-card border border-white/10 rounded-[12px] p-5">
+              <div class="w-11 h-11 rounded-[10px] bg-brand-lime/10 flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5 text-brand-lime" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <div>
+                <p class="text-xs text-white/40 uppercase tracking-wide font-medium mb-0.5">Our Address</p>
+                <address class="not-italic text-white font-semibold leading-snug">
+                  9 Cordelia Court, Burns Lane<br />London, NW7 2GB
+                </address>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Business hours -->
+          <div class="bg-brand-dark-card border border-white/10 rounded-[12px] p-6">
+            <h3 class="text-sm font-semibold text-white mb-4 flex items-center gap-2">
+              <svg class="w-4 h-4 text-brand-lime shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              Business Hours
+            </h3>
+            <ul class="flex flex-col gap-2.5 text-sm">
+              {[
+                { day: 'Monday – Friday',  hours: '7:00am – 6:00pm' },
+                { day: 'Saturday',         hours: '8:00am – 2:00pm' },
+                { day: 'Sunday',           hours: 'Emergency only'  },
+              ].map(({ day, hours }) => (
+                <li class="flex justify-between items-center border-b border-white/6 pb-2.5 last:border-0 last:pb-0">
+                  <span class="text-white/50">{day}</span>
+                  <span class="text-white font-medium">{hours}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Accreditations -->
+          <div class="bg-brand-dark-card border border-white/10 rounded-[12px] p-6">
+            <h3 class="text-sm font-semibold text-white mb-4">Accreditations</h3>
+            <ul class="flex flex-col gap-2.5">
+              {[
+                'EA Licensed Waste Carrier · CBDU335711',
+                'SafeContractor Approved',
+                'GDPR & DPA 2018 Compliant',
+              ].map((badge) => (
+                <li class="flex items-center gap-2.5 text-sm text-white/60">
+                  <svg class="w-4 h-4 text-brand-lime shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  {badge}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- ── RIGHT: Contact form ── -->
+        <div class="lg:col-span-2">
+          <div class="bg-brand-dark-card border border-white/10 rounded-[16px] p-6 sm:p-10">
+
+            <h2 class="text-xl font-semibold text-white mb-1">Send an Enquiry</h2>
+            <p class="text-sm text-white/50 mb-7">We'll respond within 2 hours during business hours.</p>
+
+            <form
+              method="POST"
+              action="#"
+              enctype="multipart/form-data"
+              class="flex flex-col gap-6"
+              novalidate
+            >
+
+              <!-- Name + Company row -->
+              <div class="grid sm:grid-cols-2 gap-5">
+                <div class="flex flex-col gap-1.5">
+                  <label for="name" class="text-xs font-medium text-white/60 uppercase tracking-wide">
+                    Full Name <span class="text-brand-lime">*</span>
+                  </label>
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    required
+                    placeholder="John Smith"
+                    class="w-full bg-brand-dark border border-white/10 rounded-[8px] px-4 py-3
+                           text-sm text-white placeholder-white/30
+                           focus:outline-none focus:border-brand-lime/60 focus:ring-1 focus:ring-brand-lime/30
+                           transition-colors"
+                  />
+                </div>
+                <div class="flex flex-col gap-1.5">
+                  <label for="company" class="text-xs font-medium text-white/60 uppercase tracking-wide">
+                    Company
+                  </label>
+                  <input
+                    id="company"
+                    name="company"
+                    type="text"
+                    placeholder="Acme Ltd"
+                    class="w-full bg-brand-dark border border-white/10 rounded-[8px] px-4 py-3
+                           text-sm text-white placeholder-white/30
+                           focus:outline-none focus:border-brand-lime/60 focus:ring-1 focus:ring-brand-lime/30
+                           transition-colors"
+                  />
+                </div>
+              </div>
+
+              <!-- Tel + Email row -->
+              <div class="grid sm:grid-cols-2 gap-5">
+                <div class="flex flex-col gap-1.5">
+                  <label for="telephone" class="text-xs font-medium text-white/60 uppercase tracking-wide">
+                    Phone <span class="text-brand-lime">*</span>
+                  </label>
+                  <input
+                    id="telephone"
+                    name="telephone"
+                    type="tel"
+                    required
+                    placeholder="07700 900000"
+                    class="w-full bg-brand-dark border border-white/10 rounded-[8px] px-4 py-3
+                           text-sm text-white placeholder-white/30
+                           focus:outline-none focus:border-brand-lime/60 focus:ring-1 focus:ring-brand-lime/30
+                           transition-colors"
+                  />
+                </div>
+                <div class="flex flex-col gap-1.5">
+                  <label for="email" class="text-xs font-medium text-white/60 uppercase tracking-wide">
+                    Email <span class="text-brand-lime">*</span>
+                  </label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    placeholder="you@company.com"
+                    class="w-full bg-brand-dark border border-white/10 rounded-[8px] px-4 py-3
+                           text-sm text-white placeholder-white/30
+                           focus:outline-none focus:border-brand-lime/60 focus:ring-1 focus:ring-brand-lime/30
+                           transition-colors"
+                  />
+                </div>
+              </div>
+
+              <!-- Service + Area row -->
+              <div class="grid sm:grid-cols-2 gap-5">
+                <div class="flex flex-col gap-1.5">
+                  <label for="service" class="text-xs font-medium text-white/60 uppercase tracking-wide">
+                    Service Required
+                  </label>
+                  <select
+                    id="service"
+                    name="service"
+                    class="w-full bg-brand-dark border border-white/10 rounded-[8px] px-4 py-3
+                           text-sm text-white
+                           focus:outline-none focus:border-brand-lime/60 focus:ring-1 focus:ring-brand-lime/30
+                           transition-colors appearance-none"
+                  >
+                    <option value="" disabled selected class="text-white/30">Select a service…</option>
+                    <option value="strip-out">Strip out &amp; Demolition</option>
+                    <option value="commercial-clearance">Commercial Clearance</option>
+                    <option value="residential-waste">Residential Waste</option>
+                    <option value="garden-refuse">Garden Refuse</option>
+                    <option value="building-construction">Building &amp; Construction</option>
+                    <option value="electrical-equipment">Electrical Equipment</option>
+                    <option value="confidential-waste">Confidential Waste</option>
+                    <option value="asbestos-removal">Asbestos Removal</option>
+                    <option value="hardcore-wood">Hardcore &amp; Wood</option>
+                    <option value="scrap-metal">Scrap Metal</option>
+                    <option value="other">Other / Not Sure</option>
+                  </select>
+                </div>
+                <div class="flex flex-col gap-1.5">
+                  <label for="area" class="text-xs font-medium text-white/60 uppercase tracking-wide">
+                    Your Area
+                  </label>
+                  <select
+                    id="area"
+                    name="area"
+                    class="w-full bg-brand-dark border border-white/10 rounded-[8px] px-4 py-3
+                           text-sm text-white
+                           focus:outline-none focus:border-brand-lime/60 focus:ring-1 focus:ring-brand-lime/30
+                           transition-colors appearance-none"
+                  >
+                    <option value="" disabled selected class="text-white/30">Select an area…</option>
+                    <optgroup label="London">
+                      <option value="central-london">Central London</option>
+                      <option value="north-london">North London</option>
+                      <option value="east-london">East London</option>
+                      <option value="south-london">South London</option>
+                      <option value="west-london">West London</option>
+                    </optgroup>
+                    <optgroup label="Home Counties">
+                      <option value="surrey">Surrey</option>
+                      <option value="kent">Kent</option>
+                      <option value="essex">Essex</option>
+                      <option value="hertfordshire">Hertfordshire</option>
+                      <option value="berkshire">Berkshire</option>
+                      <option value="buckinghamshire">Buckinghamshire</option>
+                      <option value="middlesex">Middlesex</option>
+                    </optgroup>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Description -->
+              <div class="flex flex-col gap-1.5">
+                <label for="description" class="text-xs font-medium text-white/60 uppercase tracking-wide">
+                  Description <span class="text-brand-lime">*</span>
+                </label>
+                <textarea
+                  id="description"
+                  name="description"
+                  required
+                  rows="5"
+                  placeholder="Describe your waste management needs — volume, frequency, site type, any specific requirements…"
+                  class="w-full bg-brand-dark border border-white/10 rounded-[8px] px-4 py-3
+                         text-sm text-white placeholder-white/30 resize-none
+                         focus:outline-none focus:border-brand-lime/60 focus:ring-1 focus:ring-brand-lime/30
+                         transition-colors"
+                ></textarea>
+              </div>
+
+              <!-- Image upload -->
+              <div class="flex flex-col gap-1.5">
+                <label for="images" class="text-xs font-medium text-white/60 uppercase tracking-wide">
+                  Attach Images <span class="text-white/30">(optional)</span>
+                </label>
+                <label
+                  for="images"
+                  id="contact-drop-zone"
+                  class="flex flex-col items-center justify-center gap-2 w-full
+                         border border-dashed border-white/20 rounded-[8px] px-4 py-6
+                         cursor-pointer hover:border-brand-lime/50 hover:bg-brand-lime/5
+                         transition-colors text-center"
+                >
+                  <svg class="w-7 h-7 text-white/25" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"/>
+                  </svg>
+                  <span id="contact-drop-label" class="text-xs text-white/40">
+                    Click to upload or drag &amp; drop
+                  </span>
+                  <span class="text-[10px] text-white/25">JPG, PNG, WEBP — up to 10 MB each</span>
+                </label>
+                <input
+                  id="images"
+                  name="images"
+                  type="file"
+                  multiple
+                  accept="image/jpeg,image/png,image/webp"
+                  class="sr-only"
+                />
+              </div>
+
+              <!-- Submit -->
+              <button
+                type="submit"
+                class="w-full inline-flex items-center justify-center gap-2 bg-brand-forest text-white
+                       px-6 py-4 rounded-[8px] text-sm font-semibold
+                       hover:bg-brand-forest-dark hover:-translate-y-0.5 hover:shadow-cta
+                       transition-all duration-200"
+              >
+                Send Enquiry
+                <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+                </svg>
+              </button>
+
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<script>
+  const input    = document.getElementById('images') as HTMLInputElement;
+  const label    = document.getElementById('contact-drop-label')!;
+  const dropZone = document.getElementById('contact-drop-zone')!;
+
+  input.addEventListener('change', () => {
+    const count = input.files?.length ?? 0;
+    label.textContent = count === 0
+      ? 'Click to upload or drag & drop'
+      : count === 1
+        ? input.files![0].name
+        : `${count} images selected`;
+  });
+
+  dropZone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    dropZone.classList.add('border-brand-lime/50', 'bg-brand-lime/5');
+  });
+
+  dropZone.addEventListener('dragleave', () => {
+    dropZone.classList.remove('border-brand-lime/50', 'bg-brand-lime/5');
+  });
+
+  dropZone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    dropZone.classList.remove('border-brand-lime/50', 'bg-brand-lime/5');
+    if (e.dataTransfer?.files.length) {
+      const dt = new DataTransfer();
+      Array.from(e.dataTransfer.files)
+        .filter(f => f.type.startsWith('image/'))
+        .forEach(f => dt.items.add(f));
+      input.files = dt.files;
+      input.dispatchEvent(new Event('change'));
+    }
+  });
+</script>

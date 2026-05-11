@@ -1,0 +1,124 @@
+---
+// src/components/StatsBar.astro
+// Layout 91 counter / stats band — forest-green background, four authority stats
+// Counters animate up on scroll using Intersection Observer (vanilla JS, no framework needed)
+
+const stats = [
+  {
+    value:  99,
+    suffix: '%',
+    label:  'Landfill Diversion Rate',
+    icon:   'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15',
+  },
+  {
+    value:  500,
+    suffix: '+',
+    label:  'Business Clients',
+    icon:   'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z',
+  },
+  {
+    value:  24,
+    suffix: '/7',
+    label:  'Support Available',
+    icon:   'M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z',
+  },
+  {
+    value:  15,
+    suffix: '+',
+    label:  'Years of Experience',
+    icon:   'M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z',
+  },
+];
+---
+
+<section
+  id="stats-bar"
+  class="bg-brand-forest py-16 lg:py-20 relative overflow-hidden"
+  aria-label="WasteWize UK key statistics"
+>
+  <!-- Decorative lime circles -->
+  <div class="pointer-events-none absolute -top-20 -left-20 w-64 h-64 rounded-full
+              bg-brand-lime/10" aria-hidden="true"/>
+  <div class="pointer-events-none absolute -bottom-16 -right-16 w-48 h-48 rounded-full
+              bg-brand-lime/8" aria-hidden="true"/>
+
+  <div class="container mx-auto px-4 relative">
+
+    <!-- Eyebrow -->
+    <p class="text-center text-xs font-semibold tracking-widest uppercase text-brand-lime/70
+              mb-10">
+      Our Impact in Numbers
+    </p>
+
+    <!-- Stats grid -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+      {stats.map(({ value, suffix, label, icon }, i) => (
+        <div class="flex flex-col items-center text-center gap-4">
+
+          <!-- Icon -->
+          <div class="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center
+                      border border-white/20 shrink-0">
+            <svg class="w-6 h-6 text-brand-lime" fill="none" stroke="currentColor"
+                 stroke-width="1.7" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d={icon}/>
+            </svg>
+          </div>
+
+          <!-- Counter -->
+          <div>
+            <p class="text-white leading-none">
+              <span
+                class="font-display text-4xl lg:text-5xl font-bold stat-counter"
+                data-target={value}
+                data-index={i}
+              >0</span>
+              <span class="font-display text-3xl lg:text-4xl font-bold">{suffix}</span>
+            </p>
+            <p class="text-white/70 text-sm font-medium mt-2">{label}</p>
+          </div>
+
+          <!-- Lime divider (hidden on last item in row) -->
+          <div class="hidden lg:block absolute right-0 top-1/4 h-1/2 w-px bg-white/10
+                      last:hidden" aria-hidden="true"/>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<script>
+  // Animate counters when section enters viewport
+  const counters  = document.querySelectorAll<HTMLElement>('.stat-counter');
+  const duration  = 1800; // ms
+  const easeOut   = (t: number) => 1 - Math.pow(1 - t, 3);
+
+  function animateCounter(el: HTMLElement) {
+    const target = Number(el.dataset.target);
+    const start  = performance.now();
+
+    function step(now: number) {
+      const elapsed  = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      el.textContent = String(Math.floor(easeOut(progress) * target));
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = String(target);
+    }
+
+    requestAnimationFrame(step);
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target as HTMLElement);
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.3 },
+  );
+
+  counters.forEach((el) => observer.observe(el));
+</script>

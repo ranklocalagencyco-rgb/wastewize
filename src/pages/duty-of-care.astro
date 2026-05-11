@@ -1,0 +1,326 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Duty of Care & Compliance | WasteWize UK"
+  description="Understanding your legal Waste Duty of Care. WasteWize UK provides full EA-licensed documentation, digital Waste Transfer Notes, and 99% landfill diversion."
+>
+
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Duty of Care & Compliance | WasteWize UK",
+      "url": "https://wastewize.co.uk/duty-of-care",
+      "description": "Understanding your legal Waste Duty of Care obligations and how WasteWize UK ensures full compliance.",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home",          "item": "https://wastewize.co.uk/" },
+          { "@type": "ListItem", "position": 2, "name": "Duty of Care", "item": "https://wastewize.co.uk/duty-of-care" }
+        ]
+      }
+    })} />
+  </Fragment>
+
+  <!-- Breadcrumb -->
+  <nav class="bg-brand-dark border-b border-white/5 py-3 px-4" aria-label="Breadcrumb">
+    <div class="container mx-auto">
+      <ol class="flex items-center gap-2 text-xs text-white/40">
+        <li><a href="/" class="hover:text-brand-lime transition-colors">Home</a></li>
+        <li aria-hidden="true">›</li>
+        <li class="text-white/70">Duty of Care</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ── Hero ── -->
+    <section class="py-20 lg:py-28 bg-brand-dark border-b border-white/5 relative overflow-hidden">
+      <div class="absolute inset-0 bg-brand-lime/5 blur-[120px] rounded-full -translate-y-1/2 pointer-events-none" aria-hidden="true"></div>
+      <div class="container mx-auto px-4 max-w-3xl relative z-10 text-center">
+        <span class="text-xs font-semibold tracking-widest uppercase text-brand-lime block mb-3">
+          Regulatory Compliance
+        </span>
+        <h1 class="font-display text-4xl lg:text-5xl font-bold text-white leading-tight mb-5">
+          Your <span class="text-brand-lime">Duty of Care</span>
+        </h1>
+        <p class="text-[15px] text-white/60 leading-relaxed max-w-2xl mx-auto">
+          Under Section 34 of the Environmental Protection Act 1990, anyone who produces waste has a legal duty to ensure it is disposed of responsibly — or face unlimited fines.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── Three pillars ── -->
+    <section class="py-20 bg-brand-dark">
+      <div class="container mx-auto px-4">
+        <div class="grid sm:grid-cols-3 gap-5">
+
+          <div class="group bg-brand-dark-card border border-white/10 rounded-[12px] p-6
+                      flex flex-col gap-4 hover:border-brand-lime/50 hover:shadow-card
+                      hover:-translate-y-1 transition-all duration-300">
+            <div class="w-11 h-11 rounded-[10px] bg-brand-lime/10 flex items-center justify-center shrink-0
+                        group-hover:bg-brand-lime/20 transition-colors">
+              <svg class="w-5 h-5 text-brand-lime" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-base font-semibold text-white mb-2">Full Indemnity</h3>
+              <p class="text-sm text-white/55 leading-relaxed">By using an Upper-Tier EA Licensed Carrier like WasteWize, the legal responsibility for the waste is safely transferred from you to us.</p>
+            </div>
+          </div>
+
+          <div class="group bg-brand-dark-card border border-white/10 rounded-[12px] p-6
+                      flex flex-col gap-4 hover:border-brand-lime/50 hover:shadow-card
+                      hover:-translate-y-1 transition-all duration-300">
+            <div class="w-11 h-11 rounded-[10px] bg-brand-lime/10 flex items-center justify-center shrink-0
+                        group-hover:bg-brand-lime/20 transition-colors">
+              <svg class="w-5 h-5 text-brand-lime" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2m3 2v-4m3 2v-6m2 8V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-base font-semibold text-white mb-2">Waste Transfer Notes</h3>
+              <p class="text-sm text-white/55 leading-relaxed">Every collection is documented with a digital WTN, providing a permanent audit trail of where your waste originated and where it ended up.</p>
+            </div>
+          </div>
+
+          <div class="group bg-brand-dark-card border border-white/10 rounded-[12px] p-6
+                      flex flex-col gap-4 hover:border-brand-lime/50 hover:shadow-card
+                      hover:-translate-y-1 transition-all duration-300">
+            <div class="w-11 h-11 rounded-[10px] bg-brand-lime/10 flex items-center justify-center shrink-0
+                        group-hover:bg-brand-lime/20 transition-colors">
+              <svg class="w-5 h-5 text-brand-lime" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-base font-semibold text-white mb-2">The Waste Hierarchy</h3>
+              <p class="text-sm text-white/55 leading-relaxed">We legally must prioritise the waste hierarchy: Prevent, Reuse, Recycle, Recover, and — only as a last resort — Dispose.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Why it matters ── -->
+    <section class="py-20 bg-brand-dark-card border-y border-white/5">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <span class="text-xs font-semibold tracking-widest uppercase text-brand-lime block mb-3">
+          The Legal Risk
+        </span>
+        <h2 class="font-display text-3xl lg:text-4xl font-bold text-white mb-6">
+          Why Does This Matter to You?
+        </h2>
+        <p class="text-[15px] text-white/60 leading-relaxed mb-10">
+          If your waste is fly-tipped by an unlicensed carrier, <strong class="text-white font-semibold">you</strong> are legally liable and can face unlimited fines or prosecution. Simply "paying someone to take it away" is not enough to satisfy the law.
+        </p>
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div class="border-l-2 border-brand-lime pl-6">
+            <h4 class="text-white font-semibold mb-2">For Homeowners</h4>
+            <p class="text-sm text-white/55 leading-relaxed">"I didn't know they were unlicensed" is not a legal defence. Using WasteWize UK ensures you have the paperwork to prove you acted responsibly.</p>
+          </div>
+          <div class="border-l-2 border-brand-lime pl-6">
+            <h4 class="text-white font-semibold mb-2">For Businesses</h4>
+            <p class="text-sm text-white/55 leading-relaxed">Commercial entities are required by law to keep Waste Transfer Notes for at least 2 years. Our digital system handles this archiving for you automatically.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Digital WTN ── -->
+    <section class="py-20 lg:py-28 bg-brand-dark border-b border-white/5">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col lg:flex-row items-center gap-14">
+
+          <div class="flex-1">
+            <span class="text-xs font-semibold tracking-widest uppercase text-brand-lime block mb-3">
+              The Documentation
+            </span>
+            <h2 class="font-display text-3xl lg:text-4xl font-bold text-white mb-5">
+              Digital Waste Transfer Notes (WTN)
+            </h2>
+            <p class="text-[15px] text-white/60 leading-relaxed mb-8">
+              Upon completion of every job, we issue a digital WTN. This document contains:
+            </p>
+            <ul class="flex flex-col gap-3">
+              {[
+                'Description of the waste (SIC Codes)',
+                'The volume and weight of the materials',
+                'The date, time, and location of collection',
+                'Our Environment Agency Licence Number',
+                'The destination licensed site for material recovery',
+              ].map((item) => (
+                <li class="flex items-center gap-3 text-sm text-white/70">
+                  <svg class="w-4 h-4 text-brand-lime shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Mock WTN Document -->
+          <div class="flex-1 w-full max-w-sm rotate-1">
+            <div class="bg-white rounded-[10px] shadow-2xl overflow-hidden text-gray-800 text-[11px] font-sans select-none">
+
+              <!-- Header band -->
+              <div class="bg-[#1a2e1a] px-5 py-3 flex items-center justify-between">
+                <div>
+                  <p class="text-brand-lime font-bold text-[13px] tracking-tight">WasteWize UK</p>
+                  <p class="text-white/50 text-[9px] uppercase tracking-widest">Licensed Waste Carrier</p>
+                </div>
+                <div class="text-right">
+                  <p class="text-white/40 text-[9px] uppercase tracking-widest">EA Licence</p>
+                  <p class="text-brand-lime font-mono text-[11px] font-bold">CBDU335711</p>
+                </div>
+              </div>
+
+              <!-- Document title -->
+              <div class="px-5 pt-4 pb-3 border-b border-gray-200">
+                <h3 class="font-bold text-[13px] text-gray-900 uppercase tracking-wide">Waste Transfer Note</h3>
+                <div class="flex gap-4 mt-1 text-[9px] text-gray-400">
+                  <span>Ref: <span class="text-gray-700 font-semibold">WW-2025-8821</span></span>
+                  <span>Date: <span class="text-gray-700 font-semibold">11 May 2025</span></span>
+                  <span>Time: <span class="text-gray-700 font-semibold">09:14</span></span>
+                </div>
+              </div>
+
+              <div class="px-5 py-3 space-y-3">
+
+                <!-- Producer -->
+                <div>
+                  <p class="text-[8px] font-bold uppercase tracking-widest text-gray-400 mb-1">Waste Producer</p>
+                  <p class="font-semibold text-gray-800">Acme Construction Ltd</p>
+                  <p class="text-gray-500 text-[10px]">47 Meridian Way, London, N1 3BT</p>
+                </div>
+
+                <div class="border-t border-gray-100"></div>
+
+                <!-- Waste description -->
+                <div>
+                  <p class="text-[8px] font-bold uppercase tracking-widest text-gray-400 mb-1.5">Waste Description</p>
+                  <div class="grid grid-cols-2 gap-x-4 gap-y-1 text-[10px]">
+                    <div>
+                      <span class="text-gray-400">SIC Code:</span>
+                      <span class="ml-1 font-semibold text-gray-700">17 01 01</span>
+                    </div>
+                    <div>
+                      <span class="text-gray-400">Type:</span>
+                      <span class="ml-1 font-semibold text-gray-700">Mixed C&amp;D</span>
+                    </div>
+                    <div>
+                      <span class="text-gray-400">Volume:</span>
+                      <span class="ml-1 font-semibold text-gray-700">6 yd³</span>
+                    </div>
+                    <div>
+                      <span class="text-gray-400">Weight:</span>
+                      <span class="ml-1 font-semibold text-gray-700">~850 kg</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="border-t border-gray-100"></div>
+
+                <!-- Destination -->
+                <div>
+                  <p class="text-[8px] font-bold uppercase tracking-widest text-gray-400 mb-1">Destination Facility</p>
+                  <p class="font-semibold text-gray-800">Veolia Recycling Centre</p>
+                  <p class="text-gray-500 text-[10px]">Smugglers Way, Wandsworth, SW18 1EQ</p>
+                  <p class="text-[9px] mt-0.5">
+                    <span class="text-gray-400">Permit:</span>
+                    <span class="font-semibold text-gray-700 ml-0.5">EPR/AB3942LD</span>
+                  </p>
+                </div>
+
+                <div class="border-t border-gray-100"></div>
+
+                <!-- Hierarchy + recycling rate -->
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="text-[8px] font-bold uppercase tracking-widest text-gray-400 mb-1">Waste Hierarchy</p>
+                    <div class="flex gap-1">
+                      {['Recycle', 'Recover'].map((tier) => (
+                        <span class="bg-green-100 text-green-800 text-[8px] font-semibold px-1.5 py-0.5 rounded">
+                          {tier}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <div class="text-right">
+                    <p class="text-[8px] text-gray-400">Diversion rate</p>
+                    <p class="text-[20px] font-extrabold text-green-700 leading-none">99%</p>
+                    <p class="text-[8px] text-gray-400">landfill-free</p>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Footer / stamp -->
+              <div class="bg-gray-50 border-t border-gray-200 px-5 py-2.5 flex items-center justify-between">
+                <div class="flex items-center gap-1.5">
+                  <div class="w-3 h-3 rounded-full bg-green-500 flex items-center justify-center">
+                    <svg class="w-2 h-2 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                    </svg>
+                  </div>
+                  <span class="text-[9px] font-semibold text-green-700">Duty of Care Satisfied</span>
+                </div>
+                <span class="text-[8px] text-gray-400 font-mono">DIGITALLY ISSUED · WasteWize UK</span>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section class="py-20 lg:py-28 bg-brand-dark">
+      <div class="container mx-auto px-4 text-center max-w-2xl">
+        <span class="text-xs font-semibold tracking-widest uppercase text-brand-lime block mb-3">
+          Get Compliant Today
+        </span>
+        <h2 class="font-display text-3xl lg:text-4xl font-bold text-white mb-4">
+          Need a Compliant Waste Partner?
+        </h2>
+        <p class="text-[15px] text-white/60 leading-relaxed mb-8">
+          Don't risk fines. Get a fully documented, professional waste collection today.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a
+            href="/contact#quote"
+            class="inline-flex items-center justify-center gap-2 bg-brand-forest text-white
+                   px-6 py-3 rounded-[8px] text-sm font-semibold
+                   hover:bg-brand-forest-dark hover:-translate-y-px hover:shadow-cta
+                   transition-all duration-200"
+          >
+            Get a Free Quote
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+            </svg>
+          </a>
+          <a
+            href="tel:+447929771954"
+            class="inline-flex items-center justify-center gap-2 bg-white/5 border border-white/15
+                   text-white px-6 py-3 rounded-[8px] text-sm font-semibold
+                   hover:border-brand-lime/50 hover:bg-white/10 hover:-translate-y-px
+                   transition-all duration-200"
+          >
+            <svg class="w-4 h-4 text-brand-lime" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+            </svg>
+            07929 771954
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</Layout>

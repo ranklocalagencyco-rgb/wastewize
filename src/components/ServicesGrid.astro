@@ -1,0 +1,119 @@
+---
+// src/components/ServicesGrid.astro
+import ServiceCard from './ServiceCard.astro';
+
+const services = [
+  {
+    title:       'Strip out & Demolition',
+    description: 'Interior strip-outs & soft demolition with full waste-transfer documentation.',
+    href:        '/services/strip-out-demolition',
+    icon:        'M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16',
+  },
+  {
+    title:       'Commercial Clearance',
+    description: 'Office & retail clearance of any size — fully insured, flexible scheduling.',
+    href:        '/services/commercial-clearance',
+    icon:        'M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4',
+  },
+  {
+    title:       'Residential Waste',
+    description: 'House clearances & bulky item collections, from single items to full properties.',
+    href:        '/services/residential-waste',
+    icon:        'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6',
+  },
+  {
+    title:       'Garden Refuse',
+    description: 'Green waste collection & composting for domestic gardens and landscaping projects.',
+    href:        '/services/garden-refuse',
+    icon:        'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z',
+  },
+  {
+    title:       'Building & Construction',
+    description: 'On-site skips & waste management for construction sites with compliance docs.',
+    href:        '/services/building-construction',
+    icon:        'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4',
+  },
+  {
+    title:       'Electrical Equipment',
+    description: 'WEEE-compliant electrical recycling with transfer notes & data destruction.',
+    href:        '/services/electrical-equipment',
+    icon:        'M13 10V3L4 14h7v7l9-11h-7z',
+  },
+  {
+    title:       'Confidential Waste',
+    description: 'Secure document shredding with a certificate of destruction. GDPR compliant.',
+    href:        '/services/confidential-waste',
+    icon:        'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
+  },
+  {
+    title:       'Asbestos Removal',
+    description: 'HSE-licensed asbestos removal with air monitoring & waste consignment notes.',
+    href:        '/services/asbestos-removal',
+    icon:        'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
+  },
+  {
+    title:       'Hardcore & Wood',
+    description: 'Hardcore crushed & recycled; timber chipped for biomass. Segregated loads.',
+    href:        '/services/hardcore-wood',
+    icon:        'M12 3a9 9 0 100 18A9 9 0 0012 3zM12 8a4 4 0 110 8 4 4 0 010-8zM12 12h.01',
+  },
+  {
+    title:       'Scrap Metal',
+    description: 'Ferrous & non-ferrous scrap recycling at competitive rates. Transfer notes included.',
+    href:        '/services/scrap-metal',
+    icon:        'M6 3v9a6 6 0 0012 0V3M6 3h3m6 0h3M6 3v3m12-3v3',
+  },
+];
+---
+
+<section class="py-20 lg:py-28 bg-brand-dark" id="services">
+  <div class="container mx-auto px-4">
+
+    <!-- Section header -->
+    <div class="max-w-2xl mb-14">
+      <span class="text-xs font-semibold tracking-widest uppercase text-brand-lime mb-3 block">
+        What We Do
+      </span>
+      <h2 class="font-display text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight">
+        End-to-End Waste Solutions<br/>
+        <span class="text-brand-lime">Built Around Your Business</span>
+      </h2>
+      <p class="text-[16px] leading-relaxed text-white/60">
+        From a single item collection to a full circular-economy programme — our services are
+        modular, scalable, and always backed by real compliance expertise.
+      </p>
+    </div>
+
+    <!-- Responsive grid: 1 → 2 → 4 columns -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      {services.map((service) => (
+        <ServiceCard {...service} />
+      ))}
+    </div>
+
+    <!-- Bottom CTA row -->
+    <div class="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4
+                border-t border-white/10 pt-10">
+      <p class="text-white/50 text-sm">
+        Can't see your specific need?{' '}
+        <a href="/contact" class="text-brand-lime font-semibold hover:underline">
+          Talk to our team — we'll design a solution.
+        </a>
+      </p>
+      <a
+        href="/services"
+        class="inline-flex items-center gap-2 bg-brand-forest text-white
+               px-6 py-3 rounded-[8px] text-sm font-semibold shrink-0
+               hover:bg-brand-forest-dark hover:shadow-cta hover:-translate-y-0.5
+               transition-all duration-200"
+      >
+        View All Services
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"
+             viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</section>

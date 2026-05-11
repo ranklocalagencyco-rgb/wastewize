@@ -1,0 +1,84 @@
+---
+import TopBar    from '../components/TopBar.astro';
+import Navbar    from '../components/Navbar.astro';
+import Footer    from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?:       string;
+  description?: string;
+  ogImage?:     string;
+}
+
+const {
+  title       = 'WasteWize UK | Commercial Waste Management — London & Home Counties',
+  description = 'End-to-end commercial waste solutions with 99% landfill diversion rate. Serving 500+ businesses across London & the Home Counties. Get your free waste audit today.',
+  ogImage     = '/og-image.jpg',
+} = Astro.props;
+
+const GA_ID = 'G-XXXXXXXXXX'; // ← Replace with your GA4 Measurement ID
+---
+<!DOCTYPE html>
+<html lang="en-GB" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>{title}</title>
+  <meta name="description"        content={description} />
+  <meta name="robots"             content="index, follow" />
+  <link rel="canonical"           href={Astro.url.href} />
+  <link rel="sitemap"             href="/sitemap-index.xml" />
+
+<!-- Social Meta Tags (Simplified for Local Dev) -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content="WasteWize UK - One Call Takes It All." />
+<meta property="og:url" content={Astro.url} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content="WasteWize UK - One Call Takes It All." />
+<meta name="twitter:image" content={ogImage} />
+
+  <!-- Favicons -->
+  <link rel="icon"             href="/wastewizeuk-favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/wastewizeuk-favicon.png" />
+  <meta name="theme-color"      content="#2E7D32" />
+
+  <!-- Google Fonts: DM Sans (body) + Fraunces (display headings) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Fraunces:opsz,wght@9..144,700;9..144,800&display=swap"
+  />
+
+  <!-- Google Analytics 4 -->
+  <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
+  <script is:inline define:vars={{ GA_ID }}>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', GA_ID);
+  </script>
+
+  <!-- Page-specific head content (JSON-LD, extra meta, etc.) -->
+  <slot name="head" />
+</head>
+<body class="font-body text-white bg-brand-dark antialiased">
+
+  <!-- ① Dual-layer header: TopBar + sticky Navbar -->
+  <TopBar />
+  <Navbar />
+
+  <!-- ② Page-specific content -->
+  <main>
+    <slot />
+  </main>
+
+  <!-- ③ Footer -->
+  <Footer />
+
+</body>
+</html>

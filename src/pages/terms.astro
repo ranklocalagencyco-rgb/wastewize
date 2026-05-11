@@ -1,0 +1,102 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Terms & Conditions | WasteWize UK"
+  description="Terms and conditions of service for WasteWize UK waste management and clearance services."
+>
+
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home",              "item": "https://wastewize.co.uk/" },
+        { "@type": "ListItem", "position": 2, "name": "Terms of Service",  "item": "https://wastewize.co.uk/terms" }
+      ]
+    })} />
+  </Fragment>
+  <main class="bg-brand-dark text-white min-h-screen">
+    <section class="py-20 px-6 border-b border-white/5 bg-brand-dark-card">
+      <div class="container mx-auto max-w-4xl text-center">
+        <h1 class="font-display text-4xl md:text-6xl font-extrabold mb-4">Terms of <span class="text-brand-lime">Service</span></h1>
+        <p class="text-white/40 uppercase tracking-widest text-sm italic">Effective Date: May 2026</p>
+      </div>
+    </section>
+
+    <section class="py-20 px-6">
+      <div class="container mx-auto max-w-3xl">
+        <div class="prose prose-invert max-w-none space-y-12 text-white/70 leading-relaxed">
+          
+          <div>
+            <h2 class="text-2xl font-bold text-white mb-4">1. Service Provision</h2>
+            <p>
+              WasteWize Ltd ("WasteWize UK") provides waste clearance and disposal services in accordance with Environment Agency regulations and the Environmental Protection Act 1990. All services are subject to the specific terms outlined in your formal quotation.
+            </p>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-bold text-white mb-4">2. Hazardous & Specialist Materials</h2>
+            <p>We are licensed to handle hazardous waste, including <strong>Asbestos</strong>, subject to the following conditions:</p>
+            <ul class="list-disc pl-6 mt-4 space-y-2 text-sm">
+              <li><strong>Asbestos:</strong> Must be identified at the point of quotation. Asbestos must be double-bagged or wrapped in heavy-duty 1000-gauge polythene and sealed according to HSE guidelines prior to collection.</li>
+              <li><strong>Documentation:</strong> Specialist waste streams will be accompanied by a Hazardous Waste Consignment Note (HWCN) rather than a standard Waste Transfer Note.</li>
+              <li><strong>Other Surcharges:</strong> Specific items such as upholstered seating (POPs), mattresses, and refrigeration units incur additional disposal fees due to specialist recycling requirements.</li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-bold text-white mb-4">3. Prohibited Materials</h2>
+            <p>Unless specifically agreed and quoted for, we <strong>cannot</strong> collect:</p>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 list-none pl-0 mt-4 text-sm">
+              <li class="flex items-center gap-2"><span class="text-brand-lime">/</span> Gas Canisters & Cylinders</li>
+              <li class="flex items-center gap-2"><span class="text-brand-lime">/</span> Medical or Clinical Waste</li>
+              <li class="flex items-center gap-2"><span class="text-brand-lime">/</span> Raw Meat, Fish, or Animal By-products</li>
+              <li class="flex items-center gap-2"><span class="text-brand-lime">/</span> Unidentified Liquid Chemicals</li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-bold text-white mb-4">4. Quotations & Loading</h2>
+            <ul class="list-disc pl-6 space-y-2 text-sm">
+              <li>Quotes are estimates based on the volume and weight described. If the load exceeds the estimate, we reserve the right to provide an updated on-site price.</li>
+              <li>A standard loading window of 30 minutes is included. Delays caused by site access or unprepared waste may result in a waiting time fee of £1.50 per minute.</li>
+            </ul>
+          </div>
+
+          <div class="bg-white/5 border border-white/10 p-8 rounded-2xl">
+            <h2 class="text-xl font-bold text-brand-lime mb-4 italic">5. Access & Liability</h2>
+            <p class="text-sm">
+              Customers must ensure safe and legal access for our vehicles. WasteWize UK is not liable for damage to property when instructed to leave the public highway or enter narrow/restricted private access points. Our operatives reserve the right to halt work if site conditions are deemed unsafe.
+            </p>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-bold text-white mb-4">6. Payment & Cancellation</h2>
+            <p>
+              Payment is due upon completion of the service unless prior credit terms have been established. Cancellations made within 24 hours of the scheduled arrival window may be subject to a call-out fee.
+            </p>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-bold text-white mb-4">7. Governing Law</h2>
+            <p>
+              These terms are governed by the laws of England and Wales. <br/>
+              <strong>Registered Office:</strong> 9 Cordelia Court, Burns Lane, London, NW7 2GB.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="mt-20 pt-10 border-t border-white/10 text-center flex flex-col items-center gap-4">
+          <p class="text-xs text-white/30">Need to clarify a specific waste type?</p>
+          <a href="/contact" class="inline-flex items-center gap-2 text-brand-lime hover:text-white transition-colors font-semibold">
+            Contact Specialist Disposal Team
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

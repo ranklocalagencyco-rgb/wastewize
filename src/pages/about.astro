@@ -1,0 +1,320 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="About Us | WasteWize UK — Commercial Waste Management Since 2018"
+  description="Learn how WasteWize UK grew from a West London logistics specialist into a leading commercial waste management and sustainability partner for 500+ businesses across London and the Home Counties."
+>
+
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "WasteWize UK",
+      "url": "https://wastewize.co.uk",
+      "logo": "https://wastewize.co.uk/favicon.svg",
+      "foundingDate": "2018",
+      "description": "End-to-end commercial waste management, recycling, and compliance services across London and the Home Counties.",
+      "telephone": "+447929771954",
+      "email": "info@wastewize.co.uk",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "9 Cordelia Court, Burns Lane",
+        "addressLocality": "London",
+        "postalCode": "NW7 2GB",
+        "addressCountry": "GB"
+      },
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "London and Home Counties"
+      },
+      "sameAs": [
+        "https://www.facebook.com/people/WastewizeLtd/61586085284705/",
+        "https://www.instagram.com/wastewizeltd"
+      ]
+    })} />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://wastewize.co.uk/" },
+        { "@type": "ListItem", "position": 2, "name": "About Us", "item": "https://wastewize.co.uk/about" }
+      ]
+    })} />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "About WasteWize UK",
+      "url": "https://wastewize.co.uk/about",
+      "description": "The story, mission, and values behind WasteWize UK — commercial waste specialists serving London and the Home Counties since 2018.",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://wastewize.co.uk/" },
+          { "@type": "ListItem", "position": 2, "name": "About Us", "item": "https://wastewize.co.uk/about" }
+        ]
+      }
+    })} />
+  </Fragment>
+
+  <!-- ── Breadcrumb ── -->
+  <nav class="bg-brand-dark border-b border-white/5 py-3 px-4" aria-label="Breadcrumb">
+    <div class="container mx-auto">
+      <ol class="flex items-center gap-2 text-xs text-white/40">
+        <li><a href="/" class="hover:text-brand-lime transition-colors">Home</a></li>
+        <li aria-hidden="true">›</li>
+        <li class="text-white/70">About Us</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <section class="bg-brand-dark py-16 sm:py-20 lg:py-24 border-b border-white/8">
+    <div class="container mx-auto px-4 sm:px-6">
+      <div class="max-w-3xl">
+        <span class="text-xs font-semibold tracking-widest uppercase text-brand-lime mb-4 block">
+          About WasteWize UK
+        </span>
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+          Built on Compliance.<br class="hidden sm:block" />
+          <span class="text-brand-lime">Driven by Zero.</span>
+        </h1>
+        <p class="text-base sm:text-lg leading-relaxed text-white/60 max-w-2xl mb-8">
+          WasteWize UK was founded with a single purpose: to make responsible waste management straightforward for UK businesses. From our roots in West London logistics to industry-leading 99% landfill diversion rates, every decision we make is measured against our commitment to net zero.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a
+            href="/contact#quote"
+            class="inline-flex items-center gap-2 bg-brand-forest text-white px-6 py-3 rounded-[8px]
+                   text-sm font-semibold hover:bg-brand-forest-dark hover:-translate-y-px
+                   hover:shadow-cta transition-all duration-200"
+          >
+            Get a Free Quote
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+            </svg>
+          </a>
+          <a
+            href="/services"
+            class="inline-flex items-center gap-2 border border-white/20 text-white/70 px-6 py-3
+                   rounded-[8px] text-sm font-semibold hover:border-brand-lime hover:text-white
+                   transition-all duration-200"
+          >
+            View Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Trust stats ── -->
+  <section class="bg-brand-dark-card border-b border-white/8 py-12">
+    <div class="container mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        {[
+          { value: '2018',  label: 'Founded'           },
+          { value: '500+',  label: 'Business Clients'  },
+          { value: '99%',   label: 'Landfill Diversion'},
+          { value: '100%',  label: 'EA Licensed'       },
+        ].map(({ value, label }) => (
+          <div class="text-center">
+            <p class="font-display text-3xl sm:text-4xl font-bold text-brand-lime mb-1">{value}</p>
+            <p class="text-sm text-white/50">{label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Mission & Values ── -->
+  <section class="py-20 lg:py-24 bg-brand-dark border-b border-white/5">
+    <div class="container mx-auto px-4 sm:px-6">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+        <!-- Text -->
+        <div>
+          <span class="text-brand-lime font-bold uppercase tracking-[0.2em] text-xs mb-4 block">Our Mission</span>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mb-6 leading-snug">
+            Responsible Waste.<br />Measurable Impact.
+          </h2>
+          <p class="text-white/60 leading-relaxed mb-5">
+            We partner with businesses of all sizes to design waste strategies that meet regulatory requirements, reduce environmental impact, and deliver genuine cost savings. Our team manages every material stream — from everyday commercial waste and confidential shredding to hazardous materials and WEEE.
+          </p>
+          <p class="text-white/60 leading-relaxed">
+            Transparency is at the core of everything we do. Every job comes with full documentation, EA-compliant waste transfer notes, and clear reporting so you always know exactly where your waste goes.
+          </p>
+        </div>
+
+        <!-- Values grid -->
+        <div class="grid sm:grid-cols-2 gap-4">
+          {[
+            {
+              icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>`,
+              title: 'Full Compliance',
+              desc:  'Upper-Tier EA licence and WEEE registration on every applicable job.'
+            },
+            {
+              icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/>`,
+              title: 'Net Zero Focus',
+              desc:  'Carbon-optimised routing and 99% material recovery keep your footprint minimal.'
+            },
+            {
+              icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z"/>`,
+              title: 'Total Transparency',
+              desc:  'Waste transfer notes and compliance reports delivered for every collection.'
+            },
+            {
+              icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 6.75z"/>`,
+              title: 'Same-Week Service',
+              desc:  'Fast-response collections available across London and the Home Counties.'
+            },
+          ].map(({ icon, title, desc }) => (
+            <div class="bg-white/5 border border-white/10 rounded-xl p-5 hover:border-brand-lime/30 transition-colors duration-300">
+              <div class="w-9 h-9 rounded-lg bg-brand-forest/40 flex items-center justify-center mb-3">
+                <svg class="w-5 h-5 text-brand-lime" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24" aria-hidden="true">
+                  <Fragment set:html={icon} />
+                </svg>
+              </div>
+              <h3 class="text-white font-semibold text-sm mb-1.5">{title}</h3>
+              <p class="text-white/50 text-xs leading-relaxed">{desc}</p>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Timeline: The Journey to Zero ── -->
+  <section class="py-24 bg-brand-dark border-t border-white/5">
+    <div class="container mx-auto px-4 sm:px-6 max-w-2xl">
+
+      <div class="text-center mb-16">
+        <span class="text-brand-lime font-bold uppercase tracking-[0.2em] text-xs mb-4 block">Our Evolution</span>
+        <h2 class="font-display text-4xl md:text-5xl font-bold text-white">The Journey to Zero</h2>
+      </div>
+
+      <div class="relative">
+        <!-- Vertical line through all dots -->
+        <div class="absolute left-5 top-6 bottom-6 w-px bg-white/10" aria-hidden="true"></div>
+
+        {[
+          {
+            year: '2018',
+            title: 'The Foundation',
+            desc: 'WasteWize Ltd established with a focus on delivering professional waste logistics to West London.'
+          },
+          {
+            year: '2020',
+            title: 'Regulatory Leadership',
+            desc: 'Secured Upper-Tier Environment Agency licensing and WEEE registration to handle specialist waste streams.'
+          },
+          {
+            year: '2022',
+            title: 'Infrastructure Scale',
+            desc: 'Significant fleet expansion and the implementation of carbon-optimised routing for Home Counties operations.'
+          },
+          {
+            year: '2024',
+            title: '99% Landfill Diversion',
+            desc: 'Achieved industry-leading diversion rates through strategic material recovery partnerships.'
+          },
+          {
+            year: '2026',
+            title: 'The Future',
+            desc: 'Investing in zero-emission collection technology and expanding our circular economy roadmap.'
+          }
+        ].map((item) => (
+          <div class="relative flex gap-6 pb-10 last:pb-0">
+
+            <!-- Dot -->
+            <div class="shrink-0 mt-1 w-10 h-10 rounded-full bg-brand-dark border border-white/15
+                        flex items-center justify-center z-10">
+              <div class="w-2.5 h-2.5 rounded-full bg-brand-lime
+                          shadow-[0_0_12px_rgba(163,230,53,0.7)]"></div>
+            </div>
+
+            <!-- Card -->
+            <div class="flex-1">
+              <div class="bg-white/5 border border-white/10 p-6 rounded-2xl
+                          hover:border-brand-lime/30 transition-colors duration-300">
+                <span class="text-brand-lime font-display font-bold text-xl mb-1 block">{item.year}</span>
+                <h3 class="text-white font-bold text-lg mb-2">{item.title}</h3>
+                <p class="text-white/50 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            </div>
+
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Licences & Accreditations ── -->
+  <section class="py-16 bg-brand-dark-card border-t border-white/8">
+    <div class="container mx-auto px-4 sm:px-6">
+      <div class="text-center mb-10">
+        <span class="text-brand-lime font-bold uppercase tracking-[0.2em] text-xs mb-3 block">Credentials</span>
+        <h2 class="font-display text-2xl sm:text-3xl font-bold text-white">Fully Licensed &amp; Accredited</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
+        {[
+          { badge: 'EA',   title: 'Environment Agency',   sub: 'Upper-Tier Carrier Licence'   },
+          { badge: 'WEEE', title: 'WEEE Registration', sub: 'Electrical Equipment Disposal' },
+          { badge: 'DC',   title: 'Duty of Care',      sub: 'Full Documentation Provided'  },
+          { badge: 'SC',   title: 'SafeContractor',    sub: 'Approved Contractor'           },
+        ].map(({ badge, title, sub }) => (
+          <div class="flex items-start gap-4 bg-white/5 border border-white/10 rounded-xl p-5 hover:border-brand-lime/20 transition-colors">
+            <div class="w-10 h-10 rounded-lg bg-brand-forest/40 flex items-center justify-center shrink-0">
+              <span class="text-brand-lime font-bold text-xs">{badge}</span>
+            </div>
+            <div>
+              <p class="text-white font-semibold text-sm">{title}</p>
+              <p class="text-white/40 text-xs mt-0.5">{sub}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="py-20 bg-brand-dark border-t border-white/5">
+    <div class="container mx-auto px-4 sm:px-6 text-center">
+      <span class="text-brand-lime font-bold uppercase tracking-[0.2em] text-xs mb-4 block">Ready to Start?</span>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mb-4">
+        Partner With WasteWize UK
+      </h2>
+      <p class="text-white/60 max-w-xl mx-auto mb-8 leading-relaxed">
+        Whether you need a one-off clearance or a fully managed waste strategy, our team is ready to help. Get a free, no-obligation quote today.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a
+          href="/contact#quote"
+          class="inline-flex items-center gap-2 bg-brand-forest text-white px-7 py-3.5
+                 rounded-[8px] text-sm font-semibold hover:bg-brand-forest-dark
+                 hover:-translate-y-px hover:shadow-cta transition-all duration-200"
+        >
+          Get a Free Quote
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+          </svg>
+        </a>
+        <a
+          href="tel:+447929771954"
+          class="inline-flex items-center gap-2 border border-white/20 text-white/70 px-7 py-3.5
+                 rounded-[8px] text-sm font-semibold hover:border-brand-lime hover:text-white
+                 transition-all duration-200"
+        >
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+          </svg>
+          07929 771954
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

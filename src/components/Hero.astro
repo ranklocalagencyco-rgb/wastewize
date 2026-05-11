@@ -1,0 +1,268 @@
+---
+// src/components/Hero.astro
+// Layout 91 split-hero: copy + CTA left | optimised Image right
+// Uses astro:assets <Image /> for Core Web Vitals (LCP optimisation)
+// import { Image } from 'astro:assets';
+// import heroImg from '../assets/hero-waste-facility.jpg';
+---
+
+<section class="relative overflow-hidden bg-brand-dark pt-8 pb-16 lg:pt-16 lg:pb-24">
+
+  <!-- Subtle background wash -->
+  <div
+    class="pointer-events-none absolute inset-y-0 right-0 w-1/2 bg-brand-lime/5 rounded-bl-[60px] hidden lg:block"
+    aria-hidden="true"
+  />
+
+  <div class="container mx-auto px-4 relative">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+      <!-- ── LEFT: Copy ── -->
+      <div class="max-w-xl">
+
+        <!-- Eyebrow badge -->
+        <div class="inline-flex items-center gap-2 bg-brand-lime/10 border border-brand-lime/30
+                    rounded-full px-4 py-1.5 mb-6">
+          <span class="w-2 h-2 rounded-full bg-brand-lime animate-pulse" aria-hidden="true"/>
+          <span class="text-xs font-semibold tracking-wide uppercase text-brand-lime">
+            Trusted across London &amp; Home Counties
+          </span>
+        </div>
+
+        <!-- Main headline -->
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-[3.25rem] font-extrabold
+                    leading-[1.08] text-white mb-6">
+          One call <em class="not-italic text-brand-lime">takes all</em>
+        </h1>
+
+        <!-- Sub-copy -->
+        <p class="text-[17px] leading-relaxed text-white/60 mb-8 max-w-lg">
+          WasteWize delivers end-to-end commercial waste solutions — from on-site audits and
+          scheduled collections to full circular recovery and compliance reporting. We help
+          businesses cut costs, hit net-zero targets, and stay fully EA-licensed.
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-wrap gap-4 mb-10">
+          <a
+            href="tel:+447929771954"
+            class="inline-flex items-center gap-2 bg-brand-forest text-white
+                   px-7 py-4 rounded-[8px] text-base font-semibold
+                   hover:bg-brand-forest-dark hover:-translate-y-0.5 hover:shadow-cta
+                   transition-all duration-200 focus-visible:outline focus-visible:outline-2
+                   focus-visible:outline-brand-lime focus-visible:outline-offset-2"
+          >
+            <svg class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+            </svg>
+            Call 07929 771954
+          </a>
+          <a
+            href="tel:+447498363345"
+            class="inline-flex items-center gap-2 bg-brand-forest text-white
+                   px-7 py-4 rounded-[8px] text-base font-semibold
+                   hover:bg-brand-forest-dark hover:-translate-y-0.5 hover:shadow-cta
+                   transition-all duration-200 focus-visible:outline focus-visible:outline-2
+                   focus-visible:outline-brand-lime focus-visible:outline-offset-2"
+          >
+            <svg class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+            </svg>
+            Call 07498 363345
+          </a>
+        </div>
+
+        <!-- Quick-trust row -->
+        <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-white/50">
+          {[
+            'EA Licensed',
+            'SafeContractor Approved',
+          ].map((badge) => (
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-brand-lime shrink-0" fill="currentColor" viewBox="0 0 20 20"
+                   aria-hidden="true">
+                <path fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"/>
+              </svg>
+              {badge}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <!-- ── RIGHT: Contact form ── -->
+      <div class="w-full">
+        <div class="bg-brand-dark-card border border-white/10 rounded-[20px] p-6 sm:p-8 shadow-float">
+
+          <h2 class="text-lg font-semibold text-white mb-1">Get a Free Quote</h2>
+          <p class="text-sm text-white/50 mb-6">We'll get back to you within 2 hours.</p>
+
+          <form
+            method="POST"
+            action="#"
+            enctype="multipart/form-data"
+            class="flex flex-col gap-4"
+            novalidate
+          >
+
+            <!-- Name -->
+            <div class="flex flex-col gap-1.5">
+              <label for="hero-name" class="text-xs font-medium text-white/60 uppercase tracking-wide">
+                Full Name <span class="text-brand-lime">*</span>
+              </label>
+              <input
+                id="hero-name"
+                name="name"
+                type="text"
+                required
+                placeholder="John Smith"
+                class="w-full bg-brand-dark border border-white/10 rounded-[8px] px-4 py-3
+                       text-sm text-white placeholder-white/30
+                       focus:outline-none focus:border-brand-lime/60 focus:ring-1 focus:ring-brand-lime/30
+                       transition-colors"
+              />
+            </div>
+
+            <!-- Tel + Email row -->
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div class="flex flex-col gap-1.5">
+                <label for="hero-tel" class="text-xs font-medium text-white/60 uppercase tracking-wide">
+                  Phone <span class="text-brand-lime">*</span>
+                </label>
+                <input
+                  id="hero-tel"
+                  name="telephone"
+                  type="tel"
+                  required
+                  placeholder="07700 900000"
+                  class="w-full bg-brand-dark border border-white/10 rounded-[8px] px-4 py-3
+                         text-sm text-white placeholder-white/30
+                         focus:outline-none focus:border-brand-lime/60 focus:ring-1 focus:ring-brand-lime/30
+                         transition-colors"
+                />
+              </div>
+              <div class="flex flex-col gap-1.5">
+                <label for="hero-email" class="text-xs font-medium text-white/60 uppercase tracking-wide">
+                  Email <span class="text-brand-lime">*</span>
+                </label>
+                <input
+                  id="hero-email"
+                  name="email"
+                  type="email"
+                  required
+                  placeholder="you@company.com"
+                  class="w-full bg-brand-dark border border-white/10 rounded-[8px] px-4 py-3
+                         text-sm text-white placeholder-white/30
+                         focus:outline-none focus:border-brand-lime/60 focus:ring-1 focus:ring-brand-lime/30
+                         transition-colors"
+                />
+              </div>
+            </div>
+
+            <!-- Description -->
+            <div class="flex flex-col gap-1.5">
+              <label for="hero-desc" class="text-xs font-medium text-white/60 uppercase tracking-wide">
+                Description <span class="text-brand-lime">*</span>
+              </label>
+              <textarea
+                id="hero-desc"
+                name="description"
+                required
+                rows="4"
+                placeholder="Tell us about your waste management needs…"
+                class="w-full bg-brand-dark border border-white/10 rounded-[8px] px-4 py-3
+                       text-sm text-white placeholder-white/30 resize-none
+                       focus:outline-none focus:border-brand-lime/60 focus:ring-1 focus:ring-brand-lime/30
+                       transition-colors"
+              ></textarea>
+            </div>
+
+            <!-- Image upload -->
+            <div class="flex flex-col gap-1.5">
+              <label for="hero-images" class="text-xs font-medium text-white/60 uppercase tracking-wide">
+                Attach Images <span class="text-white/30">(optional)</span>
+              </label>
+              <label
+                for="hero-images"
+                id="drop-zone"
+                class="flex flex-col items-center justify-center gap-2 w-full
+                       border border-dashed border-white/20 rounded-[8px] px-4 py-5
+                       cursor-pointer hover:border-brand-lime/50 hover:bg-brand-lime/5
+                       transition-colors text-center"
+              >
+                <svg class="w-6 h-6 text-white/30" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"/>
+                </svg>
+                <span id="drop-label" class="text-xs text-white/40">
+                  Click to upload or drag &amp; drop
+                </span>
+                <span class="text-[10px] text-white/25">JPG, PNG, WEBP — up to 10 MB each</span>
+              </label>
+              <input
+                id="hero-images"
+                name="images"
+                type="file"
+                multiple
+                accept="image/jpeg,image/png,image/webp"
+                class="sr-only"
+              />
+            </div>
+
+            <!-- Submit -->
+            <button
+              type="submit"
+              class="w-full inline-flex items-center justify-center gap-2 bg-brand-forest text-white
+                     px-6 py-3.5 rounded-[8px] text-sm font-semibold
+                     hover:bg-brand-forest-dark hover:-translate-y-0.5 hover:shadow-cta
+                     transition-all duration-200 mt-1"
+            >
+              Send Enquiry
+              <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+              </svg>
+            </button>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const input     = document.getElementById('hero-images') as HTMLInputElement;
+  const label     = document.getElementById('drop-label')!;
+  const dropZone  = document.getElementById('drop-zone')!;
+
+  input.addEventListener('change', () => {
+    const count = input.files?.length ?? 0;
+    label.textContent = count === 0
+      ? 'Click to upload or drag & drop'
+      : count === 1
+        ? input.files![0].name
+        : `${count} images selected`;
+  });
+
+  dropZone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    dropZone.classList.add('border-brand-lime/50', 'bg-brand-lime/5');
+  });
+
+  dropZone.addEventListener('dragleave', () => {
+    dropZone.classList.remove('border-brand-lime/50', 'bg-brand-lime/5');
+  });
+
+  dropZone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    dropZone.classList.remove('border-brand-lime/50', 'bg-brand-lime/5');
+    if (e.dataTransfer?.files.length) {
+      const dt = new DataTransfer();
+      Array.from(e.dataTransfer.files)
+        .filter(f => f.type.startsWith('image/'))
+        .forEach(f => dt.items.add(f));
+      input.files = dt.files;
+      input.dispatchEvent(new Event('change'));
+    }
+  });
+</script>

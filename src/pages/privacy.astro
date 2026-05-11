@@ -1,0 +1,93 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Privacy Policy | WasteWize UK"
+  description="Privacy Policy for WasteWize UK. Learn how we handle your data and maintain compliance with UK GDPR and environmental regulations."
+>
+
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home",           "item": "https://wastewize.co.uk/" },
+        { "@type": "ListItem", "position": 2, "name": "Privacy Policy", "item": "https://wastewize.co.uk/privacy" }
+      ]
+    })} />
+  </Fragment>
+  <main class="bg-brand-dark text-white min-h-screen">
+    <section class="py-20 px-6 border-b border-white/5 bg-brand-dark-card">
+      <div class="container mx-auto max-w-4xl text-center">
+        <h1 class="font-display text-4xl md:text-6xl font-extrabold mb-4">Privacy Policy</h1>
+        <p class="text-white/40 uppercase tracking-widest text-sm">Last Updated: May 2026</p>
+      </div>
+    </section>
+
+    <section class="py-20 px-6">
+      <div class="container mx-auto max-w-3xl">
+        <div class="prose prose-invert prose-brand max-w-none space-y-12 text-white/70 leading-relaxed">
+          
+          <div>
+            <h2 class="text-2xl font-bold text-white mb-4">1. Introduction</h2>
+            <p>
+              WasteWize Ltd ("we," "us," or "our") is committed to protecting the privacy and security of your personal data. This policy outlines how we collect, use, and safeguard your information in accordance with the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.
+            </p>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-bold text-white mb-4">2. Information We Collect</h2>
+            <p>We collect information necessary to provide waste management services and fulfill our legal "Duty of Care" obligations. This includes:</p>
+            <ul class="list-disc pl-6 mt-4 space-y-2">
+              <li><strong>Identity Data:</strong> Name, business name, and job title.</li>
+              <li><strong>Contact Data:</strong> Billing address, collection address, email address, and telephone numbers.</li>
+              <li><strong>Transaction Data:</strong> Details about payments and the specific waste services purchased.</li>
+              <li><strong>Technical Data:</strong> IP address and usage data via cookies when you visit wastewize.co.uk.</li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-bold text-white mb-4">3. How We Use Your Data</h2>
+            <p>We use your personal information for:</p>
+            <ul class="list-disc pl-6 mt-4 space-y-2">
+              <li><strong>Service Delivery:</strong> To schedule collections and navigate to sites.</li>
+              <li><strong>Compliance:</strong> To issue digital Waste Transfer Notes (WTNs) required by the Environment Agency.</li>
+              <li><strong>Communication:</strong> To provide quotes and logistical updates regarding your collection.</li>
+            </ul>
+          </div>
+
+          <div class="bg-white/5 border border-white/10 p-8 rounded-2xl">
+            <h2 class="text-xl font-bold text-brand-lime mb-4">4. Confidential Waste Destruction</h2>
+            <p class="text-sm">
+              For clients utilizing our <strong>Confidential Waste Destruction</strong> service: Materials are handled with strict chain-of-custody protocols. Data is destroyed according to BS EN 15713 standards. We do not retain the contents of any destroyed materials, and a Certificate of Destruction is issued upon completion.
+            </p>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-bold text-white mb-4">5. Data Retention</h2>
+            <p>
+              We retain Waste Transfer Notes and hazardous waste records for the statutory periods required by UK law (typically <strong>2 years</strong> for WTNs and <strong>3 years</strong> for hazardous waste). General contact data is kept only as long as necessary for business operations.
+            </p>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-bold text-white mb-4">6. Contact & Registered Office</h2>
+            <p>For any questions regarding this policy or your data rights, please contact our data lead:</p>
+            <div class="mt-6 p-6 border-l-2 border-brand-lime bg-white/5">
+              <p class="text-white font-bold">WasteWize Ltd</p>
+              <p>9 Cordelia Court, Burns Lane</p>
+              <p>London, NW7 2GB</p>
+              <p class="mt-2 text-brand-lime">07929 771954</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="mt-20 pt-10 border-t border-white/10 text-center">
+          <a href="/" class="text-sm text-brand-lime hover:underline italic">Return to Home</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
