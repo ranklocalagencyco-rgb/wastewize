@@ -8,9 +8,15 @@
 
 <section class="relative overflow-hidden bg-brand-dark pt-8 pb-16 lg:pt-16 lg:pb-24">
 
-  <!-- Subtle background wash -->
+  <!-- Background image -->
   <div
-    class="pointer-events-none absolute inset-y-0 right-0 w-1/2 bg-brand-lime/5 rounded-bl-[60px] hidden lg:block"
+    class="pointer-events-none absolute inset-0 bg-[url('/images/hero-truck.jpg')] bg-cover bg-center bg-no-repeat"
+    aria-hidden="true"
+  />
+
+  <!-- Dark gradient overlay — heavier on the left so text stays readable -->
+  <div
+    class="pointer-events-none absolute inset-0 bg-gradient-to-r from-brand-dark/95 via-brand-dark/80 to-brand-dark/60"
     aria-hidden="true"
   />
 
