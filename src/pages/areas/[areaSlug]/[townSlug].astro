@@ -76,6 +76,95 @@ const postcode    = seo?.postcode ?? null;
       }
     })} />
 
+    <!-- Service schema -->
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": `Waste Removal Services in ${town}`,
+      "serviceType": "Waste Management",
+      "description": `Comprehensive waste removal for homeowners and commercial businesses in ${town}. We provide professional house clearances and trade waste collections with a 99% landfill diversion rate.`,
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "WasteWize UK",
+        "url": "https://www.wastewize.co.uk",
+        "telephone": "+447929771954",
+        "image": "https://www.wastewize.co.uk/wastewizeuk-favicon.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "9 Cordelia Court, Burns Lane",
+          "addressLocality": "London",
+          "postalCode": "NW7 2GB",
+          "addressCountry": "GB"
+        }
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": town
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "WasteWize UK Service Directory",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Commercial Waste Management",
+              "description": `Tailored trade waste collection, recycling, and compliance documentation for businesses in ${town}.`
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Homeowner Waste Removal",
+              "description": `Fast residential house clearances, furniture disposal, and garden waste removal for ${town} residents.`
+            }
+          }
+        ]
+      }
+    })} />
+
+    <!-- FAQ schema -->
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": `Do you offer household clearances in ${town}?`,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": `Yes — WasteWize UK provides full house clearances in ${town}, including furniture, appliances, and bulky items. We carry full public liability insurance and issue a Waste Transfer Note on every job.`
+          }
+        },
+        {
+          "@type": "Question",
+          "name": `Can businesses in ${town} get a free waste audit?`,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": `Yes. We offer a free on-site waste audit for commercial customers in ${town}. Our team will assess your current waste streams and recommend a compliant, cost-effective collection schedule.`
+          }
+        },
+        {
+          "@type": "Question",
+          "name": `How quickly can you collect waste in ${town}?`,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": `We offer same-week availability across ${town} and the surrounding ${area.name} area. In many cases we can arrange next-day collection — call 07929 771954 for availability.`
+          }
+        },
+        {
+          "@type": "Question",
+          "name": `Are you EA-licensed to collect waste in ${town}?`,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": `Yes. WasteWize UK holds an Environment Agency Waste Carrier Licence (CBDU335711), which covers all collections in ${town} and across London and the Home Counties. You will receive a Duty of Care Waste Transfer Note on every collection.`
+          }
+        }
+      ]
+    })} />
+
     <!-- Breadcrumb schema -->
     <script type="application/ld+json" is:inline set:html={JSON.stringify({
       "@context": "https://schema.org",
@@ -119,7 +208,7 @@ const postcode    = seo?.postcode ?? null;
           )}
         </div>
         <h1 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
-          Waste Collection &amp; Clearance in {town}
+          Home &amp; Business Waste Clearance in {town}
         </h1>
         <p class="text-base sm:text-[17px] leading-relaxed text-white/60 max-w-xl">
           {heroIntro}
@@ -353,6 +442,7 @@ const postcode    = seo?.postcode ?? null;
           {nearbyTowns.map((t) => (
             <a
               href={`/areas/${area.slug}/${slugify(t)}`}
+              title={`See our ${t} residential & trade services`}
               class="text-sm font-medium bg-brand-dark-card border border-white/10 text-white/60
                      rounded-full px-4 py-2
                      hover:border-brand-lime/40 hover:text-white
@@ -370,6 +460,51 @@ const postcode    = seo?.postcode ?? null;
       </div>
     </section>
   )}
+
+  <!-- ── FAQ ── -->
+  <section class="py-12 sm:py-16 lg:py-20 bg-brand-dark border-t border-white/8" aria-labelledby="faq-heading">
+    <div class="container mx-auto px-4 sm:px-6">
+      <div class="max-w-2xl mx-auto">
+
+        <span class="text-xs font-semibold tracking-widest uppercase text-brand-lime mb-3 block">
+          Common Questions
+        </span>
+        <h2 id="faq-heading" class="font-display text-2xl sm:text-3xl font-bold text-white mb-8">
+          Frequently Asked Questions — {town}
+        </h2>
+
+        <dl class="flex flex-col gap-4">
+          {[
+            {
+              q: `Do you offer household clearances in ${town}?`,
+              a: `Yes — WasteWize UK provides full house clearances in ${town}, including furniture, appliances, and bulky items. We carry full public liability insurance and issue a Waste Transfer Note on every job.`,
+            },
+            {
+              q: `Can businesses in ${town} get a free waste audit?`,
+              a: `Yes. We offer a free on-site waste audit for commercial customers in ${town}. Our team will assess your current waste streams and recommend a compliant, cost-effective collection schedule.`,
+            },
+            {
+              q: `How quickly can you collect waste in ${town}?`,
+              a: `We offer same-week availability across ${town} and the surrounding ${area.name} area. In many cases we can arrange next-day collection — call 07929 771954 for availability.`,
+            },
+            {
+              q: `Are you EA-licensed to collect waste in ${town}?`,
+              a: `Yes. WasteWize UK holds an Environment Agency Waste Carrier Licence (CBDU335711), covering all collections in ${town} and across London and the Home Counties. You will receive a Duty of Care Waste Transfer Note on every collection.`,
+            },
+          ].map(({ q, a }) => (
+            <div class="bg-brand-dark-card border border-white/10 rounded-[12px] p-6">
+              <dt class="text-[15px] font-semibold text-white mb-2 flex items-start gap-3">
+                <span class="text-brand-lime shrink-0 mt-0.5" aria-hidden="true">Q</span>
+                {q}
+              </dt>
+              <dd class="text-sm leading-relaxed text-white/60 pl-6">{a}</dd>
+            </div>
+          ))}
+        </dl>
+
+      </div>
+    </div>
+  </section>
 
   <!-- ── CTA ── -->
   <section class="py-12 sm:py-16 lg:py-20 bg-brand-dark-card border-t border-white/8">
