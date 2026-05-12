@@ -17,6 +17,43 @@ import StatsBar      from '../components/StatsBar.astro';
 
   <Fragment slot="head">
     <link rel="preload" as="image" href="/wastewize-tipper-in-central-london.webp" fetchpriority="high" />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "WasteWize UK",
+      "image": "https://www.wastewize.co.uk/wastewizeuk-favicon.png",
+      "@id": "https://www.wastewize.co.uk",
+      "url": "https://www.wastewize.co.uk",
+      "telephone": "+447929771954",
+      "email": "info@wastewize.co.uk",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "9 Cordelia Court, Burns Lane",
+        "addressLocality": "London",
+        "postalCode": "NW7 2GB",
+        "addressCountry": "GB"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 51.6152,
+        "longitude": -0.2229
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+        "https://www.facebook.com/people/WastewizeLtd/61586085284705/",
+        "https://www.instagram.com/wastewizeltd"
+      ],
+      "areaServed": [
+        { "@type": "AdministrativeArea", "name": "London" },
+        { "@type": "AdministrativeArea", "name": "Home Counties" }
+      ],
+      "description": "WasteWize UK offers end-to-end homeowners and commercial waste removal and collection services with a 99% landfill diversion rate across London and the Home Counties."
+    })} />
   </Fragment>
 
   <!-- 1. Hero — split layout, headline + CTA left, image right -->
