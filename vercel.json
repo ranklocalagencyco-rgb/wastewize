@@ -1,3 +1,11 @@
 {
-  "framework": "astro"
+  "framework": "astro",
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.wastewize.co.uk" }],
+      "destination": "https://wastewize.co.uk/$1",
+      "permanent": true
+    }
+  ]
 }

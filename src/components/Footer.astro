@@ -4,21 +4,20 @@ const currentYear = new Date().getFullYear();
 
 const footerLinks = {
   Services: [
-    { label: 'Strip out & Demolition',  href: '/services' },
-    { label: 'Commercial Clearance',    href: '/services' },
-    { label: 'Residential Waste',       href: '/services' },
-    { label: 'Garden Refuse',           href: '/services' },
-    { label: 'Building & Construction', href: '/services' },
-    { label: 'Electrical Equipment',    href: '/services' },
-    { label: 'Confidential Waste',      href: '/services' },
-    { label: 'Asbestos Removal',        href: '/services' },
-    { label: 'Hardcore & Wood',         href: '/services' },
-    { label: 'Scrap Metal',             href: '/services' },
+    { label: 'Strip out & Demolition',  href: '/services/strip-out-demolition' },
+    { label: 'Commercial Clearance',    href: '/services/commercial-clearance' },
+    { label: 'Residential Waste',       href: '/services/residential-waste' },
+    { label: 'Garden Refuse',           href: '/services/garden-refuse' },
+    { label: 'Building & Construction', href: '/services/building-construction' },
+    { label: 'Electrical Equipment',    href: '/services/electrical-equipment' },
+    { label: 'Confidential Waste',      href: '/services/confidential-waste' },
+    { label: 'Asbestos Removal',        href: '/services/asbestos-removal' },
+    { label: 'Hardcore & Wood',         href: '/services/hardcore-wood' },
+    { label: 'Scrap Metal',             href: '/services/scrap-metal' },
   ],
   Company: [
     { label: 'About Us',          href: '/about' },
     { label: 'Sustainability',    href: '/sustainability' },
-    { label: 'Case Studies',      href: '/case-studies' },
     { label: 'Areas',             href: '/areas' },
     { label: 'Contact',           href: '/contact' },
   ],
@@ -137,7 +136,19 @@ const footerLinks = {
                 justify-between gap-3 text-xs text-white/70">
       <p>&copy; {currentYear} WasteWize UK Ltd. All rights reserved.</p>
       <p>This site is powered by <a href="https://www.ranklocalagency.co" target="_blank" rel="noopener" class="text-white/70 hover:text-white transition-colors underline underline-offset-2">Ranklocalagency</a></p>
-      <p>EA Licence No: CBDU335711 · Registered in England &amp; Wales No: 11181115</p>
+      <p>
+        <a href="https://environment.data.gov.uk/public-register/view/search-waste-carriers-brokers?regIdentifier=CBDU335711"
+           target="_blank" rel="noopener"
+           class="hover:text-white transition-colors underline underline-offset-2">
+          EA Licence No: CBDU335711
+        </a>
+        ·
+        <a href="https://find-and-update.company-information.service.gov.uk/company/11181115"
+           target="_blank" rel="noopener"
+           class="hover:text-white transition-colors underline underline-offset-2">
+          Registered in England &amp; Wales No: 11181115
+        </a>
+      </p>
     </div>
   </div>
 

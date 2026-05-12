@@ -1,0 +1,427 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { services } from '../../data/services';
+import { serviceDetails } from '../../data/service-detail';
+
+export function getStaticPaths() {
+  return services.map((svc) => ({
+    params: { serviceSlug: svc.href.replace('/services/', '') },
+    props:  { svc },
+  }));
+}
+
+interface Props { svc: (typeof services)[number] }
+
+const { svc }    = Astro.props;
+const slug       = svc.href.replace('/services/', '');
+const detail     = serviceDetails[slug];
+const related    = services.filter((s) => detail.relatedIds.includes(s.id));
+const BASE       = 'https://wastewize.co.uk';
+const pageUrl    = `${BASE}${svc.href}`;
+---
+
+<Layout title={detail.metaTitle} description={detail.metaDesc}>
+
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home",     "item": `${BASE}/` },
+        { "@type": "ListItem", "position": 2, "name": "Services", "item": `${BASE}/services` },
+        { "@type": "ListItem", "position": 3, "name": svc.title,  "item": pageUrl },
+      ]
+    })} />
+
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": svc.title,
+      "url": pageUrl,
+      "description": detail.heroDesc,
+      "serviceType": "Waste Management",
+      "areaServed": [
+        { "@type": "AdministrativeArea", "name": "London" },
+        { "@type": "AdministrativeArea", "name": "Home Counties" }
+      ],
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "WasteWize UK",
+        "url": BASE,
+        "telephone": "+447929771954",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "9 Cordelia Court, Burns Lane",
+          "addressLocality": "London",
+          "postalCode": "NW7 2GB",
+          "addressCountry": "GB"
+        }
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": `${svc.title} — What's Included`,
+        "itemListElement": detail.included.map((item, i) => ({
+          "@type": "Offer",
+          "position": i + 1,
+          "itemOffered": { "@type": "Service", "name": item }
+        }))
+      }
+    })} />
+
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": detail.faqs.map(({ q, a }) => ({
+        "@type": "Question",
+        "name": q,
+        "acceptedAnswer": { "@type": "Answer", "text": a }
+      }))
+    })} />
+  </Fragment>
+
+  <!-- ── Breadcrumb ── -->
+  <nav class="bg-brand-dark border-b border-white/5 py-3 px-4" aria-label="Breadcrumb">
+    <div class="container mx-auto">
+      <ol class="flex flex-wrap items-center gap-1.5 text-xs text-white/40">
+        <li><a href="/"        class="hover:text-brand-lime transition-colors">Home</a></li>
+        <li aria-hidden="true" class="text-white/20">/</li>
+        <li><a href="/services" class="hover:text-brand-lime transition-colors">Services</a></li>
+        <li aria-hidden="true" class="text-white/20">/</li>
+        <li class="text-white/70" aria-current="page">{svc.title}</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <section class="py-16 sm:py-20 lg:py-24 bg-brand-dark border-b border-white/8"
+           aria-labelledby="service-heading">
+    <div class="container mx-auto px-4 sm:px-6">
+      <div class="max-w-3xl">
+
+        <div class="flex items-center gap-2 mb-5">
+          <span class="inline-flex items-center gap-1.5 text-xs font-semibold tracking-widest
+                       uppercase text-brand-lime bg-brand-lime/10 border border-brand-lime/30
+                       rounded-full px-3 py-1">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2"
+                 viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d={svc.icon}/>
+            </svg>
+            {svc.catLabel}
+          </span>
+          <span class="text-xs text-white/30 uppercase tracking-widest font-medium">Service</span>
+        </div>
+
+        <h1 id="service-heading"
+            class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white
+                   leading-[1.06] mb-6">
+          {svc.title}
+          <span class="block text-brand-lime text-3xl sm:text-4xl lg:text-5xl mt-1 font-bold">
+            in London &amp; the Home Counties
+          </span>
+        </h1>
+
+        <p class="text-base sm:text-lg text-white/60 leading-relaxed mb-8 max-w-2xl">
+          {detail.heroDesc}
+        </p>
+
+        <div class="flex flex-wrap gap-4 mb-10">
+          <a href="/contact#quote"
+             class="inline-flex items-center gap-2 bg-brand-forest text-white px-7 py-3.5
+                    rounded-[8px] text-sm font-semibold hover:bg-brand-forest-dark
+                    hover:-translate-y-px hover:shadow-cta transition-all duration-200">
+            Get a Free Quote
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"
+                 viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+            </svg>
+          </a>
+          <a href="tel:+447929771954"
+             class="inline-flex items-center gap-2 border border-white/20 text-white/70
+                    px-7 py-3.5 rounded-[8px] text-sm font-semibold
+                    hover:border-brand-lime hover:text-white transition-all duration-200">
+            <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20"
+                 aria-hidden="true">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+            </svg>
+            07929 771954
+          </a>
+        </div>
+
+        <!-- Trust chips -->
+        <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/50">
+          {['EA Licensed', 'Duty of Care Docs Included', 'Same-Week Availability'].map((badge) => (
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-brand-lime shrink-0" fill="currentColor"
+                   viewBox="0 0 20 20" aria-hidden="true">
+                <path fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"/>
+              </svg>
+              {badge}
+            </span>
+          ))}
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── What's Included ── -->
+  <section class="py-16 sm:py-20 bg-brand-dark-card border-b border-white/8"
+           aria-labelledby="included-heading">
+    <div class="container mx-auto px-4 sm:px-6">
+      <div class="mb-10">
+        <span class="text-xs font-semibold tracking-widest uppercase text-brand-lime mb-3 block">
+          Scope of Service
+        </span>
+        <h2 id="included-heading"
+            class="font-display text-2xl sm:text-3xl font-bold text-white">
+          What Does {svc.title} Include?
+        </h2>
+      </div>
+      <ul class="grid sm:grid-cols-2 gap-x-10 gap-y-3">
+        {detail.included.map((item) => (
+          <li class="flex items-start gap-3 text-sm text-white/70 leading-relaxed">
+            <svg class="w-5 h-5 text-brand-lime shrink-0 mt-0.5" fill="currentColor"
+                 viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"/>
+            </svg>
+            {item}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── How It Works (sustainability page format) ── -->
+  <section class="py-16 sm:py-20 bg-brand-dark border-b border-white/8"
+           aria-labelledby="process-heading">
+    <div class="container mx-auto px-4 sm:px-6 max-w-5xl">
+
+      <div class="text-center mb-12">
+        <span class="text-xs font-semibold tracking-widest uppercase text-brand-lime mb-3 block">
+          Step by Step
+        </span>
+        <h2 id="process-heading"
+            class="font-display text-2xl sm:text-3xl font-bold text-white">
+          How Our {svc.title} Service Works
+        </h2>
+        <p class="mt-3 text-sm text-white/50 max-w-xl mx-auto">
+          Every job follows the same documented process — from first contact to final Waste Transfer Note.
+        </p>
+      </div>
+
+      <div class="relative">
+        <!-- Connecting line (desktop) -->
+        <div class="hidden lg:block absolute top-10 left-[8%] right-[8%] h-[2px]
+                    bg-gradient-to-r from-brand-lime/20 via-brand-lime/50 to-brand-lime/20"
+             aria-hidden="true"></div>
+
+        <div class={`grid grid-cols-2 gap-6 lg:gap-4 relative z-10
+                    ${detail.process.length === 4 ? 'lg:grid-cols-4' :
+                      detail.process.length === 5 ? 'lg:grid-cols-5' :
+                      detail.process.length === 6 ? 'lg:grid-cols-6' : 'lg:grid-cols-5'}`}>
+          {detail.process.map(({ title, desc }, i) => (
+            <div class="flex flex-col items-center text-center gap-3">
+              <div class="w-20 h-20 rounded-full bg-brand-dark-card border-2 border-brand-lime/30
+                          flex items-center justify-center relative shrink-0
+                          hover:border-brand-lime hover:bg-brand-lime/10
+                          transition-all duration-300 group/step">
+                <span class="text-brand-lime font-bold text-lg group-hover/step:scale-110
+                             transition-transform duration-300">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <span class="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-brand-lime
+                             text-[10px] font-bold text-brand-dark flex items-center
+                             justify-center leading-none" aria-hidden="true">
+                  {i + 1}
+                </span>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-white mb-1">{title}</p>
+                <p class="text-[11px] text-white/40 leading-snug">{desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Compliance & Licences ── -->
+  <section class="py-16 sm:py-20 bg-brand-dark-card border-b border-white/8"
+           aria-labelledby="compliance-heading">
+    <div class="container mx-auto px-4 sm:px-6">
+      <div class="mb-10">
+        <span class="text-xs font-semibold tracking-widest uppercase text-brand-lime mb-3 block">
+          Regulatory Credentials
+        </span>
+        <h2 id="compliance-heading"
+            class="font-display text-2xl sm:text-3xl font-bold text-white">
+          Licences &amp; Documentation for {svc.title}
+        </h2>
+        <p class="mt-3 text-sm text-white/50 max-w-xl">
+          Every WasteWize collection comes with a complete compliance paper trail —
+          so you have full legal protection from the moment we arrive.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {detail.compliance.map(({ badge, title, desc, href }) => (
+          href
+            ? (
+              <a href={href} target="_blank" rel="noopener"
+                 class="bg-brand-dark border border-white/10 rounded-[12px] p-6
+                        flex flex-col gap-3 hover:border-brand-lime/30 transition-colors">
+                <span class="inline-flex items-center justify-center w-12 h-12 rounded-[10px]
+                             bg-brand-lime/15 border border-brand-lime/30 text-brand-lime
+                             text-sm font-bold tracking-wide">{badge}</span>
+                <h3 class="text-[14px] font-semibold text-white">{title}</h3>
+                <p class="text-xs text-white/50 leading-relaxed flex-1">{desc}</p>
+              </a>
+            )
+            : (
+              <div class="bg-brand-dark border border-white/10 rounded-[12px] p-6
+                          flex flex-col gap-3 hover:border-brand-lime/30 transition-colors">
+                <span class="inline-flex items-center justify-center w-12 h-12 rounded-[10px]
+                             bg-brand-lime/15 border border-brand-lime/30 text-brand-lime
+                             text-sm font-bold tracking-wide">{badge}</span>
+                <h3 class="text-[14px] font-semibold text-white">{title}</h3>
+                <p class="text-xs text-white/50 leading-relaxed flex-1">{desc}</p>
+              </div>
+            )
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section class="py-16 sm:py-20 bg-brand-dark border-b border-white/8"
+           aria-labelledby="faq-heading">
+    <div class="container mx-auto px-4 sm:px-6 max-w-3xl">
+
+      <div class="text-center mb-12">
+        <span class="text-xs font-semibold tracking-widest uppercase text-brand-lime mb-3 block">
+          Common Questions
+        </span>
+        <h2 id="faq-heading"
+            class="font-display text-2xl sm:text-3xl font-bold text-white">
+          Frequently Asked Questions About {svc.title}
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        {detail.faqs.map(({ q, a }, i) => (
+          <details class="group bg-brand-dark-card border border-white/10 rounded-[12px]
+                          overflow-hidden hover:border-brand-lime/25 transition-colors">
+            <summary class="flex items-center justify-between gap-4 px-6 py-5
+                            cursor-pointer list-none select-none">
+              <h3 class="text-[15px] font-semibold text-white leading-snug pr-2">{q}</h3>
+              <svg class="w-5 h-5 text-brand-lime shrink-0 transition-transform duration-200
+                          group-open:rotate-180"
+                   fill="none" stroke="currentColor" stroke-width="2"
+                   viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6">
+              <p class="text-sm text-white/60 leading-relaxed">{a}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Related Services ── -->
+  {related.length > 0 && (
+    <section class="py-16 sm:py-20 bg-brand-dark-card border-b border-white/8"
+             aria-labelledby="related-heading">
+      <div class="container mx-auto px-4 sm:px-6">
+        <div class="mb-10">
+          <span class="text-xs font-semibold tracking-widest uppercase text-brand-lime mb-3 block">
+            You May Also Need
+          </span>
+          <h2 id="related-heading"
+              class="font-display text-2xl sm:text-3xl font-bold text-white">
+            Related Services
+          </h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {related.map((r) => (
+            <a href={r.href}
+               class="group bg-brand-dark border border-white/10 rounded-[12px] p-6
+                      flex flex-col gap-4 hover:border-brand-lime/50 hover:-translate-y-1
+                      hover:shadow-card transition-all duration-300">
+              <div class="w-11 h-11 rounded-[10px] bg-brand-lime/10 flex items-center
+                          justify-center shrink-0 group-hover:bg-brand-lime/20 transition-colors">
+                <svg class="w-5 h-5 text-brand-lime" fill="none" stroke="currentColor"
+                     stroke-width="1.7" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d={r.icon}/>
+                </svg>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-[15px] font-semibold text-white mb-1.5
+                           group-hover:text-brand-lime transition-colors duration-200">
+                  {r.title}
+                </h3>
+                <p class="text-[13px] text-white/50 leading-relaxed">{r.shortDesc}</p>
+              </div>
+              <span class="text-xs text-brand-lime font-semibold flex items-center gap-1
+                           group-hover:gap-2 transition-all duration-200">
+                Learn more
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5"
+                     viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+                </svg>
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- ── CTA ── -->
+  <section class="py-20 bg-brand-dark">
+    <div class="container mx-auto px-4 sm:px-6 text-center max-w-2xl">
+      <span class="text-xs font-semibold tracking-widest uppercase text-brand-lime mb-4 block">
+        Ready to Book?
+      </span>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mb-4">
+        Get a Free Quote for {svc.title}
+      </h2>
+      <p class="text-white/60 leading-relaxed mb-8 max-w-lg mx-auto text-sm">
+        Tell us about your job and we will provide a fixed-price quote — usually within the hour.
+        Same-week availability across London and the Home Counties.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/contact#quote"
+           class="inline-flex items-center gap-2 bg-brand-forest text-white px-7 py-3.5
+                  rounded-[8px] text-sm font-semibold hover:bg-brand-forest-dark
+                  hover:-translate-y-px hover:shadow-cta transition-all duration-200">
+          Get a Free Quote
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"
+               viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+          </svg>
+        </a>
+        <a href="/services"
+           class="inline-flex items-center gap-2 border border-white/20 text-white/70
+                  px-7 py-3.5 rounded-[8px] text-sm font-semibold
+                  hover:border-brand-lime hover:text-white transition-all duration-200">
+          View All Services
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
