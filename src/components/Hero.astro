@@ -8,9 +8,14 @@
 
 <section class="relative overflow-hidden bg-brand-dark pt-8 pb-16 lg:pt-16 lg:pb-24">
 
-  <!-- Background image pinned left, 30% visible -->
-  <div
-    class="pointer-events-none absolute inset-0 bg-[url('/wastewize-tipper-in-central-london.webp')] bg-cover bg-[0%_50%] lg:bg-left bg-no-repeat opacity-50"
+  <!-- Background image — real <img> so browser discovers it in HTML for LCP -->
+  <img
+    src="/wastewize-tipper-in-central-london.webp"
+    alt=""
+    fetchpriority="high"
+    loading="eager"
+    decoding="async"
+    class="pointer-events-none absolute inset-0 w-full h-full object-cover object-left opacity-50"
     aria-hidden="true"
   />
 
