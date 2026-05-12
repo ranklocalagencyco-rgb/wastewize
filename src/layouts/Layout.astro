@@ -81,5 +81,14 @@ const GA_ID = 'G-XXXXXXXXXX'; // ← Replace with your GA4 Measurement ID
   <!-- ③ Footer -->
   <Footer />
 
+  <script is:inline>
+    document.querySelectorAll('[data-user][data-host]').forEach(function(el) {
+      var addr = el.dataset.user + '@' + el.dataset.host;
+      if (el.tagName === 'A') el.href = 'mailto:' + addr;
+      var span = el.querySelector('[data-email-text]');
+      if (span) span.textContent = addr;
+    });
+  </script>
+
 </body>
 </html>
