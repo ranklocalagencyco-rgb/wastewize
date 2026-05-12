@@ -16,6 +16,9 @@ import StatsBar      from '../components/StatsBar.astro';
 >
 
   <Fragment slot="head">
+    <!-- Preload LCP hero image so browser fetches it before parsing <body> -->
+    <link rel="preload" as="image" href="/wastewize-tipper-in-central-london.webp" fetchpriority="high" />
+
     <script type="application/ld+json" is:inline set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
