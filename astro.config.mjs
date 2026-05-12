@@ -9,7 +9,7 @@ export default defineConfig({
   adapter: vercel(),
   integrations: [sitemap()],
   build: {
-    inlineStylesheets: 'always',
+    inlineStylesheets: 'auto',
   },
   vite: {
     plugins: [tailwindcss()],
