@@ -11,8 +11,8 @@ interface Props {
 }
 
 const {
-  title       = 'WasteWize UK | Commercial Waste Management — London & Home Counties',
-  description = 'End-to-end commercial waste solutions with 99% landfill diversion rate. Serving 500+ businesses across London & the Home Counties. Get your free waste audit today.',
+  title       = 'WasteWize UK | Waste Removal for Homeowners & Businesses — London & Home Counties',
+  description = 'EA-licensed waste removal for homeowners and businesses. 99% landfill diversion rate. House clearances, commercial collections & more across London & the Home Counties. Get a free quote today.',
   ogImage     = '/og-image.jpg',
 } = Astro.props;
 
@@ -51,13 +51,9 @@ const GA_ID = 'G-XXXXXXXXXX'; // ← Replace with your GA4 Measurement ID
   <link rel="apple-touch-icon" href="/wastewizeuk-favicon.png" />
   <meta name="theme-color"      content="#2E7D32" />
 
-  <!-- Google Fonts: DM Sans (body) + Fraunces (display headings) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Fraunces:opsz,wght@9..144,700;9..144,800&display=swap"
-  />
+  <!-- Self-hosted fonts: preload critical woff2 files -->
+  <link rel="preload" href="/fonts/dm-sans-latin.woff2"      as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/fraunces-latin.woff2"     as="font" type="font/woff2" crossorigin />
 
   <!-- Google Analytics 4 -->
   <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>

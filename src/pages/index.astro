@@ -11,9 +11,13 @@ import StatsBar      from '../components/StatsBar.astro';
 ---
 
 <Layout
-  title="WasteWize UK | Commercial Waste Management — London & Home Counties"
-  description="EA-licensed commercial waste collection, clearance, and recycling across London & the Home Counties. 99% landfill diversion rate. Same-week availability. Get a free quote today."
+  title="WasteWize UK | Waste Removal for Homeowners & Businesses — London & Home Counties"
+  description="EA-licensed waste removal for homeowners and businesses across London & the Home Counties. House clearances, commercial collections, recycling & more. 99% landfill diversion. Same-week availability."
 >
+
+  <Fragment slot="head">
+    <link rel="preload" as="image" href="/wastewize-tipper-in-central-london.webp" fetchpriority="high" />
+  </Fragment>
 
   <!-- 1. Hero — split layout, headline + CTA left, image right -->
   <Hero />
