@@ -151,7 +151,7 @@ export const areas: Area[] = [
       'Golders Green', 'Greenford',
       'Hampton', 'Hampton Hill', 'Hanwell', 'Hanworth', 'Harefield', 'Harlesden',
       'Harlington', 'Harrow', 'Harrow on the Hill', 'Hatch End', 'Hayes', 'Hendon',
-      'Heston', 'Hillingdon Heath', 'Hounslow',
+      'Heston', 'Hillingdon', 'Hillingdon Heath', 'Hounslow',
       'Ickenham', 'Isleworth',
       'Kenton', 'Kingsbury',
       'Mill Hill',

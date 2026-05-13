@@ -188,6 +188,12 @@ export const townSeo: Record<string, TownSeo> = {
     intro: "Heston's industrial estates and commercial premises occupy a prime Heathrow corridor location, generating regular demand for bulk waste disposal, WEEE recycling, and construction clearance. WasteWize UK serves Heston businesses with flexible, EA-licensed collections tailored to the operational requirements of logistics and trade companies.",
   },
 
+  'middlesex/hillingdon': {
+    postcode: 'UB10',
+    metaDesc: 'Waste collection and clearance services in Hillingdon UB10. WasteWize UK provides commercial and residential waste removal, office clearances, and specialist disposal across the Hillingdon area.',
+    intro: "Hillingdon is a major west London district combining established residential neighbourhoods with a significant commercial and light industrial base close to Uxbridge and the A40 corridor. WasteWize UK provides reliable house clearances, commercial strip-outs, construction waste removal, and trade waste services throughout the UB10 area, with EA-licensed disposal and same-week availability.",
+  },
+
   'middlesex/hillingdon-heath': {
     postcode: 'UB8',
     metaDesc: 'Waste collection and domestic clearance in Hillingdon Heath UB8. WasteWize UK provides commercial and residential waste services near Uxbridge — EA licensed.',
