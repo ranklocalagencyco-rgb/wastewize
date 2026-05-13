@@ -12,11 +12,12 @@ import Layout from '../layouts/Layout.astro';
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "WasteWize UK",
+      "legalName": "WasteWize UK Ltd",
       "url": "https://wastewize.co.uk",
       "logo": "https://wastewize.co.uk/Wastewize-logo.webp",
       "foundingDate": "2018",
-      "description": "End-to-end waste removal, recycling, and compliance services for homeowners and businesses across London and the Home Counties.",
-      "telephone": "+447929771954",
+      "description": "End-to-end waste removal, recycling, and compliance services for homeowners and businesses across London and the Home Counties since 2018. EA Upper-Tier licensed (CBDU335711) with a 99% landfill diversion rate.",
+      "telephone": ["+447929771954", "+447498363345"],
       "email": "info@wastewize.co.uk",
       "address": {
         "@type": "PostalAddress",
@@ -25,13 +26,35 @@ import Layout from '../layouts/Layout.astro';
         "postalCode": "NW7 2GB",
         "addressCountry": "GB"
       },
-      "areaServed": {
-        "@type": "AdministrativeArea",
-        "name": "London and Home Counties"
-      },
+      "areaServed": [
+        { "@type": "AdministrativeArea", "name": "London" },
+        { "@type": "AdministrativeArea", "name": "Surrey" },
+        { "@type": "AdministrativeArea", "name": "Essex" },
+        { "@type": "AdministrativeArea", "name": "Hertfordshire" },
+        { "@type": "AdministrativeArea", "name": "Berkshire" },
+        { "@type": "AdministrativeArea", "name": "Kent" }
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "EA Upper-Tier Waste Carrier, Broker and Dealer Licence",
+          "credentialCategory": "licence",
+          "recognizedBy": { "@type": "Organization", "name": "Environment Agency" },
+          "identifier": "CBDU335711",
+          "url": "https://environment.data.gov.uk/public-register/view/search-waste-carriers-brokers?regIdentifier=CBDU335711"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "SafeContractor Approved",
+          "credentialCategory": "accreditation",
+          "recognizedBy": { "@type": "Organization", "name": "Alcumus SafeContractor" }
+        }
+      ],
       "sameAs": [
         "https://www.facebook.com/people/WastewizeLtd/61586085284705/",
-        "https://www.instagram.com/wastewizeltd"
+        "https://www.instagram.com/wastewizeltd",
+        "https://find-and-update.company-information.service.gov.uk/company/11181115",
+        "https://environment.data.gov.uk/public-register/view/search-waste-carriers-brokers?regIdentifier=CBDU335711"
       ]
     })} />
     <script type="application/ld+json" is:inline set:html={JSON.stringify({

@@ -23,11 +23,12 @@ import StatsBar      from '../components/StatsBar.astro';
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "WasteWize UK",
-      "image": "https://wastewize.co.uk/wastewizeuk-favicon.png",
+      "image": "https://wastewize.co.uk/Wastewize-logo.webp",
       "@id": "https://wastewize.co.uk",
       "url": "https://wastewize.co.uk",
-      "telephone": "+447929771954",
+      "telephone": ["+447929771954", "+447498363345"],
       "email": "info@wastewize.co.uk",
+      "priceRange": "££",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "9 Cordelia Court, Burns Lane",
@@ -40,21 +41,90 @@ import StatsBar      from '../components/StatsBar.astro';
         "latitude": 51.6152,
         "longitude": -0.2229
       },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-        "opens": "08:00",
-        "closes": "18:00"
-      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "07:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Saturday"],
+          "opens": "08:00",
+          "closes": "14:00"
+        }
+      ],
       "sameAs": [
         "https://www.facebook.com/people/WastewizeLtd/61586085284705/",
-        "https://www.instagram.com/wastewizeltd"
+        "https://www.instagram.com/wastewizeltd",
+        "https://find-and-update.company-information.service.gov.uk/company/11181115",
+        "https://environment.data.gov.uk/public-register/view/search-waste-carriers-brokers?regIdentifier=CBDU335711"
       ],
       "areaServed": [
         { "@type": "AdministrativeArea", "name": "London" },
-        { "@type": "AdministrativeArea", "name": "Home Counties" }
+        { "@type": "AdministrativeArea", "name": "Surrey" },
+        { "@type": "AdministrativeArea", "name": "Essex" },
+        { "@type": "AdministrativeArea", "name": "Hertfordshire" },
+        { "@type": "AdministrativeArea", "name": "Berkshire" },
+        { "@type": "AdministrativeArea", "name": "Kent" },
+        { "@type": "AdministrativeArea", "name": "Middlesex" }
       ],
-      "description": "WasteWize UK offers end-to-end homeowners and commercial waste removal and collection services with a 99% landfill diversion rate across London and the Home Counties."
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "name": "EA Upper-Tier Waste Carrier Licence",
+        "credentialCategory": "licence",
+        "recognizedBy": { "@type": "Organization", "name": "Environment Agency" },
+        "identifier": "CBDU335711"
+      },
+      "description": "WasteWize UK provides EA-licensed waste removal and clearance for homeowners and businesses across London and the Home Counties, with a 99% landfill diversion rate. Services include house clearances, commercial clearance, strip-out, asbestos removal, confidential waste, and more."
+    })} />
+
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is WasteWize UK licensed by the Environment Agency?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. WasteWize UK holds an Upper-Tier Environment Agency Waste Carrier, Broker and Dealer licence (CBDU335711). This is the highest tier of EA licensing and is required by law for any business that carries, brokers, or deals in controlled waste for profit. Every collection includes a completed Duty of Care Waste Transfer Note."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which areas does WasteWize UK cover?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "WasteWize UK covers all London boroughs — Central, North, East, South, and West London — plus the Home Counties including Surrey, Kent, Essex, Hertfordshire, Berkshire, Buckinghamshire, and Middlesex. Coverage extends to over 200 towns and localities across the region."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How quickly can WasteWize UK collect my waste?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We offer same-week availability across London and the Home Counties. In many cases we can arrange next-day collection. Call 07929 771954 for current availability, or complete the online quote form for a response within 2 hours during business hours."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is WasteWize UK's landfill diversion rate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "WasteWize UK achieves a 99% landfill diversion rate through partnerships with certified material recovery facilities. Hardcore is crushed into secondary aggregate, wood is processed for biomass, metals go to certified recyclers, green waste is composted, and general waste is processed at energy-from-waste facilities."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you provide Duty of Care waste transfer notes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Under the Environmental Protection Act 1990, businesses have a legal Duty of Care to ensure their waste is handled correctly. WasteWize UK provides a completed Waste Transfer Note for every single collection, giving you a full compliance audit trail for regulatory and insurance purposes."
+          }
+        }
+      ]
     })} />
   </Fragment>
 

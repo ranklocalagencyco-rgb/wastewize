@@ -31,19 +31,14 @@ const filters = [
       "name": "WasteWize UK Waste Removal Services",
       "description": "EA-licensed waste removal services for homeowners and businesses across London and the Home Counties.",
       "url": "https://wastewize.co.uk/services",
-      "numberOfItems": 10,
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1,  "name": "Strip out & Demolition",  "description": "Full strip-out and soft demolition of commercial and residential interiors including fixtures, fittings, partitions, and raised floors. EA-licensed with duty-of-care documentation.", "url": "https://wastewize.co.uk/services" },
-        { "@type": "ListItem", "position": 2,  "name": "Commercial Clearance",    "description": "End-of-tenancy and office clearance for retail units, warehouses, offices, and commercial premises. Fully insured, EA-licensed, and available at short notice.", "url": "https://wastewize.co.uk/services" },
-        { "@type": "ListItem", "position": 3,  "name": "Residential Waste",       "description": "House clearances, bulky item collections, and domestic waste removal. All waste disposed of responsibly with full duty-of-care documentation.", "url": "https://wastewize.co.uk/services" },
-        { "@type": "ListItem", "position": 4,  "name": "Garden Refuse",           "description": "Collection and responsible composting of all garden waste including cuttings, branches, soil, and green waste. One-off clearances and regular scheduled collections available.", "url": "https://wastewize.co.uk/services" },
-        { "@type": "ListItem", "position": 5,  "name": "Building & Construction", "description": "On-site waste management for construction and refurbishment projects. Segregated skips, muck-away, and full site compliance documentation including waste transfer notes.", "url": "https://wastewize.co.uk/services" },
-        { "@type": "ListItem", "position": 6,  "name": "Electrical Equipment",    "description": "WEEE-compliant collection and recycling of electrical and electronic equipment. Official WEEE transfer notes issued for every collection. Certified data destruction available.", "url": "https://wastewize.co.uk/services" },
-        { "@type": "ListItem", "position": 7,  "name": "Confidential Waste",      "description": "Secure collection and certified destruction of confidential documents and data-bearing devices. Certificate of destruction issued. Fully GDPR and DPA 2018 compliant.", "url": "https://wastewize.co.uk/services" },
-        { "@type": "ListItem", "position": 8,  "name": "Asbestos Removal",        "description": "HSE-licensed asbestos surveying, encapsulation, and removal for commercial, residential, and industrial sites. Air monitoring, independent analyst sign-off, and waste consignment notes included.", "url": "https://wastewize.co.uk/services" },
-        { "@type": "ListItem", "position": 9,  "name": "Hardcore & Wood",         "description": "Segregated collection of hardcore, rubble, concrete, timber, and wood waste from construction sites. Hardcore crushed for recycling; wood processed for biomass energy.", "url": "https://wastewize.co.uk/services" },
-        { "@type": "ListItem", "position": 10, "name": "Scrap Metal",             "description": "Collection and recycling of ferrous and non-ferrous scrap metal from commercial, industrial, and construction sources. Competitive rates for large volumes with full waste transfer notes.", "url": "https://wastewize.co.uk/services" }
-      ]
+      "numberOfItems": services.length,
+      "itemListElement": services.map((svc, i) => ({
+        "@type": "ListItem",
+        "position": i + 1,
+        "name": svc.title,
+        "description": svc.shortDesc,
+        "url": `https://wastewize.co.uk${svc.href}`
+      }))
     })} />
     <script type="application/ld+json" is:inline set:html={JSON.stringify({
       "@context": "https://schema.org",
@@ -202,18 +197,22 @@ const filters = [
 
             <!-- Title + short description -->
             <div class="flex flex-col gap-1.5 flex-1">
-              <h2
-                class="text-[15px] font-semibold text-white leading-snug
-                       group-hover:text-brand-lime transition-colors duration-200"
-              >
-                {svc.title}
+              <h2 class="text-[15px] font-semibold leading-snug">
+                <a
+                  href={svc.href}
+                  class="text-white group-hover:text-brand-lime transition-colors duration-200
+                         focus-visible:outline-none focus-visible:underline"
+                  onclick="event.stopPropagation()"
+                >
+                  {svc.title}
+                </a>
               </h2>
               <p class="text-[13px] leading-relaxed text-white/50">
                 {svc.shortDesc}
               </p>
             </div>
 
-            <!-- Category pill + chevron -->
+            <!-- Category pill + "View service" link -->
             <div class="flex items-center justify-between">
               <span
                 class="text-[11px] font-semibold tracking-wide uppercase px-2.5 py-1
@@ -221,17 +220,15 @@ const filters = [
               >
                 {svc.catLabel}
               </span>
-              <svg
-                class="w-4 h-4 text-white/30 group-hover:text-brand-lime
-                       transition-all duration-300 card-chevron"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
+              <a
+                href={svc.href}
+                class="text-[11px] font-semibold text-white/30 group-hover:text-brand-lime
+                       transition-colors duration-200 hover:underline underline-offset-2"
+                onclick="event.stopPropagation()"
+                aria-label={`View ${svc.title} service page`}
               >
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
-              </svg>
+                View →
+              </a>
             </div>
           </article>
         ))}
