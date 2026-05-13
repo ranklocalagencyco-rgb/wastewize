@@ -630,12 +630,6 @@ export const townSeo: Record<string, TownSeo> = {
     intro: "Amersham's blend of historic Old Town and the busy commuter hub around the Metropolitan and Chiltern lines creates a wide mix of clearance and waste needs. WasteWize UK handles everything from end-of-tenancy office clearances in the town centre to house clearances in the surrounding Chiltern villages, with full EA-licensed compliance on every job.",
   },
 
-  'buckinghamshire/amersham-on-the-hill': {
-    postcode: 'HP6',
-    metaDesc: 'Waste collection and clearance services in Amersham-on-the-Hill HP6. WasteWize UK covers commercial strip-outs, house clearances, and trade waste for the Met line corridor.',
-    intro: "Amersham-on-the-Hill, centred around the Metropolitan and Chiltern railway station, is a busy commuter neighbourhood with a strong mix of retail, office, and residential properties. WasteWize UK provides reliable waste collection and clearance services throughout the area, with same-week availability and full duty-of-care documentation.",
-  },
-
   'buckinghamshire/aylesbury': {
     postcode: 'HP20',
     metaDesc: 'Commercial waste management and clearance in Aylesbury HP20. WasteWize UK serves the county town with office clearance, construction waste, WEEE recycling, and confidential shredding.',
@@ -648,24 +642,6 @@ export const townSeo: Record<string, TownSeo> = {
     intro: "Beaconsfield's position on the M40 corridor makes it a popular base for professional services businesses and upmarket retail. WasteWize UK supports end-of-tenancy office clearances, confidential document destruction, and residential house clearances throughout the HP9 area, with fully insured and EA-licensed collection on every booking.",
   },
 
-  'buckinghamshire/bedgrove': {
-    postcode: 'HP21',
-    metaDesc: 'House clearances and domestic waste removal in Bedgrove HP21. WasteWize UK covers this Aylesbury residential suburb for bulky item collections, renovation waste, and full property clearances.',
-    intro: "Bedgrove is one of Aylesbury's largest residential suburbs, with a high density of family homes generating regular demand for house clearances, bulky item removals, and renovation debris disposal. WasteWize UK covers the HP21 area with short-notice collections and full duty-of-care documentation on every domestic waste job.",
-  },
-
-  'buckinghamshire/booker': {
-    postcode: 'HP12',
-    metaDesc: 'Industrial and construction waste collection in Booker HP12. WasteWize UK serves Booker Industrial Estate and the wider High Wycombe commercial zone with skips, WEEE recycling, and trade waste.',
-    intro: "Booker is home to one of High Wycombe's principal industrial estates, generating significant volumes of commercial, manufacturing, and construction waste. WasteWize UK provides segregated skip hire, WEEE-compliant electrical equipment recycling, scrap metal collection, and general trade waste services to businesses operating in the HP12 corridor.",
-  },
-
-  'buckinghamshire/bowerdean': {
-    postcode: 'HP13',
-    metaDesc: 'Residential waste removal and house clearances in Bowerdean HP13. WasteWize UK serves this High Wycombe suburb with bulky collections, garden refuse, and domestic clearances.',
-    intro: "Bowerdean is a well-established residential neighbourhood on the northern fringe of High Wycombe, with a mix of post-war and newer housing. WasteWize UK provides house clearances, bulky item collections, and garden waste removal throughout the area, with same-week availability and full disposal documentation on every job.",
-  },
-
   'buckinghamshire/buckingham': {
     postcode: 'MK18',
     metaDesc: 'Commercial waste collection and clearance in Buckingham MK18. WasteWize UK covers the market town with office clearance, construction waste, and residential collections.',
@@ -676,12 +652,6 @@ export const townSeo: Record<string, TownSeo> = {
     postcode: 'SL1',
     metaDesc: 'Waste collection and office clearance in Burnham SL1. WasteWize UK provides EA-licensed commercial and residential waste services in Burnham, close to the M4 and Slough Trading Estate.',
     intro: "Burnham sits between Slough and Maidenhead, within easy reach of the M4 and M40, making it a practical base for commercial operators and logistics businesses. WasteWize UK covers the SL1 area with commercial clearances, construction waste removal, and domestic collections, all backed by full duty-of-care documentation.",
-  },
-
-  'buckinghamshire/castlefield': {
-    postcode: 'HP13',
-    metaDesc: 'House clearances and waste removal in Castlefield HP13. WasteWize UK serves this High Wycombe residential area with domestic clearances, bulky item collections, and garden waste.',
-    intro: "Castlefield is a residential neighbourhood within High Wycombe, characterised by a mix of terraced and semi-detached housing serving local families and commuters. WasteWize UK provides prompt house clearances, bulky item removals, and garden refuse collections across the HP13 area, with full waste transfer documentation on every job.",
   },
 
   'buckinghamshire/chalfont-st-giles': {
@@ -706,24 +676,6 @@ export const townSeo: Record<string, TownSeo> = {
     postcode: 'UB9',
     metaDesc: 'Waste collection and clearance services in Denham UB9. WasteWize UK covers this M25/M40 junction village with commercial and residential waste removal, asbestos disposal, and office clearance.',
     intro: "Denham sits at the intersection of the M25 and M40, making it a strategically positioned location for commercial and logistics operations. WasteWize UK covers the UB9 area with commercial clearances, construction waste removal, and specialist asbestos disposal, serving both the village's residential properties and the surrounding business parks.",
-  },
-
-  'buckinghamshire/downley': {
-    postcode: 'HP13',
-    metaDesc: 'House clearances and residential waste collection in Downley HP13. WasteWize UK covers this High Wycombe hilltop village with domestic clearances, bulky item removal, and garden refuse.',
-    intro: "Downley is a village suburb perched above High Wycombe with a strong sense of community and predominantly residential character. WasteWize UK provides house clearances, bulky item collections, and garden waste removal throughout Downley and the HP13 postcode, with same-week availability and transparent pricing.",
-  },
-
-  'buckinghamshire/elmhurst': {
-    postcode: 'HP20',
-    metaDesc: 'Residential waste removal and house clearances in Elmhurst HP20. WasteWize UK covers this Aylesbury neighbourhood with domestic clearances, renovation waste, and bulky item collections.',
-    intro: "Elmhurst is a residential district within the Aylesbury urban area, featuring a range of housing stock from post-war semis to newer estates. WasteWize UK provides house clearances, renovation debris removal, and bulky item collections throughout the HP20 area, with short-notice availability and full duty-of-care paperwork on every job.",
-  },
-
-  'buckinghamshire/fairford-leys': {
-    postcode: 'HP19',
-    metaDesc: 'Waste collection and clearance in Fairford Leys HP19. WasteWize UK serves this major Aylesbury residential development with house clearances, garden waste, and domestic waste removal.',
-    intro: "Fairford Leys is one of Aylesbury's largest modern residential developments, comprising thousands of homes to the west of the town centre. WasteWize UK provides reliable house clearances, garden refuse collections, and bulky item removals across the HP19 postcode, with EA-licensed disposal and same-week booking available.",
   },
 
   'buckinghamshire/gerrards-cross': {
@@ -756,12 +708,6 @@ export const townSeo: Record<string, TownSeo> = {
     intro: "High Wycombe is Buckinghamshire's largest commercial centre, with a major retail core, extensive light industrial estates, and one of the region's most active construction pipelines. WasteWize UK provides the full range of commercial waste services across HP11, HP12, and HP13 — from on-site segregated skips and muck-away to office strip-outs, WEEE collections, and confidential shredding.",
   },
 
-  'buckinghamshire/holtspur': {
-    postcode: 'HP9',
-    metaDesc: 'Residential waste collection and house clearances in Holtspur HP9. WasteWize UK serves this Beaconsfield suburb with domestic clearances, garden refuse, and bulky item removals.',
-    intro: "Holtspur is a residential neighbourhood on the south-western edge of Beaconsfield, characterised by leafy streets and family homes in the HP9 postcode. WasteWize UK provides house clearances, garden waste collections, and bulky item removals throughout Holtspur, with fully insured and EA-licensed disposal on every job.",
-  },
-
   'buckinghamshire/iver': {
     postcode: 'SL0',
     metaDesc: 'Commercial and residential waste collection in Iver SL0. WasteWize UK serves this M25 corridor village with clearances, construction waste, asbestos removal, and trade waste collections.',
@@ -786,22 +732,10 @@ export const townSeo: Record<string, TownSeo> = {
     intro: "Marlow Bottom is a quiet valley village nestled in the Chilterns north of Marlow, with predominantly residential properties and a strong community character. WasteWize UK provides house clearances, garden waste removal, and bulky item collections throughout Marlow Bottom and the wider SL7 area, with same-week availability and full compliance paperwork.",
   },
 
-  'buckinghamshire/micklefield': {
-    postcode: 'HP13',
-    metaDesc: 'Waste collection and clearances in Micklefield HP13. WasteWize UK serves this High Wycombe residential area with domestic clearances, renovation waste removal, and bulky item collections.',
-    intro: "Micklefield is a residential area within High Wycombe, with a mix of housing types popular with local families and commuters. WasteWize UK provides house clearances, renovation debris removal, and bulky item collections across the HP13 area, with short-notice bookings and full duty-of-care documentation on every collection.",
-  },
-
   'buckinghamshire/penn': {
     postcode: 'HP10',
     metaDesc: 'Residential waste collection and house clearances in Penn HP10. WasteWize UK provides discreet domestic clearances, garden refuse, and bulky item removals for this Chilterns village.',
     intro: "Penn is a picturesque Chilterns village to the south of High Wycombe, known for its common land, period cottages, and high-value residential properties. WasteWize UK provides discreet house clearances, garden waste collections, and bulky item removals throughout Penn and the HP10 area, with professional standards suited to the village environment.",
-  },
-
-  'buckinghamshire/prebendal-farm': {
-    postcode: 'HP19',
-    metaDesc: 'Residential waste removal and clearances in Prebendal Farm HP19. WasteWize UK covers this Aylesbury area with domestic clearances, renovation waste, and bulky item collections.',
-    intro: "Prebendal Farm is a residential district within the Aylesbury area, featuring modern housing developments west of the town centre. WasteWize UK provides house clearances, renovation debris disposal, and bulky item removals across the HP19 postcode, with EA-licensed waste management and same-week availability.",
   },
 
   'buckinghamshire/princes-risborough': {
@@ -816,28 +750,10 @@ export const townSeo: Record<string, TownSeo> = {
     intro: "Richings Park is a planned residential estate near Iver with well-maintained housing and good access to the M25 and the Elizabeth line at nearby Langley. WasteWize UK provides house clearances, garden refuse collections, and domestic waste removal throughout the SL0 area, with fully insured and EA-licensed service on every booking.",
   },
 
-  'buckinghamshire/sands': {
-    postcode: 'HP12',
-    metaDesc: 'Industrial and commercial waste collection in Sands HP12. WasteWize UK serves this High Wycombe industrial and residential area with construction waste, skip hire, and trade collections.',
-    intro: "Sands is a mixed industrial and residential area on the western edge of High Wycombe, with a cluster of commercial and light manufacturing operations alongside established housing. WasteWize UK provides segregated skip hire, construction waste removal, scrap metal collections, and trade waste services throughout the HP12 area.",
-  },
-
-  'buckinghamshire/southcourt': {
-    postcode: 'HP21',
-    metaDesc: 'House clearances and residential waste removal in Southcourt HP21. WasteWize UK serves this Aylesbury suburb with domestic clearances, bulky item collections, and garden refuse.',
-    intro: "Southcourt is a residential suburb to the south-east of Aylesbury town centre, with a predominantly family-housing character and strong community ties. WasteWize UK provides house clearances, bulky item collections, and garden waste removal across the HP21 area, with short-notice availability and full waste transfer documentation.",
-  },
-
   'buckinghamshire/stokenchurch': {
     postcode: 'HP14',
     metaDesc: 'Commercial and residential waste collection in Stokenchurch HP14. WasteWize UK covers this M40 corridor village with strip-outs, clearances, and construction waste services.',
     intro: "Stokenchurch sits directly on the M40 at the crest of the Chilterns, giving it strong logistics links and a steady flow of commercial and construction activity. WasteWize UK provides commercial strip-outs, house clearances, and construction waste collections throughout the HP14 area, with EA-licensed disposal and same-week availability.",
-  },
-
-  'buckinghamshire/terriers': {
-    postcode: 'HP13',
-    metaDesc: 'Residential waste collection and house clearances in Terriers HP13. WasteWize UK serves this High Wycombe suburb with domestic clearances, garden waste, and bulky item removals.',
-    intro: "Terriers is a residential suburb on the northern hillside of High Wycombe, with a range of housing types from Victorian terraces to modern family homes. WasteWize UK provides house clearances, garden waste collections, and bulky item removals throughout the HP13 area, with prompt, professionally managed service on every booking.",
   },
 
   'buckinghamshire/totteridge': {
@@ -850,12 +766,6 @@ export const townSeo: Record<string, TownSeo> = {
     postcode: 'HP10',
     metaDesc: 'Waste collection and house clearances in Tylers Green HP10. WasteWize UK covers this Chilterns village between Penn and High Wycombe with residential clearances and garden refuse.',
     intro: "Tylers Green is a tranquil Chilterns village between Penn and High Wycombe, with a mix of period and modern residential properties set around its historic common. WasteWize UK provides discreet house clearances, garden waste collections, and bulky item removals throughout Tylers Green and the surrounding HP10 area.",
-  },
-
-  'buckinghamshire/watermead': {
-    postcode: 'HP19',
-    metaDesc: 'Residential waste removal and clearances in Watermead HP19. WasteWize UK covers this Aylesbury lakeside development with domestic clearances, garden refuse, and bulky item collections.',
-    intro: "Watermead is a modern residential development north of Aylesbury built around a network of lakes and waterways, offering high-quality housing and excellent local amenities. WasteWize UK provides house clearances, garden waste removal, and bulky item collections throughout the HP19 area, with EA-licensed waste management on every job.",
   },
 
   'buckinghamshire/wendover': {
