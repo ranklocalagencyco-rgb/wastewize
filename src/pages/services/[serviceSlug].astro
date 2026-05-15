@@ -167,6 +167,28 @@ const pageUrl    = `${BASE}${svc.href}`;
     </div>
   </section>
 
+  <!-- ── Mid-page CTA (above-the-fold for scrollers) ── -->
+  <div class="bg-brand-dark-card border-b border-white/8">
+    <div class="container mx-auto px-4 sm:px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-white/60">
+        Ready to book <span class="text-white font-medium">{svc.title}</span>? Get a fixed price within the hour.
+      </p>
+      <div class="flex gap-3 shrink-0">
+        <a href="tel:+447929771954"
+           class="inline-flex items-center gap-2 bg-brand-forest text-white px-5 py-2.5 rounded-[8px] text-sm font-semibold hover:bg-brand-forest-dark transition-colors">
+          <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+          </svg>
+          07929 771954
+        </a>
+        <a href="/contact#quote"
+           class="inline-flex items-center gap-2 border border-white/20 text-white/70 px-5 py-2.5 rounded-[8px] text-sm font-semibold hover:border-brand-lime hover:text-white transition-colors">
+          Free Quote →
+        </a>
+      </div>
+    </div>
+  </div>
+
   <!-- ── What's Included ── -->
   <section class="py-16 sm:py-20 bg-brand-dark-card border-b border-white/8"
            aria-labelledby="included-heading">
@@ -193,6 +215,27 @@ const pageUrl    = `${BASE}${svc.href}`;
           </li>
         ))}
       </ul>
+    </div>
+  </section>
+
+  <!-- ── Body Copy (300–500 words of depth per service) ── -->
+  <section class="py-16 sm:py-20 bg-brand-dark border-b border-white/8"
+           aria-labelledby="body-heading">
+    <div class="container mx-auto px-4 sm:px-6 max-w-3xl">
+      <span class="text-xs font-semibold tracking-widest uppercase text-brand-lime mb-3 block">
+        More Detail
+      </span>
+      <h2 id="body-heading" class="font-display text-2xl sm:text-3xl font-bold text-white mb-10">
+        About Our {svc.title} Service
+      </h2>
+      <div class="flex flex-col gap-10">
+        {detail.bodySections.map(({ heading, body }) => (
+          <div>
+            <h3 class="text-lg font-semibold text-white mb-3">{heading}</h3>
+            <p class="text-[15px] text-white/60 leading-relaxed">{body}</p>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 
@@ -315,7 +358,7 @@ const pageUrl    = `${BASE}${svc.href}`;
       </div>
 
       <div class="space-y-4">
-        {detail.faqs.map(({ q, a }, i) => (
+        {detail.faqs.map(({ q, a }) => (
           <details class="group bg-brand-dark-card border border-white/10 rounded-[12px]
                           overflow-hidden hover:border-brand-lime/25 transition-colors">
             <summary class="flex items-center justify-between gap-4 px-6 py-5
@@ -388,6 +431,58 @@ const pageUrl    = `${BASE}${svc.href}`;
       </div>
     </section>
   )}
+
+  <!-- ── Coverage Areas ── -->
+  <section class="py-16 sm:py-20 bg-brand-dark border-b border-white/8"
+           aria-labelledby="areas-heading">
+    <div class="container mx-auto px-4 sm:px-6">
+      <div class="mb-8">
+        <span class="text-xs font-semibold tracking-widest uppercase text-brand-lime mb-3 block">
+          Where We Work
+        </span>
+        <h2 id="areas-heading" class="font-display text-2xl sm:text-3xl font-bold text-white mb-2">
+          {svc.title} Across London &amp; the Home Counties
+        </h2>
+        <p class="text-sm text-white/50 max-w-xl mt-2">
+          We cover all London boroughs and 12 Home County zones. Select your area for local pricing and availability.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+        {[
+          { zone: 'Central London',  slug: 'central-london',  towns: ['Westminster', 'Kensington', 'Chelsea']       },
+          { zone: 'North London',    slug: 'north-london',    towns: ['Barnet', 'Enfield', 'Camden']                },
+          { zone: 'East London',     slug: 'east-london',     towns: ['Stratford', 'Hackney', 'Newham']             },
+          { zone: 'South London',    slug: 'south-london',    towns: ['Croydon', 'Bromley', 'Wandsworth']           },
+          { zone: 'West London',     slug: 'west-london',     towns: ['Hammersmith', 'Ealing', 'Chiswick']          },
+          { zone: 'Middlesex',       slug: 'middlesex',       towns: ['Harrow', 'Uxbridge', 'Twickenham']           },
+          { zone: 'Surrey',          slug: 'surrey',          towns: ['Guildford', 'Woking', 'Epsom']               },
+          { zone: 'Hertfordshire',   slug: 'hertfordshire',   towns: ['Watford', 'St Albans', 'Hemel Hempstead']    },
+          { zone: 'Essex',           slug: 'essex',           towns: ['Chelmsford', 'Romford', 'Brentwood']         },
+          { zone: 'Kent',            slug: 'kent',            towns: ['Bromley', 'Sevenoaks', 'Maidstone']          },
+          { zone: 'Berkshire',       slug: 'berkshire',       towns: ['Reading', 'Slough', 'Windsor']               },
+          { zone: 'Buckinghamshire', slug: 'buckinghamshire', towns: ['High Wycombe', 'Aylesbury', 'Amersham']      },
+        ].map(({ zone, slug, towns }) => (
+          <a href={`/areas/${slug}`}
+             class="group bg-brand-dark-card border border-white/10 rounded-[12px] p-4
+                    hover:border-brand-lime/40 hover:-translate-y-0.5 hover:shadow-card
+                    transition-all duration-200 flex flex-col gap-2">
+            <span class="text-[14px] font-semibold text-white group-hover:text-brand-lime transition-colors">
+              {zone}
+            </span>
+            <span class="text-[11px] text-white/35 leading-snug">
+              {towns.join(' · ')}
+            </span>
+          </a>
+        ))}
+      </div>
+
+      <p class="mt-6 text-xs text-white/40">
+        Don't see your town?
+        <a href="/areas" class="text-brand-lime hover:underline underline-offset-2 ml-1">View the full coverage map →</a>
+      </p>
+    </div>
+  </section>
 
   <!-- ── CTA ── -->
   <section class="py-20 bg-brand-dark">

@@ -15,16 +15,22 @@ export interface ServiceFAQ {
   a: string;
 }
 
+export interface BodySection {
+  heading: string;
+  body:    string;
+}
+
 export interface ServiceDetail {
-  slug:        string;
-  metaTitle:   string;
-  metaDesc:    string;
-  heroDesc:    string;
-  included:    string[];
-  process:     ProcessStep[];
-  compliance:  ComplianceBadge[];
-  faqs:        ServiceFAQ[];
-  relatedIds:  string[];
+  slug:         string;
+  metaTitle:    string;
+  metaDesc:     string;
+  heroDesc:     string;
+  bodySections: BodySection[];
+  included:     string[];
+  process:      ProcessStep[];
+  compliance:   ComplianceBadge[];
+  faqs:         ServiceFAQ[];
+  relatedIds:   string[];
 }
 
 export const serviceDetails: Record<string, ServiceDetail> = {
@@ -34,6 +40,20 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     metaTitle: 'Strip Out & Demolition London | EA-Licensed Interior Strip-Out | WasteWize UK',
     metaDesc:  'Professional interior strip-out and soft demolition across London and the Home Counties. EA-licensed, same-week availability, full duty-of-care documentation. Get a free quote.',
     heroDesc:  'Professional interior strip-out and soft demolition for commercial and residential projects across London and the Home Counties. Our experienced crews remove fixtures, fittings, partitions, raised floors, and all non-structural elements safely and efficiently, with full waste segregation and EA-licensed disposal on every project. Every job includes duty-of-care Waste Transfer Notes delivered within 24 hours.',
+    bodySections: [
+      {
+        heading: 'Strip-Out for Commercial Refurbishments',
+        body:    'The majority of our interior strip-out work takes place on commercial projects — office refurbishments, retail fit-outs, hotel renovations, and mixed-use developments across Central London and the wider Home Counties. We regularly work alongside principal contractors as the dedicated strip-out and waste management subcontractor, clearing completed floors while construction continues elsewhere in the building. Our crews are accustomed to tight programme windows, restricted working hours, and active-site conditions. We arrive with our own access equipment, so we are never waiting on yours. Clients typically tell us we are the fastest part of their supply chain.',
+      },
+      {
+        heading: 'Residential Strip-Out for Home Renovations',
+        body:    'For homeowners undertaking full-scale renovations — kitchen gut-outs, bathroom removals, loft conversion preparations, or extension works — our residential strip-out service clears everything so your building contractor starts on a clean canvas. We remove kitchens, bathroom suites, and fitted wardrobes, including connected waste pipes and cabling where accessible. Items are segregated for recycling or donation wherever possible. A full Waste Transfer Note is issued on every residential strip-out, giving you the compliance paperwork your buildings insurer may require as evidence of lawful disposal.',
+      },
+      {
+        heading: 'Material Segregation and Our 99% Landfill Diversion Rate',
+        body:    'On-site segregation is the primary driver of our 99% landfill diversion rate. Every strip-out produces several distinct material streams: structural timber, plasterboard, metal framing, copper cabling, ceramic tiles, and general mixed waste. By separating these throughout the removal process, we direct each to the most efficient recovery route — plasterboard to gypsum recyclers, metal to certified smelters, timber to biomass or board processors. We provide a written material breakdown per stream on request, which is particularly useful for BREEAM assessments, planning compliance, and ESG reporting on larger commercial projects.',
+      },
+    ],
     included: [
       'Fixtures, fittings, and built-in furniture',
       'Partition walls and internal dividers (non-structural)',
@@ -98,6 +118,20 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     metaTitle: 'Commercial Clearance London | Office & Retail Clearance | WasteWize UK',
     metaDesc:  'End-of-tenancy and full commercial clearance for offices, retail units, and warehouses across London and the Home Counties. Fixed-price quotes, short-notice availability, EA licensed.',
     heroDesc:  'End-of-tenancy and full-property commercial clearance for offices, retail units, warehouses, and industrial premises across London and the Home Counties. Flexible scheduling, short-notice availability, and full insurance make WasteWize the preferred choice for property managers, landlords, and facilities teams who need a site emptied cleanly, compliantly, and on time. All waste is disposed of under EA licence with a full duty-of-care paper trail.',
+    bodySections: [
+      {
+        heading: 'End-of-Tenancy Office Clearance for London Landlords',
+        body:    'End-of-tenancy clearances are among our most common commercial instructions. Whether you have inherited a floor full of furniture from a departed tenant or need a full fit-out stripped before a new occupier arrives, we provide fast turnaround — typically within 48 to 72 hours of instruction for a standard office space. We work directly with building managers to coordinate lift access, loading bay bookings, and parking permits, so you do not need to act as the go-between. Properties are left broom-clean and ready for your agent to photograph and re-let.',
+      },
+      {
+        heading: 'Retail, Warehouse, and Industrial Clearance',
+        body:    'Beyond offices, WasteWize regularly clears retail units — including heavy shelving, display cases, and refrigeration units — warehouses with industrial racking, and light industrial premises containing machinery and process equipment. Large or awkward items that other clearance companies decline, such as safes, commercial ovens, server rack enclosures, and industrial freezers, are handled with appropriate equipment. For very heavy or unusually large items, we can arrange crane-assisted removal through our specialist plant subcontractor network. No job has ever been too complicated to quote.',
+      },
+      {
+        heading: 'Reuse, Donation, and Recycling Before Disposal',
+        body:    'Before anything goes to a disposal facility, we assess cleared items for reuse. Serviceable office furniture — desks, chairs, filing cabinets, and meeting tables — is offered to local charities, schools, and social enterprises in our partner network. This reduces your environmental impact, supports local communities, and can be documented for your company\'s CSR and sustainability reporting. IT equipment is separated as WEEE and processed by registered handlers, with official transfer notes issued. Only items with no viable reuse or recycling route go to energy-from-waste — nothing we handle goes to landfill when a recovery pathway exists.',
+      },
+    ],
     included: [
       'Office furniture — desks, chairs, cabinets, and shelving',
       'IT equipment — computers, monitors, servers (WEEE-compliant stream)',
@@ -162,6 +196,20 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     metaTitle: 'House Clearance London | Residential Waste Removal | WasteWize UK',
     metaDesc:  'Professional house clearance and residential waste removal across London and the Home Counties. Single items to full property clearances. EA licensed, same-week availability.',
     heroDesc:  'Professional house clearance and residential waste removal for homeowners, families, and estate agents across London and the Home Counties. Whether you need a single bulky item collected or an entire property cleared after bereavement, relocation, or renovation, our uniformed team handles everything with care, speed, and a full legal paper trail. Every collection is backed by our Environment Agency Waste Carrier Licence — your protection against fly-tipping liability.',
+    bodySections: [
+      {
+        heading: 'House Clearance for Every Situation',
+        body:    'Residential clearances come in every shape and size. We handle routine pre-sale clearances where a property needs to be emptied in a single day, and sensitive bereavement clearances where families need time to identify keepsakes and trust that the rest is managed with discretion. We also carry out partial clearances — a garage full of accumulated clutter, a loft untouched for twenty years, or a collection of bulky items that the council refuse to take. Whatever the situation, our team works at your pace, to your schedule, and leaves every room broom-clean on departure.',
+      },
+      {
+        heading: 'Items We Take That Others Refuse',
+        body:    'One of the most common questions we receive is what happens with difficult items. WasteWize takes everything regardless of condition — heavily stained mattresses, fridges and freezers (F-gas certified disposal), upright pianos, full kitchen units including soil pipes and cabling, bathroom suites, and mixed bags of household waste. We hold the specialist licences to handle WEEE-regulated electronics, F-gas-regulated refrigerants in white goods, and hazardous household waste streams. Unlike many clearance services, we do not charge extra for difficult items — these are factored into the fixed quote we give you upfront.',
+      },
+      {
+        heading: 'Protecting Yourself Against Fly-Tipping Liability',
+        body:    'If you pay an unlicensed trader to remove waste and they fly-tip it, the legal liability can fall back to you as the waste producer. Councils and the Environment Agency actively pursue householders in these cases — fines start at £400 per incident and can reach thousands for larger-scale dumping. Every WasteWize collection includes a Duty of Care Waste Transfer Note that traces your waste from your property to its licensed destination. You keep a copy; we retain a copy. This note is your legal proof of compliant disposal under the Environmental Protection Act 1990 — and we never leave without issuing one.',
+      },
+    ],
     included: [
       'Full property clearances — every room, every item',
       'Single-room and partial clearances',
@@ -226,6 +274,20 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     metaTitle: 'Garden Waste Removal London | Green Waste Collection | WasteWize UK',
     metaDesc:  'Professional garden waste collection and green waste removal across London and the Home Counties. All material composted or recovered — zero landfill. EA licensed. Book online.',
     heroDesc:  'Professional garden waste collection and responsible composting for homeowners, housing associations, and landscaping contractors across London and the Home Counties. From seasonal clearances and hedge trimmings to soil removal and shed contents, our EA-licensed service collects from your garden or driveway and diverts everything to PAS 100-certified composting and biomass facilities. No landfill, no hassle, full duty-of-care documentation.',
+    bodySections: [
+      {
+        heading: 'One-Off and Seasonal Garden Clearances',
+        body:    'The most common request is a one-off clearance before or after a significant garden project — clearing years of accumulated growth before landscapers begin, or removing the waste after major works are completed. We collect everything the council refuse service will not touch: large volumes of soil and turf, heavy root balls, entire tree sections up to 150mm diameter, overgrown hedging, and greenhouse contents including broken glass carefully bagged for safe transport. We load from wherever the material has been piled, so you do not have to move it twice. Most domestic garden clearances are completed in a single visit.',
+      },
+      {
+        heading: 'Where Your Garden Waste Goes',
+        body:    'All green waste collected by WasteWize goes to composting or biomass recovery — not landfill. The majority is composted to PAS 100 standard, producing a certified product used by local authorities and professional landscapers. Cleaner woody material — branches and logs — is chipped and directed to biomass energy facilities. Soil and turf go to licensed soil recovery sites and, after testing, are often reused as engineering fill or certified topsoil. We provide the waste facility name and Environment Agency permit number on your Waste Transfer Note, so you can verify the destination independently if you wish.',
+      },
+      {
+        heading: 'Garden Waste Collections for Landscaping Contractors',
+        body:    'Landscaping contractors and grounds maintenance companies often need more than a one-off residential service. WasteWize provides regular scheduled collections under fixed-rate monthly agreements, with priority booking slots for our regular clients. All commercial garden waste collections come with a Duty of Care Waste Transfer Note as standard — a legal requirement for businesses producing commercial waste under the Environmental Protection Act 1990. We work across London and the Home Counties and can accommodate short-notice bookings when end-of-project volumes exceed your initial estimate. Contact us to discuss a regular account arrangement.',
+      },
+    ],
     included: [
       'Grass cuttings and lawn clippings',
       'Hedge and shrub trimmings',
@@ -290,6 +352,20 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     metaTitle: 'Construction Waste Removal London | Builder\'s Waste Collection | WasteWize UK',
     metaDesc:  'On-site construction waste management for London and the Home Counties. Segregated collections, muck-away, compliance docs. EA licensed. Alternative to skip hire. Get a quote.',
     heroDesc:  'On-site waste management for construction, refurbishment, and fit-out projects of all scales across London and the Home Counties. We supply segregated collection services for every construction waste stream — from general mixed debris and plasterboard to hardcore, timber, and excavation material — with full site compliance documentation included on every job. Our flexible, on-call model is designed to keep active build sites clear without the constraints of static skip hire.',
+    bodySections: [
+      {
+        heading: 'On-Call Construction Waste Management',
+        body:    'Build sites generate waste unpredictably — a delivery arrives early, stripping work runs ahead of programme, a subcontractor leaves more rubble than expected. Our on-call service is designed for exactly this: you call when you have a load, and we arrive within hours. Unlike a static skip, which ties up space, requires a council permit, and runs on a fixed rental period, our model scales with your actual output. Clients on active London build programmes typically call us two to four times per week during intensive phases. We confirm availability within the hour and hold a fleet of vehicles dedicated to construction waste.',
+      },
+      {
+        heading: 'Skip Hire Alternative for London Construction Sites',
+        body:    'Many of our construction clients originally used skips but switched for three reasons. First, there is no skip permit required — in dense London streets, placement permits are frequently refused or take days to arrange, stalling programmes. Second, our segregated collections — timber, metal, plasterboard, and general mixed waste kept separate — attract lower processing costs and achieve better recycling rates than a mixed skip, which commonly sends a higher proportion to landfill and incurs a higher landfill tax liability. Third, we carry items that skips legally cannot, including treated timber, certain hazardous streams, and asbestos, coordinated through our specialist partners.',
+      },
+      {
+        heading: 'Compliance Documentation for Contractors and Principal Contractors',
+        body:    'Under the Environmental Protection Act 1990, any contractor producing waste on a client\'s site is legally responsible for ensuring it is disposed of correctly — regardless of whether you physically handle it. Every WasteWize construction collection comes with a signed Duty of Care Waste Transfer Note per load, a copy of our EA Waste Carrier Licence, and copies of our public liability and employers\' liability insurance. We compile these into a single compliance pack on request, ready for building control inspections, planning enforcement visits, or principal contractor supply chain audits.',
+      },
+    ],
     included: [
       'Mixed construction and demolition (C&D) waste',
       'Plasterboard — segregated stream as required by EA regulations',
@@ -354,6 +430,20 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     metaTitle: 'WEEE Collection London | Electrical Equipment Recycling | WasteWize UK',
     metaDesc:  'WEEE-compliant electrical equipment collection and recycling for London businesses. Official WEEE transfer notes, data destruction certificates. EA and WEEE registered.',
     heroDesc:  'WEEE-compliant collection and recycling of waste electrical and electronic equipment for businesses across London and the Home Counties. Every collection is handled by our WEEE-registered team with official WEEE Duty of Care Transfer Notes issued as standard — ensuring your business meets its full legal obligations under the UK WEEE Regulations 2013. Certified data destruction is available for computers, servers, and all data-bearing devices.',
+    bodySections: [
+      {
+        heading: 'WEEE Compliance for London Offices and Businesses',
+        body:    'Under the WEEE Regulations 2013, any business producing waste electrical equipment is legally responsible for ensuring it reaches an Approved Treatment Facility (AATF). Placing old computers, printers, or appliances in a general waste skip or bin is a criminal offence — not simply a disposal shortcut. WasteWize provides a fully documented WEEE collection service: equipment is separated from all other waste, transported in a dedicated vehicle, and processed at an AATF registered for each equipment category. The official WEEE Duty of Care Transfer Note you receive is your legal compliance evidence — retain it for a minimum of two years, as required under the Regulations.',
+      },
+      {
+        heading: 'Data Destruction for Old Computers and IT Equipment',
+        body:    'Data destruction is the most sensitive aspect of IT asset disposal. We offer two GDPR-compliant destruction methods: Blancco-certified software wiping, which produces a per-device certificate showing the serial number, wipe date, and overwrite standard achieved; and physical shredding to DIN 66399 H-5 standard, with a certificate of destruction per device. Both methods satisfy GDPR Article 17 requirements for erasure. For large IT decommissions — server room clearances, office floor relocations, or data centre wind-downs — we provide an on-site inventory audit before collection, ensuring every device is logged and accounted for before it leaves the building.',
+      },
+      {
+        heading: 'WEEE Collections for Office Fit-Outs and Relocations',
+        body:    'Office relocations and fit-out projects are the single largest source of WEEE waste in London. A typical floor of 50 desks generates monitors, desktop units, phones, printers, UPS systems, and network equipment — often several tonnes of WEEE in total. WasteWize works alongside office removal firms and fit-out contractors to coordinate WEEE collections on clearance day or immediately afterwards. We arrive with our own equipment trolleys and loading crew, so there is no waiting for the removals team to sort items and no risk of WEEE being accidentally mixed with general clearance waste and sent to the wrong facility.',
+      },
+    ],
     included: [
       'Desktop computers, laptops, tablets, and monitors',
       'Servers, networking equipment, and data centre hardware',
@@ -418,6 +508,20 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     metaTitle: 'Confidential Waste Disposal London | GDPR Document Shredding | WasteWize UK',
     metaDesc:  'Secure confidential waste collection and certified destruction for London businesses. Certificate of destruction on every job. GDPR and DPA 2018 compliant. Book online.',
     heroDesc:  'Secure collection and certified destruction of confidential documents, sensitive records, and data-bearing media for businesses across London and the Home Counties. A time-stamped certificate of destruction is issued for every single collection — giving you a complete, GDPR-compliant audit trail that satisfies data protection obligations under UK GDPR and the Data Protection Act 2018. On-site shredding is available for organisations with the highest security requirements.',
+    bodySections: [
+      {
+        heading: 'Who Needs Confidential Waste Disposal?',
+        body:    'Any organisation that handles personal data — which under UK GDPR means virtually every business — has a legal obligation to securely destroy that data when it is no longer needed. Our most common clients include law firms and barristers\' chambers disposing of closed files, accountancy practices clearing historical client records, medical practices destroying patient notes, HR departments shredding personnel files, and financial services firms retiring transaction records. We also carry out residential collections for individuals with significant personal document volumes — former company directors, executors administering estates, and home workers winding down a business.',
+      },
+      {
+        heading: 'The Destruction Process and Chain of Custody',
+        body:    'From the moment your material is collected — whether in tamper-evident sacks or from locked consoles — it remains in a sealed, locked vehicle under continuous chain-of-custody until it reaches our licensed destruction facility. The seal is never broken in transit. At the facility, documents are cross-cut shredded to DIN 66399 P-4 standard, producing a maximum particle size of 160mm² — a far more secure cut than the strip shredding most offices use in-house, which can still be reassembled. Higher security levels, P-5 and P-6, are available for legal, government, and medical material where the highest destruction standard is contractually required.',
+      },
+      {
+        heading: 'Your Certificate of Destruction',
+        body:    'Within 24 hours of destruction, you receive a time-stamped certificate listing your company name, collection reference, date and time of destruction, approximate volume of material, the destruction method applied, and the DIN 66399 security level achieved. This certificate is your primary evidence under UK GDPR Article 5(1)(f) that personal data was processed securely — and you should retain it for at least six years to align with the Limitation Act 1980 limitation period for civil claims. Regulated firms in the legal, financial services, and healthcare sectors should additionally cross-reference their specific sector regulator\'s data retention requirements.',
+      },
+    ],
     included: [
       'Paper documents — personnel files, financial records, contracts, client data',
       'Hard drives (HDDs and SSDs) and solid-state storage',
@@ -478,6 +582,20 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     metaTitle: 'Asbestos Removal London | HSE-Licensed Asbestos Disposal | WasteWize UK',
     metaDesc:  'HSE-licensed asbestos surveying, encapsulation, and removal across London and the Home Counties. Air monitoring, UKAS analyst sign-off, and waste consignment notes included.',
     heroDesc:  'HSE-licensed asbestos surveying, encapsulation, and full removal for commercial, residential, and industrial sites across London and the Home Counties. Every project includes comprehensive air monitoring throughout, an independent UKAS-accredited analyst clearance certificate on completion, and all required hazardous waste consignment notes — covering you fully for compliance, planning, and insurance purposes. Work does not commence until a licensed survey has cleared the scope.',
+    bodySections: [
+      {
+        heading: 'When Do You Need an Asbestos Survey?',
+        body:    'The Control of Asbestos Regulations 2012 requires an asbestos survey before any refurbishment or demolition work on a building constructed or refurbished before 2000. This is a legal requirement, not a recommendation. Failing to carry out a pre-works survey can invalidate project insurance, expose principal contractors to HSE prosecution, and — if asbestos-containing materials are inadvertently disturbed — create a serious and immediate health risk. WasteWize arranges the appropriate survey type for your situation: management surveys for occupied premises, and refurbishment or demolition surveys before any stripping, renovation, or demolition work begins.',
+      },
+      {
+        heading: 'Common Asbestos Locations in London Properties',
+        body:    'Asbestos appears in more places than most building owners expect. In domestic properties built before 1985, it is commonly found in ceiling tiles, textured coatings such as artex, vinyl floor tiles and their adhesive backing, pipe lagging in boiler cupboards and loft spaces, and asbestos insulation board lining airing cupboards and internal garage walls. In commercial buildings, add suspended ceiling tiles, profiled roof panels, and structural steelwork insulation. The presence of asbestos does not always require removal: if it is in good condition and will not be disturbed by planned works, a management plan in place is often the legally correct and proportionate response.',
+      },
+      {
+        heading: 'Asbestos in Domestic Properties — What Homeowners Need to Know',
+        body:    'Many homeowners are surprised to learn that residential asbestos removal falls under the same legal framework as commercial projects. An HSE licence is required for all high-risk removal work in domestic properties — including friable asbestos, asbestos insulation board, and pipe lagging. For lower-risk materials such as textured ceiling coatings in good condition, the guidance is generally to leave the material undisturbed or encapsulate it rather than remove it — disturbing a stable coating creates more risk than managing it in place. If you are planning any work that will cut, drill, or abrade surfaces in a pre-2000 home, ask us about a refurbishment survey before your tradesperson begins.',
+      },
+    ],
     included: [
       'Asbestos management surveys (for occupied premises)',
       'Refurbishment and demolition surveys (required before any strip-out)',
@@ -546,6 +664,20 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     metaTitle: 'Hardcore & Rubble Removal London | Timber Disposal | WasteWize UK',
     metaDesc:  'Segregated hardcore, rubble, concrete, and timber collection across London and the Home Counties. Crushed for aggregate or chipped for biomass — zero landfill. EA licensed.',
     heroDesc:  'Segregated collection of hardcore, rubble, concrete, bricks, and timber from construction, demolition, and renovation sites across London and the Home Counties. All hardcore material is crushed and processed for recycling as secondary aggregate — displacing virgin quarried material. Clean wood and timber is chipped and processed for biomass energy or panel board. Segregated loads attract lower rates and achieve near-zero landfill.',
+    bodySections: [
+      {
+        heading: 'Hardcore and Rubble from Renovation and Construction Projects',
+        body:    'A standard bathroom or kitchen renovation produces more hardcore than most homeowners anticipate — tiles, a concrete floor screed, a redundant partition, and rubble from routing new pipework can fill a large skip quickly. WasteWize collects hardcore and rubble from residential and commercial sites of any scale: from a single bathroom worth of broken tiles to multi-load volumes from a structural demolition. Our crew handles all loading — you do not need to move anything. We cover all of London and the Home Counties and can often collect the same day for urgent site clearances where access or programme pressure dictates a fast turnaround.',
+      },
+      {
+        heading: 'What Happens to Concrete and Brick After Collection',
+        body:    'Concrete, brick, and stone collected by WasteWize go to licensed inert waste processing facilities where they are crushed and graded to produce Type 1 sub-base aggregate — the same material used in road construction, foundations, and drainage applications. This qualifies as end-of-waste recovery under the Quality Protocol for Aggregate Recycling, meaning the processed material is no longer classified as waste and displaces virgin quarried material. Clean, uncontaminated hardcore achieves a near-zero landfill rate. The only material that cannot follow this route is hardcore contaminated with asbestos, which must be handled as hazardous waste under a separate specialist stream.',
+      },
+      {
+        heading: 'Timber Disposal: Clean Wood vs Treated or Preserved Wood',
+        body:    'Clean structural timber — joists, rafters, floorboards, and dimensional lumber without preservative treatment — is chipped and directed to biomass energy facilities or processed into chipboard and MDF, achieving full material recovery. Treated or preserved timber requires different handling: CCA-treated timber and creosote-treated timber cannot go to standard biomass facilities under UK air quality regulations and must be sent to specialist high-temperature combustion plants with appropriate emissions controls. When you book a timber collection, tell us whether the wood is treated — this determines the vehicle type, processing route, and price, and avoids any compliance issue at the receiving facility.',
+      },
+    ],
     included: [
       'Concrete, reinforced concrete, and pre-cast sections',
       'Bricks, blocks, and masonry',
@@ -610,6 +742,20 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     metaTitle: 'Scrap Metal Collection London | Metal Recycling | WasteWize UK',
     metaDesc:  'Ferrous and non-ferrous scrap metal collection and recycling across London and the Home Counties. Competitive rates on large volumes. Waste transfer notes included. EA licensed.',
     heroDesc:  'Collection and responsible recycling of ferrous and non-ferrous scrap metal from commercial, industrial, and construction sites across London and the Home Counties. Competitive rates are available for large volumes; all collections are carried out under our Environment Agency Waste Carrier Licence with a full Duty of Care Waste Transfer Note issued as standard. We operate exclusively on a cashless basis in full compliance with the Scrap Metal Dealers Act 2013.',
+    bodySections: [
+      {
+        heading: 'Scrap Metal Collection for London Businesses and Contractors',
+        body:    'Construction sites, engineering workshops, electrical contractors, and commercial properties across London generate significant scrap metal volumes during normal operations — structural steel offcuts, copper cabling stripped during rewiring, aluminium window frames from building refurbishments, and cast iron radiators from heating system replacements. WasteWize collects all of these under our EA Waste Carrier Licence, with a full Duty of Care Waste Transfer Note on every collection. For large volumes of high-value metals — particularly copper, aluminium, and stainless steel — we offer competitive purchase rates paid by bank transfer within five working days of collection.',
+      },
+      {
+        heading: 'Metal Recycling — Why It Matters',
+        body:    'Recycling metal is significantly more energy-efficient than producing it from raw ore. Recycled aluminium uses just 5% of the energy required for primary production from bauxite; recycled copper requires around 15% of the energy of smelting virgin ore. The UK steel industry relies on scrap as a primary feedstock, with electric arc furnaces producing new steel almost entirely from recycled material. When you use WasteWize for scrap metal collection, your material goes to certified smelters and shredders operating within the UK or EU — not through overseas intermediaries with unknown processing standards. We can provide the name and EA permit number of the receiving facility on your Waste Transfer Note.',
+      },
+      {
+        heading: 'The Scrap Metal Dealers Act 2013 — What It Means for Your Business',
+        body:    'The Scrap Metal Dealers Act 2013 banned all cash payments for scrap metal — for both dealers and the individuals or businesses providing material. Any collector that offers cash for your scrap is operating illegally, and accepting cash payment from such a collector may implicate you in that offence. WasteWize is registered as a scrap metal collector and dealer under the Act. Where purchase rates are agreed for large volumes of high-value metals, all payments are made exclusively by bank transfer with a clear paper trail on both sides. We are happy to provide a copy of our registration certificate on request before any collection.',
+      },
+    ],
     included: [
       'Structural steel — beams, columns, and sections',
       'Cast iron — radiators, pipes, and machinery',

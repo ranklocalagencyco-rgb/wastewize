@@ -8,60 +8,22 @@ function slugify(str: string): string {
   return str.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 }
 
-const TARGET_TOWNS: { town: string; areaSlug: string }[] = [
-  { town: 'Hillingdon',   areaSlug: 'middlesex' },
-  { town: 'Uxbridge',     areaSlug: 'middlesex' },
-  { town: 'Ruislip',      areaSlug: 'middlesex' },
-  { town: 'Ickenham',     areaSlug: 'middlesex' },
-  { town: 'Eastcote',     areaSlug: 'middlesex' },
-  { town: 'Harrow',       areaSlug: 'middlesex' },
-  { town: 'Pinner',       areaSlug: 'middlesex' },
-  { town: 'South Harrow', areaSlug: 'middlesex' },
-  { town: 'Hayes',        areaSlug: 'middlesex' },
-  { town: 'Ealing',       areaSlug: 'middlesex' },
-  { town: 'Greenford',    areaSlug: 'middlesex' },
-  { town: 'Northolt',     areaSlug: 'middlesex' },
-  { town: 'Iver',         areaSlug: 'buckinghamshire' },
-  { town: 'Iver Heath',   areaSlug: 'buckinghamshire' },
-  { town: 'Denham',       areaSlug: 'buckinghamshire' },
-  { town: 'Langley',      areaSlug: 'berkshire' },
-  { town: 'Slough',       areaSlug: 'berkshire' },
-];
-
 export function getStaticPaths() {
   function slugify(str: string): string {
     return str.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
   }
 
-  const TARGET_TOWNS: { town: string; areaSlug: string }[] = [
-    { town: 'Hillingdon',   areaSlug: 'middlesex' },
-    { town: 'Uxbridge',     areaSlug: 'middlesex' },
-    { town: 'Ruislip',      areaSlug: 'middlesex' },
-    { town: 'Ickenham',     areaSlug: 'middlesex' },
-    { town: 'Eastcote',     areaSlug: 'middlesex' },
-    { town: 'Harrow',       areaSlug: 'middlesex' },
-    { town: 'Pinner',       areaSlug: 'middlesex' },
-    { town: 'South Harrow', areaSlug: 'middlesex' },
-    { town: 'Hayes',        areaSlug: 'middlesex' },
-    { town: 'Ealing',       areaSlug: 'middlesex' },
-    { town: 'Greenford',    areaSlug: 'middlesex' },
-    { town: 'Northolt',     areaSlug: 'middlesex' },
-    { town: 'Iver',         areaSlug: 'buckinghamshire' },
-    { town: 'Iver Heath',   areaSlug: 'buckinghamshire' },
-    { town: 'Denham',       areaSlug: 'buckinghamshire' },
-    { town: 'Langley',      areaSlug: 'berkshire' },
-    { town: 'Slough',       areaSlug: 'berkshire' },
-  ];
-
-  return TARGET_TOWNS.flatMap(({ town, areaSlug }) =>
-    services.map((svc) => ({
-      params: {
-        areaSlug,
-        townSlug:    slugify(town),
-        serviceSlug: svc.href.replace('/services/', ''),
-      },
-      props: { town, areaSlug, svc },
-    }))
+  return areas.flatMap((area) =>
+    area.towns.flatMap((town) =>
+      services.map((svc) => ({
+        params: {
+          areaSlug:    area.slug,
+          townSlug:    slugify(town),
+          serviceSlug: svc.href.replace('/services/', ''),
+        },
+        props: { town, areaSlug: area.slug, svc },
+      }))
+    )
   );
 }
 
