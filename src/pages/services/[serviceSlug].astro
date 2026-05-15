@@ -4,10 +4,12 @@ import { services } from '../../data/services';
 import { serviceDetails } from '../../data/service-detail';
 
 export function getStaticPaths() {
-  return services.map((svc) => ({
-    params: { serviceSlug: svc.href.replace('/services/', '') },
-    props:  { svc },
-  }));
+  return services
+    .filter((svc) => svc.href.startsWith('/services/'))
+    .map((svc) => ({
+      params: { serviceSlug: svc.href.slice(10) },
+      props:  { svc },
+    }));
 }
 
 interface Props { svc: (typeof services)[number] }
