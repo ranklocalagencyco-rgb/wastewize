@@ -1,0 +1,244 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const BASE = 'https://wastewize.co.uk';
+
+const comparison = [
+  { feature: 'Price (typical load)',   skip: '£200–£400+',   wastewize: 'From £150',             winner: 'us' },
+  { feature: 'Council permit needed',  skip: 'Yes (on-road)', wastewize: 'No',                   winner: 'us' },
+  { feature: 'You load it',           skip: 'Yes',           wastewize: 'No — we load everything', winner: 'us' },
+  { feature: 'Waiting time for skip',  skip: '1–3 days',      wastewize: 'Same or next day',      winner: 'us' },
+  { feature: 'On-site time',          skip: '7–14 days',     wastewize: 'Gone in hours',         winner: 'us' },
+  { feature: 'Takes hazardous items', skip: 'No (restricted)',wastewize: 'Yes — WEEE, asbestos, batteries', winner: 'us' },
+  { feature: 'Takes liquids / paint', skip: 'No',            wastewize: 'Yes',                   winner: 'us' },
+  { feature: 'Waste Transfer Note',   skip: 'Rarely',        wastewize: 'Every job — legally required', winner: 'us' },
+  { feature: 'Recycling rate',        skip: 'Varies',        wastewize: '99% landfill diversion', winner: 'us' },
+  { feature: 'Fly-tip protection',    skip: 'Limited',       wastewize: 'Full EA licence CBDU335711', winner: 'us' },
+];
+
+const faqs = [
+  {
+    q: 'Is a skip hire alternative cheaper than hiring a skip in London?',
+    a: 'In most cases yes. A skip hire alternative from WasteWize starts from £150, while skip hire in London typically costs £200–£400 for the skip alone — before adding council permit fees (£50–£100), waiting for delivery, and doing all the loading yourself.',
+  },
+  {
+    q: 'Do I need a council permit for your service?',
+    a: 'No. Skips placed on a public road require a council permit. Our vehicle arrives, our team loads everything, and we drive away — no permit, no road obstruction, no neighbour disputes.',
+  },
+  {
+    q: 'What items can you take that a skip cannot?',
+    a: 'Skips cannot legally take fridges, TVs, paint, batteries, tyres, asbestos, or liquids. WasteWize takes all of these under the correct EA licences — WEEE-compliant electronics disposal, asbestos removal, and hazardous waste streams.',
+  },
+  {
+    q: 'How quickly can you collect?',
+    a: 'Same-week availability across London and the Home Counties. Next-day in most areas. Call 07929 771954 for live availability.',
+  },
+  {
+    q: 'How is WasteWize priced vs a skip?',
+    a: 'WasteWize charges by load (van capacity), not by the day or week. You only pay for what you actually have removed. No delivery charge, no collection charge, no permit fee — one all-inclusive price.',
+  },
+];
+---
+
+<Layout
+  title="Skip Hire Alternative London — Cheaper, Faster, No Permit | WasteWize UK"
+  description="Skip hire alternative in London from £150. No permit needed, we load everything, same-day available. Takes items skips can't. EA-licensed. Compare skip hire vs WasteWize."
+>
+
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home",                  "item": `${BASE}/` },
+        { "@type": "ListItem", "position": 2, "name": "Skip Hire Alternative", "item": `${BASE}/skip-hire-alternative` },
+      ]
+    })} />
+
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(({ q, a }) => ({
+        "@type": "Question",
+        "name": q,
+        "acceptedAnswer": { "@type": "Answer", "text": a }
+      }))
+    })} />
+  </Fragment>
+
+  <!-- Breadcrumb -->
+  <nav aria-label="Breadcrumb" class="bg-brand-dark border-b border-white/8">
+    <div class="container mx-auto px-4 sm:px-6 py-3">
+      <ol class="flex flex-wrap items-center gap-1.5 text-xs text-white/40">
+        <li><a href="/" class="hover:text-white/70 transition-colors">Home</a></li>
+        <li aria-hidden="true" class="text-white/20">/</li>
+        <li class="text-white/70" aria-current="page">Skip Hire Alternative</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="bg-brand-dark py-14 sm:py-20 lg:py-24 border-b border-white/8">
+    <div class="container mx-auto px-4 sm:px-6">
+      <div class="max-w-3xl">
+        <span class="text-xs font-semibold tracking-widest uppercase text-brand-lime mb-4 block">
+          Skip Hire Alternative · London &amp; Home Counties
+        </span>
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-5 leading-[1.06]">
+          Skip Hire Alternative<br />
+          <span class="text-brand-lime">London — No Permit, We Load, From £150</span>
+        </h1>
+        <p class="text-lg sm:text-xl text-white/60 leading-relaxed max-w-2xl mb-8">
+          Forget the skip — no council permit, no loading yourself, no waiting a fortnight. WasteWize arrives same or next day, our team loads everything, and we're gone in hours. Takes items skips legally can't touch.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="tel:+447929771954"
+             class="inline-flex items-center gap-2 bg-brand-forest text-white px-7 py-4 rounded-[8px] text-base font-semibold hover:bg-brand-forest-dark hover:-translate-y-0.5 hover:shadow-cta transition-all duration-200">
+            <svg class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+            </svg>
+            Call 07929 771954
+          </a>
+          <a href="/contact"
+             class="inline-flex items-center gap-2 border border-white/20 text-white/80 px-7 py-4 rounded-[8px] text-base font-semibold hover:border-brand-lime/50 hover:text-white transition-all duration-200">
+            Get a Free Quote →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison table -->
+  <section class="py-14 sm:py-18 bg-brand-dark border-b border-white/8">
+    <div class="container mx-auto px-4 sm:px-6">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white mb-3">Skip Hire vs WasteWize — Head to Head</h2>
+      <p class="text-white/60 mb-10 max-w-2xl">See why thousands of London homeowners and businesses switch from skips to a managed removal service.</p>
+      <div class="overflow-x-auto rounded-[12px] border border-white/10">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-brand-dark-card border-b border-white/10">
+              <th class="text-left px-5 py-4 text-white/50 font-semibold uppercase tracking-wider text-xs w-1/3">Feature</th>
+              <th class="text-left px-5 py-4 text-white/50 font-semibold uppercase tracking-wider text-xs w-1/3">
+                <span class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-white/20" aria-hidden="true"/>
+                  Skip Hire
+                </span>
+              </th>
+              <th class="text-left px-5 py-4 text-brand-lime font-semibold uppercase tracking-wider text-xs w-1/3">
+                <span class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-brand-lime" aria-hidden="true"/>
+                  WasteWize
+                </span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {comparison.map(({ feature, skip, wastewize }, i) => (
+              <tr class={`border-b border-white/6 last:border-0 ${i % 2 === 0 ? 'bg-brand-dark' : 'bg-brand-dark-card/30'}`}>
+                <td class="px-5 py-4 text-white/70 font-medium">{feature}</td>
+                <td class="px-5 py-4 text-white/40">{skip}</td>
+                <td class="px-5 py-4 text-brand-lime font-semibold">{wastewize}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="py-14 sm:py-18 bg-brand-dark border-b border-white/8">
+    <div class="container mx-auto px-4 sm:px-6">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white mb-10">How It Works — 3 Steps</h2>
+      <div class="grid sm:grid-cols-3 gap-6">
+        {[
+          { step: '1', title: 'Get a Quote',       desc: 'Call us or fill in the form. We give you a fixed price — no surprises.' },
+          { step: '2', title: 'We Arrive',          desc: 'Our two-person team comes to you — same or next day in most of London.' },
+          { step: '3', title: 'We Load & Go',      desc: 'We carry everything out, load the vehicle, and leave. You keep your Waste Transfer Note.' },
+        ].map(({ step, title, desc }) => (
+          <div class="bg-brand-dark-card border border-white/10 rounded-[12px] p-6 flex gap-5">
+            <span class="text-3xl font-extrabold text-brand-lime/30 shrink-0 leading-none">{step}</span>
+            <div>
+              <h3 class="text-[15px] font-semibold text-white mb-2">{title}</h3>
+              <p class="text-sm text-white/50 leading-relaxed">{desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Items we take that skips can't -->
+  <section class="py-14 sm:py-18 bg-brand-dark border-b border-white/8">
+    <div class="container mx-auto px-4 sm:px-6">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white mb-3">Items We Take That Skips Can't</h2>
+      <p class="text-white/60 mb-8 max-w-2xl">Skips have strict restrictions. WasteWize holds the licences to handle everything legally.</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        {[
+          'Fridges & freezers (F-Gas)',
+          'TVs & monitors (WEEE)',
+          'Paint & solvents',
+          'Car batteries & lithium batteries',
+          'Asbestos-containing materials',
+          'Tyres',
+          'Fluorescent tubes',
+          'Oil & fuel cans',
+          'Clinical / sharps waste (arranged)',
+        ].map((item) => (
+          <div class="flex items-center gap-3 bg-brand-dark-card border border-white/10 rounded-[10px] px-4 py-3">
+            <svg class="w-4 h-4 text-brand-lime shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-sm text-white/70">{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-14 sm:py-18 bg-brand-dark border-b border-white/8" aria-labelledby="sha-faq-heading">
+    <div class="container mx-auto px-4 sm:px-6 max-w-2xl mx-auto">
+      <h2 id="sha-faq-heading" class="font-display text-2xl sm:text-3xl font-bold text-white mb-8">
+        Skip Hire Alternative — FAQ
+      </h2>
+      <dl class="flex flex-col gap-4">
+        {faqs.map(({ q, a }) => (
+          <div class="bg-brand-dark-card border border-white/10 rounded-[12px] p-6">
+            <dt class="text-[15px] font-semibold text-white mb-2 flex items-start gap-3">
+              <span class="text-brand-lime shrink-0 mt-0.5" aria-hidden="true">Q</span>
+              {q}
+            </dt>
+            <dd class="text-sm leading-relaxed text-white/60 pl-6">{a}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-14 sm:py-20 bg-brand-dark-card border-t border-white/8">
+    <div class="container mx-auto px-4 sm:px-6 max-w-2xl mx-auto text-center">
+      <h2 class="font-display text-2xl sm:text-3xl font-bold text-white mb-3">
+        Ditch the Skip — Book WasteWize Today
+      </h2>
+      <p class="text-white/60 mb-8 leading-relaxed">
+        Same or next day across London &amp; the Home Counties. No permit, no hassle, all-inclusive pricing.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+        <a href="tel:+447929771954"
+           class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-brand-forest text-white px-8 py-4 rounded-[8px] text-base font-semibold hover:bg-brand-forest-dark hover:shadow-cta hover:-translate-y-0.5 transition-all duration-200">
+          <svg class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+          </svg>
+          07929 771954
+        </a>
+        <a href="/contact"
+           class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-white/20 text-white/80 px-8 py-4 rounded-[8px] text-base font-semibold hover:border-brand-lime/50 hover:text-white transition-all duration-200">
+          Get a Free Quote →
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

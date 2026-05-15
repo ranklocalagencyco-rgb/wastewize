@@ -1,0 +1,258 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const BASE = 'https://wastewize.co.uk';
+
+const servicePrices = [
+  {
+    category: 'House & Property Clearance',
+    rows: [
+      { service: 'Single Room / Studio Clearance',  from: '£150', to: '£300',  note: 'Approx. 1 van load' },
+      { service: '1-Bedroom Flat Clearance',        from: '£250', to: '£400',  note: '1–2 loads' },
+      { service: '2-Bedroom Property Clearance',    from: '£350', to: '£550',  note: '2 loads' },
+      { service: '3-Bedroom House Clearance',       from: '£450', to: '£700',  note: '2–3 loads' },
+      { service: '4–5 Bedroom House Clearance',     from: '£600', to: '£950',  note: '3+ loads' },
+      { service: 'Loft or Garage Clearance',        from: '£100', to: '£300',  note: 'Depends on volume' },
+    ],
+  },
+  {
+    category: 'Commercial Waste Removal',
+    rows: [
+      { service: 'Office Clearance (small office)',   from: '£200', to: '£450',  note: 'Per visit' },
+      { service: 'Office Clearance (large floor)',    from: '£500', to: '£1,200', note: 'Site survey advised' },
+      { service: 'Shop / Retail Clearance',           from: '£300', to: '£800',  note: 'Depends on fit-out' },
+      { service: 'Trade Waste Collection (ongoing)',  from: '£POA', to: '£POA',  note: 'Monthly account rates' },
+    ],
+  },
+  {
+    category: 'Garden & Outdoor Waste',
+    rows: [
+      { service: 'Garden Refuse (small garden)',      from: '£80',  to: '£180',  note: 'Green waste + soil' },
+      { service: 'Garden Refuse (large garden)',      from: '£180', to: '£350',  note: 'Multiple loads' },
+      { service: 'Shed or Outbuilding Clearance',     from: '£100', to: '£250',  note: 'Includes timber' },
+    ],
+  },
+  {
+    category: 'Construction & Builders Waste',
+    rows: [
+      { service: 'Builders Waste (small job)',        from: '£150', to: '£300',  note: 'Single load' },
+      { service: 'Hardcore / Rubble Removal',         from: '£200', to: '£500',  note: 'By weight/volume' },
+      { service: 'Strip-Out & Demolition Waste',      from: '£POA', to: '£POA',  note: 'Site survey required' },
+    ],
+  },
+  {
+    category: 'Specialist Removal',
+    rows: [
+      { service: 'Asbestos Removal (small domestic)', from: '£POA', to: '£POA',  note: 'Licensed survey first' },
+      { service: 'Confidential Waste (per bag)',       from: '£15',  to: '£25',   note: 'GDPR certificate issued' },
+      { service: 'WEEE / Electronics Disposal',       from: '£50',  to: '£200',  note: 'Per collection' },
+      { service: 'Scrap Metal Collection',            from: 'Free', to: 'Free',  note: 'Subject to volume' },
+    ],
+  },
+];
+
+const faqs = [
+  {
+    q: 'How is waste removal priced?',
+    a: 'WasteWize prices by the volume of waste removed (number of van loads). Our vans have a 14.4 cubic yard capacity — larger than most skip sizes. You receive a fixed all-inclusive price before we start: labour, transport, and EA-licensed disposal included.',
+  },
+  {
+    q: 'Are there any hidden fees?',
+    a: 'No. The price we quote covers our team collecting, loading, and disposing of your waste legally. Dump fees, fuel, and labour are all included. The only additional charge would be if specialist licences are required (e.g., asbestos removal), which is always quoted separately.',
+  },
+  {
+    q: 'Is VAT included in these prices?',
+    a: 'Guide prices on this page exclude VAT. VAT at the applicable rate is added to your final invoice.',
+  },
+  {
+    q: 'Can I get a fixed price before the team arrives?',
+    a: 'Yes. Send us photos or a description of what needs removing and we will give you a fixed price. For larger jobs (full estates, commercial strip-outs) we recommend a free site survey.',
+  },
+  {
+    q: 'Is WasteWize cheaper than a skip?',
+    a: 'For most residential and light commercial loads, yes. Skip hire in London typically runs £200–£400 for the skip alone, before adding council permit costs (£50–£100+), plus you load it yourself. WasteWize sends a two-person team, loads everything, and handles compliant disposal — often at a comparable or lower total cost, with no permit required.',
+  },
+];
+---
+
+<Layout
+  title="Waste Removal Prices London 2026 | Cost Guide | WasteWize UK"
+  description="Transparent waste removal prices for London and the Home Counties. House clearances from £150, office clearances from £200, garden waste from £80. All-inclusive quotes. EA licensed."
+>
+
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home",   "item": `${BASE}/` },
+        { "@type": "ListItem", "position": 2, "name": "Prices", "item": `${BASE}/prices` },
+      ]
+    })} />
+
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(({ q, a }) => ({
+        "@type": "Question",
+        "name": q,
+        "acceptedAnswer": { "@type": "Answer", "text": a }
+      }))
+    })} />
+  </Fragment>
+
+  <!-- Breadcrumb -->
+  <nav aria-label="Breadcrumb" class="bg-brand-dark border-b border-white/8">
+    <div class="container mx-auto px-4 sm:px-6 py-3">
+      <ol class="flex flex-wrap items-center gap-1.5 text-xs text-white/40">
+        <li><a href="/" class="hover:text-white/70 transition-colors">Home</a></li>
+        <li aria-hidden="true" class="text-white/20">/</li>
+        <li class="text-white/70" aria-current="page">Prices</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="bg-brand-dark py-14 sm:py-20 border-b border-white/8">
+    <div class="container mx-auto px-4 sm:px-6 max-w-3xl">
+      <span class="text-xs font-semibold tracking-widest uppercase text-brand-lime mb-4 block">
+        Transparent Pricing · No Hidden Fees
+      </span>
+      <h1 class="font-display text-4xl sm:text-5xl font-extrabold text-white mb-5 leading-[1.06]">
+        Waste Removal Prices<br />
+        <span class="text-brand-lime">London &amp; Home Counties</span>
+      </h1>
+      <p class="text-lg text-white/60 leading-relaxed mb-8 max-w-2xl">
+        All-inclusive guide prices — labour, transport, and EA-licensed disposal included. We quote by the load (van capacity), not by the hour. Send us photos for a fixed price before we arrive.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="tel:+447929771954"
+           class="inline-flex items-center gap-2 bg-brand-forest text-white px-7 py-3.5 rounded-[8px] text-sm font-semibold hover:bg-brand-forest-dark hover:-translate-y-0.5 hover:shadow-cta transition-all duration-200">
+          <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+          </svg>
+          Call for an Instant Quote
+        </a>
+        <a href="/contact"
+           class="inline-flex items-center gap-2 border border-white/20 text-white/80 px-7 py-3.5 rounded-[8px] text-sm font-semibold hover:border-brand-lime/50 hover:text-white transition-all duration-200">
+          Send Photos for a Fixed Price →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing tables -->
+  <section class="py-14 sm:py-18 bg-brand-dark border-b border-white/8">
+    <div class="container mx-auto px-4 sm:px-6">
+      <div class="flex flex-col gap-12">
+        {servicePrices.map(({ category, rows }) => (
+          <div>
+            <h2 class="text-xl font-bold text-white mb-5 flex items-center gap-3">
+              <span class="w-1 h-6 bg-brand-lime rounded-full shrink-0" aria-hidden="true"/>
+              {category}
+            </h2>
+            <div class="overflow-x-auto rounded-[12px] border border-white/10">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr class="bg-brand-dark-card border-b border-white/10">
+                    <th class="text-left px-5 py-3.5 text-white/40 font-semibold uppercase tracking-wider text-xs">Service</th>
+                    <th class="text-left px-5 py-3.5 text-white/40 font-semibold uppercase tracking-wider text-xs">From</th>
+                    <th class="text-left px-5 py-3.5 text-white/40 font-semibold uppercase tracking-wider text-xs">Up To</th>
+                    <th class="text-left px-5 py-3.5 text-white/40 font-semibold uppercase tracking-wider text-xs hidden sm:table-cell">Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {rows.map(({ service, from, to, note }, i) => (
+                    <tr class={`border-b border-white/6 last:border-0 ${i % 2 === 0 ? 'bg-brand-dark' : 'bg-brand-dark-card/30'}`}>
+                      <td class="px-5 py-3.5 text-white/80">{service}</td>
+                      <td class="px-5 py-3.5 text-brand-lime font-bold">{from}</td>
+                      <td class="px-5 py-3.5 text-white/60">{to}</td>
+                      <td class="px-5 py-3.5 text-white/30 text-xs hidden sm:table-cell">{note}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-8 bg-brand-dark-card border border-brand-lime/20 rounded-[12px] px-6 py-5">
+        <p class="text-sm text-white/60 leading-relaxed">
+          <strong class="text-white">All prices exclude VAT.</strong> Guide prices shown — actual price depends on volume, access, and item type. Specialist items (asbestos, large quantities of WEEE) are quoted separately after a free site survey. <a href="/contact" class="text-brand-lime hover:underline underline-offset-2">Contact us</a> for an exact fixed quote — we respond within 2 hours.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's included -->
+  <section class="py-14 sm:py-18 bg-brand-dark border-b border-white/8">
+    <div class="container mx-auto px-4 sm:px-6">
+      <h2 class="text-2xl font-bold text-white mb-8">What Every Quote Includes</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {[
+          { label: 'Two-person team',               desc: 'We do all the heavy lifting — you don\'t move a thing.' },
+          { label: 'EA-licensed disposal',           desc: 'Waste Carrier Licence CBDU335711. Legally compliant disposal every time.' },
+          { label: 'Duty of Care Waste Transfer Note', desc: 'Your legal protection under the Environmental Protection Act 1990.' },
+          { label: '99% landfill diversion',        desc: 'We recycle, donate, and recover before landfill.' },
+          { label: 'All transport & fuel',           desc: 'No delivery or collection charges added afterwards.' },
+          { label: 'Same-week availability',         desc: 'Most London bookings confirmed within 24–48 hours.' },
+        ].map(({ label, desc }) => (
+          <div class="flex gap-4 bg-brand-dark-card border border-white/10 rounded-[12px] p-5">
+            <svg class="w-5 h-5 text-brand-lime shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <div>
+              <p class="text-[14px] font-semibold text-white mb-1">{label}</p>
+              <p class="text-sm text-white/50">{desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-14 sm:py-18 bg-brand-dark border-b border-white/8" aria-labelledby="prices-faq-heading">
+    <div class="container mx-auto px-4 sm:px-6 max-w-2xl mx-auto">
+      <h2 id="prices-faq-heading" class="font-display text-2xl sm:text-3xl font-bold text-white mb-8">
+        Pricing FAQ
+      </h2>
+      <dl class="flex flex-col gap-4">
+        {faqs.map(({ q, a }) => (
+          <div class="bg-brand-dark-card border border-white/10 rounded-[12px] p-6">
+            <dt class="text-[15px] font-semibold text-white mb-2 flex items-start gap-3">
+              <span class="text-brand-lime shrink-0 mt-0.5" aria-hidden="true">Q</span>
+              {q}
+            </dt>
+            <dd class="text-sm leading-relaxed text-white/60 pl-6">{a}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-14 sm:py-20 bg-brand-dark-card border-t border-white/8">
+    <div class="container mx-auto px-4 sm:px-6 max-w-xl mx-auto text-center">
+      <h2 class="font-display text-2xl sm:text-3xl font-bold text-white mb-3">Get Your Exact Price</h2>
+      <p class="text-white/60 mb-8 leading-relaxed">
+        Send us photos or call — we'll give you a fixed all-inclusive price within 2 hours. No obligation.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+        <a href="tel:+447929771954"
+           class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-brand-forest text-white px-8 py-4 rounded-[8px] text-base font-semibold hover:bg-brand-forest-dark hover:shadow-cta hover:-translate-y-0.5 transition-all duration-200">
+          <svg class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+          </svg>
+          07929 771954
+        </a>
+        <a href="/contact"
+           class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-white/20 text-white/80 px-8 py-4 rounded-[8px] text-base font-semibold hover:border-brand-lime/50 hover:text-white transition-all duration-200">
+          Contact Form →
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
