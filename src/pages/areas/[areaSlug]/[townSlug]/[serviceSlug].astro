@@ -8,21 +8,30 @@ function slugify(str: string): string {
   return str.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 }
 
+function svcSlug(href: string): string {
+  return href.startsWith('/services/') ? href.slice(10) : href.slice(1);
+}
+
 export function getStaticPaths() {
   function slugify(str: string): string {
     return str.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
   }
+  function svcSlug(href: string): string {
+    return href.startsWith('/services/') ? href.slice(10) : href.slice(1);
+  }
 
   return areas.flatMap((area) =>
     area.towns.flatMap((town) =>
-      services.map((svc) => ({
-        params: {
-          areaSlug:    area.slug,
-          townSlug:    slugify(town),
-          serviceSlug: svc.href.replace('/services/', ''),
-        },
-        props: { town, areaSlug: area.slug, svc },
-      }))
+      services
+        .filter((svc) => serviceDetails[svcSlug(svc.href)] !== undefined)
+        .map((svc) => ({
+          params: {
+            areaSlug:    area.slug,
+            townSlug:    slugify(town),
+            serviceSlug: svcSlug(svc.href),
+          },
+          props: { town, areaSlug: area.slug, svc },
+        }))
     )
   );
 }
@@ -35,7 +44,7 @@ interface Props {
 
 const { town, areaSlug, svc } = Astro.props;
 const area    = areas.find((a) => a.slug === areaSlug)!;
-const slug    = svc.href.replace('/services/', '');
+const slug    = svcSlug(svc.href);
 const detail  = serviceDetails[slug];
 const townSlug = slugify(town);
 

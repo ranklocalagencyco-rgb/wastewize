@@ -1,0 +1,411 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const BASE = 'https://wastewize.co.uk';
+
+const faqs = [
+  {
+    q: 'Who is responsible for clearing fly-tipped waste in London?',
+    a: 'Under the Environmental Protection Act 1990 and the Anti-social Behaviour, Crime and Policing Act 2014, the landowner — not the person who dumped the waste — is responsible for clearing it. This applies to private individuals, landlords, businesses, housing associations, and commercial property owners. Failure to clear can result in a fixed-penalty notice or prosecution by the local authority.',
+  },
+  {
+    q: 'How much does fly tipping removal cost in London?',
+    a: 'Fly tipping removal in London typically costs between £150 for a single-load incident and £600+ for large or mixed commercial deposits. The price depends on the volume, type of waste, and access. WasteWize provides a free, fixed-price quote within 2 hours — often from photos alone. All disposal costs are included in the price.',
+  },
+  {
+    q: 'Can you remove fly-tipped waste from private land?',
+    a: 'Yes. We specialise in fly tipping clearance from private land — including driveways, alleyways, rear courtyards, industrial yards, car parks, and agricultural land. We arrive with a van and team, load everything, and provide a Duty of Care Waste Transfer Note proving legal disposal. You are not liable for the dumped waste once it has been removed with documentation.',
+  },
+  {
+    q: 'Do I need to report fly tipping to the council before removing it?',
+    a: 'You are not legally required to report it before removing it from your own land, but reporting to your local council (or via the Flycapture database) creates an evidence trail that may be useful if the offender is later identified. We recommend photographing the waste before clearance and reporting online — we can begin clearance immediately once you have your photos.',
+  },
+  {
+    q: 'What types of fly-tipped waste can you remove?',
+    a: 'We remove all common fly-tipped materials: bagged household waste, furniture, white goods, mattresses, builder\'s rubble, garden waste, tyres, scrap metal, electronics, and mixed commercial waste. We also remove hazardous items including asbestos-containing materials — for these, a survey and specialist disposal is arranged separately.',
+  },
+  {
+    q: 'How quickly can you clear a fly-tipped site in London?',
+    a: 'Same-week availability across London and the Home Counties. For urgent commercial or landlord situations, next-day clearance is often available. Call 07929 771954 for current availability — we prioritise fly tipping jobs where there is a health, safety, or environmental risk.',
+  },
+];
+
+const whatWeRemove = [
+  'Bagged household waste and black sacks',
+  'Furniture — sofas, beds, mattresses, wardrobes',
+  "Builder's rubble, hardcore, and mixed construction waste",
+  'Garden waste — soil, branches, green waste',
+  'White goods — fridges, washing machines, ovens',
+  'Tyres (including illegal tyre fly-tips)',
+  'Scrap metal and old vehicles parts',
+  'Electronics and WEEE',
+  'Commercial waste dumped on private land',
+  'Hazardous materials (assessed and quoted separately)',
+];
+
+const whoWeHelp = [
+  {
+    title: 'Private Landowners',
+    desc:  'Waste dumped on your driveway, alleyway, or land is your legal responsibility to clear. We handle it quickly and provide documentation.',
+  },
+  {
+    title: 'Landlords & Letting Agents',
+    desc:  'Common in rear yards, shared areas, and vacant properties between tenancies. We clear and document — protecting you from council notices.',
+  },
+  {
+    title: 'Businesses & Facilities Managers',
+    desc:  'Industrial yards, car parks, and loading bays are frequent targets. We provide a rapid-response clearance service with full compliance paperwork.',
+  },
+  {
+    title: 'Housing Associations',
+    desc:  'Communal areas and estate land require fast, documented clearance. We work with housing associations across London on ongoing and one-off jobs.',
+  },
+];
+---
+
+<Layout
+  title="Fly Tipping Removal London | Private Land & Commercial | WasteWize UK"
+  description="Fast fly tipping removal from private land across London. EA-licensed clearance of dumped waste — furniture, rubble, tyres, mixed waste. Duty of Care docs included. Same-week availability."
+>
+
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home",                  "item": `${BASE}/` },
+        { "@type": "ListItem", "position": 2, "name": "Fly Tipping Removal",   "item": `${BASE}/fly-tipping-removal` },
+      ]
+    })} />
+
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Fly Tipping Removal London",
+      "url": `${BASE}/fly-tipping-removal`,
+      "description": "EA-licensed fly tipping removal from private land, driveways, yards, and commercial sites across London and the Home Counties. Duty of Care Waste Transfer Notes included. Same-week availability.",
+      "serviceType": "Fly Tipping Removal",
+      "areaServed": [
+        { "@type": "AdministrativeArea", "name": "London" },
+        { "@type": "AdministrativeArea", "name": "Surrey" },
+        { "@type": "AdministrativeArea", "name": "Essex" },
+        { "@type": "AdministrativeArea", "name": "Hertfordshire" },
+        { "@type": "AdministrativeArea", "name": "Berkshire" },
+        { "@type": "AdministrativeArea", "name": "Kent" },
+        { "@type": "AdministrativeArea", "name": "Middlesex" },
+      ],
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "WasteWize UK",
+        "url": BASE,
+        "telephone": "+447929771954",
+        "hasCredential": {
+          "@type": "EducationalOccupationalCredential",
+          "name": "EA Upper-Tier Waste Carrier Licence",
+          "identifier": "CBDU335711"
+        }
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "GBP",
+        "lowPrice": "150",
+        "highPrice": "600",
+        "offerCount": "4"
+      }
+    })} />
+
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(({ q, a }) => ({
+        "@type": "Question",
+        "name": q,
+        "acceptedAnswer": { "@type": "Answer", "text": a }
+      }))
+    })} />
+  </Fragment>
+
+  <!-- Breadcrumb -->
+  <nav aria-label="Breadcrumb" class="bg-brand-dark border-b border-white/8">
+    <div class="container mx-auto px-4 sm:px-6 py-3">
+      <ol class="flex flex-wrap items-center gap-1.5 text-xs text-white/40">
+        <li><a href="/" class="hover:text-white/70 transition-colors">Home</a></li>
+        <li aria-hidden="true" class="text-white/20">/</li>
+        <li class="text-white/70" aria-current="page">Fly Tipping Removal</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="bg-brand-dark py-14 sm:py-20 border-b border-white/8">
+    <div class="container mx-auto px-4 sm:px-6 max-w-3xl">
+      <span class="text-xs font-semibold tracking-widest uppercase text-brand-lime mb-4 block">
+        Private Land · Driveways · Commercial Sites
+      </span>
+      <h1 class="font-display text-4xl sm:text-5xl font-extrabold text-white mb-5 leading-[1.06]">
+        Fly Tipping Removal<br />
+        <span class="text-brand-lime">London &amp; Home Counties</span>
+      </h1>
+      <p class="text-lg text-white/60 leading-relaxed mb-6 max-w-2xl">
+        Waste dumped on your land is your legal responsibility — not the council's. WasteWize provides fast, EA-licensed fly tip clearance from private driveways, yards, alleyways, and commercial sites. We remove everything and provide Duty of Care documentation to protect you from further liability.
+      </p>
+
+      <!-- Legal alert -->
+      <div class="bg-brand-lime/5 border border-brand-lime/25 rounded-[10px] px-5 py-4 mb-8 max-w-2xl">
+        <p class="text-sm text-white/70 leading-relaxed">
+          <strong class="text-white">Important:</strong> Under the Environmental Protection Act 1990, landowners are legally obliged to clear fly-tipped waste from their own land — even if they did not dump it. Councils can issue fixed penalty notices of up to £400 for failure to comply.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap gap-4 mb-10">
+        <a href="tel:+447929771954"
+           class="inline-flex items-center gap-2 bg-brand-forest text-white px-7 py-3.5 rounded-[8px] text-sm font-semibold hover:bg-brand-forest-dark hover:-translate-y-0.5 hover:shadow-cta transition-all duration-200">
+          <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+          </svg>
+          Call 07929 771954
+        </a>
+        <a href="/contact"
+           class="inline-flex items-center gap-2 border border-white/20 text-white/80 px-7 py-3.5 rounded-[8px] text-sm font-semibold hover:border-brand-lime/50 hover:text-white transition-all duration-200">
+          Send Photos for a Fixed Quote →
+        </a>
+      </div>
+
+      <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/50">
+        {['EA Licensed · CBDU335711', 'Same-Week Availability', 'Duty of Care Docs Included', 'All Waste Types Accepted'].map((badge) => (
+          <span class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-brand-lime shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            {badge}
+          </span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Who we help -->
+  <section class="py-14 sm:py-18 bg-brand-dark-card border-b border-white/8" aria-labelledby="who-heading">
+    <div class="container mx-auto px-4 sm:px-6">
+      <h2 id="who-heading" class="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+        <span class="w-1 h-6 bg-brand-lime rounded-full shrink-0" aria-hidden="true"/>
+        Who We Help
+      </h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {whoWeHelp.map(({ title, desc }) => (
+          <div class="bg-brand-dark border border-white/10 rounded-[12px] p-6 flex flex-col gap-3">
+            <div class="w-10 h-10 rounded-[8px] bg-brand-lime/10 flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5 text-brand-lime" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
+              </svg>
+            </div>
+            <h3 class="text-[15px] font-semibold text-white">{title}</h3>
+            <p class="text-sm text-white/50 leading-relaxed">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- What we remove + how it works -->
+  <section class="py-14 sm:py-18 bg-brand-dark border-b border-white/8" aria-labelledby="what-heading">
+    <div class="container mx-auto px-4 sm:px-6">
+      <div class="grid lg:grid-cols-2 gap-12 items-start">
+
+        <!-- What we remove -->
+        <div>
+          <h2 id="what-heading" class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+            <span class="w-1 h-6 bg-brand-lime rounded-full shrink-0" aria-hidden="true"/>
+            What We Remove
+          </h2>
+          <p class="text-white/60 leading-relaxed mb-6 text-sm">
+            We clear all types of fly-tipped waste in a single visit. No sorting required from you — we handle mixed loads.
+          </p>
+          <ul class="flex flex-col gap-3">
+            {whatWeRemove.map((item) => (
+              <li class="flex items-start gap-3 text-sm text-white/70 leading-relaxed">
+                <svg class="w-5 h-5 text-brand-lime shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Steps -->
+        <div class="flex flex-col gap-5">
+          <h2 class="text-2xl font-bold text-white flex items-center gap-3">
+            <span class="w-1 h-6 bg-brand-lime rounded-full shrink-0" aria-hidden="true"/>
+            How It Works
+          </h2>
+          {[
+            { n: '01', title: 'Photograph the fly tip', desc: 'Before we arrive, photograph the waste. This evidence is useful if you wish to report the offender to your council via the Flycapture database.' },
+            { n: '02', title: 'Call or send us photos', desc: 'We quote within 2 hours. For large or mixed loads a quick phone call is often faster. Same-week and next-day slots available.' },
+            { n: '03', title: 'We clear in one visit',   desc: 'A two-person team arrives, loads all waste, and leaves the site clean. No skips, no permits, no return visits needed.' },
+            { n: '04', title: 'You receive documentation', desc: 'A Duty of Care Waste Transfer Note is issued immediately after collection — your legal proof of compliant disposal. Keep it on file.' },
+          ].map(({ n, title, desc }) => (
+            <div class="flex gap-5 bg-brand-dark-card border border-white/10 rounded-[12px] p-5">
+              <span class="text-brand-lime font-bold text-lg shrink-0 w-8">{n}</span>
+              <div>
+                <p class="text-[14px] font-semibold text-white mb-1">{title}</p>
+                <p class="text-sm text-white/50 leading-relaxed">{desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="py-14 sm:py-18 bg-brand-dark-card border-b border-white/8" aria-labelledby="pricing-heading">
+    <div class="container mx-auto px-4 sm:px-6">
+      <h2 id="pricing-heading" class="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+        <span class="w-1 h-6 bg-brand-lime rounded-full shrink-0" aria-hidden="true"/>
+        Guide Prices
+      </h2>
+      <div class="overflow-x-auto rounded-[12px] border border-white/10 mb-6">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-brand-dark border-b border-white/10">
+              <th class="text-left px-5 py-3.5 text-white/40 font-semibold uppercase tracking-wider text-xs">Incident Size</th>
+              <th class="text-left px-5 py-3.5 text-white/40 font-semibold uppercase tracking-wider text-xs">From</th>
+              <th class="text-left px-5 py-3.5 text-white/40 font-semibold uppercase tracking-wider text-xs">Up To</th>
+              <th class="text-left px-5 py-3.5 text-white/40 font-semibold uppercase tracking-wider text-xs hidden sm:table-cell">Typical Contents</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { size: 'Small (half-load)',  from: '£150', to: '£220', note: 'A few bags, small furniture items' },
+              { size: 'Medium (one load)',  from: '£220', to: '£350', note: 'Sofa, mattress, multiple bags' },
+              { size: 'Large (two loads+)', from: '£350', to: '£600', note: 'Bulk rubble, appliances, mixed waste' },
+              { size: 'Commercial / repeat', from: '£POA', to: '£POA', note: 'Ongoing account rates available' },
+            ].map(({ size, from, to, note }, i) => (
+              <tr class={`border-b border-white/6 last:border-0 ${i % 2 === 0 ? 'bg-brand-dark' : 'bg-brand-dark-card/30'}`}>
+                <td class="px-5 py-3.5 text-white/80">{size}</td>
+                <td class="px-5 py-3.5 text-brand-lime font-bold">{from}</td>
+                <td class="px-5 py-3.5 text-white/60">{to}</td>
+                <td class="px-5 py-3.5 text-white/30 text-xs hidden sm:table-cell">{note}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div class="bg-brand-dark border border-brand-lime/20 rounded-[12px] px-6 py-4">
+        <p class="text-sm text-white/60 leading-relaxed">
+          <strong class="text-white">All prices exclude VAT.</strong> Fixed quotes include labour, transport, and EA-licensed disposal. Send photos for a price within 2 hours.
+          <a href="/prices" class="text-brand-lime hover:underline underline-offset-2 ml-1">See full price guide →</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compliance -->
+  <section class="py-14 sm:py-18 bg-brand-dark border-b border-white/8" aria-labelledby="compliance-heading">
+    <div class="container mx-auto px-4 sm:px-6">
+      <h2 id="compliance-heading" class="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+        <span class="w-1 h-6 bg-brand-lime rounded-full shrink-0" aria-hidden="true"/>
+        Your Legal Protection
+      </h2>
+      <div class="grid sm:grid-cols-3 gap-5">
+        {[
+          {
+            badge: 'EA',
+            title: 'EA Upper-Tier Waste Carrier Licence',
+            desc:  'CBDU335711. Using an unlicensed carrier to remove fly-tipped waste can expose you to additional liability. WasteWize holds the highest tier of EA licensing.',
+          },
+          {
+            badge: 'DoC',
+            title: 'Duty of Care Waste Transfer Note',
+            desc:  'Issued on every job. This document is your legal evidence that waste from your land was removed and disposed of compliantly — essential if the council follows up.',
+          },
+          {
+            badge: '99%',
+            title: '99% Landfill Diversion',
+            desc:  'We segregate, recycle, and recover materials wherever possible. Detailed disposal route information is available on request.',
+          },
+        ].map(({ badge, title, desc }) => (
+          <div class="bg-brand-dark-card border border-white/10 rounded-[12px] p-6 flex flex-col gap-3">
+            <span class="inline-flex items-center justify-center w-12 h-12 rounded-[10px] bg-brand-lime/15 border border-brand-lime/30 text-brand-lime text-sm font-bold tracking-wide shrink-0">
+              {badge}
+            </span>
+            <h3 class="text-[14px] font-semibold text-white">{title}</h3>
+            <p class="text-xs text-white/50 leading-relaxed">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-14 sm:py-18 bg-brand-dark-card border-b border-white/8" aria-labelledby="faq-heading">
+    <div class="container mx-auto px-4 sm:px-6 max-w-2xl mx-auto">
+      <h2 id="faq-heading" class="font-display text-2xl sm:text-3xl font-bold text-white mb-8">
+        Frequently Asked Questions
+      </h2>
+      <dl class="flex flex-col gap-4">
+        {faqs.map(({ q, a }) => (
+          <div class="bg-brand-dark border border-white/10 rounded-[12px] p-6">
+            <dt class="text-[15px] font-semibold text-white mb-2 flex items-start gap-3">
+              <span class="text-brand-lime shrink-0 mt-0.5" aria-hidden="true">Q</span>
+              {q}
+            </dt>
+            <dd class="text-sm leading-relaxed text-white/60 pl-6">{a}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <!-- Related services -->
+  <section class="py-14 sm:py-18 bg-brand-dark border-b border-white/8" aria-labelledby="related-heading">
+    <div class="container mx-auto px-4 sm:px-6">
+      <h2 id="related-heading" class="text-xl font-bold text-white mb-6 flex items-center gap-3">
+        <span class="w-1 h-6 bg-brand-lime rounded-full shrink-0" aria-hidden="true"/>
+        Related Services
+      </h2>
+      <div class="grid sm:grid-cols-3 gap-5">
+        {[
+          { title: 'House Clearance',            href: '/house-clearance',                desc: 'Full property clearances — estate, probate, and tenant abandonments.' },
+          { title: 'Builders Waste Removal',     href: '/services/building-construction', desc: 'Construction debris, rubble, and mixed site waste cleared fast.' },
+          { title: 'End of Tenancy Clearance',   href: '/end-of-tenancy-clearance',       desc: 'Fast turnaround clearances for landlords, agents, and tenants.' },
+        ].map(({ title, href, desc }) => (
+          <a href={href}
+             class="group bg-brand-dark-card border border-white/10 rounded-[12px] p-5 flex flex-col gap-2
+                    hover:border-brand-lime/50 hover:-translate-y-1 hover:shadow-card transition-all duration-300">
+            <h3 class="text-[14px] font-semibold text-white group-hover:text-brand-lime transition-colors duration-200">{title}</h3>
+            <p class="text-xs text-white/50 leading-relaxed">{desc}</p>
+            <span class="text-brand-lime text-xs mt-auto">Learn more →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-14 sm:py-20 bg-brand-dark-card border-t border-white/8">
+    <div class="container mx-auto px-4 sm:px-6 max-w-xl mx-auto text-center">
+      <h2 class="font-display text-2xl sm:text-3xl font-bold text-white mb-3">Clear the Fly Tip Today</h2>
+      <p class="text-white/60 mb-8 leading-relaxed">
+        Send us photos or call — we'll give you a fixed price within 2 hours. Same-week availability across London and the Home Counties.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+        <a href="tel:+447929771954"
+           class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-brand-forest text-white px-8 py-4 rounded-[8px] text-base font-semibold hover:bg-brand-forest-dark hover:shadow-cta hover:-translate-y-0.5 transition-all duration-200">
+          <svg class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+          </svg>
+          07929 771954
+        </a>
+        <a href="/contact"
+           class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-white/20 text-white/80 px-8 py-4 rounded-[8px] text-base font-semibold hover:border-brand-lime/50 hover:text-white transition-all duration-200">
+          Contact Form →
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

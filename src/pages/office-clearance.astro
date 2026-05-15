@@ -1,0 +1,454 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const BASE = 'https://wastewize.co.uk';
+
+const faqs = [
+  {
+    q: 'How much does office clearance cost in London?',
+    a: 'Office clearance in London typically costs between £200 for a small single-room office and £2,000+ for a full floor or multi-storey clearance. Pricing depends on the volume of items, floor access, and whether IT equipment, confidential documents, or specialist furniture is involved. WasteWize provides a free, no-obligation quote within 2 hours.',
+  },
+  {
+    q: 'Can you do office clearance outside of business hours?',
+    a: 'Yes. We offer early-morning, evening, and weekend office clearances to avoid disruption to your business or building neighbours. Just mention your preferred window when you enquire and we will accommodate where possible.',
+  },
+  {
+    q: 'Do you provide a Duty of Care Waste Transfer Note for commercial clearances?',
+    a: 'Yes — every WasteWize office clearance includes a Duty of Care Waste Transfer Note as required under the Environmental Protection Act 1990. This is your legal proof that waste was handled by a licensed carrier. We also provide a certificate of secure document destruction where required.',
+  },
+  {
+    q: 'What happens to the office furniture and equipment you remove?',
+    a: 'We divert 99% of material from landfill. Usable desks, chairs, and storage units are donated or resold. IT equipment is processed under WEEE regulations. Mixed commercial waste goes to licensed transfer stations. You receive full transparency on disposal routes.',
+  },
+  {
+    q: 'Can you clear confidential documents and data-bearing equipment?',
+    a: 'Yes. We work with certified data destruction partners for hard drives, servers, and confidential paperwork. Ask about our secure IT disposal and document shredding add-on when requesting a quote.',
+  },
+  {
+    q: 'Are you licensed to carry commercial waste from London offices?',
+    a: 'Yes. WasteWize UK holds an Upper-Tier Environment Agency Waste Carrier Licence (CBDU335711) and £5m public liability insurance — both required for legal commercial waste collection. You receive a Waste Transfer Note on every job.',
+  },
+  {
+    q: 'How quickly can you complete an office clearance in London?',
+    a: 'We offer same-week availability across London and the Home Counties, with next-day service in most areas. Large office floors are typically cleared in a single working day. Call 07929 771954 for urgent bookings.',
+  },
+];
+
+const pricingRows = [
+  { size: 'Small Office / Single Room',     low: '£200',  high: '£400',   note: 'One load'      },
+  { size: 'Suite (5–10 desks)',             low: '£400',  high: '£700',   note: 'One–two loads' },
+  { size: 'Medium Floor (10–25 desks)',     low: '£650',  high: '£1,100', note: 'Two–three loads'},
+  { size: 'Large Floor (25–50 desks)',      low: '£1,000',high: '£1,800', note: 'Three+ loads'  },
+  { size: 'Full Building / Multi-Floor',    low: 'POA',   high: 'POA',    note: 'Site survey'   },
+];
+---
+
+<Layout
+  title="Office Clearance London | EA Licensed | WasteWize UK"
+  description="Professional office clearance across London and the Home Counties. EA-licensed, fully insured, 99% landfill diversion. From £200. Free no-obligation quote — same-week availability."
+>
+
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home",             "item": `${BASE}/` },
+        { "@type": "ListItem", "position": 2, "name": "Office Clearance", "item": `${BASE}/office-clearance` },
+      ]
+    })} />
+
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Office Clearance London",
+      "url": `${BASE}/office-clearance`,
+      "description": "Professional office clearance for businesses, landlords, and property managers across London and the Home Counties. EA-licensed, 99% landfill diversion, same-week availability.",
+      "serviceType": "Office Clearance",
+      "areaServed": [
+        { "@type": "AdministrativeArea", "name": "London" },
+        { "@type": "AdministrativeArea", "name": "Surrey" },
+        { "@type": "AdministrativeArea", "name": "Middlesex" },
+        { "@type": "AdministrativeArea", "name": "Hertfordshire" },
+        { "@type": "AdministrativeArea", "name": "Essex" },
+        { "@type": "AdministrativeArea", "name": "Berkshire" },
+        { "@type": "AdministrativeArea", "name": "Kent" },
+      ],
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "WasteWize UK",
+        "url": BASE,
+        "telephone": "+447929771954",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "9 Cordelia Court, Burns Lane",
+          "addressLocality": "London",
+          "postalCode": "NW7 2GB",
+          "addressCountry": "GB"
+        }
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "GBP",
+        "lowPrice": "200",
+        "highPrice": "1800",
+        "offerCount": "5"
+      }
+    })} />
+
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(({ q, a }) => ({
+        "@type": "Question",
+        "name": q,
+        "acceptedAnswer": { "@type": "Answer", "text": a }
+      }))
+    })} />
+  </Fragment>
+
+  <!-- Breadcrumb -->
+  <nav aria-label="Breadcrumb" class="bg-brand-dark border-b border-white/8">
+    <div class="container mx-auto px-4 sm:px-6 py-3">
+      <ol class="flex flex-wrap items-center gap-1.5 text-xs text-white/40">
+        <li><a href="/" class="hover:text-white/70 transition-colors">Home</a></li>
+        <li aria-hidden="true" class="text-white/20">/</li>
+        <li class="text-white/70" aria-current="page">Office Clearance</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="bg-brand-dark py-14 sm:py-20 lg:py-24 border-b border-white/8">
+    <div class="container mx-auto px-4 sm:px-6">
+      <div class="max-w-3xl">
+        <span class="text-xs font-semibold tracking-widest uppercase text-brand-lime mb-4 block">
+          Office Clearance · London &amp; Home Counties
+        </span>
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-5 leading-[1.06]">
+          Office Clearance London<br />
+          <span class="text-brand-lime">&amp; the Home Counties</span>
+        </h1>
+        <p class="text-lg sm:text-xl text-white/60 leading-relaxed max-w-2xl mb-8">
+          Full office clearances for businesses, landlords, and property managers — desks, chairs, IT equipment, filing cabinets, and all commercial waste removed in a single visit. EA-licensed, same-week availability, from £200.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="tel:+447929771954"
+             class="inline-flex items-center gap-2 bg-brand-forest text-white px-7 py-4 rounded-[8px] text-base font-semibold hover:bg-brand-forest-dark hover:-translate-y-0.5 hover:shadow-cta transition-all duration-200">
+            <svg class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+            </svg>
+            Call 07929 771954
+          </a>
+          <a href="/contact"
+             class="inline-flex items-center gap-2 border border-white/20 text-white/80 px-7 py-4 rounded-[8px] text-base font-semibold hover:border-brand-lime/50 hover:text-white transition-all duration-200">
+            Get a Free Quote
+            <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Trust strip -->
+        <div class="mt-10 flex flex-wrap gap-5">
+          {[
+            { v: 'EA Licensed',    l: 'CBDU335711'           },
+            { v: '£5m',            l: 'Public Liability'     },
+            { v: '99%',            l: 'Landfill Diversion'   },
+            { v: 'Same Week',      l: 'Availability'         },
+            { v: 'WTN Issued',     l: 'On Every Job'         },
+          ].map(({ v, l }) => (
+            <div class="flex flex-col">
+              <span class="text-brand-lime font-bold text-lg">{v}</span>
+              <span class="text-white/40 text-xs">{l}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mid-page CTA -->
+  <div class="bg-brand-dark-card border-b border-white/8">
+    <div class="container mx-auto px-4 sm:px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-white/60">
+        Need your <span class="text-white font-medium">London office cleared fast</span>? Get a fixed price within the hour.
+      </p>
+      <div class="flex gap-3 shrink-0">
+        <a href="tel:+447929771954"
+           class="inline-flex items-center gap-2 bg-brand-forest text-white px-5 py-2.5 rounded-[8px] text-sm font-semibold hover:bg-brand-forest-dark transition-colors">
+          <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+          </svg>
+          07929 771954
+        </a>
+        <a href="/contact#quote"
+           class="inline-flex items-center gap-2 border border-white/20 text-white/70 px-5 py-2.5 rounded-[8px] text-sm font-semibold hover:border-brand-lime hover:text-white transition-colors">
+          Free Quote →
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- What we clear -->
+  <section class="py-14 sm:py-18 bg-brand-dark border-b border-white/8">
+    <div class="container mx-auto px-4 sm:px-6">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white mb-3">What We Clear from London Offices</h2>
+      <p class="text-white/60 mb-10 max-w-2xl">We take everything from a single office room to an entire commercial floor — no sorting required from you.</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {[
+          {
+            icon: 'M3 7h18M3 12h18M3 17h18',
+            title: 'Desks, Chairs & Workstations',
+            desc: 'Sitting desks, standing desks, operator chairs, meeting tables, reception furniture — any quantity.',
+          },
+          {
+            icon: 'M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4',
+            title: 'Filing Cabinets & Storage',
+            desc: 'Steel filing cabinets, shelving units, lockers, pedestals — emptied and removed in one visit.',
+          },
+          {
+            icon: 'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z',
+            title: 'IT Equipment (WEEE)',
+            desc: 'Computers, monitors, servers, printers, photocopiers — WEEE-compliant disposal with data destruction available.',
+          },
+          {
+            icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z',
+            title: 'Documents & Confidential Waste',
+            desc: 'Secure shredding and certified destruction for confidential paperwork and data-bearing media.',
+          },
+          {
+            icon: 'M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16',
+            title: 'General Office Waste',
+            desc: 'Packaging, broken equipment, stationery, kitchen items, and anything left behind by outgoing tenants.',
+          },
+          {
+            icon: 'M12 3v1m0 16v1M4.22 4.22l.707.707M18.364 18.364l.707.707M1 12h1m18 0h1M4.22 19.778l.707-.707M18.364 5.636l.707-.707',
+            title: 'Kitchenette & Breakout Areas',
+            desc: 'Fridges, microwaves, vending machines, café-style furniture and fixtures removed and disposed of responsibly.',
+          },
+        ].map(({ icon, title, desc }) => (
+          <div class="bg-brand-dark-card border border-white/10 rounded-[12px] p-6 flex gap-4">
+            <div class="w-10 h-10 rounded-[8px] bg-brand-lime/10 flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5 text-brand-lime" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d={icon}/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-[15px] font-semibold text-white mb-1">{title}</h3>
+              <p class="text-sm text-white/50 leading-relaxed">{desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing table -->
+  <section class="py-14 sm:py-18 bg-brand-dark border-b border-white/8" id="prices">
+    <div class="container mx-auto px-4 sm:px-6">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white mb-3">Office Clearance Prices London</h2>
+      <p class="text-white/60 mb-10 max-w-2xl">Guide prices — final quote depends on volume, floor level, and lift/stair access. All prices include labour, transport, and EA-licensed disposal. No hidden fees.</p>
+      <div class="overflow-x-auto rounded-[12px] border border-white/10">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-brand-dark-card border-b border-white/10">
+              <th class="text-left px-5 py-4 text-white/50 font-semibold uppercase tracking-wider text-xs">Office Size</th>
+              <th class="text-left px-5 py-4 text-white/50 font-semibold uppercase tracking-wider text-xs">From</th>
+              <th class="text-left px-5 py-4 text-white/50 font-semibold uppercase tracking-wider text-xs">Up to</th>
+              <th class="text-left px-5 py-4 text-white/50 font-semibold uppercase tracking-wider text-xs">Typical Loads</th>
+            </tr>
+          </thead>
+          <tbody>
+            {pricingRows.map(({ size, low, high, note }, i) => (
+              <tr class={`border-b border-white/6 last:border-0 ${i % 2 === 0 ? 'bg-brand-dark' : 'bg-brand-dark-card/40'}`}>
+                <td class="px-5 py-4 text-white font-medium">{size}</td>
+                <td class="px-5 py-4 text-brand-lime font-bold">{low}</td>
+                <td class="px-5 py-4 text-white/70">{high}</td>
+                <td class="px-5 py-4 text-white/40 text-xs">{note}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-4 text-xs text-white/30">Prices exclude VAT. Hazardous or specialist items quoted separately. <a href="/contact" class="text-brand-lime hover:underline">Get your exact office clearance quote →</a></p>
+    </div>
+  </section>
+
+  <!-- Who we serve -->
+  <section class="py-14 sm:py-18 bg-brand-dark border-b border-white/8">
+    <div class="container mx-auto px-4 sm:px-6">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white mb-3">Who Uses Our Office Clearance Service</h2>
+      <p class="text-white/60 mb-10 max-w-2xl">From growing SMEs to large corporate relocations, we clear offices of every size across London.</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {[
+          { title: 'Businesses Relocating',      desc: 'Moving office? We clear your old space to schedule so you hand the keys back on time.' },
+          { title: 'Commercial Landlords',        desc: 'End-of-lease clearances handled fast so vacant offices return to market without delay.' },
+          { title: 'Property Managers',           desc: 'Managed account arrangements available for agents and facilities teams across multiple sites.' },
+          { title: 'Insolvency Practitioners',    desc: 'Discreet, rapid clearances for creditor-appointed insolvencies and administration scenarios.' },
+        ].map(({ title, desc }) => (
+          <div class="bg-brand-dark-card border border-white/10 rounded-[12px] p-6">
+            <h3 class="text-[15px] font-semibold text-brand-lime mb-2">{title}</h3>
+            <p class="text-sm text-white/50 leading-relaxed">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="py-14 sm:py-18 bg-brand-dark-card border-b border-white/8">
+    <div class="container mx-auto px-4 sm:px-6 max-w-5xl">
+      <div class="text-center mb-12">
+        <span class="text-xs font-semibold tracking-widest uppercase text-brand-lime mb-3 block">Step by Step</span>
+        <h2 class="font-display text-2xl sm:text-3xl font-bold text-white">How Our Office Clearance Service Works</h2>
+        <p class="mt-3 text-sm text-white/50 max-w-xl mx-auto">Every job follows the same documented process — from first contact to final Waste Transfer Note.</p>
+      </div>
+
+      <div class="relative">
+        <div class="hidden lg:block absolute top-10 left-[8%] right-[8%] h-[2px]
+                    bg-gradient-to-r from-brand-lime/20 via-brand-lime/50 to-brand-lime/20"
+             aria-hidden="true"></div>
+        <div class="grid grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-4 relative z-10">
+          {[
+            { title: 'Free Quote',       desc: 'Call or email — we respond within 2 hours with a fixed price.' },
+            { title: 'Book a Date',      desc: 'Choose a time that suits your tenancy schedule, even evenings or weekends.' },
+            { title: 'We Arrive',        desc: 'Uniformed crew with the right vehicle for your office floor.' },
+            { title: 'Full Clearance',   desc: 'Everything removed, floors swept — ready for inspection.' },
+            { title: 'WTN Issued',       desc: 'You receive your Duty of Care Waste Transfer Note the same day.' },
+          ].map(({ title, desc }, i) => (
+            <div class="flex flex-col items-center text-center gap-3">
+              <div class="w-20 h-20 rounded-full bg-brand-dark border-2 border-brand-lime/30
+                          flex items-center justify-center relative shrink-0
+                          hover:border-brand-lime hover:bg-brand-lime/10
+                          transition-all duration-300 group/step">
+                <span class="text-brand-lime font-bold text-lg group-hover/step:scale-110 transition-transform duration-300">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <span class="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-brand-lime
+                             text-[10px] font-bold text-brand-dark flex items-center
+                             justify-center leading-none" aria-hidden="true">
+                  {i + 1}
+                </span>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-white mb-1">{title}</p>
+                <p class="text-[11px] text-white/40 leading-snug">{desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compliance -->
+  <section class="py-14 sm:py-18 bg-brand-dark border-b border-white/8">
+    <div class="container mx-auto px-4 sm:px-6">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white mb-3">Licences &amp; Compliance for Office Clearance</h2>
+      <p class="text-white/60 mb-10 max-w-2xl">Commercial waste must be handled by a licensed carrier — non-compliance carries fines of up to £5,000. WasteWize is fully licensed and insured.</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {[
+          { badge: 'EA',    title: 'Environment Agency Licence',   desc: 'Upper-Tier Waste Carrier Licence CBDU335711 — legally required for commercial waste removal in England.' },
+          { badge: 'WTN',   title: 'Duty of Care Waste Transfer Note', desc: 'Issued on every job. Your legal proof under the Environmental Protection Act 1990.' },
+          { badge: '£5m',   title: 'Public Liability Insurance',   desc: '£5m cover protects your premises and staff during every clearance visit.' },
+          { badge: 'WEEE',  title: 'WEEE-Compliant IT Disposal',   desc: 'All electrical and electronic equipment processed under the WEEE Regulations 2013.' },
+        ].map(({ badge, title, desc }) => (
+          <div class="bg-brand-dark-card border border-white/10 rounded-[12px] p-6 flex flex-col gap-3 hover:border-brand-lime/30 transition-colors">
+            <span class="inline-flex items-center justify-center w-12 h-12 rounded-[10px]
+                         bg-brand-lime/15 border border-brand-lime/30 text-brand-lime
+                         text-sm font-bold tracking-wide">{badge}</span>
+            <h3 class="text-[14px] font-semibold text-white">{title}</h3>
+            <p class="text-xs text-white/50 leading-relaxed flex-1">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-14 sm:py-18 bg-brand-dark border-b border-white/8" aria-labelledby="oc-faq-heading">
+    <div class="container mx-auto px-4 sm:px-6 max-w-2xl">
+      <h2 id="oc-faq-heading" class="font-display text-2xl sm:text-3xl font-bold text-white mb-8">
+        Office Clearance London — FAQ
+      </h2>
+      <dl class="flex flex-col gap-4">
+        {faqs.map(({ q, a }) => (
+          <div class="bg-brand-dark-card border border-white/10 rounded-[12px] p-6">
+            <dt class="text-[15px] font-semibold text-white mb-2 flex items-start gap-3">
+              <span class="text-brand-lime shrink-0 mt-0.5" aria-hidden="true">Q</span>
+              {q}
+            </dt>
+            <dd class="text-sm leading-relaxed text-white/60 pl-6">{a}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <!-- Coverage areas -->
+  <section class="py-14 sm:py-18 bg-brand-dark-card border-b border-white/8">
+    <div class="container mx-auto px-4 sm:px-6">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white mb-3">Office Clearance Across London &amp; the Home Counties</h2>
+      <p class="text-white/60 mb-8 max-w-2xl">We cover all London boroughs and 12 Home County zones. Select your area for local pricing and availability.</p>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+        {[
+          { zone: 'Central London',    slug: 'central-london',    towns: ['Westminster', 'Kensington', 'Chelsea']      },
+          { zone: 'North London',      slug: 'north-london',      towns: ['Barnet', 'Enfield', 'Camden']               },
+          { zone: 'East London',       slug: 'east-london',       towns: ['Stratford', 'Hackney', 'Newham']            },
+          { zone: 'South London',      slug: 'south-london',      towns: ['Croydon', 'Bromley', 'Wandsworth']          },
+          { zone: 'West London',       slug: 'west-london',       towns: ['Hammersmith', 'Ealing', 'Chiswick']         },
+          { zone: 'Middlesex',         slug: 'middlesex',         towns: ['Harrow', 'Uxbridge', 'Twickenham']          },
+          { zone: 'Surrey',            slug: 'surrey',            towns: ['Guildford', 'Woking', 'Epsom']              },
+          { zone: 'Hertfordshire',     slug: 'hertfordshire',     towns: ['Watford', 'St Albans', 'Hemel Hempstead']   },
+          { zone: 'Essex',             slug: 'essex',             towns: ['Chelmsford', 'Romford', 'Brentwood']        },
+          { zone: 'Kent',              slug: 'kent',              towns: ['Bromley', 'Sevenoaks', 'Maidstone']         },
+          { zone: 'Berkshire',         slug: 'berkshire',         towns: ['Reading', 'Slough', 'Windsor']              },
+          { zone: 'Buckinghamshire',   slug: 'buckinghamshire',   towns: ['High Wycombe', 'Aylesbury', 'Amersham']     },
+        ].map(({ zone, slug, towns }) => (
+          <a href={`/areas/${slug}`}
+             class="group bg-brand-dark border border-white/10 rounded-[12px] p-4
+                    hover:border-brand-lime/40 hover:-translate-y-0.5 hover:shadow-card
+                    transition-all duration-200 flex flex-col gap-2">
+            <span class="text-[14px] font-semibold text-white group-hover:text-brand-lime transition-colors">
+              {zone}
+            </span>
+            <span class="text-[11px] text-white/35 leading-snug">
+              {towns.join(' · ')}
+            </span>
+          </a>
+        ))}
+      </div>
+      <p class="mt-6 text-xs text-white/40">
+        Don't see your town?
+        <a href="/areas" class="text-brand-lime hover:underline underline-offset-2 ml-1">View the full coverage map →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-14 sm:py-20 bg-brand-dark-card border-t border-white/8">
+    <div class="container mx-auto px-4 sm:px-6 max-w-2xl text-center">
+      <h2 class="font-display text-2xl sm:text-3xl font-bold text-white mb-3">
+        Ready to Book Your Office Clearance in London?
+      </h2>
+      <p class="text-white/60 mb-8 leading-relaxed">
+        Call us for an instant quote — or complete the form and we'll respond within 2 hours. Same-week availability across London &amp; the Home Counties.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+        <a href="tel:+447929771954"
+           class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-brand-forest text-white px-8 py-4 rounded-[8px] text-base font-semibold hover:bg-brand-forest-dark hover:shadow-cta hover:-translate-y-0.5 transition-all duration-200">
+          <svg class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+          </svg>
+          07929 771954
+        </a>
+        <a href="/contact"
+           class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-white/20 text-white/80 px-8 py-4 rounded-[8px] text-base font-semibold hover:border-brand-lime/50 hover:text-white transition-all duration-200">
+          Send an Enquiry →
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

@@ -621,7 +621,7 @@ const postcode    = detail?.postcode ?? null;
 
 </Layout>
 
-<script define:vars={{ TOWN_SERVICES: services }} is:inline>
+<script define:vars={{ TOWN_SERVICES: services, AREA_SLUG: areaSlug, TOWN_SLUG: slugify(town) }} is:inline>
 
   const grid    = document.getElementById('town-svc-grid');
   const panel   = document.getElementById('town-detail-panel');
@@ -705,7 +705,7 @@ const postcode    = detail?.postcode ?? null;
     detTitle.textContent = svc.title;
     detDesc.textContent  = svc.desc;
     detPath.setAttribute('d', svc.icon);
-    detLink.href         = svc.href;
+    detLink.href         = '/areas/' + AREA_SLUG + '/' + TOWN_SLUG + '/' + svc.href.replace('/services/', '');
     detPills.innerHTML   = svc.pills
       .map(function(p) { return '<span class="text-xs font-semibold px-3 py-1 rounded-full bg-brand-dark-elevated border border-brand-lime/20 text-white/60">' + p + '</span>'; })
       .join('');

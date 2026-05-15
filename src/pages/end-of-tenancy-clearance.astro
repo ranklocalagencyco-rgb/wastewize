@@ -1,0 +1,427 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const BASE = 'https://wastewize.co.uk';
+
+const faqs = [
+  {
+    q: 'How much does end of tenancy clearance cost in London?',
+    a: 'End of tenancy clearance in London typically costs between £150 for a studio or single room and £700 for a full three-bedroom property. The price depends on the volume of items, access, and any specialist waste (white goods, electronics, hazardous materials). WasteWize provides a fixed all-inclusive quote within 2 hours — no hidden charges.',
+  },
+  {
+    q: 'Who is responsible for clearing a property at the end of a tenancy?',
+    a: 'Legally the responsibility depends on the tenancy agreement, but in practice landlords and letting agents almost always arrange clearance — especially when tenants abandon furniture or belongings. WasteWize works directly with landlords, letting agents, and property managers to turn properties around quickly between tenancies.',
+  },
+  {
+    q: 'Can you clear a property before the checkout inspection?',
+    a: 'Yes. We offer same-week availability across London and many cases next-day clearance. If you have a specific checkout or inventory date, call 07929 771954 and we will schedule around it. We are experienced working to tight landlord turnaround windows.',
+  },
+  {
+    q: 'Do you work with letting agents and property managers?',
+    a: 'Yes — letting agents and property management companies are some of our most frequent clients. We can invoice the managing company directly, work with key access, and handle multiple properties across a portfolio under an account arrangement. Call to discuss trade rates.',
+  },
+  {
+    q: 'What happens to the furniture and belongings left behind by tenants?',
+    a: 'We operate a 99% landfill diversion policy. Usable furniture is assessed for donation to local charities. Metals go to certified recyclers. Electronics are handled under WEEE regulations. Items that cannot be recovered go to energy-from-waste facilities — nothing goes to landfill if we can help it.',
+  },
+  {
+    q: 'Do you provide documentation for landlords and agents?',
+    a: 'Yes. Every clearance includes a Duty of Care Waste Transfer Note under the Environmental Protection Act 1990 — the legal document proving your waste was handled and disposed of correctly. This protects you from fly-tipping liability and satisfies letting compliance requirements.',
+  },
+];
+
+const whatWeClear = [
+  'Furniture — sofas, beds, wardrobes, tables, chairs',
+  'White goods — washing machines, fridges, freezers, ovens',
+  'Mattresses and bedding',
+  'Bags and boxes of mixed household waste',
+  'Garden waste from private gardens and shared areas',
+  'Electrical items and small WEEE',
+  'Accumulated clutter, clothing, and personal items',
+  'Carpets, laminate, and flooring',
+  'Kitchen and bathroom fittings (coordinated strip-outs)',
+  'Any items left behind — regardless of condition',
+];
+
+const whoWeHelp = [
+  {
+    title: 'Landlords',
+    desc:  'Fast turnaround between tenancies so you can re-let without delay. We work with key access — you do not need to be on site.',
+  },
+  {
+    title: 'Letting Agents',
+    desc:  'Account rates available for agencies managing multiple properties. Direct invoicing, reliable scheduling, and full compliance documentation.',
+  },
+  {
+    title: 'Tenants',
+    desc:  'Clearing before your checkout inspection? We clear everything, help avoid deposit disputes over abandoned items, and work to tight deadlines.',
+  },
+  {
+    title: 'Property Managers',
+    desc:  'Portfolio-level clearance support across London and the Home Counties. One point of contact, one invoice, full audit trail.',
+  },
+];
+
+const steps = [
+  { title: 'Contact Us',      desc: 'Call or send photos. We quote within 2 hours — fixed, all-inclusive price.' },
+  { title: 'Book a Slot',     desc: 'Same-week or next-day availability. We work around checkout and inventory dates.' },
+  { title: 'We Clear',        desc: 'Two-person team arrives on time, loads everything, and leaves the property broom-clean.' },
+  { title: 'Documentation',   desc: 'You receive a Duty of Care Waste Transfer Note confirming legal disposal.' },
+];
+---
+
+<Layout
+  title="End of Tenancy Clearance London | Landlords & Agents | WasteWize UK"
+  description="Fast end of tenancy clearance for landlords, letting agents, and tenants across London. EA-licensed, same-week availability, Duty of Care documentation included. From £150."
+>
+
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home",                          "item": `${BASE}/` },
+        { "@type": "ListItem", "position": 2, "name": "End of Tenancy Clearance",      "item": `${BASE}/end-of-tenancy-clearance` },
+      ]
+    })} />
+
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "End of Tenancy Clearance London",
+      "url": `${BASE}/end-of-tenancy-clearance`,
+      "description": "EA-licensed end of tenancy clearance for landlords, letting agents, and tenants across London and the Home Counties. Same-week availability, Duty of Care Waste Transfer Notes included.",
+      "serviceType": "End of Tenancy Clearance",
+      "areaServed": [
+        { "@type": "AdministrativeArea", "name": "London" },
+        { "@type": "AdministrativeArea", "name": "Surrey" },
+        { "@type": "AdministrativeArea", "name": "Essex" },
+        { "@type": "AdministrativeArea", "name": "Hertfordshire" },
+        { "@type": "AdministrativeArea", "name": "Berkshire" },
+        { "@type": "AdministrativeArea", "name": "Kent" },
+        { "@type": "AdministrativeArea", "name": "Middlesex" },
+      ],
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "WasteWize UK",
+        "url": BASE,
+        "telephone": "+447929771954",
+        "hasCredential": {
+          "@type": "EducationalOccupationalCredential",
+          "name": "EA Upper-Tier Waste Carrier Licence",
+          "identifier": "CBDU335711"
+        }
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "GBP",
+        "lowPrice": "150",
+        "highPrice": "700",
+        "offerCount": "6"
+      }
+    })} />
+
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(({ q, a }) => ({
+        "@type": "Question",
+        "name": q,
+        "acceptedAnswer": { "@type": "Answer", "text": a }
+      }))
+    })} />
+  </Fragment>
+
+  <!-- Breadcrumb -->
+  <nav aria-label="Breadcrumb" class="bg-brand-dark border-b border-white/8">
+    <div class="container mx-auto px-4 sm:px-6 py-3">
+      <ol class="flex flex-wrap items-center gap-1.5 text-xs text-white/40">
+        <li><a href="/" class="hover:text-white/70 transition-colors">Home</a></li>
+        <li aria-hidden="true" class="text-white/20">/</li>
+        <li class="text-white/70" aria-current="page">End of Tenancy Clearance</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="bg-brand-dark py-14 sm:py-20 border-b border-white/8">
+    <div class="container mx-auto px-4 sm:px-6 max-w-3xl">
+      <span class="text-xs font-semibold tracking-widest uppercase text-brand-lime mb-4 block">
+        Landlords · Letting Agents · Tenants
+      </span>
+      <h1 class="font-display text-4xl sm:text-5xl font-extrabold text-white mb-5 leading-[1.06]">
+        End of Tenancy Clearance<br />
+        <span class="text-brand-lime">London &amp; Home Counties</span>
+      </h1>
+      <p class="text-lg text-white/60 leading-relaxed mb-8 max-w-2xl">
+        EA-licensed clearance service for landlords, letting agents, and tenants. We clear everything left behind — furniture, white goods, accumulated waste — and leave the property broom-clean. Same-week availability. Duty of Care documentation on every job.
+      </p>
+      <div class="flex flex-wrap gap-4 mb-10">
+        <a href="tel:+447929771954"
+           class="inline-flex items-center gap-2 bg-brand-forest text-white px-7 py-3.5 rounded-[8px] text-sm font-semibold hover:bg-brand-forest-dark hover:-translate-y-0.5 hover:shadow-cta transition-all duration-200">
+          <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+          </svg>
+          Call 07929 771954
+        </a>
+        <a href="/contact"
+           class="inline-flex items-center gap-2 border border-white/20 text-white/80 px-7 py-3.5 rounded-[8px] text-sm font-semibold hover:border-brand-lime/50 hover:text-white transition-all duration-200">
+          Send Photos for a Fixed Quote →
+        </a>
+      </div>
+      <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/50">
+        {['EA Licensed · CBDU335711', 'Same-Week Availability', 'Duty of Care Docs Included', '99% Landfill Diversion'].map((badge) => (
+          <span class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-brand-lime shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            {badge}
+          </span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Who we help -->
+  <section class="py-14 sm:py-18 bg-brand-dark-card border-b border-white/8" aria-labelledby="who-heading">
+    <div class="container mx-auto px-4 sm:px-6">
+      <h2 id="who-heading" class="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+        <span class="w-1 h-6 bg-brand-lime rounded-full shrink-0" aria-hidden="true"/>
+        Who We Help
+      </h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {whoWeHelp.map(({ title, desc }) => (
+          <div class="bg-brand-dark border border-white/10 rounded-[12px] p-6 flex flex-col gap-3">
+            <div class="w-10 h-10 rounded-[8px] bg-brand-lime/10 flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5 text-brand-lime" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"/>
+              </svg>
+            </div>
+            <h3 class="text-[15px] font-semibold text-white">{title}</h3>
+            <p class="text-sm text-white/50 leading-relaxed">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- What we clear -->
+  <section class="py-14 sm:py-18 bg-brand-dark border-b border-white/8" aria-labelledby="what-heading">
+    <div class="container mx-auto px-4 sm:px-6">
+      <div class="grid lg:grid-cols-2 gap-12 items-start">
+        <div>
+          <h2 id="what-heading" class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+            <span class="w-1 h-6 bg-brand-lime rounded-full shrink-0" aria-hidden="true"/>
+            What We Clear
+          </h2>
+          <p class="text-white/60 leading-relaxed mb-6 text-sm">
+            We take everything — regardless of condition. No cherry-picking, no extra charges for heavy items. Our two-person team loads and removes it all.
+          </p>
+          <ul class="flex flex-col gap-3">
+            {whatWeClear.map((item) => (
+              <li class="flex items-start gap-3 text-sm text-white/70 leading-relaxed">
+                <svg class="w-5 h-5 text-brand-lime shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="flex flex-col gap-5">
+          <!-- Why not a skip -->
+          <div class="bg-brand-dark-card border border-white/10 rounded-[12px] p-6">
+            <h3 class="text-[15px] font-semibold text-white mb-3">Why Not a Skip?</h3>
+            <p class="text-sm text-white/55 leading-relaxed mb-4">
+              Skips require council permits (£50–£100+), take days to deliver and collect, and you load them yourself. For rented properties, skips on the street attract additional waste from passers-by, creating a fly-tipping liability.
+            </p>
+            <p class="text-sm text-white/55 leading-relaxed">
+              WasteWize sends a two-person team who load everything, clear in a single visit, and hand you a legal Duty of Care note — often at the same or lower total cost as a skip.
+            </p>
+          </div>
+          <!-- Deposit disputes note -->
+          <div class="bg-brand-lime/5 border border-brand-lime/20 rounded-[12px] p-6">
+            <h3 class="text-[15px] font-semibold text-white mb-2">Avoiding Deposit Disputes</h3>
+            <p class="text-sm text-white/60 leading-relaxed">
+              Items left behind at checkout are a common source of deposit disputes at the Tenancy Deposit Scheme. A professional clearance receipt and Waste Transfer Note provide clean evidence that the property was cleared — useful for both landlords and tenants.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="py-14 sm:py-18 bg-brand-dark-card border-b border-white/8" aria-labelledby="process-heading">
+    <div class="container mx-auto px-4 sm:px-6">
+      <h2 id="process-heading" class="text-2xl font-bold text-white mb-10 flex items-center gap-3">
+        <span class="w-1 h-6 bg-brand-lime rounded-full shrink-0" aria-hidden="true"/>
+        How It Works
+      </h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {steps.map(({ title, desc }, i) => (
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-full bg-brand-lime/10 border border-brand-lime/30 flex items-center justify-center shrink-0">
+              <span class="text-brand-lime font-bold text-lg">{i + 1}</span>
+            </div>
+            <div>
+              <p class="text-[14px] font-semibold text-white mb-1.5">{title}</p>
+              <p class="text-sm text-white/50 leading-relaxed">{desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="py-14 sm:py-18 bg-brand-dark border-b border-white/8" aria-labelledby="pricing-heading">
+    <div class="container mx-auto px-4 sm:px-6">
+      <h2 id="pricing-heading" class="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+        <span class="w-1 h-6 bg-brand-lime rounded-full shrink-0" aria-hidden="true"/>
+        Guide Prices
+      </h2>
+      <div class="overflow-x-auto rounded-[12px] border border-white/10 mb-6">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-brand-dark-card border-b border-white/10">
+              <th class="text-left px-5 py-3.5 text-white/40 font-semibold uppercase tracking-wider text-xs">Property Type</th>
+              <th class="text-left px-5 py-3.5 text-white/40 font-semibold uppercase tracking-wider text-xs">From</th>
+              <th class="text-left px-5 py-3.5 text-white/40 font-semibold uppercase tracking-wider text-xs">Up To</th>
+              <th class="text-left px-5 py-3.5 text-white/40 font-semibold uppercase tracking-wider text-xs hidden sm:table-cell">Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { type: 'Studio / Single Room',      from: '£150', to: '£280',  note: 'Approx. 1 van load' },
+              { type: '1-Bedroom Flat',             from: '£250', to: '£380',  note: '1–2 loads' },
+              { type: '2-Bedroom Property',         from: '£320', to: '£520',  note: '2 loads' },
+              { type: '3-Bedroom House',            from: '£450', to: '£700',  note: '2–3 loads' },
+              { type: 'HMO / Multi-Room Property',  from: '£POA', to: '£POA',  note: 'Contact for quote' },
+            ].map(({ type, from, to, note }, i) => (
+              <tr class={`border-b border-white/6 last:border-0 ${i % 2 === 0 ? 'bg-brand-dark' : 'bg-brand-dark-card/30'}`}>
+                <td class="px-5 py-3.5 text-white/80">{type}</td>
+                <td class="px-5 py-3.5 text-brand-lime font-bold">{from}</td>
+                <td class="px-5 py-3.5 text-white/60">{to}</td>
+                <td class="px-5 py-3.5 text-white/30 text-xs hidden sm:table-cell">{note}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div class="bg-brand-dark-card border border-brand-lime/20 rounded-[12px] px-6 py-4">
+        <p class="text-sm text-white/60 leading-relaxed">
+          <strong class="text-white">All prices exclude VAT.</strong> Fixed all-inclusive quotes — labour, transport, and EA-licensed disposal included. Send photos or call for an exact price.
+          <a href="/prices" class="text-brand-lime hover:underline underline-offset-2 ml-1">See full price guide →</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compliance -->
+  <section class="py-14 sm:py-18 bg-brand-dark-card border-b border-white/8" aria-labelledby="compliance-heading">
+    <div class="container mx-auto px-4 sm:px-6">
+      <h2 id="compliance-heading" class="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+        <span class="w-1 h-6 bg-brand-lime rounded-full shrink-0" aria-hidden="true"/>
+        Landlord &amp; Agent Compliance
+      </h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {[
+          {
+            badge: 'EA',
+            title: 'EA Upper-Tier Waste Carrier Licence',
+            desc:  'CBDU335711 — the highest tier of Environment Agency licensing. Every clearance is fully compliant with the Environmental Protection Act 1990.',
+          },
+          {
+            badge: 'DoC',
+            title: 'Duty of Care Waste Transfer Note',
+            desc:  'Provided on every job. This is the legal document that proves your waste was handled and disposed of correctly — essential for landlord compliance and letting agent records.',
+          },
+          {
+            badge: '99%',
+            title: '99% Landfill Diversion',
+            desc:  'Usable items are donated. Metals and WEEE are recycled. Only non-recoverable waste goes to energy-from-waste. We document the disposal route.',
+          },
+        ].map(({ badge, title, desc }) => (
+          <div class="bg-brand-dark border border-white/10 rounded-[12px] p-6 flex flex-col gap-3">
+            <span class="inline-flex items-center justify-center w-12 h-12 rounded-[10px] bg-brand-lime/15 border border-brand-lime/30 text-brand-lime text-sm font-bold tracking-wide shrink-0">
+              {badge}
+            </span>
+            <h3 class="text-[14px] font-semibold text-white">{title}</h3>
+            <p class="text-xs text-white/50 leading-relaxed">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-14 sm:py-18 bg-brand-dark border-b border-white/8" aria-labelledby="faq-heading">
+    <div class="container mx-auto px-4 sm:px-6 max-w-2xl mx-auto">
+      <h2 id="faq-heading" class="font-display text-2xl sm:text-3xl font-bold text-white mb-8">
+        Frequently Asked Questions
+      </h2>
+      <dl class="flex flex-col gap-4">
+        {faqs.map(({ q, a }) => (
+          <div class="bg-brand-dark-card border border-white/10 rounded-[12px] p-6">
+            <dt class="text-[15px] font-semibold text-white mb-2 flex items-start gap-3">
+              <span class="text-brand-lime shrink-0 mt-0.5" aria-hidden="true">Q</span>
+              {q}
+            </dt>
+            <dd class="text-sm leading-relaxed text-white/60 pl-6">{a}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <!-- Related services -->
+  <section class="py-14 sm:py-18 bg-brand-dark-card border-b border-white/8" aria-labelledby="related-heading">
+    <div class="container mx-auto px-4 sm:px-6">
+      <h2 id="related-heading" class="text-xl font-bold text-white mb-6 flex items-center gap-3">
+        <span class="w-1 h-6 bg-brand-lime rounded-full shrink-0" aria-hidden="true"/>
+        Related Services
+      </h2>
+      <div class="grid sm:grid-cols-3 gap-5">
+        {[
+          { title: 'House Clearance',        href: '/house-clearance',                    desc: 'Full property clearances for probate, bereavement, and downsizing.' },
+          { title: 'Commercial Clearance',   href: '/services/commercial-clearance',      desc: 'Office, retail, and warehouse clearances for businesses and property managers.' },
+          { title: 'Skip Hire Alternative',  href: '/skip-hire-alternative',              desc: 'No permits, no loading yourself — a cheaper, faster alternative to a skip.' },
+        ].map(({ title, href, desc }) => (
+          <a href={href}
+             class="group bg-brand-dark border border-white/10 rounded-[12px] p-5 flex flex-col gap-2
+                    hover:border-brand-lime/50 hover:-translate-y-1 hover:shadow-card transition-all duration-300">
+            <h3 class="text-[14px] font-semibold text-white group-hover:text-brand-lime transition-colors duration-200">{title}</h3>
+            <p class="text-xs text-white/50 leading-relaxed">{desc}</p>
+            <span class="text-brand-lime text-xs mt-auto">Learn more →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-14 sm:py-20 bg-brand-dark-card border-t border-white/8">
+    <div class="container mx-auto px-4 sm:px-6 max-w-xl mx-auto text-center">
+      <h2 class="font-display text-2xl sm:text-3xl font-bold text-white mb-3">Book an End of Tenancy Clearance</h2>
+      <p class="text-white/60 mb-8 leading-relaxed">
+        Send photos or call — we'll give you a fixed all-inclusive price within 2 hours. Same-week availability across London and the Home Counties.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+        <a href="tel:+447929771954"
+           class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-brand-forest text-white px-8 py-4 rounded-[8px] text-base font-semibold hover:bg-brand-forest-dark hover:shadow-cta hover:-translate-y-0.5 transition-all duration-200">
+          <svg class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+          </svg>
+          07929 771954
+        </a>
+        <a href="/contact"
+           class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-white/20 text-white/80 px-8 py-4 rounded-[8px] text-base font-semibold hover:border-brand-lime/50 hover:text-white transition-all duration-200">
+          Contact Form →
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
