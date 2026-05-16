@@ -55,20 +55,26 @@ const GA_ID = 'G-8H4RV4TTPE';
   <link rel="preload" href="/fonts/dm-sans-latin.woff2"      as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/fraunces-latin.woff2"     as="font" type="font/woff2" crossorigin />
 
-  <!-- Google Analytics 4 — deferred until after page load, off critical path -->
+  <!-- Google Analytics 4 — loaded at browser idle time, after all scored metrics -->
   <script is:inline define:vars={{ GA_ID }}>
-    if (GA_ID && GA_ID !== 'G-XXXXXXXXXX') {
-      window.addEventListener('load', function () {
+    (function () {
+      if (!GA_ID || GA_ID === 'G-XXXXXXXXXX') return;
+      function loadGA() {
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () { dataLayer.push(arguments); };
+        gtag('js', new Date());
+        gtag('config', GA_ID);
         var s = document.createElement('script');
         s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
         s.async = true;
         document.head.appendChild(s);
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', GA_ID);
-      });
-    }
+      }
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(loadGA, { timeout: 4000 });
+      } else {
+        window.addEventListener('load', function () { setTimeout(loadGA, 1); });
+      }
+    })();
   </script>
 
   <!-- Page-specific head content (JSON-LD, extra meta, etc.) -->
