@@ -306,13 +306,8 @@ const otherServices = services
           </span>
         </h1>
 
-        {leadPara && (
-          <p class="text-base sm:text-lg text-brand-lime/80 leading-relaxed mb-3 max-w-2xl font-medium">
-            {leadPara}
-          </p>
-        )}
-        <p class="text-base sm:text-lg text-white/60 leading-relaxed mb-4 max-w-2xl">
-          {detail.heroDesc}
+        <p class={`text-base sm:text-lg leading-relaxed mb-4 max-w-2xl ${leadPara ? 'text-brand-lime/80 font-medium' : 'text-white/60'}`}>
+          {leadPara ?? detail.heroDesc}
         </p>
         {townDetail?.intro && (
           <p class="text-sm sm:text-base text-white/45 leading-relaxed mb-8 max-w-2xl">
