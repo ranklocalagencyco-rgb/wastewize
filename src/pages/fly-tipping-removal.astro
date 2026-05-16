@@ -209,54 +209,70 @@ const whoWeHelp = [
     </div>
   </section>
 
-  <!-- What we remove + how it works -->
-  <section class="py-14 sm:py-18 bg-brand-dark border-b border-white/8" aria-labelledby="what-heading">
+  <!-- What we remove -->
+  <section class="py-16 sm:py-20 bg-brand-dark border-b border-white/8" aria-labelledby="what-heading">
     <div class="container mx-auto px-4 sm:px-6">
-      <div class="grid lg:grid-cols-2 gap-12 items-start">
+      <h2 id="what-heading" class="text-2xl sm:text-3xl font-bold text-white mb-3">What We Remove</h2>
+      <p class="text-white/60 mb-10 max-w-2xl text-sm sm:text-base">
+        We clear all types of fly-tipped waste in a single visit. No sorting required from you — we handle mixed loads.
+      </p>
+      <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-3">
+        {whatWeRemove.map((item) => (
+          <li class="flex items-start gap-3 text-sm text-white/70 leading-relaxed">
+            <svg class="w-5 h-5 text-brand-lime shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            {item}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
 
-        <!-- What we remove -->
-        <div>
-          <h2 id="what-heading" class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-            <span class="w-1 h-6 bg-brand-lime rounded-full shrink-0" aria-hidden="true"/>
-            What We Remove
-          </h2>
-          <p class="text-white/60 leading-relaxed mb-6 text-sm">
-            We clear all types of fly-tipped waste in a single visit. No sorting required from you — we handle mixed loads.
-          </p>
-          <ul class="flex flex-col gap-3">
-            {whatWeRemove.map((item) => (
-              <li class="flex items-start gap-3 text-sm text-white/70 leading-relaxed">
-                <svg class="w-5 h-5 text-brand-lime shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                </svg>
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <!-- Steps -->
-        <div class="flex flex-col gap-5">
-          <h2 class="text-2xl font-bold text-white flex items-center gap-3">
-            <span class="w-1 h-6 bg-brand-lime rounded-full shrink-0" aria-hidden="true"/>
-            How It Works
-          </h2>
+  <!-- How it works -->
+  <section class="py-16 sm:py-20 bg-brand-dark-card border-b border-white/8" aria-labelledby="process-heading">
+    <div class="container mx-auto px-4 sm:px-6 max-w-5xl">
+      <div class="text-center mb-12">
+        <span class="text-xs font-semibold tracking-widest uppercase text-brand-lime mb-3 block">Step by Step</span>
+        <h2 id="process-heading" class="font-display text-2xl sm:text-3xl font-bold text-white">
+          How Our Fly Tipping Removal Service Works
+        </h2>
+        <p class="mt-3 text-sm text-white/50 max-w-xl mx-auto">
+          Every job follows the same documented process — from first contact to final Waste Transfer Note.
+        </p>
+      </div>
+      <div class="relative">
+        <div class="hidden lg:block absolute top-10 left-[8%] right-[8%] h-[2px]
+                    bg-gradient-to-r from-brand-lime/20 via-brand-lime/50 to-brand-lime/20"
+             aria-hidden="true"></div>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4 relative z-10">
           {[
-            { n: '01', title: 'Photograph the fly tip', desc: 'Before we arrive, photograph the waste. This evidence is useful if you wish to <a href="https://www.gov.uk/report-flytipping" target="_blank" rel="noopener" class="text-brand-lime underline underline-offset-2">report the offender to your local council</a> via the <a href="https://www.flycapture.com/" target="_blank" rel="noopener" class="text-brand-lime underline underline-offset-2">Flycapture database</a>.' },
-            { n: '02', title: 'Call or send us photos', desc: 'We quote within 2 hours. For large or mixed loads a quick phone call is often faster. Same-week and next-day slots available.' },
-            { n: '03', title: 'We clear in one visit',   desc: 'A two-person team arrives, loads all waste, and leaves the site clean. No skips, no permits, no return visits needed.' },
-            { n: '04', title: 'You receive documentation', desc: 'A Duty of Care Waste Transfer Note is issued immediately after collection — your legal proof of compliant disposal. Keep it on file.' },
-          ].map(({ n, title, desc }) => (
-            <div class="flex gap-5 bg-brand-dark-card border border-white/10 rounded-[12px] p-5">
-              <span class="text-brand-lime font-bold text-lg shrink-0 w-8">{n}</span>
+            { title: 'Photograph the Fly Tip', html: 'Before we arrive, photograph the waste. This evidence is useful if you wish to <a href="https://www.gov.uk/report-flytipping" target="_blank" rel="noopener" class="text-brand-lime underline underline-offset-2">report to your local council</a> via the <a href="https://www.flycapture.com/" target="_blank" rel="noopener" class="text-brand-lime underline underline-offset-2">Flycapture database</a>.' },
+            { title: 'Call or Send Photos',    html: 'We quote within 2 hours. For large or mixed loads a quick phone call is often faster. Same-week and next-day slots available.' },
+            { title: 'We Clear in One Visit',  html: 'A two-person team arrives, loads all waste, and leaves the site clean. No skips, no permits, no return visits needed.' },
+            { title: 'Documentation Issued',   html: 'A Duty of Care Waste Transfer Note is issued immediately after collection — your legal proof of compliant disposal. Keep it on file.' },
+          ].map(({ title, html }, i) => (
+            <div class="flex flex-col items-center text-center gap-3">
+              <div class="w-20 h-20 rounded-full bg-brand-dark border-2 border-brand-lime/30
+                          flex items-center justify-center relative shrink-0
+                          hover:border-brand-lime hover:bg-brand-lime/10
+                          transition-all duration-300 group/step">
+                <span class="text-brand-lime font-bold text-lg group-hover/step:scale-110 transition-transform duration-300">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <span class="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-brand-lime
+                             text-[10px] font-bold text-brand-dark flex items-center
+                             justify-center leading-none" aria-hidden="true">
+                  {i + 1}
+                </span>
+              </div>
               <div>
-                <p class="text-[14px] font-semibold text-white mb-1">{title}</p>
-                <p class="text-sm text-white/50 leading-relaxed"><Fragment set:html={desc} /></p>
+                <p class="text-sm font-semibold text-white mb-1">{title}</p>
+                <p class="text-[11px] text-white/40 leading-snug"><Fragment set:html={html} /></p>
               </div>
             </div>
           ))}
         </div>
-
       </div>
     </div>
   </section>
