@@ -115,31 +115,31 @@ export const serviceDetails: Record<string, ServiceDetail> = {
 
   'commercial-clearance': {
     slug:      'commercial-clearance',
-    metaTitle: 'Commercial Clearance London | Office & Retail Clearance | WasteWize UK',
-    metaDesc:  'End-of-tenancy and full commercial clearance for offices, retail units, and warehouses across London and the Home Counties. Fixed-price quotes, short-notice availability, EA licensed.',
-    heroDesc:  'End-of-tenancy and full-property commercial clearance for offices, retail units, warehouses, and industrial premises across London and the Home Counties. Flexible scheduling, short-notice availability, and full insurance make WasteWize the preferred choice for property managers, landlords, and facilities teams who need a site emptied cleanly, compliantly, and on time. All waste is disposed of under EA licence with a full duty-of-care paper trail.',
+    metaTitle: 'Commercial Clearance London | Retail, Warehouse & Industrial | WasteWize UK',
+    metaDesc:  'EA-licensed commercial clearance for retail units, warehouses, restaurants, and industrial premises across London and the Home Counties. Fixed-price quotes, short-notice availability.',
+    heroDesc:  'EA-licensed commercial clearance for retail units, warehouses, restaurants, and industrial premises across London and the Home Counties. Property managers, landlords, and facilities teams choose WasteWize for fast end-of-tenancy turnarounds, flexible scheduling, and a complete compliance paper trail on every job. Need a dedicated office clearance? See our specialist office clearance service.',
     bodySections: [
       {
-        heading: 'End-of-Tenancy Office Clearance for London Landlords',
-        body:    'End-of-tenancy clearances are among our most common commercial instructions. Whether you have inherited a floor full of furniture from a departed tenant or need a full fit-out stripped before a new occupier arrives, we provide fast turnaround — typically within 48 to 72 hours of instruction for a standard office space. We work directly with building managers to coordinate lift access, loading bay bookings, and parking permits, so you do not need to act as the go-between. Properties are left broom-clean and ready for your agent to photograph and re-let.',
+        heading: 'Retail & Warehouse End-of-Tenancy Clearance',
+        body:    'End-of-tenancy clearances are among our most frequent commercial instructions. Whether you have a retail unit full of shelving and point-of-sale fixtures, a warehouse with industrial racking and stored stock, or a restaurant with commercial kitchen equipment to strip out, WasteWize provides fast turnaround — typically within 48 to 72 hours of instruction for a standard unit. We liaise directly with building managers to coordinate loading bay access, parking permits, and any landlord restrictions on working hours, so you do not need to act as the go-between. Premises are left broom-clean and ready for your agent to photograph and re-let.',
       },
       {
-        heading: 'Retail, Warehouse, and Industrial Clearance',
-        body:    'Beyond offices, WasteWize regularly clears retail units — including heavy shelving, display cases, and refrigeration units — warehouses with industrial racking, and light industrial premises containing machinery and process equipment. Large or awkward items that other clearance companies decline, such as safes, commercial ovens, server rack enclosures, and industrial freezers, are handled with appropriate equipment. For very heavy or unusually large items, we can arrange crane-assisted removal through our specialist plant subcontractor network. No job has ever been too complicated to quote.',
+        heading: 'Industrial & Specialist Commercial Clearance',
+        body:    'WasteWize handles clearances that most companies decline — light industrial premises containing machinery and process equipment, commercial kitchens with heavy catering appliances, server rooms with rack enclosures, and storage facilities with mixed hazardous and non-hazardous material. Large or awkward items such as safes, commercial ovens, industrial freezers, and heavy shelving are handled with appropriate lifting equipment. For unusually heavy items, we can arrange crane-assisted removal through our specialist plant subcontractor network.',
       },
       {
         heading: 'Reuse, Donation, and Recycling Before Disposal',
-        body:    'Before anything goes to a disposal facility, we assess cleared items for reuse. Serviceable office furniture — desks, chairs, filing cabinets, and meeting tables — is offered to local charities, schools, and social enterprises in our partner network. This reduces your environmental impact, supports local communities, and can be documented for your company\'s CSR and sustainability reporting. IT equipment is separated as WEEE and processed by registered handlers, with official transfer notes issued. Only items with no viable reuse or recycling route go to energy-from-waste — nothing we handle goes to landfill when a recovery pathway exists.',
+        body:    'Before anything goes to a disposal facility, we assess cleared items for reuse. Serviceable commercial furniture and equipment is offered to local charities, schools, and social enterprises in our partner network — documented for your company\'s CSR and sustainability reporting. IT equipment is separated as WEEE and processed by registered handlers, with official transfer notes issued. Only items with no viable reuse or recycling route go to energy-from-waste — nothing we handle goes to landfill when a recovery pathway exists.',
       },
     ],
     included: [
-      'Office furniture — desks, chairs, cabinets, and shelving',
-      'IT equipment — computers, monitors, servers (WEEE-compliant stream)',
-      'Retail fixtures, display units, and point-of-sale equipment',
+      'Retail fixtures, shelving, display units, and point-of-sale equipment',
       'Warehouse racking, pallet storage, and industrial shelving',
-      'Kitchen and breakroom equipment',
-      'Carpet, floor tiles, and general office fit-out',
-      'General office consumables and stationery',
+      'Commercial kitchen and catering equipment',
+      'Restaurant fit-out and front-of-house furniture',
+      'IT equipment and server racks (WEEE-compliant stream)',
+      'Industrial machinery and process equipment',
+      'General commercial fit-out, carpet, and floor tiles',
       'Site broom-clean on completion',
     ],
     process: [
