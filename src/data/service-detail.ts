@@ -40,10 +40,12 @@ export interface ServiceDetail {
 export const serviceDetails: Record<string, ServiceDetail> = {
 
   'strip-out-demolition': {
-    slug:      'strip-out-demolition',
-    metaTitle: 'Strip Out & Demolition London | EA-Licensed Interior Strip-Out | WasteWize UK',
+    slug:        'strip-out-demolition',
+    serviceType: 'Strip Out and Demolition Service',
+    metaTitle:   'Strip Out & Demolition London | EA-Licensed Interior Strip-Out | WasteWize UK',
     metaDesc:  'Professional interior strip-out and soft demolition across London and the Home Counties. EA-licensed, same-week availability, full duty-of-care documentation. Get a free quote.',
-    heroDesc:  'Professional interior strip-out and soft demolition for commercial and residential projects across London and the Home Counties. Our experienced crews remove fixtures, fittings, partitions, raised floors, and all non-structural elements safely and efficiently, with full waste segregation and EA-licensed disposal on every project. Every job includes duty-of-care Waste Transfer Notes delivered within 24 hours.',
+    heroDesc:     'Professional interior strip-out and soft demolition for commercial and residential projects across London and the Home Counties. Our experienced crews remove fixtures, fittings, partitions, raised floors, and all non-structural elements safely and efficiently, with full waste segregation and EA-licensed disposal on every project. Every job includes duty-of-care Waste Transfer Notes delivered within 24 hours.',
+    leadTemplate: 'In [Town], WasteWize UK\'s strip-out team provides EA-licensed interior strip-out and soft demolition for commercial and residential refurbishments across [County]. From partition removal and raised-floor clearance to full fixture and fitting strip-outs, we keep active sites clear with same-week scheduling and full compliance documentation on every job.',
     bodySections: [
       {
         heading: 'Strip-Out for Commercial Refurbishments',
@@ -114,14 +116,30 @@ export const serviceDetails: Record<string, ServiceDetail> = {
         a: 'All materials are stream-segregated on site. Metal is sent to certified smelters; timber to biomass or timber recycling; plasterboard to specialist gypsum recyclers; and general mixed waste to energy-from-waste facilities. We achieve a 99% landfill diversion rate on most strip-out projects.',
       },
     ],
+    townFaqs: [
+      {
+        q: 'Can you carry out a strip-out in [Town] at short notice?',
+        a: 'Yes. We regularly take short-notice strip-out instructions in [Town] and across [County] — particularly for projects where asbestos surveys have cleared and stripping can proceed immediately. Call 07929 771954 to confirm vehicle and crew availability.',
+      },
+      {
+        q: 'Do you cover commercial and residential properties in [Town]?',
+        a: 'Yes. We carry out strip-outs across all types of premises in [Town] — offices, retail units, restaurants, and light industrial — as well as residential refurbishments. Our crew are accustomed to active-site conditions and restricted working hours across [County].',
+      },
+      {
+        q: 'How much does a strip-out cost in [Town]?',
+        a: 'Strip-out pricing in [Town] depends on scope, floor area, and material streams. A small residential strip-out (single kitchen or bathroom) typically starts from around £500; a commercial floor strip-out is priced after a site visit. Call 07929 771954 or send photos for a same-day estimate.',
+      },
+    ],
     relatedIds: ['asbestos-removal', 'builders-waste-removal', 'commercial-clearance'],
   },
 
   'commercial-clearance': {
-    slug:      'commercial-clearance',
-    metaTitle: 'Commercial Clearance London | Retail, Warehouse & Industrial | WasteWize UK',
+    slug:        'commercial-clearance',
+    serviceType: 'Commercial Clearance Service',
+    metaTitle:   'Commercial Clearance London | Retail, Warehouse & Industrial | WasteWize UK',
     metaDesc:  'EA-licensed commercial clearance for retail units, warehouses, restaurants, and industrial premises across London and the Home Counties. Fixed-price quotes, short-notice availability.',
-    heroDesc:  'EA-licensed commercial clearance for retail units, warehouses, restaurants, and industrial premises across London and the Home Counties. Property managers, landlords, and facilities teams choose WasteWize for fast end-of-tenancy turnarounds, flexible scheduling, and a complete compliance paper trail on every job. Need a dedicated office clearance? See our specialist office clearance service.',
+    heroDesc:     'EA-licensed commercial clearance for retail units, warehouses, restaurants, and industrial premises across London and the Home Counties. Property managers, landlords, and facilities teams choose WasteWize for fast end-of-tenancy turnarounds, flexible scheduling, and a complete compliance paper trail on every job. Need a dedicated office clearance? See our specialist office clearance service.',
+    leadTemplate: 'WasteWize UK provides EA-licensed commercial clearance for businesses in [Town] — clearing retail units, warehouses, offices, and industrial premises with fixed-price quotes, same-week availability, and full duty-of-care documentation across [County]. From end-of-tenancy turnarounds to large-scale decommissions, we handle every size of commercial instruction.',
     bodySections: [
       {
         heading: 'Retail & Warehouse End-of-Tenancy Clearance',
@@ -192,14 +210,30 @@ export const serviceDetails: Record<string, ServiceDetail> = {
         a: 'If we encounter asbestos, unknown chemical containers, or other hazardous materials, we pause work immediately and advise you on the appropriate specialist removal process. Hazardous waste is never mixed with general clearance loads — each stream requires its own licensed handler and documentation.',
       },
     ],
+    townFaqs: [
+      {
+        q: 'Can you clear a commercial premises in [Town] at short notice?',
+        a: 'Yes. We routinely carry out short-notice commercial clearances in [Town] — particularly for end-of-tenancy work with fixed lease surrender dates. Call 07929 771954 with your deadline and we confirm vehicle availability within the hour.',
+      },
+      {
+        q: 'Do you cover all types of commercial property in [Town]?',
+        a: 'Yes. We clear offices, retail units, warehouses, restaurants, and industrial premises across [Town] and the wider [County] area. We handle everything from standard office furniture to commercial kitchen appliances and industrial shelving.',
+      },
+      {
+        q: 'How much does commercial clearance cost in [Town]?',
+        a: 'Commercial clearance pricing in [Town] depends on premises size, content type, and access. A single-floor office or retail unit typically starts from around £200; larger premises are priced after a site visit or photo assessment. We provide a written fixed-price quote before any work begins — no hourly rate surprises.',
+      },
+    ],
     relatedIds: ['strip-out-demolition', 'residential-waste', 'confidential-waste'],
   },
 
   'residential-waste': {
-    slug:      'residential-waste',
-    metaTitle: 'Residential Waste Removal London | Bulky Item Collection | WasteWize UK',
+    slug:        'residential-waste',
+    serviceType: 'Residential Waste Removal Service',
+    metaTitle:   'Residential Waste Removal London | Bulky Item Collection | WasteWize UK',
     metaDesc:  'EA-licensed residential waste removal and bulky item collection across London and the Home Counties. Single items to loft, garage, and partial room clearances. Same-week availability.',
-    heroDesc:  'EA-licensed residential waste removal and bulky item collection for London homeowners, landlords, and residents across the Home Counties. Whether you need a single sofa collected, a garage emptied, a loft cleared after decades of accumulation, or a mixed load of household rubbish removed, WasteWize handles every size of job with a fixed-price quote, same-week availability, and a Duty of Care Waste Transfer Note on every collection. Need a full property cleared? See our dedicated house clearance service.',
+    heroDesc:     'EA-licensed residential waste removal and bulky item collection for London homeowners, landlords, and residents across the Home Counties. Whether you need a single sofa collected, a garage emptied, a loft cleared after decades of accumulation, or a mixed load of household rubbish removed, WasteWize handles every size of job with a fixed-price quote, same-week availability, and a Duty of Care Waste Transfer Note on every collection. Need a full property cleared? See our dedicated house clearance service.',
+    leadTemplate: 'WasteWize UK provides EA-licensed residential waste removal and bulky item collection across [Town] and the wider [County] area. From single-item pickups — sofas, mattresses, white goods — to full garage and loft clearances, we load everything ourselves with a fixed-price quote and a Duty of Care Waste Transfer Note on every job. Prices from £50.',
     bodySections: [
       {
         heading: 'Bulky Items & Partial Clearances — No Volume Too Small',
@@ -274,14 +308,30 @@ export const serviceDetails: Record<string, ServiceDetail> = {
         a: 'Yes. Fridges and freezers are collected under F-gas certified disposal procedures. Televisions and other electrical items are handled under WEEE (Waste Electrical and Electronic Equipment) regulations. Both are included in your standard quote.',
       },
     ],
+    townFaqs: [
+      {
+        q: 'Can you collect bulky items from [Town] at short notice?',
+        a: 'Yes. We collect single bulky items and small mixed loads from [Town] with short-notice availability — often next working day. Call 07929 771954 or send a WhatsApp photo of your items for an instant fixed price.',
+      },
+      {
+        q: 'Do you collect from all areas of [Town]?',
+        a: 'Yes. We cover [Town] and the wider [County] area including all surrounding postcodes. There are no travel surcharges for standard residential collections within [Town]. Call 07929 771954 to confirm same-day availability.',
+      },
+      {
+        q: 'How much does residential waste removal cost in [Town]?',
+        a: 'A single bulky item collected from [Town] typically costs between £50 and £120 depending on size and floor level. Small mixed loads — a garage worth of household items — start from around £150. We give you a fixed price by phone or WhatsApp before we arrive.',
+      },
+    ],
     relatedIds: ['garden-refuse', 'commercial-clearance', 'confidential-waste'],
   },
 
   'garden-refuse': {
-    slug:      'garden-refuse',
-    metaTitle: 'Garden Waste Removal London | Green Waste Collection | WasteWize UK',
+    slug:        'garden-refuse',
+    serviceType: 'Garden Waste Removal Service',
+    metaTitle:   'Garden Waste Removal London | Green Waste Collection | WasteWize UK',
     metaDesc:  'Professional garden waste collection and green waste removal across London and the Home Counties. All material composted or recovered — zero landfill. EA licensed. Book online.',
-    heroDesc:  'Professional garden waste collection and responsible composting for homeowners, housing associations, and landscaping contractors across London and the Home Counties. From seasonal clearances and hedge trimmings to soil removal and shed contents, our EA-licensed service collects from your garden or driveway and diverts everything to PAS 100-certified composting and biomass facilities. No landfill, no hassle, full duty-of-care documentation.',
+    heroDesc:     'Professional garden waste collection and responsible composting for homeowners, housing associations, and landscaping contractors across London and the Home Counties. From seasonal clearances and hedge trimmings to soil removal and shed contents, our EA-licensed service collects from your garden or driveway and diverts everything to PAS 100-certified composting and biomass facilities. No landfill, no hassle, full duty-of-care documentation.',
+    leadTemplate: 'WasteWize UK provides EA-licensed garden waste collection and responsible composting for homeowners and landscaping contractors across [Town] and [County]. From one-off seasonal clearances to regular scheduled collections, we collect all green waste — grass cuttings, branches, soil, and more — from your garden or driveway. From £80.',
     bodySections: [
       {
         heading: 'One-Off and Seasonal Garden Clearances',
@@ -352,14 +402,30 @@ export const serviceDetails: Record<string, ServiceDetail> = {
         a: 'For homeowners using a licensed carrier, a Waste Transfer Note is issued as standard and is evidence of your duty of care. Businesses — including landscaping contractors and housing associations — are legally required to hold a WTN for every commercial waste collection under the Environmental Protection Act 1990.',
       },
     ],
+    townFaqs: [
+      {
+        q: 'Can you collect garden waste from [Town] at short notice?',
+        a: 'Yes. We arrange short-notice garden waste collections across [Town] and the wider [County] area. Most domestic collections are booked within two working days. Call 07929 771954 with your volume estimate for a same-day fixed price.',
+      },
+      {
+        q: 'Do you offer regular garden waste collections in [Town]?',
+        a: 'Yes. We provide fortnightly and monthly collection schedules for homeowners, housing associations, and landscaping contractors in [Town] and across [County]. Regular clients receive a fixed rate and a priority booking slot for seasonal surge periods.',
+      },
+      {
+        q: 'How much does garden waste removal cost in [Town]?',
+        a: 'A standard domestic garden clearance in [Town] — one van-load of mixed green waste — typically starts from around £80. Larger volumes including soil, tree sections, or full garden clearances are quoted by volume. Call 07929 771954 for a same-day fixed price.',
+      },
+    ],
     relatedIds: ['residential-waste', 'rubble-wood-removal', 'builders-waste-removal'],
   },
 
   'builders-waste-removal': {
-    slug:      'builders-waste-removal',
-    metaTitle: 'Builders Waste Removal London | Construction Site Clearance | WasteWize UK',
+    slug:        'builders-waste-removal',
+    serviceType: 'Builders Waste Removal Service',
+    metaTitle:   'Builders Waste Removal London | Construction Site Clearance | WasteWize UK',
     metaDesc:  'EA-licensed builders waste removal across London and the Home Counties. Segregated collection of construction waste and site debris — including timber, plasterboard, hardcore, and mixed loads. Muck-away, compliance docs, same-day availability.',
-    heroDesc:  'Builders waste removal and on-site construction waste management for sites of all scales across London and the Home Counties. We collect every stream of builders waste and site debris — mixed construction waste, plasterboard, hardcore, timber, and excavation material — with full site compliance documentation on every job. Our flexible, on-call model keeps active build sites clear without the cost and inflexibility of static skip hire.',
+    heroDesc:     'Builders waste removal and on-site construction waste management for sites of all scales across London and the Home Counties. We collect every stream of builders waste and site debris — mixed construction waste, plasterboard, hardcore, timber, and excavation material — with full site compliance documentation on every job. Our flexible, on-call model keeps active build sites clear without the cost and inflexibility of static skip hire.',
+    leadTemplate: 'WasteWize UK provides on-call builders waste removal for construction sites in [Town] and across [County]. Our flexible model keeps active build programmes clear — segregated collections for timber, plasterboard, hardcore, and mixed waste — with full site compliance documentation on every load. From £150 per collection.',
     bodySections: [
       {
         heading: 'On-Call Builders Waste Removal for London Construction Sites',
@@ -430,14 +496,30 @@ export const serviceDetails: Record<string, ServiceDetail> = {
         a: 'Not as a standard construction waste stream. If asbestos-containing materials are found during a refurbishment, work must pause and a licensed asbestos survey must be carried out. We coordinate directly with our HSE-licensed asbestos removal partners and can manage the handover so your project timeline is not disrupted.',
       },
     ],
+    townFaqs: [
+      {
+        q: 'Can you collect builders waste from a [Town] site at short notice?',
+        a: 'Yes. Our on-call service means you call when your site is full and we aim to arrive within hours. We cover construction sites across [Town] and the wider [County] area — including active programmes in residential streets where skip permits are difficult to obtain.',
+      },
+      {
+        q: 'Do you provide compliance documentation for [Town] construction sites?',
+        a: 'Yes. Every collection from a [Town] site includes a signed Duty of Care Waste Transfer Note, a copy of our EA Waste Carrier Licence (CBDU335711), and copies of our public liability insurance. We compile these into a single compliance pack on request for building control inspections.',
+      },
+      {
+        q: 'How much does builders waste removal cost in [Town]?',
+        a: 'Builders waste removal pricing in [Town] depends on load volume and material stream. A single mixed-waste collection from a [Town] site typically starts from around £150 for a van load. Ongoing site programmes are agreed at a fixed weekly rate. Call 07929 771954 to confirm availability and pricing.',
+      },
+    ],
     relatedIds: ['strip-out-demolition', 'rubble-wood-removal', 'asbestos-removal'],
   },
 
   'electrical-equipment': {
-    slug:      'electrical-equipment',
-    metaTitle: 'WEEE Collection London | Electrical Equipment Recycling | WasteWize UK',
+    slug:        'electrical-equipment',
+    serviceType: 'WEEE Electrical Equipment Collection Service',
+    metaTitle:   'WEEE Collection London | Electrical Equipment Recycling | WasteWize UK',
     metaDesc:  'WEEE-compliant electrical equipment collection and recycling for London businesses. Official WEEE transfer notes, data destruction certificates. EA and WEEE registered.',
-    heroDesc:  'WEEE-compliant collection and recycling of waste electrical and electronic equipment for businesses across London and the Home Counties. Every collection is handled by our WEEE-registered team with official WEEE Duty of Care Transfer Notes issued as standard — ensuring your business meets its full legal obligations under the UK WEEE Regulations 2013. Certified data destruction is available for computers, servers, and all data-bearing devices.',
+    heroDesc:     'WEEE-compliant collection and recycling of waste electrical and electronic equipment for businesses across London and the Home Counties. Every collection is handled by our WEEE-registered team with official WEEE Duty of Care Transfer Notes issued as standard — ensuring your business meets its full legal obligations under the UK WEEE Regulations 2013. Certified data destruction is available for computers, servers, and all data-bearing devices.',
+    leadTemplate: 'WasteWize UK provides WEEE-compliant electrical equipment collection for businesses in [Town] and across [County]. Every collection is handled by our WEEE-registered team with official WEEE Duty of Care Transfer Notes issued as standard, ensuring full legal compliance under the UK WEEE Regulations 2013. Certified data destruction available for all data-bearing devices.',
     bodySections: [
       {
         heading: 'WEEE Compliance for London Offices and Businesses',
@@ -508,14 +590,30 @@ export const serviceDetails: Record<string, ServiceDetail> = {
         a: 'We collect from a single large item upward, though our minimum charge applies to collections requiring a dedicated van. For large volumes — an entire office floor\'s equipment, a server room decommission, or a warehouse of white goods — we can provide a dedicated vehicle and on-site inventory audit.',
       },
     ],
+    townFaqs: [
+      {
+        q: 'Can you collect electrical equipment from a [Town] business at short notice?',
+        a: 'Yes. We arrange WEEE collections across [Town] and the wider [County] area with short-notice availability — particularly for office clearances, fit-out projects, and IT asset disposals where timing is fixed. Call 07929 771954 to confirm vehicle availability.',
+      },
+      {
+        q: 'Do you provide WEEE transfer notes for collections in [Town]?',
+        a: 'Yes. Every business customer in [Town] and across [County] receives an official WEEE Duty of Care Transfer Note for every collection, listing the equipment types and quantities. Retain this for a minimum of two years as required under the WEEE Regulations 2013.',
+      },
+      {
+        q: 'How much does WEEE collection cost in [Town]?',
+        a: 'WEEE collection pricing in [Town] depends on volume and equipment type. A minimum charge applies for collections requiring a dedicated vehicle — typically from around £75 for small loads. Larger volumes, office floor decommissions, and server room clearances are priced per site. Call 07929 771954 for a same-day quote.',
+      },
+    ],
     relatedIds: ['confidential-waste', 'commercial-clearance', 'strip-out-demolition'],
   },
 
   'confidential-waste': {
-    slug:      'confidential-waste',
-    metaTitle: 'Confidential Waste Disposal London | GDPR Document Shredding | WasteWize UK',
+    slug:        'confidential-waste',
+    serviceType: 'Confidential Waste Disposal Service',
+    metaTitle:   'Confidential Waste Disposal London | GDPR Document Shredding | WasteWize UK',
     metaDesc:  'Secure confidential waste collection and certified destruction for London businesses. Certificate of destruction on every job. GDPR and DPA 2018 compliant. Book online.',
-    heroDesc:  'Secure collection and certified destruction of confidential documents, sensitive records, and data-bearing media for businesses across London and the Home Counties. A time-stamped certificate of destruction is issued for every single collection — giving you a complete, GDPR-compliant audit trail that satisfies data protection obligations under UK GDPR and the Data Protection Act 2018. On-site shredding is available for organisations with the highest security requirements.',
+    heroDesc:     'Secure collection and certified destruction of confidential documents, sensitive records, and data-bearing media for businesses across London and the Home Counties. A time-stamped certificate of destruction is issued for every single collection — giving you a complete, GDPR-compliant audit trail that satisfies data protection obligations under UK GDPR and the Data Protection Act 2018. On-site shredding is available for organisations with the highest security requirements.',
+    leadTemplate: 'WasteWize UK provides GDPR-compliant confidential waste collection and certified destruction for businesses in [Town] and across [County]. A time-stamped certificate of destruction is issued for every collection — your complete audit trail under UK GDPR and the Data Protection Act 2018. From £50 per collection.',
     bodySections: [
       {
         heading: 'Who Needs Confidential Waste Disposal?',
@@ -582,14 +680,30 @@ export const serviceDetails: Record<string, ServiceDetail> = {
         a: 'Yes. Self-employed professionals, former directors, home workers, and individuals with significant amounts of personal data at home can book a residential confidential waste collection. All the same chain-of-custody and destruction standards apply as for business collections.',
       },
     ],
+    townFaqs: [
+      {
+        q: 'Can you collect confidential waste from a [Town] business at short notice?',
+        a: 'Yes. We arrange short-notice confidential waste collections across [Town] and the wider [County] area — particularly for offices relocating, closing, or responding to a compliance deadline. Call 07929 771954 to confirm vehicle availability and collection timing.',
+      },
+      {
+        q: 'Do you provide a certificate of destruction for collections in [Town]?',
+        a: 'Yes. Every confidential waste collection from a [Town] premises is accompanied by a time-stamped certificate of destruction, issued after secure shredding at our licensed facility. This is your legal compliance evidence under UK GDPR Article 17 and the Data Protection Act 2018.',
+      },
+      {
+        q: 'How much does confidential waste disposal cost in [Town]?',
+        a: 'Confidential waste disposal in [Town] is priced by volume — typically per tamper-evident sack or per consignment. Small collections (one to five sacks) typically start from around £50. Regular scheduled collections for [Town] offices are available at fixed monthly rates. Call 07929 771954 for a same-day quote.',
+      },
+    ],
     relatedIds: ['electrical-equipment', 'commercial-clearance', 'residential-waste'],
   },
 
   'asbestos-removal': {
-    slug:      'asbestos-removal',
-    metaTitle: 'Asbestos Removal London | HSE-Licensed Asbestos Disposal | WasteWize UK',
+    slug:        'asbestos-removal',
+    serviceType: 'Asbestos Removal Service',
+    metaTitle:   'Asbestos Removal London | HSE-Licensed Asbestos Disposal | WasteWize UK',
     metaDesc:  'HSE-licensed asbestos surveying, encapsulation, and removal across London and the Home Counties. Air monitoring, UKAS analyst sign-off, and waste consignment notes included.',
-    heroDesc:  'HSE-licensed asbestos surveying, encapsulation, and full removal for commercial, residential, and industrial sites across London and the Home Counties. Every project includes comprehensive air monitoring throughout, an independent UKAS-accredited analyst clearance certificate on completion, and all required hazardous waste consignment notes — covering you fully for compliance, planning, and insurance purposes. Work does not commence until a licensed survey has cleared the scope.',
+    heroDesc:     'HSE-licensed asbestos surveying, encapsulation, and full removal for commercial, residential, and industrial sites across London and the Home Counties. Every project includes comprehensive air monitoring throughout, an independent UKAS-accredited analyst clearance certificate on completion, and all required hazardous waste consignment notes — covering you fully for compliance, planning, and insurance purposes. Work does not commence until a licensed survey has cleared the scope.',
+    leadTemplate: 'WasteWize UK coordinates HSE-licensed asbestos removal for properties in [Town] and across [County]. Working with our certified specialist partners, we manage the full process — survey, encapsulation or removal, air monitoring, and waste consignment notes — for residential and commercial properties. Fixed-price quotations provided after survey.',
     bodySections: [
       {
         heading: 'When Do You Need an Asbestos Survey?',
@@ -664,14 +778,30 @@ export const serviceDetails: Record<string, ServiceDetail> = {
         a: 'Cost depends on the type and quantity of material, accessibility, and the decontamination requirements. A small area of textured coating removal typically ranges from £400 to £900; a larger commercial project involving extensive AIB or lagging can run to several thousand pounds. We provide fixed-price written quotations after the survey is completed — there are no unexpected extras.',
       },
     ],
+    townFaqs: [
+      {
+        q: 'Can you arrange asbestos removal in [Town] at short notice?',
+        a: 'Yes. We coordinate HSE-licensed asbestos surveys and removal for properties across [Town] and the wider [County] area. Refurbishment and demolition surveys can typically be arranged within 48 to 72 hours. Call 07929 771954 to discuss your timeline and we will confirm specialist availability.',
+      },
+      {
+        q: 'Do you cover residential properties in [Town]?',
+        a: 'Yes. Our HSE-licensed asbestos removal partners cover residential and commercial properties across [Town] and [County]. Artex ceilings, pipe lagging, floor tiles, roof sheets, and structural panels are all within scope. A pre-removal survey is always conducted before any disturbance.',
+      },
+      {
+        q: 'How much does asbestos removal cost in [Town]?',
+        a: 'Asbestos removal pricing in [Town] depends on the type, location, and quantity of asbestos-containing material. A residential refurbishment survey typically starts from around £300; removal of small quantities (Artex, tiles, lagging) starts from around £400. Larger commercial projects are quoted after a site survey. Call 07929 771954 for a referral and cost indication.',
+      },
+    ],
     relatedIds: ['strip-out-demolition', 'builders-waste-removal', 'confidential-waste'],
   },
 
   'rubble-wood-removal': {
-    slug:      'rubble-wood-removal',
-    metaTitle: 'Rubble & Wood Waste Removal London | Licensed Waste Clearance | WasteWize UK',
+    slug:        'rubble-wood-removal',
+    serviceType: 'Rubble and Wood Removal Service',
+    metaTitle:   'Rubble & Wood Waste Removal London | Licensed Waste Clearance | WasteWize UK',
     metaDesc:  'EA-licensed rubble and wood waste removal across London and the Home Counties. Includes hardcore, bricks, concrete, and timber — crushed for aggregate or chipped for biomass. Zero landfill.',
-    heroDesc:  'Rubble and wood waste removal from renovation, construction, and demolition sites across London and the Home Counties. All rubble — including hardcore, bricks, and concrete — is crushed and processed for recycling as secondary aggregate, displacing virgin quarried material. Clean wood and timber is chipped and processed for biomass energy or panel board. Segregated loads attract lower rates and achieve near-zero landfill.',
+    heroDesc:     'Rubble and wood waste removal from renovation, construction, and demolition sites across London and the Home Counties. All rubble — including hardcore, bricks, and concrete — is crushed and processed for recycling as secondary aggregate, displacing virgin quarried material. Clean wood and timber is chipped and processed for biomass energy or panel board. Segregated loads attract lower rates and achieve near-zero landfill.',
+    leadTemplate: 'WasteWize UK provides licensed rubble, concrete, brick, and timber removal for renovation and construction projects in [Town] and across [County]. Hardcore is crushed for secondary aggregate; timber is chipped for biomass — achieving near-zero landfill on most loads. From £100 per collection.',
     bodySections: [
       {
         heading: 'Rubble & Wood Waste Removal from Renovation and Construction Projects',
@@ -742,14 +872,30 @@ export const serviceDetails: Record<string, ServiceDetail> = {
         a: 'Yes. Asbestos-containing materials, contaminated soil, and chemically treated waste must be handled under separate specialist streams. We will identify any of these during booking and arrange the correct service. Never mix asbestos with general hardcore — this is a criminal offence under the Control of Asbestos Regulations 2012.',
       },
     ],
+    townFaqs: [
+      {
+        q: 'Can you collect rubble or timber from a [Town] site at short notice?',
+        a: 'Yes. We arrange rubble and wood removal across [Town] and the wider [County] area with short-notice availability. For active renovation sites where material accumulates quickly, we can arrange same-day or next-day collections. Call 07929 771954 to confirm vehicle availability.',
+      },
+      {
+        q: 'Do you cover small renovation projects in [Town]?',
+        a: 'Yes. We collect from small domestic renovation projects in [Town] — a bathroom remodel, a garden wall demolition, a decking removal — as well as larger commercial and construction sites across [County]. There is no minimum load requirement for standard [Town] collections.',
+      },
+      {
+        q: 'How much does rubble and wood removal cost in [Town]?',
+        a: 'Rubble and timber removal pricing in [Town] depends on load volume and material type. A single van-load of mixed rubble or timber from a [Town] address typically starts from around £100. Segregated loads — clean hardcore or clean timber only — may attract a lower rate due to the direct recycling route. Call 07929 771954 for a fixed price based on your volume.',
+      },
+    ],
     relatedIds: ['builders-waste-removal', 'strip-out-demolition', 'garden-refuse'],
   },
 
   'scrap-metal-collection': {
-    slug:      'scrap-metal-collection',
-    metaTitle: 'Scrap Metal Collection London | Licensed Metal Recycling | WasteWize UK',
+    slug:        'scrap-metal-collection',
+    serviceType: 'Scrap Metal Collection Service',
+    metaTitle:   'Scrap Metal Collection London | Licensed Metal Recycling | WasteWize UK',
     metaDesc:  'Ferrous and non-ferrous scrap metal collection and recycling across London and the Home Counties. Competitive rates on large volumes. Waste transfer notes included. EA licensed.',
-    heroDesc:  'Collection and responsible recycling of ferrous and non-ferrous scrap metal from commercial, industrial, and construction sites across London and the Home Counties. Competitive rates are available for large volumes; all collections are carried out under our Environment Agency Waste Carrier Licence with a full Duty of Care Waste Transfer Note issued as standard. We operate exclusively on a cashless basis in full compliance with the Scrap Metal Dealers Act 2013.',
+    heroDesc:     'Collection and responsible recycling of ferrous and non-ferrous scrap metal from commercial, industrial, and construction sites across London and the Home Counties. Competitive rates are available for large volumes; all collections are carried out under our Environment Agency Waste Carrier Licence with a full Duty of Care Waste Transfer Note issued as standard. We operate exclusively on a cashless basis in full compliance with the Scrap Metal Dealers Act 2013.',
+    leadTemplate: 'WasteWize UK provides licensed scrap metal collection and recycling for commercial, industrial, and residential customers in [Town] and across [County]. Ferrous and non-ferrous metals collected with competitive rates and official Waste Transfer Notes included on every job. High-value metals (copper, aluminium, brass) may attract a purchase rate.',
     bodySections: [
       {
         heading: 'Scrap Metal Collection for London Businesses and Contractors',
@@ -818,6 +964,20 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       {
         q: 'Can you collect scrap metal from a residential property?',
         a: 'Yes. Homeowners with significant amounts of scrap metal — from a renovation, inherited machinery, or appliance disposal — can book a residential scrap metal collection. Our standard collection service applies; the Waste Transfer Note is provided as with any other collection.',
+      },
+    ],
+    townFaqs: [
+      {
+        q: 'Can you collect scrap metal from [Town] at short notice?',
+        a: 'Yes. We collect scrap metal from commercial, industrial, and residential addresses in [Town] and the wider [County] area with short-notice availability. Call 07929 771954 with an estimate of your metal volume and type and we will confirm collection timing.',
+      },
+      {
+        q: 'What types of metal do you collect from [Town] addresses?',
+        a: 'We collect ferrous metals — steel, iron, cast iron — and non-ferrous metals — copper, aluminium, brass, lead, stainless steel — from [Town] addresses. We also collect mixed scrap from renovation and construction sites across [County].',
+      },
+      {
+        q: 'How is scrap metal collection priced in [Town]?',
+        a: 'Scrap metal pricing in [Town] depends on the metal type, volume, and current market rate. High-value non-ferrous metals (copper, aluminium, brass) may result in a payment to you; ferrous metal collections may be free or at a small charge depending on volume. Call 07929 771954 with your metal description for an immediate indication.',
       },
     ],
     relatedIds: ['rubble-wood-removal', 'builders-waste-removal', 'electrical-equipment'],
