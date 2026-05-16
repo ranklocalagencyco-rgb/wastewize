@@ -54,7 +54,9 @@ const pageUrl = `${BASE}/areas/${areaSlug}/${townSlug}/${slug}`;
 const metaTitle = `${svc.title} in ${town} | WasteWize UK`;
 const metaDesc  = `EA-licensed ${svc.title.toLowerCase()} in ${town}, ${area.name}. WasteWize UK provides professional collection, disposal, and full duty-of-care documentation — same-week availability across ${town} and the surrounding area.`;
 
-const otherServices = services.filter((s) => s.id !== svc.id).slice(0, 4);
+const otherServices = services
+  .filter((s) => s.id !== svc.id && serviceDetails[svcSlug(s.href)] !== undefined)
+  .slice(0, 4);
 ---
 
 <Layout title={metaTitle} description={metaDesc}>
@@ -409,7 +411,7 @@ const otherServices = services.filter((s) => s.id !== svc.id).slice(0, 4);
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-6">
         {otherServices.map((r) => (
-          <a href={`/areas/${areaSlug}/${townSlug}/${r.href.replace('/services/', '')}`}
+          <a href={`/areas/${areaSlug}/${townSlug}/${svcSlug(r.href)}`}
              class="group bg-brand-dark border border-white/10 rounded-[12px] p-5
                     flex flex-col gap-3 hover:border-brand-lime/50 hover:-translate-y-1
                     hover:shadow-card transition-all duration-300">
