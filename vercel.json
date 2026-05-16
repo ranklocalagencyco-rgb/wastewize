@@ -12,6 +12,36 @@
       "has": [{ "type": "host", "value": "www.wastewize.co.uk" }],
       "destination": "https://wastewize.co.uk/$1",
       "permanent": true
+    },
+    {
+      "source": "/services/hardcore-wood",
+      "destination": "/services/rubble-wood-removal",
+      "permanent": true
+    },
+    {
+      "source": "/areas/:area/:town/hardcore-wood",
+      "destination": "/areas/:area/:town/rubble-wood-removal",
+      "permanent": true
+    },
+    {
+      "source": "/services/scrap-metal",
+      "destination": "/services/scrap-metal-collection",
+      "permanent": true
+    },
+    {
+      "source": "/areas/:area/:town/scrap-metal",
+      "destination": "/areas/:area/:town/scrap-metal-collection",
+      "permanent": true
+    },
+    {
+      "source": "/services/building-construction",
+      "destination": "/services/builders-waste-removal",
+      "permanent": true
+    },
+    {
+      "source": "/areas/:area/:town/building-construction",
+      "destination": "/areas/:area/:town/builders-waste-removal",
+      "permanent": true
     }
   ]
 }

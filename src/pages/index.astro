@@ -1,13 +1,78 @@
 ---
 // src/pages/index.astro
-// Homepage — Layout 91 section sequence:
-//   TopBar → Navbar (via BaseLayout) → Hero →
-//   ServicesGrid → StatsBar → [Process] → [CTA Banner] → Footer (via BaseLayout)
+import Layout       from '../layouts/Layout.astro';
+import Hero         from '../components/Hero.astro';
+import ServicesGrid from '../components/ServicesGrid.astro';
+import StatsBar     from '../components/StatsBar.astro';
 
-import Layout    from '../layouts/Layout.astro';
-import Hero          from '../components/Hero.astro';
-import ServicesGrid  from '../components/ServicesGrid.astro';
-import StatsBar      from '../components/StatsBar.astro';
+const faqs = [
+  {
+    q: 'Is WasteWize UK licensed by the Environment Agency?',
+    a: 'Yes. WasteWize UK holds an Upper-Tier Environment Agency Waste Carrier, Broker and Dealer licence (CBDU335711). This is the highest tier of EA licensing and is required by law for any business that carries, brokers, or deals in controlled waste for profit. Every collection includes a completed Duty of Care Waste Transfer Note.',
+  },
+  {
+    q: 'Which areas does WasteWize UK cover?',
+    a: 'WasteWize UK covers all London boroughs — Central, North, East, South, and West London — plus the Home Counties including Surrey, Kent, Essex, Hertfordshire, Berkshire, Buckinghamshire, and Middlesex. Coverage extends to over 200 towns and localities across the region.',
+  },
+  {
+    q: 'How quickly can WasteWize UK collect my waste?',
+    a: 'We offer same-day and next-day availability across London and the Home Counties. In many cases we can arrange a same-day collection. Call 07929 771954 for current availability, or complete the online quote form for a response within 2 hours during business hours.',
+  },
+  {
+    q: "What is WasteWize UK's landfill diversion rate?",
+    a: 'WasteWize UK achieves a 99% landfill diversion rate through partnerships with certified material recovery facilities. Hardcore is crushed into secondary aggregate, wood is processed for biomass, metals go to certified recyclers, green waste is composted, and general waste is processed at energy-from-waste facilities.',
+  },
+  {
+    q: 'Do you provide Duty of Care waste transfer notes?',
+    a: 'Yes. Under the Environmental Protection Act 1990, businesses have a legal Duty of Care to ensure their waste is handled correctly. WasteWize UK provides a completed Waste Transfer Note for every single collection, giving you a full compliance audit trail for regulatory and insurance purposes.',
+  },
+];
+
+const steps = [
+  {
+    n: '01',
+    title: 'Free Quote',
+    body:  'Call 07929 771954 or submit the online form. We confirm pricing within 2 hours — no hidden charges, no obligation.',
+  },
+  {
+    n: '02',
+    title: 'Book a Date',
+    body:  'Choose same-day, next-day, or a scheduled slot across London and the Home Counties. We work around your timetable.',
+  },
+  {
+    n: '03',
+    title: 'We Arrive & Clear',
+    body:  'Our two-person crew handles all loading and heavy lifting. We separate materials on site for maximum recycling diversion.',
+  },
+  {
+    n: '04',
+    title: 'WTN Issued',
+    body:  'You receive a signed Waste Transfer Note the same day — your legal proof of correct disposal under the Environmental Protection Act 1990.',
+  },
+];
+
+const reasons = [
+  {
+    icon:  'M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.955 11.955 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z',
+    title: 'EA-Licensed, Every Job',
+    body:  'Upper-Tier EA Licence CBDU335711. Every collection is legal, documented, and traceable — no risk of fly-tip liability passing to you.',
+  },
+  {
+    icon:  'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15',
+    title: '99% Landfill Diversion',
+    body:  'Metals, timber, hardcore, and green waste are sorted on-site and processed at certified MRFs — keeping your waste out of landfill.',
+  },
+  {
+    icon:  'M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z',
+    title: 'Same-Day Availability',
+    body:  'We cover London and the Home Counties with a fleet ready to move. Most bookings confirmed within 2 hours.',
+  },
+  {
+    icon:  'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z',
+    title: 'Full Duty of Care Paperwork',
+    body:  'Every job includes a signed Waste Transfer Note (WTN) and a carrier licence copy — the documentation your business, landlord, or insurer needs.',
+  },
+];
 ---
 
 <Layout
@@ -102,48 +167,11 @@ import StatsBar      from '../components/StatsBar.astro';
     <script type="application/ld+json" is:inline set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Is WasteWize UK licensed by the Environment Agency?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. WasteWize UK holds an Upper-Tier Environment Agency Waste Carrier, Broker and Dealer licence (CBDU335711). This is the highest tier of EA licensing and is required by law for any business that carries, brokers, or deals in controlled waste for profit. Every collection includes a completed Duty of Care Waste Transfer Note."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Which areas does WasteWize UK cover?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "WasteWize UK covers all London boroughs — Central, North, East, South, and West London — plus the Home Counties including Surrey, Kent, Essex, Hertfordshire, Berkshire, Buckinghamshire, and Middlesex. Coverage extends to over 200 towns and localities across the region."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How quickly can WasteWize UK collect my waste?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We offer same-week availability across London and the Home Counties. In many cases we can arrange next-day collection. Call 07929 771954 for current availability, or complete the online quote form for a response within 2 hours during business hours."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is WasteWize UK's landfill diversion rate?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "WasteWize UK achieves a 99% landfill diversion rate through partnerships with certified material recovery facilities. Hardcore is crushed into secondary aggregate, wood is processed for biomass, metals go to certified recyclers, green waste is composted, and general waste is processed at energy-from-waste facilities."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do you provide Duty of Care waste transfer notes?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Under the Environmental Protection Act 1990, businesses have a legal Duty of Care to ensure their waste is handled correctly. WasteWize UK provides a completed Waste Transfer Note for every single collection, giving you a full compliance audit trail for regulatory and insurance purposes."
-          }
-        }
-      ]
+      "mainEntity": faqs.map(f => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": { "@type": "Answer", "text": f.a },
+      })),
     })} />
   </Fragment>
 
@@ -156,14 +184,145 @@ import StatsBar      from '../components/StatsBar.astro';
   <!-- 4. Stats band — animated counters on forest-green background -->
   <StatsBar />
 
-  <!-- ────────────────────────────────────────────────────
-       5. Process Steps  (Audit → Collection → Recovery → Reporting)
-          Add <ProcessSteps /> here in the next sprint
-       ──────────────────────────────────────────────────── -->
+  <!-- ── How We Work ── -->
+  <section class="bg-brand-dark-card py-16 sm:py-20 border-b border-white/8" aria-labelledby="how-heading">
+    <div class="container mx-auto px-4 sm:px-6 max-w-5xl text-center">
+      <span class="text-xs font-semibold tracking-widest uppercase text-brand-lime mb-3 block">Step by Step</span>
+      <h2 id="how-heading" class="font-display text-3xl sm:text-4xl font-bold text-white mb-4">
+        How Waste Removal Works With WasteWize
+      </h2>
+      <p class="text-white/55 max-w-2xl mx-auto mb-14 text-sm sm:text-base leading-relaxed">
+        From your first call to the signed Waste Transfer Note — here is exactly what happens when you book waste collection with us.
+      </p>
 
-  <!-- ────────────────────────────────────────────────────
-       6. CTA Banner  ("Ready to lower your waste costs?")
-          Add <CTABanner /> here in the next sprint
-       ──────────────────────────────────────────────────── -->
+      <div class="relative grid grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-6">
+        <div class="hidden lg:block absolute top-10 left-[12.5%] right-[12.5%] h-[2px]
+                    bg-gradient-to-r from-brand-lime/20 via-brand-lime/50 to-brand-lime/20
+                    pointer-events-none" aria-hidden="true"></div>
+
+        {steps.map((s) => (
+          <div class="flex flex-col items-center text-center">
+            <div class="relative w-20 h-20 rounded-full bg-brand-dark border-2 border-brand-lime/30
+                        flex items-center justify-center mb-5 shrink-0
+                        hover:border-brand-lime hover:bg-brand-lime/10 transition-all duration-300 group/step">
+              <span class="font-display text-2xl font-bold text-brand-lime
+                           group-hover/step:scale-110 transition-transform duration-300">{s.n}</span>
+              <span class="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-brand-lime
+                           text-[10px] font-bold text-brand-dark flex items-center
+                           justify-center leading-none" aria-hidden="true">
+                {parseInt(s.n, 10)}
+              </span>
+            </div>
+            <h3 class="text-white font-semibold text-[15px] mb-2">{s.title}</h3>
+            <p class="text-white/50 text-xs leading-relaxed">{s.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Why Choose WasteWize ── -->
+  <section class="bg-brand-dark py-16 sm:py-20 border-b border-white/8" aria-labelledby="why-heading">
+    <div class="container mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <span class="text-xs font-semibold tracking-widest uppercase text-brand-lime mb-3 block">Why WasteWize</span>
+        <h2 id="why-heading" class="font-display text-3xl sm:text-4xl font-bold text-white mb-4">
+          EA-Licensed Waste Removal You Can Rely On
+        </h2>
+        <p class="text-white/55 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
+          We are not a broker or aggregator. WasteWize is a directly licensed waste carrier with our own fleet, our own crew, and our own compliance documentation on every job.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {reasons.map((r) => (
+          <div class="bg-brand-dark-card border border-white/10 rounded-[12px] p-6 flex flex-col gap-4
+                      hover:border-brand-lime/30 hover:-translate-y-1 hover:shadow-card
+                      transition-all duration-300">
+            <div class="w-12 h-12 rounded-[10px] bg-brand-lime/15 border border-brand-lime/30
+                        flex items-center justify-center shrink-0">
+              <svg class="w-6 h-6 text-brand-lime" fill="none" stroke="currentColor"
+                   stroke-width="1.7" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d={r.icon}/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-white font-semibold text-[14px] mb-1.5">{r.title}</h3>
+              <p class="text-white/55 text-xs leading-relaxed">{r.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section class="bg-brand-dark py-16 sm:py-20 border-b border-white/8" aria-labelledby="faq-heading">
+    <div class="container mx-auto px-4 sm:px-6 max-w-3xl">
+      <div class="text-center mb-12">
+        <span class="text-xs font-semibold tracking-widest uppercase text-brand-lime mb-3 block">Common Questions</span>
+        <h2 id="faq-heading" class="font-display text-3xl sm:text-4xl font-bold text-white">
+          Waste Removal FAQs
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map(({ q, a }) => (
+          <details class="group bg-brand-dark-card border border-white/10 rounded-[12px]
+                          overflow-hidden hover:border-brand-lime/25 transition-colors">
+            <summary class="flex items-center justify-between gap-4 px-6 py-5
+                            cursor-pointer list-none select-none">
+              <h3 class="text-[15px] font-semibold text-white leading-snug pr-2">{q}</h3>
+              <svg class="w-5 h-5 text-brand-lime shrink-0 transition-transform duration-200
+                          group-open:rotate-180"
+                   fill="none" stroke="currentColor" stroke-width="2"
+                   viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6">
+              <p class="text-sm text-white/60 leading-relaxed">{a}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA Banner ── -->
+  <section class="bg-brand-forest py-16 sm:py-20 relative overflow-hidden">
+    <div class="pointer-events-none absolute -top-20 -left-20 w-64 h-64 rounded-full
+                bg-brand-lime/10" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute -bottom-16 -right-16 w-48 h-48 rounded-full
+                bg-brand-lime/8" aria-hidden="true"></div>
+    <div class="container mx-auto px-4 sm:px-6 text-center max-w-3xl relative">
+      <span class="text-xs font-semibold tracking-widest uppercase text-white mb-4 block">
+        Ready to Book?
+      </span>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mb-4">
+        EA-Licensed Waste Removal Across London
+      </h2>
+      <p class="text-white/65 text-sm sm:text-base mb-8 max-w-xl mx-auto leading-relaxed">
+        Same-day availability across London &amp; the Home Counties. Call now for an instant verbal quote, or submit the form and we'll respond within 2 hours.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="tel:+447929771954"
+           class="inline-flex items-center justify-center gap-2 bg-brand-lime text-brand-dark
+                  font-semibold px-7 py-3.5 rounded-[8px] text-sm
+                  hover:bg-brand-lime/90 transition-colors duration-200">
+          <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+          </svg>
+          Call 07929 771954
+        </a>
+        <a href="/contact"
+           class="inline-flex items-center justify-center gap-2 border border-white/30
+                  text-white font-semibold px-7 py-3.5 rounded-[8px] text-sm
+                  hover:border-brand-lime hover:text-brand-lime transition-all duration-200">
+          Get a Free Quote Online
+        </a>
+      </div>
+    </div>
+  </section>
 
 </Layout>

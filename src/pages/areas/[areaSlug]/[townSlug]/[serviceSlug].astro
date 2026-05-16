@@ -56,9 +56,36 @@ const postcode   = townDetail?.postcode ?? null;
 const BASE    = 'https://wastewize.co.uk';
 const pageUrl = `${BASE}/areas/${areaSlug}/${townSlug}/${slug}`;
 
+function interpolate(template: string, vars: Record<string, string>): string {
+  return template.replace(/\[(\w+)\]/g, (_, key) => vars[key] ?? `[${key}]`);
+}
+const _tplVars: Record<string, string> = {
+  Town:     town,
+  County:   area.name,
+  Postcode: postcode ?? town,
+  Service:  svc.title,
+};
+const leadPara          = detail.leadTemplate ? interpolate(detail.leadTemplate, _tplVars) : null;
+const renderedHighlights = detail.highlights?.map((h) => interpolate(h, _tplVars)) ?? [];
+const renderedTownFaqs   = detail.townFaqs?.map(({ q, a }) => ({
+  q: interpolate(q, _tplVars),
+  a: interpolate(a, _tplVars),
+})) ?? [];
+
+const _suffixMap: Record<string, string> = {
+  'rubble-wood-removal':      'Licensed Waste Clearance',
+  'scrap-metal-collection':   'Licensed Metal Recycling | WasteWize UK',
+  'builders-waste-removal':   'Construction Site Clearance | WasteWize UK',
+  'house-clearance':          'Licensed House Clearance | WasteWize UK',
+  'office-clearance':         'Commercial Clearance | WasteWize UK',
+  'end-of-tenancy-clearance': 'Landlord & Tenant Clearance | WasteWize UK',
+  'fly-tipping-removal':      'EA Licensed Fly Tip Clearance | WasteWize UK',
+  'skip-hire-alternative':    'Wait & Load Service | WasteWize UK',
+};
+const _titleSuffix = _suffixMap[slug] ?? 'WasteWize UK';
 const metaTitle = postcode
-  ? `${svc.title} in ${town} (${postcode}) | WasteWize UK`
-  : `${svc.title} in ${town} | WasteWize UK`;
+  ? `${svc.title} in ${town} (${postcode}) | ${_titleSuffix}`
+  : `${svc.title} in ${town} | ${_titleSuffix}`;
 
 // Unique meta: extract town descriptor (part before "WasteWize" in the intro)
 const _introBase = townDetail?.intro?.split('WasteWize')[0]?.trim()?.replace(/[.,\s]+$/, '') ?? null;
@@ -110,7 +137,7 @@ const otherServices = services
       "name": `${svc.title} in ${town}`,
       "url": pageUrl,
       "description": metaDesc,
-      "serviceType": "Waste Management",
+      "serviceType": detail.serviceType ?? "Waste Management",
       "areaServed": {
         "@type": "City",
         "name": town,
@@ -201,6 +228,11 @@ const otherServices = services
           "name": q,
           "acceptedAnswer": { "@type": "Answer", "text": a }
         })),
+        ...renderedTownFaqs.map(({ q, a }) => ({
+          "@type": "Question",
+          "name": q,
+          "acceptedAnswer": { "@type": "Answer", "text": a }
+        })),
         {
           "@type": "Question",
           "name": `What areas of ${town} do you cover for ${svc.title.toLowerCase()}?`,
@@ -274,6 +306,11 @@ const otherServices = services
           </span>
         </h1>
 
+        {leadPara && (
+          <p class="text-base sm:text-lg text-brand-lime/80 leading-relaxed mb-3 max-w-2xl font-medium">
+            {leadPara}
+          </p>
+        )}
         <p class="text-base sm:text-lg text-white/60 leading-relaxed mb-4 max-w-2xl">
           {detail.heroDesc}
         </p>
@@ -322,6 +359,22 @@ const otherServices = services
             </span>
           ))}
         </div>
+
+        {renderedHighlights.length > 0 && (
+          <ul class="mt-8 grid sm:grid-cols-2 gap-x-8 gap-y-2">
+            {renderedHighlights.map((h) => (
+              <li class="flex items-start gap-2.5 text-sm text-white/65 leading-snug">
+                <svg class="w-4 h-4 text-brand-lime shrink-0 mt-0.5" fill="currentColor"
+                     viewBox="0 0 20 20" aria-hidden="true">
+                  <path fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"/>
+                </svg>
+                {h}
+              </li>
+            ))}
+          </ul>
+        )}
 
       </div>
     </div>
@@ -538,6 +591,7 @@ const otherServices = services
       <div class="space-y-4">
         {[
           ...detail.faqs,
+          ...renderedTownFaqs,
           {
             q: `What areas of ${town} do you cover for ${svc.title.toLowerCase()}?`,
             a: _postcodeAns,

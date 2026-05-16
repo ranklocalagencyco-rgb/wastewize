@@ -111,7 +111,7 @@ The wider borough has one of the highest residential development rates in London
 
 This development intensity means Stratford is simultaneously a major construction waste market — ongoing strip-outs, hardcore removal, and site clearances across multiple active phases — and a growing corporate waste market as new occupiers generate IT refresh cycles, confidential waste, and end-of-tenancy clearances. WasteWize regularly serves the creative and light-industrial operators in the adjacent Hackney Wick and Fish Island zones, as well as construction teams working across the E15 and E20 development corridor. Site access on major developments requires pre-booked contractor slots, which WasteWize arranges as standard.`,
     keyAreas:    ['International Quarter', 'Westfield Stratford', 'Queen Elizabeth Olympic Park', 'Hackney Wick', 'E20', 'E15'],
-    topServices: ['building-construction', 'strip-out-demolition', 'commercial-clearance'],
+    topServices: ['builders-waste-removal', 'strip-out-demolition', 'commercial-clearance'],
   },
 
   /* ── South London ───────────────────────────────────────────────────── */
@@ -124,7 +124,7 @@ This development intensity means Stratford is simultaneously a major constructio
 
 The South Bank and Borough Market areas house a dense concentration of restaurants, hotels, galleries, and creative businesses requiring regular commercial clearances and scheduled waste collections. The Elephant and Castle regeneration — now in its second decade of delivery — generates ongoing construction waste, including significant strip-out and hardcore removal volumes from the demolition of older social housing and commercial blocks. WasteWize is experienced in operating across all of Southwark's distinct neighbourhoods, including the permit-controlled Bermondsey streets and the complex logistics environment around the Elephant and Castle development zone at Newington Causeway and Walworth Road.`,
     keyAreas:    ['Borough Market', 'Bermondsey', 'Elephant and Castle', 'Peckham', 'South Bank', 'London Bridge'],
-    topServices: ['commercial-clearance', 'building-construction', 'residential-waste'],
+    topServices: ['commercial-clearance', 'builders-waste-removal', 'residential-waste'],
   },
 
   'south-london/wandsworth': {
@@ -135,7 +135,7 @@ The South Bank and Borough Market areas house a dense concentration of restauran
 
 This development volume has generated one of the highest concentrations of construction waste removal, strip-out, and site clearance requirements in south London. Simultaneously, Wandsworth's established affluent residential areas — Putney, Tooting, Balham, Earlsfield, and Southfields — create consistent demand for house clearances, renovation waste, and garden refuse collection. WasteWize serves both markets across the full borough, with specific operational knowledge of the Nine Elms development access procedures and established relationships with the principal contractors working across the Battersea and Vauxhall sites.`,
     keyAreas:    ['Battersea Power Station', 'Nine Elms', 'Putney', 'Wandsworth Town', 'Tooting', 'Balham'],
-    topServices: ['building-construction', 'strip-out-demolition', 'residential-waste'],
+    topServices: ['builders-waste-removal', 'strip-out-demolition', 'residential-waste'],
   },
 
   /* ── West London ────────────────────────────────────────────────────── */
@@ -172,7 +172,7 @@ The residential market is among the most active in west London for high-value re
 
 The North Street regeneration scheme — one of the largest town-centre developments in the south east — has added significant construction waste volumes to the Guildford market. WasteWize serves Guildford businesses, contractors, and homeowners across the GU1, GU2, and GU4 postcode areas, providing same-week collections with full EA documentation and the same compliance standards we apply across our London operations.`,
     keyAreas:    ['Guildford High Street', 'North Street', 'Slyfield Industrial Estate', 'University of Surrey', 'Onslow Village'],
-    topServices: ['commercial-clearance', 'residential-waste', 'building-construction'],
+    topServices: ['commercial-clearance', 'residential-waste', 'builders-waste-removal'],
   },
 
   'surrey/woking': {
@@ -183,7 +183,7 @@ The North Street regeneration scheme — one of the largest town-centre developm
 
 Woking's residential market — spanning the affluent neighbourhoods of Hook Heath, St John's, and Knaphill, as well as the expanding new-build estates around Sheerwater — creates consistent demand for house clearances, garden waste removal, and renovation strip-outs. The town's position on the A320/M25 corridor makes it accessible from WasteWize's London base with predictable travel times. We cover the full GU21 and GU22 postcode areas with same-week availability and full EA documentation on every collection.`,
     keyAreas:    ['Victoria Square', 'Woking Business Park', 'Sheerwater', 'Knaphill', 'Hook Heath'],
-    topServices: ['commercial-clearance', 'building-construction', 'residential-waste'],
+    topServices: ['commercial-clearance', 'builders-waste-removal', 'residential-waste'],
   },
 
   /* ── Berkshire (priority towns) ─────────────────────────────────────── */
@@ -244,7 +244,7 @@ St Albans' commercial market is anchored by the Alban Park and Hatfield Road bus
 
 Chelmsford's residential market — including the high-value areas of Springfield, Great Baddow, and the surrounding villages — creates steady demand for house clearances, garden waste, and renovation strip-outs, particularly from the active property market that benefits from direct rail access to Liverpool Street in 35 minutes. The city's ongoing development pipeline, including the Chelmsford garden community at Beaulieu, adds construction and earthworks waste streams to the market. WasteWize serves the full Chelmsford CM1 and CM2 postcode areas with same-week availability.`,
     keyAreas:    ['Chelmsford City Centre', 'Bond Street', 'Springfield', 'Beaulieu', 'Dukes Park Industrial Estate'],
-    topServices: ['commercial-clearance', 'residential-waste', 'building-construction'],
+    topServices: ['commercial-clearance', 'residential-waste', 'builders-waste-removal'],
   },
 
   /* ── Middlesex ──────────────────────────────────────────────────────── */
@@ -255,7 +255,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     intro: "Acton's mix of light industrial estates along the A40 corridor and expanding residential developments generates a diverse range of waste streams. From strip-outs of the area's converted Victorian factories to clearances of new-build commercial units, WasteWize UK handles every Acton job with full EA compliance documentation and same-week availability.",
     localContext: `Acton straddles two distinct economic zones: the light industrial and trade estates along the A40 Western Avenue corridor and the expanding residential neighbourhoods around Acton Main Line's Elizabeth line station. The Victoria Road and Napier Road industrial estates generate regular commercial clearances, construction waste, and skip hire requirements from manufacturing, storage, and trade businesses. Residential demand has grown substantially with Elizabeth line-driven refurbishment activity in the area's Victorian and Edwardian housing stock. WasteWize covers the full W3 postcode with same-week availability — strip-outs on active conversion sites, asbestos surveys on pre-1980 properties, and scheduled collections for Acton's commercial occupiers.`,
     keyAreas:    ['A40 Corridor', 'Victoria Road Industrial Estate', 'Acton Town Centre', 'Churchfield Road', 'East Acton'],
-    topServices: ['commercial-clearance', 'building-construction', 'residential-waste'],
+    topServices: ['commercial-clearance', 'builders-waste-removal', 'residential-waste'],
   },
 
   'middlesex/alperton': {
@@ -264,7 +264,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     intro: "Alperton's industrial estates and commercial parks off the North Circular generate steady demand for construction and commercial waste services. With Wembley's continued growth pushing development into surrounding areas, WasteWize UK supports Alperton businesses with flexible skip hire, segregated collections, and full duty-of-care documentation.",
     localContext: `Alperton's Mount Pleasant and Bridgewater Road industrial estates sit between the North Circular and the Grand Union Canal, generating substantial commercial and construction waste from manufacturing, distribution, and trade businesses. Proximity to Wembley's major development corridor has increased demand for skip hire and strip-out services from contractors working across the regeneration zone. WasteWize provides segregated waste collection, scrap metal removal, and bulk clearances across the HA0 area with full EA licensing and same-week availability.`,
     keyAreas:    ['Alperton High Street', 'North Circular Road', 'Mount Pleasant Industrial Estate', 'Bridgewater Road', 'Grand Union Canal'],
-    topServices: ['commercial-clearance', 'building-construction', 'scrap-metal'],
+    topServices: ['commercial-clearance', 'builders-waste-removal', 'scrap-metal-collection'],
   },
 
   'middlesex/ashford': {
@@ -291,7 +291,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     intro: "Brentford is one of west London's fastest-growing regeneration zones, with major mixed-use developments along the Grand Union Canal and Thames waterfront transforming former industrial land. WasteWize UK supports Brentford's construction teams, strip-out contractors, and commercial tenants with compliant, efficient waste management throughout the development corridor.",
     localContext: `Brentford's Waterside and Ballymore developments are transforming its Grand Union Canal and Thames waterfront from former industrial land into a major mixed-use zone, creating enormous demand for construction waste management, muck-away, and strip-out clearances from active development sites. Away from the waterfront, the Great West Road commercial corridor — including media companies and corporate headquarters — generates regular commercial waste. WasteWize supports Brentford contractors and commercial tenants across TW8 with responsive, high-capacity waste management and full compliance documentation.`,
     keyAreas:    ['Brentford High Street', 'Brentford Waterside', 'Great West Road', 'Grand Union Canal', 'Brentford Dock'],
-    topServices: ['building-construction', 'strip-out-demolition', 'commercial-clearance'],
+    topServices: ['builders-waste-removal', 'strip-out-demolition', 'commercial-clearance'],
   },
 
   'middlesex/chiswick': {
@@ -309,7 +309,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     intro: "Cowley, nestled between Uxbridge town centre and the Grand Union Canal, combines light industrial units with growing residential streets. WasteWize UK provides commercial clearance, construction waste removal, and skip hire for Cowley businesses and contractors with fast turnaround from our London depot.",
     localContext: `Cowley's light industrial estates along Cowley Mill Road and the Brunel Road corridor generate regular commercial clearances, construction debris, and trade waste from manufacturers, trade counters, and storage operators. WasteWize handles these with segregated collection and full EA documentation. The residential streets of Cowley Peachey generate house clearances and garden refuse demand. Fast skip hire and licensed waste collection across Cowley with same-week availability from our London depot.`,
     keyAreas:    ['Cowley High Street', 'Cowley Mill Industrial Estate', 'Grand Union Canal', 'Brunel Road', 'Cowley Peachey'],
-    topServices: ['commercial-clearance', 'building-construction', 'hardcore-wood'],
+    topServices: ['commercial-clearance', 'builders-waste-removal', 'rubble-wood-removal'],
   },
 
   'middlesex/cranford': {
@@ -318,7 +318,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     intro: "Cranford lies directly beneath Heathrow's northern approach, making it a hub for aviation supply chain businesses, logistics warehouses, and trade units that require specialist and bulk waste disposal. WasteWize UK handles everything from WEEE recycling to mixed commercial loads across the Cranford area with full duty-of-care documentation.",
     localContext: `Cranford's strategic position under Heathrow's northern approach makes it a natural base for aviation logistics, warehousing, and specialist trade operations. The Bath Road commercial corridor houses cargo handling and specialist service businesses generating high volumes of WEEE, scrap metal, and bulk commercial waste. WasteWize serves the TW5 postcode with full Heathrow-corridor compliance documentation and the specialist handling required for aviation supply chain waste streams, with same-week availability on all service types.`,
     keyAreas:    ['Bath Road', 'Cranford High Street', 'Heathrow Logistics Belt', 'The Parkway', 'Airport Gate Business Centre'],
-    topServices: ['commercial-clearance', 'electrical-equipment', 'scrap-metal'],
+    topServices: ['commercial-clearance', 'electrical-equipment', 'scrap-metal-collection'],
   },
 
   'middlesex/ealing': {
@@ -327,7 +327,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     intro: "Ealing town centre, with its busy retail quarter, office district, and expanding food and hospitality sector, generates diverse commercial waste streams requiring reliable, licensed collection. WasteWize UK serves Ealing businesses along the Broadway and surrounding streets with regular commercial collections, office clearances, and specialist disposal services.",
     localContext: `Ealing Broadway is one of west London's largest commercial hubs — The Broadway shopping centre, restaurant quarter, and surrounding office buildings create high commercial waste volumes requiring reliable scheduled collections. The town centre generates WEEE recycling demand from its retail technology businesses and confidential shredding requirements from professional offices. The residential hinterland spans affluent streets around Ealing Green to the more mixed W13 area, with house clearances and renovation waste forming a significant part of WasteWize's workload across W5 and W13.`,
     keyAreas:    ['Ealing Broadway', 'Uxbridge Road', 'Ealing Green', 'The Broadway Centre', 'Western International Market'],
-    topServices: ['commercial-clearance', 'confidential-waste', 'building-construction'],
+    topServices: ['commercial-clearance', 'confidential-waste', 'builders-waste-removal'],
   },
 
   'middlesex/eastcote': {
@@ -354,7 +354,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     intro: "Edmonton's extensive industrial estates — including those along Meridian Way and Advent Way — are among north London's most active commercial waste generators. WasteWize UK serves Edmonton manufacturers, trade businesses, and construction sites with bulk waste removal, scrap metal collection, and fully documented commercial clearances.",
     localContext: `Edmonton's industrial zones along Meridian Way and Advent Way are among north London's most significant commercial waste generators — manufacturing, trade, and distribution businesses producing bulk waste streams requiring high-capacity collection. The Angel Road Industrial Estate generates regular clearances, scrap metal recovery, and construction waste from its diverse tenants. Edmonton's residential areas — including Silver Street and newer N18 development — create domestic clearance demand alongside the area's predominantly industrial waste streams. WasteWize provides high-capacity commercial and industrial services across Edmonton.`,
     keyAreas:    ['Meridian Way', 'Angel Road Industrial Estate', 'Edmonton Green', 'Advent Way', 'Fore Street'],
-    topServices: ['commercial-clearance', 'scrap-metal', 'building-construction'],
+    topServices: ['commercial-clearance', 'scrap-metal-collection', 'builders-waste-removal'],
   },
 
   'middlesex/enfield': {
@@ -363,7 +363,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     intro: "Enfield spans a wide area from its busy town centre retail district to the industrial estates of Brimsdown and Innova Park, each with distinct waste management requirements. WasteWize UK provides tailored collections across all Enfield postcode areas — from confidential shredding for high street offices to bulk clearances on major industrial sites.",
     localContext: `Enfield spans a wide geography from its established town centre — retail, cinema, and professional services — to the heavy industrial estates of Brimsdown and Innova Park in EN3, where manufacturers and logistics operators generate some of north London's highest commercial waste volumes. Town centre retail and hospitality requires scheduled collections, while Brimsdown's industrial tenants need bulk clearances, scrap metal recovery, and hazardous waste handling. Enfield's extensive residential hinterland across EN1, EN2, and EN3 adds substantial house clearance and renovation waste demand. WasteWize provides tailored services across all three postcodes.`,
     keyAreas:    ['Enfield Town Centre', 'Brimsdown Industrial Estate', 'Innova Park', 'Southbury Road', 'Chase Side'],
-    topServices: ['commercial-clearance', 'building-construction', 'confidential-waste'],
+    topServices: ['commercial-clearance', 'builders-waste-removal', 'confidential-waste'],
   },
 
   'middlesex/feltham': {
@@ -372,7 +372,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     intro: "Feltham's proximity to Heathrow and its concentration of logistics depots, trade counters, and light industrial units create high demand for commercial waste services. WasteWize UK provides flexible, licensed waste collection across Feltham — including WEEE recycling, hazardous waste, and same-week skip delivery for construction sites.",
     localContext: `Feltham's Heathrow corridor position and concentration of logistics depots, warehousing, and trade units make it one of Middlesex's most commercially active waste zones. The Feltham Trading Estate and Abelgrove Business Park house distribution, manufacturing, and aviation support businesses generating regular WEEE, bulk commercial, and construction waste. Feltham town centre's retail strip and residential surroundings add domestic clearance and trade waste. WasteWize covers TW13 with flexible, high-capacity collections and same-week skip delivery for the area's busy contractor community.`,
     keyAreas:    ['Feltham Town Centre', 'Feltham Trading Estate', 'Hanworth Road', 'Longford Road', 'Abelgrove Business Park'],
-    topServices: ['commercial-clearance', 'electrical-equipment', 'building-construction'],
+    topServices: ['commercial-clearance', 'electrical-equipment', 'builders-waste-removal'],
   },
 
   'middlesex/finchley': {
@@ -399,7 +399,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     intro: "Greenford's industrial estates along the A40 and Western Avenue house a wide range of manufacturing, distribution, and trade businesses with substantial waste disposal needs. WasteWize UK provides segregated waste collection, scrap metal removal, and bulk clearance services across Greenford's commercial sector with full EA compliance.",
     localContext: `Greenford's industrial estates along Western Avenue — including the Westway Cross Retail Park and the trade estates of Windmill Lane and Oldfield Lane — are among west London's most productive commercial waste generation zones. Manufacturing, distribution, and trade businesses generate regular skip hire, scrap metal collection, and bulk clearance requirements. Greenford's residential streets — predominantly interwar and post-war housing — add house clearances and renovation waste to the area's commercial profile. WasteWize provides segregated commercial collection and licensed disposal across UB6 with full EA documentation.`,
     keyAreas:    ['Greenford Road', 'A40 Western Avenue', 'Greenford Industrial Estate', 'Windmill Lane', 'Oldfield Lane'],
-    topServices: ['commercial-clearance', 'scrap-metal', 'building-construction'],
+    topServices: ['commercial-clearance', 'scrap-metal-collection', 'builders-waste-removal'],
   },
 
   'middlesex/hampton': {
@@ -444,7 +444,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     intro: "Harefield occupies a unique position on the western fringe of Greater London, combining semi-rural residential streets with an active industrial estate that produces specialist waste streams. WasteWize UK serves Harefield's industrial businesses and residential clients with licensed disposal, skip hire, and on-site clearance services.",
     localContext: `Harefield is a semi-rural village at the western edge of Greater London, combining period cottages and suburban houses with a significant industrial estate near the Grand Union Canal. Metal fabricators, builders' merchants, and construction materials suppliers along the Harvil Road corridor generate regular scrap metal, bulk waste, and industrial clearance requirements. WasteWize provides licensed waste services to both Harefield's industrial businesses and residential clients, with full EA compliance documentation and same-week availability.`,
     keyAreas:    ['Harefield Village', 'Harvil Road', 'Harefield Industrial Estate', 'Grand Union Canal', 'Moorhall Road'],
-    topServices: ['commercial-clearance', 'scrap-metal', 'residential-waste'],
+    topServices: ['commercial-clearance', 'scrap-metal-collection', 'residential-waste'],
   },
 
   'middlesex/harlesden': {
@@ -453,7 +453,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     intro: "Harlesden's dense commercial streets and light industrial units along the Harrow Road and Manor Park Industrial Estate generate high volumes of mixed commercial and construction waste. WasteWize UK provides responsive collections, strip-out support, and commercial clearances across Harlesden and the NW10 area.",
     localContext: `Harlesden is a densely mixed area where High Street retail and hospitality businesses sit alongside the Manor Park and Harrow Road industrial estates — one of north-west London's most active commercial waste zones. Industrial estates generate bulk construction waste, scrap metal, and commercial clearances from manufacturing and trade businesses, while the high street creates regular food waste and retail clearance requirements. Harlesden's active residential market — Victorian and Edwardian terraces under constant renovation — drives strip-out and construction waste demand. WasteWize operates high-capacity collections across NW10.`,
     keyAreas:    ['High Street Harlesden', 'Manor Park Industrial Estate', 'Harrow Road', 'Acton Lane', 'Station Road'],
-    topServices: ['commercial-clearance', 'building-construction', 'scrap-metal'],
+    topServices: ['commercial-clearance', 'builders-waste-removal', 'scrap-metal-collection'],
   },
 
   'middlesex/harlington': {
@@ -471,7 +471,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     intro: "Harrow town centre is one of outer London's largest commercial hubs, with a busy shopping quarter, office district, and extensive residential development generating diverse waste streams. WasteWize UK provides scheduled commercial collections, confidential shredding, and large-scale clearances for Harrow businesses and development sites across HA1 and HA2.",
     localContext: `Harrow is one of outer London's most significant commercial centres — anchored by St George's Shopping Centre, a busy retail quarter along St Ann's Road and Station Road, and an extensive office district housing financial services, professional firms, and public sector organisations. The commercial density creates high-volume trade waste requirements, WEEE collections, and confidential shredding demand from professional services tenants. The HA1 and HA2 residential catchment — spanning Kenton, South Harrow, and Rayners Lane — adds substantial house clearance and renovation waste demand.`,
     keyAreas:    ['Harrow Town Centre', "St Ann's Road", "St George's Shopping Centre", 'College Road', 'Harrow on the Hill'],
-    topServices: ['commercial-clearance', 'confidential-waste', 'building-construction'],
+    topServices: ['commercial-clearance', 'confidential-waste', 'builders-waste-removal'],
   },
 
   'middlesex/harrow-on-the-hill': {
@@ -498,7 +498,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     intro: "Hayes is one of west London's most significant industrial areas, home to major distribution centres, manufacturing plants, and aviation supply businesses that produce substantial waste volumes. WasteWize UK provides high-capacity commercial and industrial waste solutions across Hayes — from segregated skips and muck-away to WEEE recycling and hazardous waste disposal.",
     localContext: `Hayes is one of west London's most significant industrial areas — major distribution centres, large-scale warehousing, and aviation supply businesses along the Pump Lane and Silverdale Road corridors produce some of the highest commercial waste volumes in Middlesex. Former major manufacturers and current logistics operators generate bulk clearances, scrap metal recovery, and WEEE recycling requirements at enterprise scale. Hayes town centre adds residential and retail waste to the industrial base. WasteWize provides enterprise-scale waste management for Hayes — high-capacity vehicles, segregated waste streams, and full EA compliance.`,
     keyAreas:    ['Hayes Town Centre', 'Hayes Bridge Retail Park', 'Hayes Industrial Estate', 'Pump Lane', 'Silverdale Road'],
-    topServices: ['commercial-clearance', 'scrap-metal', 'building-construction'],
+    topServices: ['commercial-clearance', 'scrap-metal-collection', 'builders-waste-removal'],
   },
 
   'middlesex/hendon': {
@@ -516,7 +516,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     intro: "Heston's industrial estates and commercial premises occupy a prime Heathrow corridor location, generating regular demand for bulk waste disposal, WEEE recycling, and construction clearance. WasteWize UK serves Heston businesses with flexible, EA-licensed collections tailored to the operational requirements of logistics and trade companies.",
     localContext: `Heston's industrial estates and commercial premises along Great West Road and Vicarage Farm Road occupy a prime Heathrow corridor location — logistics providers, specialist aviation services companies, and trade businesses generating WEEE, construction clearances, and bulk commercial waste. The Heston Industrial Estate produces particularly high trade waste volumes from its diverse commercial tenants. Residential pockets around Heston Park provide domestic clearance and garden refuse demand alongside the predominantly commercial profile. WasteWize covers TW5 with full Heathrow-corridor compliance documentation.`,
     keyAreas:    ['Heston Road', 'Heston Industrial Estate', 'Great West Road', 'Vicarage Farm Road', 'Heston Park'],
-    topServices: ['commercial-clearance', 'electrical-equipment', 'building-construction'],
+    topServices: ['commercial-clearance', 'electrical-equipment', 'builders-waste-removal'],
   },
 
   'middlesex/hillingdon': {
@@ -525,7 +525,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     intro: "Hillingdon is a major west London district combining established residential neighbourhoods with a significant commercial and light industrial base close to Uxbridge and the A40 corridor. WasteWize UK provides reliable house clearances, commercial strip-outs, construction waste removal, and trade waste services throughout the UB10 area, with EA-licensed disposal and same-week availability.",
     localContext: `Hillingdon is a major west London district combining established residential neighbourhoods with a significant commercial and light industrial base close to Uxbridge and the A40 corridor. Residential streets spanning interwar semis to post-war council estates generate house clearances, renovation waste, and garden refuse demand across UB10. Commercial operators along Uxbridge Road and in the Long Lane industrial zone create trade waste and construction clearance requirements. WasteWize provides comprehensive waste services across Hillingdon with same-week availability.`,
     keyAreas:    ['Hillingdon Village', 'Long Lane', 'Hillingdon Heath', 'Colham Avenue', 'Uxbridge Road'],
-    topServices: ['commercial-clearance', 'residential-waste', 'building-construction'],
+    topServices: ['commercial-clearance', 'residential-waste', 'builders-waste-removal'],
   },
 
   'middlesex/hillingdon-heath': {
@@ -543,7 +543,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     intro: "Hounslow town centre's busy high street, retail parks, and extensive commercial quarter make it one of west London's highest-volume waste generation areas. WasteWize UK provides comprehensive commercial waste services across Hounslow — including scheduled collection contracts, strip-outs, asbestos surveys, and specialist disposal for the area's diverse business community.",
     localContext: `Hounslow town centre is one of west London's busiest commercial districts — a dense retail high street, active leisure quarter, and large-format retail at Treaty Shopping Centre collectively generating high commercial waste volumes. The Bell Road and Browells Lane industrial zones add manufacturing, trade, and logistics waste streams to the area's commercial profile. Hounslow's extensive residential hinterland spanning TW3 and TW4 — Victorian terraces and post-war housing — creates consistent house clearance and renovation waste demand. WasteWize provides comprehensive commercial and domestic services across Hounslow with flexible scheduling and EA-licensed compliance.`,
     keyAreas:    ['Hounslow High Street', 'Bell Road Industrial Estate', 'Lampton Road', 'Treaty Shopping Centre', 'Hounslow Heath'],
-    topServices: ['commercial-clearance', 'strip-out-demolition', 'building-construction'],
+    topServices: ['commercial-clearance', 'strip-out-demolition', 'builders-waste-removal'],
   },
 
   'middlesex/ickenham': {
@@ -561,7 +561,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     intro: "Isleworth's position along the Thames between Brentford and Twickenham gives it a mix of riverfront development sites, established commercial premises, and residential streets generating varied waste streams. WasteWize UK provides clearances, construction waste removal, and regular commercial collections across the TW7 area.",
     localContext: `Isleworth's Thames-side location between Brentford and Twickenham creates a mix of riverside development activity, established residential streets, and a modest local commercial centre. The Spring Grove area and Twickenham Road corridor include office buildings and commercial premises generating regular trade waste and clearance requirements. The residential market — period terrace, Victorian villa, and modern riverside apartment — creates house clearance and renovation waste demand alongside the commercial profile. WasteWize serves TW7 with full EA documentation and responsive same-week collections.`,
     keyAreas:    ['Isleworth High Street', 'Spring Grove', 'Twickenham Road', 'Syon Park', 'West Middlesex Hospital'],
-    topServices: ['commercial-clearance', 'residential-waste', 'building-construction'],
+    topServices: ['commercial-clearance', 'residential-waste', 'builders-waste-removal'],
   },
 
   'middlesex/kenton': {
@@ -597,7 +597,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     intro: "Neasden's North Circular industrial corridor is one of north-west London's most active commercial waste generation zones, with trade estates and warehousing alongside major retail. WasteWize UK provides high-capacity industrial waste collection, scrap metal removal, and commercial clearances throughout the Neasden area.",
     localContext: `Neasden's North Circular Road corridor is one of north-west London's most significant industrial and commercial waste generation zones — home to the IKEA Brent Park retail complex, Staples Corner trade estates, and a wide range of manufacturing and logistics businesses along Neasden Lane. The area's commercial character generates high-volume trade waste, scrap metal from light manufacturing, and construction clearances from constant commercial refurbishment. WasteWize provides high-capacity commercial waste services across Neasden — including large-format skip hire, segregated waste streams, and bulk clearances for major commercial occupiers.`,
     keyAreas:    ['North Circular Road', 'Neasden Lane', 'IKEA Brent Park', 'Staples Corner', 'Swaminarayan Temple'],
-    topServices: ['commercial-clearance', 'scrap-metal', 'building-construction'],
+    topServices: ['commercial-clearance', 'scrap-metal-collection', 'builders-waste-removal'],
   },
 
   'middlesex/north-harrow': {
@@ -615,7 +615,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     intro: "Northolt combines residential streets with a significant industrial estate and commercial zone, generating a wide range of waste types from domestic clearances to bulk industrial waste disposal. WasteWize UK provides flexible, licensed collections across Northolt — with same-week availability and compliant documentation for every job.",
     localContext: `Northolt combines a significant residential base — post-war housing estates and newer development along the West End Road corridor — with a meaningful industrial zone around Northolt Industrial Estate and the Target Roundabout commercial area. The industrial estates generate trade waste, construction clearances, and bulk disposal requirements from manufacturing and distribution businesses, while Northolt's residential stock creates house clearances and renovation waste demand across UB5. WasteWize provides flexible, EA-licensed waste services covering both aspects of Northolt's waste profile.`,
     keyAreas:    ['Northolt High Street', 'Mandeville Road', 'West End Road', 'Northolt Industrial Estate', 'Target Roundabout'],
-    topServices: ['commercial-clearance', 'building-construction', 'residential-waste'],
+    topServices: ['commercial-clearance', 'builders-waste-removal', 'residential-waste'],
   },
 
   'middlesex/northwood': {
@@ -633,7 +633,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     intro: "Osterley's Great West Road corridor — historically known as the 'Golden Mile' — remains an important commercial and light industrial zone, with businesses generating regular trade waste, WEEE, and construction clearance requirements. WasteWize UK provides comprehensive waste management for Osterley's commercial sector with full EA documentation.",
     localContext: `Osterley's Great West Road corridor — the famous Art Deco 'Golden Mile' — has evolved into a modern commercial and business services zone, with Sky, Unilever, and GSK maintaining major presences. These large corporate campuses generate WEEE recycling, IT equipment disposal, and commercial strip-out requirements at enterprise scale. Away from the Golden Mile, Osterley Park's residential hinterland and the Windmill Lane commercial area add domestic and smaller-scale commercial waste to the TW7 postcode profile.`,
     keyAreas:    ['Great West Road', 'Syon Lane', 'Osterley Park', 'Windmill Lane', 'Gillette Corner'],
-    topServices: ['commercial-clearance', 'electrical-equipment', 'building-construction'],
+    topServices: ['commercial-clearance', 'electrical-equipment', 'builders-waste-removal'],
   },
 
   'middlesex/palmers-green': {
@@ -651,7 +651,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     intro: "Perivale is home to one of London's finest concentrations of Art Deco factory buildings, many now converted into modern business parks and light industrial units generating trade and construction waste. WasteWize UK serves Perivale businesses with commercial collections, strip-out services, and compliant licensed disposal.",
     localContext: `Perivale is home to some of London's finest surviving Art Deco industrial architecture along Western Avenue — many of these landmark buildings now occupied by modern businesses generating regular commercial waste and construction clearances. The Rockware Business Centre and Bilton Way commercial parks house light industrial and trade businesses generating scrap metal recovery, commercial waste, and construction clearance requirements. The residential hinterland north of Western Avenue — predominantly interwar housing — adds domestic clearances and renovation waste to Perivale's commercial profile.`,
     keyAreas:    ['Western Avenue', 'Horsenden Lane', 'Bilton Way', 'Rockware Business Centre', 'Olympic Way'],
-    topServices: ['commercial-clearance', 'building-construction', 'scrap-metal'],
+    topServices: ['commercial-clearance', 'builders-waste-removal', 'scrap-metal-collection'],
   },
 
   'middlesex/pinner': {
@@ -705,7 +705,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     intro: "Southall's thriving commercial quarter — spanning food manufacturing, wholesale trade, retail, and hospitality along the Broadway — generates some of the highest commercial waste volumes in outer west London. WasteWize UK provides high-frequency commercial collections, confidential shredding, and specialist disposal for Southall's diverse business community.",
     localContext: `Southall's thriving commercial district along The Broadway and Uxbridge Road is one of outer west London's most commercially dense high streets, with food manufacturing, wholesale trade, specialist retail, and hospitality businesses generating some of the highest per-street commercial waste volumes in the region. The Western International Market at the UB1/UB2 boundary adds major food trade waste. Southall's residential neighbourhoods — Victorian terraces, interwar housing, and newer development — create house clearance and renovation waste demand alongside the predominantly commercial workload. WasteWize provides high-frequency commercial collections and specialist disposal for Southall's diverse business community.`,
     keyAreas:    ['The Broadway', 'Uxbridge Road', 'Southall Market', 'Western International Market', 'Norwood Road'],
-    topServices: ['commercial-clearance', 'confidential-waste', 'building-construction'],
+    topServices: ['commercial-clearance', 'confidential-waste', 'builders-waste-removal'],
   },
 
   'middlesex/southgate': {
@@ -732,7 +732,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     intro: "Staines-upon-Thames is one of Surrey and Middlesex's largest commercial centres, with a busy town centre retail district, office parks, and light industrial estates generating diverse commercial waste streams. WasteWize UK provides comprehensive waste management across Staines — from scheduled trade collections and office clearances to construction waste and specialist disposal.",
     localContext: `Staines-upon-Thames is one of the largest commercial centres in the Thames Valley corridor — a major retail town anchored by the Two Rivers Shopping Centre and extensive town centre retail, complemented by office parks and light industrial estates. Commercial waste volumes from retail and hospitality are significant, while the office and professional services community creates confidential shredding demand. Staines' active residential development market and construction activity along the River Thames waterfront add building and renovation waste streams. WasteWize covers TW18 and TW19 with comprehensive commercial and residential services.`,
     keyAreas:    ['Staines High Street', 'Two Rivers Shopping Centre', 'Stonehouse Road Industrial Area', 'Staines Bridge', 'Laleham Road'],
-    topServices: ['commercial-clearance', 'building-construction', 'confidential-waste'],
+    topServices: ['commercial-clearance', 'builders-waste-removal', 'confidential-waste'],
   },
 
   'middlesex/stanmore': {
@@ -759,7 +759,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     intro: "Sudbury's residential streets and proximity to Wembley's major development zone generate mixed demand for domestic clearances and commercial waste services linked to the area's ongoing construction activity. WasteWize UK covers Sudbury with flexible, licensed waste solutions and fast response times from our London depot.",
     localContext: `Sudbury occupies a residential zone between Harrow, Wembley, and Greenford — predominantly suburban streets with a local commercial strip along Watford Road serving the neighbourhood. Proximity to Wembley's major regeneration zone has brought construction and commercial clearance activity to its periphery, while residential streets generate steady house clearance and renovation waste demand. The Sudbury Court estate — post-war housing in HA0 — creates regular domestic clearance requirements. WasteWize covers Sudbury as part of its broader Wembley and Harrow operations.`,
     keyAreas:    ['Sudbury Hill', 'Watford Road', 'Sudbury Court Estate', 'Greenford Road', 'Wembley Boundary'],
-    topServices: ['residential-waste', 'commercial-clearance', 'building-construction'],
+    topServices: ['residential-waste', 'commercial-clearance', 'builders-waste-removal'],
   },
 
   'middlesex/sunbury-on-thames': {
@@ -795,7 +795,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     intro: "Uxbridge is the commercial capital of west London's outer boroughs, with a major town centre, business park, and extensive industrial estates generating some of the highest commercial waste volumes in Middlesex. WasteWize UK provides enterprise-scale waste management across Uxbridge — including scheduled contracts, large-format skips, and full specialist disposal capabilities.",
     localContext: `Uxbridge is the commercial capital of west London's outer boroughs — a major town centre with The Chimes shopping centre, an extensive office quarter, and some of the UK's most prominent business parks at Stockley Park and Uxbridge Business Park. Corporate headquarters, technology companies, and professional services businesses at Stockley Park generate significant WEEE recycling, confidential shredding, and commercial clearance requirements. The town centre's retail and hospitality sector creates high commercial waste volumes. Uxbridge's residential catchment spanning UB8, UB9, and UB10 adds house clearance and renovation waste demand.`,
     keyAreas:    ['Uxbridge Town Centre', 'Stockley Park', 'Uxbridge Business Park', 'The Chimes Shopping Centre', 'Cowley Mill Road'],
-    topServices: ['commercial-clearance', 'confidential-waste', 'building-construction'],
+    topServices: ['commercial-clearance', 'confidential-waste', 'builders-waste-removal'],
   },
 
   'middlesex/wealdstone': {
@@ -804,7 +804,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     intro: "Wealdstone's commercial quarter and light industrial estates along the High Road generate regular volumes of trade waste, construction debris, and commercial clearance requirements. WasteWize UK serves Wealdstone businesses with reliable, EA-licensed waste collections and prompt service from our London depot.",
     localContext: `Wealdstone's High Road commercial strip and the surrounding light industrial estates — including the Delta Estate and the Harrow View industrial zone — combine to create a substantial commercial waste generation area at the northern end of the Harrow borough. Trade businesses, small manufacturers, and retail tenants generate regular skip hire, commercial clearances, and scrap metal recovery requirements. Residential streets between Wealdstone and Kenton add house clearances and renovation waste to the overall mix. WasteWize provides responsive commercial and industrial waste services in Wealdstone with same-week availability.`,
     keyAreas:    ['Wealdstone High Road', 'Harrow View', 'Kenton Lane', 'Station Road', 'Delta Estate'],
-    topServices: ['commercial-clearance', 'building-construction', 'scrap-metal'],
+    topServices: ['commercial-clearance', 'builders-waste-removal', 'scrap-metal-collection'],
   },
 
   'middlesex/wembley': {
@@ -813,7 +813,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     intro: "Wembley's transformation into one of London's largest mixed-use developments — centred on the stadium district — has created enormous demand for construction waste management, commercial clearances, and specialist disposal services. WasteWize UK is an active partner for Wembley contractors and businesses, handling everything from muck-away and strip-outs to high-frequency commercial waste contracts.",
     localContext: `Wembley's transformation into one of London's largest single-site mixed-use development projects — the Quintain-led Wembley Park scheme around the stadium — has created one of the most sustained construction waste management requirements in outer London. Strip-outs, muck-away, and construction clearances from hundreds of new residential and commercial units around Olympic Way, combined with entertainment and hospitality waste from the stadium district's venues, create year-round demand for WasteWize's high-capacity services. The wider Wembley residential area in HA0 adds conventional residential and commercial waste to the area's predominantly construction-driven profile.`,
     keyAreas:    ['Wembley Stadium District', 'Olympic Way', 'Wembley Park', 'Quintain Development Zone', 'Great Central Way'],
-    topServices: ['building-construction', 'strip-out-demolition', 'commercial-clearance'],
+    topServices: ['builders-waste-removal', 'strip-out-demolition', 'commercial-clearance'],
   },
 
   'middlesex/west-drayton': {
@@ -822,7 +822,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     intro: "West Drayton's proximity to Heathrow and its concentration of logistics, light industrial, and trade businesses along the Horton Road corridor create significant commercial and construction waste management requirements. WasteWize UK provides comprehensive, licensed waste services across West Drayton — including bulk collections, WEEE recycling, and construction clearances.",
     localContext: `West Drayton's Horton Road corridor is one of the Heathrow logistics zone's most significant commercial arteries — warehousing, distribution centres, and light industrial units along the Grand Union Canal generate substantial commercial waste, construction debris, and scrap metal volumes. The West Drayton Industrial Estate and surrounding UB7 commercial zone create high-capacity waste management requirements. The town's residential streets — with good Elizabeth line access — add domestic clearances and renovation waste to the predominantly commercial profile. WasteWize covers West Drayton with full EA documentation and same-week availability.`,
     keyAreas:    ['West Drayton High Street', 'Horton Road', 'West Drayton Industrial Estate', 'Yiewsley Boundary', 'Grand Union Canal'],
-    topServices: ['commercial-clearance', 'building-construction', 'scrap-metal'],
+    topServices: ['commercial-clearance', 'builders-waste-removal', 'scrap-metal-collection'],
   },
 
   'middlesex/whitton': {
@@ -840,7 +840,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     intro: "Willesden's mixed commercial and light industrial character — centred on the Brent Cross and Staples Corner zones — generates high volumes of trade waste, scrap metal, and construction debris. WasteWize UK provides responsive, high-capacity waste services across Willesden, with licensed operators and full compliance documentation on every job.",
     localContext: `Willesden's commercial and industrial geography is dominated by proximity to Staples Corner and the Brent Cross industrial zones — some of north London's busiest commercial waste generation areas, with trade estates, logistics warehousing, and light manufacturing along the North Circular and Edgware Road corridors. The area's mixed residential character — Victorian terraces around Willesden Junction through to denser housing near Harlesden — creates house clearance and renovation waste demand alongside the industrial workload. WasteWize provides high-capacity commercial and industrial waste services across Willesden and NW10 with full EA compliance.`,
     keyAreas:    ['Willesden High Road', 'Staples Corner', 'Brent Cross Boundary', 'Edgware Road', 'Church Road'],
-    topServices: ['commercial-clearance', 'scrap-metal', 'building-construction'],
+    topServices: ['commercial-clearance', 'scrap-metal-collection', 'builders-waste-removal'],
   },
 
   'middlesex/winchmore-hill': {
@@ -858,7 +858,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     intro: "Yiewsley's industrial estates and commercial premises alongside the Grand Union Canal generate diverse waste streams including construction debris, trade waste, and specialist materials. WasteWize UK provides efficient, licensed waste management services across Yiewsley — with prompt collections and full compliance paperwork for every job.",
     localContext: `Yiewsley's industrial estates and commercial premises alongside the Grand Union Canal — particularly along the Trout Road and Horton Road corridors — generate diverse waste streams from construction, light manufacturing, and logistics businesses. The area's canal-side industrial heritage continues with metal fabricators, builders' merchants, and trade businesses creating regular scrap metal, construction debris, and bulk commercial waste. Yiewsley's High Street and residential streets add domestic clearances and modest retail waste to the industrial profile. WasteWize provides efficient, licensed waste management services across Yiewsley and UB7 with full compliance documentation.`,
     keyAreas:    ['Yiewsley High Street', 'Horton Road', 'Grand Union Canal', 'Trout Road Industrial Estate', 'Church Road'],
-    topServices: ['commercial-clearance', 'scrap-metal', 'building-construction'],
+    topServices: ['commercial-clearance', 'scrap-metal-collection', 'builders-waste-removal'],
   },
 
   /* ── West London (additional towns) ────────────────────────────────── */

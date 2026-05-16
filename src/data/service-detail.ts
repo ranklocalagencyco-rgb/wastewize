@@ -21,16 +21,20 @@ export interface BodySection {
 }
 
 export interface ServiceDetail {
-  slug:         string;
-  metaTitle:    string;
-  metaDesc:     string;
-  heroDesc:     string;
-  bodySections: BodySection[];
-  included:     string[];
-  process:      ProcessStep[];
-  compliance:   ComplianceBadge[];
-  faqs:         ServiceFAQ[];
-  relatedIds:   string[];
+  slug:          string;
+  metaTitle:     string;
+  metaDesc:      string;
+  heroDesc:      string;
+  bodySections:  BodySection[];
+  included:      string[];
+  process:       ProcessStep[];
+  compliance:    ComplianceBadge[];
+  faqs:          ServiceFAQ[];
+  relatedIds:    string[];
+  serviceType?:  string;
+  leadTemplate?: string;
+  highlights?:   string[];
+  townFaqs?:     ServiceFAQ[];
 }
 
 export const serviceDetails: Record<string, ServiceDetail> = {
@@ -110,7 +114,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
         a: 'All materials are stream-segregated on site. Metal is sent to certified smelters; timber to biomass or timber recycling; plasterboard to specialist gypsum recyclers; and general mixed waste to energy-from-waste facilities. We achieve a 99% landfill diversion rate on most strip-out projects.',
       },
     ],
-    relatedIds: ['asbestos-removal', 'building-construction', 'commercial-clearance'],
+    relatedIds: ['asbestos-removal', 'builders-waste-removal', 'commercial-clearance'],
   },
 
   'commercial-clearance': {
@@ -341,24 +345,24 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       },
       {
         q: 'Can you also remove patio slabs or timber decking?',
-        a: 'Patio slabs, concrete, and bricks are classified as hardcore/rubble and fall under our Building & Construction service. Timber decking is collected under our Hardcore & Wood service where possible, and diverted to biomass. We can often combine both services in a single visit.',
+        a: 'Patio slabs, concrete, and bricks are classified as rubble and fall under our Builders Waste Removal service. Timber decking is collected under our Rubble & Wood Removal service where possible, and diverted to biomass. We can often combine both services in a single visit.',
       },
       {
         q: 'Does a homeowner need a waste transfer note for garden waste?',
         a: 'For homeowners using a licensed carrier, a Waste Transfer Note is issued as standard and is evidence of your duty of care. Businesses — including landscaping contractors and housing associations — are legally required to hold a WTN for every commercial waste collection under the Environmental Protection Act 1990.',
       },
     ],
-    relatedIds: ['residential-waste', 'hardcore-wood', 'building-construction'],
+    relatedIds: ['residential-waste', 'rubble-wood-removal', 'builders-waste-removal'],
   },
 
-  'building-construction': {
-    slug:      'building-construction',
-    metaTitle: 'Construction Waste Removal London | Builder\'s Waste Collection | WasteWize UK',
-    metaDesc:  'On-site construction waste management for London and the Home Counties. Segregated collections, muck-away, compliance docs. EA licensed. Alternative to skip hire. Get a quote.',
-    heroDesc:  'On-site waste management for construction, refurbishment, and fit-out projects of all scales across London and the Home Counties. We supply segregated collection services for every construction waste stream — from general mixed debris and plasterboard to hardcore, timber, and excavation material — with full site compliance documentation included on every job. Our flexible, on-call model is designed to keep active build sites clear without the constraints of static skip hire.',
+  'builders-waste-removal': {
+    slug:      'builders-waste-removal',
+    metaTitle: 'Builders Waste Removal London | Construction Site Clearance | WasteWize UK',
+    metaDesc:  'EA-licensed builders waste removal across London and the Home Counties. Segregated collection of construction waste and site debris — including timber, plasterboard, hardcore, and mixed loads. Muck-away, compliance docs, same-day availability.',
+    heroDesc:  'Builders waste removal and on-site construction waste management for sites of all scales across London and the Home Counties. We collect every stream of builders waste and site debris — mixed construction waste, plasterboard, hardcore, timber, and excavation material — with full site compliance documentation on every job. Our flexible, on-call model keeps active build sites clear without the cost and inflexibility of static skip hire.',
     bodySections: [
       {
-        heading: 'On-Call Construction Waste Management',
+        heading: 'On-Call Builders Waste Removal for London Construction Sites',
         body:    'Build sites generate waste unpredictably — a delivery arrives early, stripping work runs ahead of programme, a subcontractor leaves more rubble than expected. Our on-call service is designed for exactly this: you call when you have a load, and we arrive within hours. Unlike a static skip, which ties up space, requires a council permit, and runs on a fixed rental period, our model scales with your actual output. Clients on active London build programmes typically call us two to four times per week during intensive phases. We confirm availability within the hour and hold a fleet of vehicles dedicated to construction waste.',
       },
       {
@@ -373,7 +377,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     included: [
       'Mixed construction and demolition (C&D) waste',
       'Plasterboard — segregated stream as required by EA regulations',
-      'Hardcore, concrete, and rubble (see also Hardcore & Wood)',
+      'Hardcore, concrete, and rubble (see also Rubble & Wood Removal)',
       'Timber, wood, and pallet waste',
       'Packaging waste — cardboard, plastic wrap, polystyrene',
       'Excavation material, soil, and spoil (muck-away)',
@@ -426,7 +430,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
         a: 'Not as a standard construction waste stream. If asbestos-containing materials are found during a refurbishment, work must pause and a licensed asbestos survey must be carried out. We coordinate directly with our HSE-licensed asbestos removal partners and can manage the handover so your project timeline is not disrupted.',
       },
     ],
-    relatedIds: ['strip-out-demolition', 'hardcore-wood', 'asbestos-removal'],
+    relatedIds: ['strip-out-demolition', 'rubble-wood-removal', 'asbestos-removal'],
   },
 
   'electrical-equipment': {
@@ -660,17 +664,17 @@ export const serviceDetails: Record<string, ServiceDetail> = {
         a: 'Cost depends on the type and quantity of material, accessibility, and the decontamination requirements. A small area of textured coating removal typically ranges from £400 to £900; a larger commercial project involving extensive AIB or lagging can run to several thousand pounds. We provide fixed-price written quotations after the survey is completed — there are no unexpected extras.',
       },
     ],
-    relatedIds: ['strip-out-demolition', 'building-construction', 'confidential-waste'],
+    relatedIds: ['strip-out-demolition', 'builders-waste-removal', 'confidential-waste'],
   },
 
-  'hardcore-wood': {
-    slug:      'hardcore-wood',
-    metaTitle: 'Hardcore & Rubble Removal London | Timber Disposal | WasteWize UK',
-    metaDesc:  'Segregated hardcore, rubble, concrete, and timber collection across London and the Home Counties. Crushed for aggregate or chipped for biomass — zero landfill. EA licensed.',
-    heroDesc:  'Segregated collection of hardcore, rubble, concrete, bricks, and timber from construction, demolition, and renovation sites across London and the Home Counties. All hardcore material is crushed and processed for recycling as secondary aggregate — displacing virgin quarried material. Clean wood and timber is chipped and processed for biomass energy or panel board. Segregated loads attract lower rates and achieve near-zero landfill.',
+  'rubble-wood-removal': {
+    slug:      'rubble-wood-removal',
+    metaTitle: 'Rubble & Wood Waste Removal London | Licensed Waste Clearance | WasteWize UK',
+    metaDesc:  'EA-licensed rubble and wood waste removal across London and the Home Counties. Includes hardcore, bricks, concrete, and timber — crushed for aggregate or chipped for biomass. Zero landfill.',
+    heroDesc:  'Rubble and wood waste removal from renovation, construction, and demolition sites across London and the Home Counties. All rubble — including hardcore, bricks, and concrete — is crushed and processed for recycling as secondary aggregate, displacing virgin quarried material. Clean wood and timber is chipped and processed for biomass energy or panel board. Segregated loads attract lower rates and achieve near-zero landfill.',
     bodySections: [
       {
-        heading: 'Hardcore and Rubble from Renovation and Construction Projects',
+        heading: 'Rubble & Wood Waste Removal from Renovation and Construction Projects',
         body:    'A standard bathroom or kitchen renovation produces more hardcore than most homeowners anticipate — tiles, a concrete floor screed, a redundant partition, and rubble from routing new pipework can fill a large skip quickly. WasteWize collects hardcore and rubble from residential and commercial sites of any scale: from a single bathroom worth of broken tiles to multi-load volumes from a structural demolition. Our crew handles all loading — you do not need to move anything. We cover all of London and the Home Counties and can often collect the same day for urgent site clearances where access or programme pressure dictates a fast turnaround.',
       },
       {
@@ -683,9 +687,9 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       },
     ],
     included: [
-      'Concrete, reinforced concrete, and pre-cast sections',
-      'Bricks, blocks, and masonry',
-      'Stone, slate, and hardcore',
+      'Rubble and demolition material (includes hardcore, bricks, broken concrete, and stone)',
+      'Concrete and reinforced concrete — crushed to secondary aggregate',
+      'Bricks, blocks, and masonry — processed at licensed inert waste facilities',
       'Road planings and tarmac (minimum volumes apply)',
       'Clean structural timber and dimensional lumber',
       'Pallet wood and packaging timber',
@@ -738,12 +742,12 @@ export const serviceDetails: Record<string, ServiceDetail> = {
         a: 'Yes. Asbestos-containing materials, contaminated soil, and chemically treated waste must be handled under separate specialist streams. We will identify any of these during booking and arrange the correct service. Never mix asbestos with general hardcore — this is a criminal offence under the Control of Asbestos Regulations 2012.',
       },
     ],
-    relatedIds: ['building-construction', 'strip-out-demolition', 'garden-refuse'],
+    relatedIds: ['builders-waste-removal', 'strip-out-demolition', 'garden-refuse'],
   },
 
-  'scrap-metal': {
-    slug:      'scrap-metal',
-    metaTitle: 'Scrap Metal Collection London | Metal Recycling | WasteWize UK',
+  'scrap-metal-collection': {
+    slug:      'scrap-metal-collection',
+    metaTitle: 'Scrap Metal Collection London | Licensed Metal Recycling | WasteWize UK',
     metaDesc:  'Ferrous and non-ferrous scrap metal collection and recycling across London and the Home Counties. Competitive rates on large volumes. Waste transfer notes included. EA licensed.',
     heroDesc:  'Collection and responsible recycling of ferrous and non-ferrous scrap metal from commercial, industrial, and construction sites across London and the Home Counties. Competitive rates are available for large volumes; all collections are carried out under our Environment Agency Waste Carrier Licence with a full Duty of Care Waste Transfer Note issued as standard. We operate exclusively on a cashless basis in full compliance with the Scrap Metal Dealers Act 2013.',
     bodySections: [
@@ -816,7 +820,492 @@ export const serviceDetails: Record<string, ServiceDetail> = {
         a: 'Yes. Homeowners with significant amounts of scrap metal — from a renovation, inherited machinery, or appliance disposal — can book a residential scrap metal collection. Our standard collection service applies; the Waste Transfer Note is provided as with any other collection.',
       },
     ],
-    relatedIds: ['hardcore-wood', 'building-construction', 'electrical-equipment'],
+    relatedIds: ['rubble-wood-removal', 'builders-waste-removal', 'electrical-equipment'],
+  },
+
+  'house-clearance': {
+    slug:        'house-clearance',
+    serviceType: 'House Clearance Service',
+    metaTitle:   'House Clearance London | EA-Licensed Full & Part Clearances | WasteWize UK',
+    metaDesc:    'EA-licensed house clearance across London and the South East. Full and part clearances, same-day availability, duty-of-care documentation. Furniture, white goods, clutter — all accepted. Call 07929 771954.',
+    heroDesc:    'WasteWize UK provides EA-licensed house clearances across London and the South East — from a single room to an entire estate. Our team handles furniture, white goods, electronics, and accumulated clutter, sorting for donation and recycling before any disposal. Full duty-of-care documentation on every job.',
+    leadTemplate: 'In [Town], WasteWize UK\'s house clearance team handles full and part-clearances — from single rooms to entire estates — with same-day availability across [County]. We remove everything: furniture, white goods, personal effects, and accumulated clutter, leaving the property clean and cleared.',
+    highlights: [
+      'Full house clearances from £250 across [County]',
+      'Single room or part-clearance also available',
+      'Same-day and next-day availability in [Town]',
+      'Furniture and white goods accepted',
+      'EA Licensed carrier — CBDU335711',
+      'Duty of Care Waste Transfer Note included',
+      '99% landfill diversion — items donated or recycled first',
+    ],
+    bodySections: [
+      {
+        heading: 'House Clearance Services',
+        body:    'WasteWize UK provides full and part house clearance across London and the South East. From single rooms to entire estates, our EA-licensed team handles all waste types including furniture, white goods, electrical items, and personal effects.',
+      },
+    ],
+    included: [
+      'Full furniture removal (sofas, beds, wardrobes, tables)',
+      'White goods (washing machines, fridges, dishwashers)',
+      'Bagged and loose clutter — boxes, bags, accumulated items',
+      'Carpets, curtains, and soft furnishings',
+      'Garden furniture and garage contents',
+      'Electronic and electrical items (WEEE)',
+      'Books, clothes, and bric-a-brac',
+      'Duty of Care Waste Transfer Note',
+    ],
+    process: [
+      { title: 'Free Quote',     desc: 'Call or contact online — we quote based on volume and access, with no hidden fees.' },
+      { title: 'Book a Slot',   desc: 'Same-day, next-day, or pre-planned — we confirm within 2 hours during business hours.' },
+      { title: 'Team Attends',  desc: 'Our crew arrive at the agreed time, assess the property, and begin clearance.' },
+      { title: 'Sort & Remove', desc: 'Items are sorted on-site for donation, recycling, or responsible disposal.' },
+      { title: 'Documentation', desc: 'Duty of Care Waste Transfer Note issued within 24 hours of completion.' },
+    ],
+    compliance: [
+      {
+        badge: 'EA',
+        title: 'EA Carrier Licence CBDU335711',
+        desc:  'Registered with the Environment Agency as a licensed waste carrier — legally authorised to transport controlled waste.',
+        href:  'https://environment.data.gov.uk/public-register/view/search-waste-carriers-brokers',
+      },
+      {
+        badge: 'DoC',
+        title: 'Duty of Care Certificate',
+        desc:  'Waste Transfer Note issued on every clearance under the Environmental Protection Act 1990 duty-of-care framework.',
+      },
+      {
+        badge: '99%',
+        title: '99% Landfill Diversion',
+        desc:  'All cleared items are sorted. Usable furniture is donated first; remaining material is streamed to recovery and recycling.',
+      },
+      {
+        badge: 'DBS',
+        title: 'DBS-Checked Crew',
+        desc:  'All house clearance operatives are DBS-checked for your peace of mind when granting property access.',
+      },
+    ],
+    faqs: [
+      {
+        q: 'How much does a house clearance cost?',
+        a: 'House clearance prices depend on volume, property size, and access. A single room typically starts from £150; a full three-bedroom house from £450. We provide a fixed-price quote before any work begins — no surprises.',
+      },
+      {
+        q: 'Do you clear bereavement properties?',
+        a: 'Yes. WasteWize UK handles estate and bereavement clearances with care and discretion. We work at your pace, can donate suitable items to local charities, and are experienced in liaising with probate solicitors and estate agents.',
+      },
+      {
+        q: 'Can I be present during the clearance?',
+        a: 'You can be present if you prefer, but it is not required. Many clients provide access via key safe, estate agent, or property manager. We send confirmation photos and issue the Waste Transfer Note by email on completion.',
+      },
+      {
+        q: 'What happens to the items you remove?',
+        a: 'Items are sorted during the clearance. Usable furniture, clothing, and household goods are offered to local charities. Recyclable materials (metal, glass, cardboard) are separated and streamed to the appropriate recycling facility. Only residual waste goes to landfill — typically less than 1% of a standard clearance.',
+      },
+    ],
+    townFaqs: [
+      {
+        q: 'Can you clear a house in [Town] at short notice?',
+        a: 'Yes. We offer same-day and next-day house clearances across [Town] and the wider [County] area. Call 07929 771954 before noon and we can typically dispatch a crew the same day for standard clearances.',
+      },
+      {
+        q: 'Do you operate in all parts of [Town]?',
+        a: 'We cover the full [Town] area including all surrounding streets and [County] postcodes. There are no travel surcharges for standard clearances within [Town].',
+      },
+      {
+        q: 'Is house clearance in [Town] ([Postcode]) more expensive?',
+        a: 'No. Our house clearance pricing in [Town] is based on volume and access — not postcode. [Postcode] postcodes are within our standard service area and attract no area surcharges.',
+      },
+    ],
+    relatedIds: ['skip-hire-alternative', 'office-clearance', 'end-of-tenancy-clearance'],
+  },
+
+  'office-clearance': {
+    slug:        'office-clearance',
+    serviceType: 'Office Clearance Service',
+    metaTitle:   'Office Clearance London | Commercial Premises Clearance | WasteWize UK',
+    metaDesc:    'EA-licensed office clearance across London and the South East. Desks, chairs, IT equipment, filing cabinets — all removed in a single visit. Full commercial duty-of-care documentation. Same-day availability. Call 07929 771954.',
+    heroDesc:    'WasteWize UK provides EA-licensed office clearance for businesses relocating, downsizing, or surrendering a lease. We clear desks, chairs, IT equipment, filing cabinets, and all commercial waste — issuing full duty-of-care documentation for your business audit trail. Out-of-hours and weekend slots available.',
+    leadTemplate: 'For businesses in [Town] needing to clear commercial premises — whether relocating, downsizing, or ending a lease — WasteWize UK provides same-day office clearance across [County]. We remove desks, chairs, IT equipment, filing cabinets, and all office waste, issuing full duty-of-care documentation for your commercial records.',
+    highlights: [
+      'Commercial office clearance from £200 in [Town]',
+      'Full premises cleared in a single visit where possible',
+      'IT equipment and WEEE handled responsibly',
+      'Out-of-hours and weekend slots available',
+      'EA Licensed — CBDU335711 for commercial compliance',
+      'Duty of Care documentation for your audit trail',
+      'Serving businesses across [County]',
+    ],
+    bodySections: [
+      {
+        heading: 'Commercial Office Clearance',
+        body:    'WasteWize UK provides office clearance for businesses of all sizes — from small offices to multi-floor commercial premises. We handle desks, chairs, IT equipment, filing cabinets, and all commercial waste with full duty-of-care documentation.',
+      },
+    ],
+    included: [
+      'Desks, chairs, and office furniture',
+      'IT equipment — monitors, PCs, servers, peripherals',
+      'Filing cabinets and loose paperwork (non-confidential)',
+      'Printers, fax machines, and telecoms equipment',
+      'Kitchen and breakroom items',
+      'Partitioning and fit-out materials',
+      'General office waste and accumulated stock',
+      'Commercial Duty of Care Waste Transfer Note',
+    ],
+    process: [
+      { title: 'Site Survey',    desc: 'We assess the office volume by photo or in-person — providing a fixed quote before any work begins.' },
+      { title: 'Schedule',       desc: 'Book a time that minimises business disruption — including out-of-hours and weekend availability.' },
+      { title: 'Clearance',      desc: 'Our crew attend and remove all agreed items from the premises efficiently.' },
+      { title: 'Segregation',    desc: 'Furniture is assessed for donation; IT equipment is streamed to responsible WEEE recycling.' },
+      { title: 'Documentation',  desc: 'Commercial Waste Transfer Note issued within 24 hours — suitable for business audit purposes.' },
+    ],
+    compliance: [
+      {
+        badge: 'EA',
+        title: 'EA Carrier Licence CBDU335711',
+        desc:  'Environment Agency registered carrier — essential for commercial waste removal under the Environmental Protection Act 1990.',
+        href:  'https://environment.data.gov.uk/public-register/view/search-waste-carriers-brokers',
+      },
+      {
+        badge: 'DoC',
+        title: 'Duty of Care Certificate',
+        desc:  'Waste Transfer Note issued on every commercial clearance — required for businesses under the duty-of-care framework.',
+      },
+      {
+        badge: 'WEEE',
+        title: 'WEEE Compliant Disposal',
+        desc:  'All IT and electrical equipment is handled through registered WEEE recyclers — compliant with the WEEE Regulations 2013.',
+      },
+      {
+        badge: '99%',
+        title: '99% Landfill Diversion',
+        desc:  'Commercial furniture and equipment is streamed for reuse, donation, or specialist recycling before any disposal.',
+      },
+    ],
+    faqs: [
+      {
+        q: 'Do you provide documentation suitable for commercial compliance?',
+        a: 'Yes. Every office clearance includes a commercial Duty of Care Waste Transfer Note under the Environmental Protection Act 1990 Section 34. This is a legal requirement for businesses and is suitable for internal audit trails, landlord requirements, and regulatory compliance.',
+      },
+      {
+        q: 'Can you clear an office outside business hours?',
+        a: 'Yes. We offer early morning, evening, and weekend office clearance slots to minimise disruption to your operations or neighbouring businesses. Out-of-hours bookings are subject to availability — call 07929 771954 to confirm.',
+      },
+      {
+        q: 'Do you handle confidential documents?',
+        a: 'We remove non-confidential office paperwork as general waste. For confidential documents requiring secure destruction, we recommend using a specialist data destruction service alongside our clearance. We can advise on suitable providers.',
+      },
+      {
+        q: 'How quickly can you clear a commercial premises?',
+        a: 'Most small to medium offices (under 2,000 sq ft) can be fully cleared in a single day. Larger premises or multiple floors may require phased clearances over two to three days. We\'ll confirm timescales when we quote.',
+      },
+    ],
+    townFaqs: [
+      {
+        q: 'Can you clear our office in [Town] the same day?',
+        a: 'Yes, for smaller clearances in [Town] we can often dispatch a crew the same day — call 07929 771954 before noon. Larger commercial clearances in [County] are typically scheduled within 24–48 hours.',
+      },
+      {
+        q: 'Do you cover commercial premises across [County]?',
+        a: 'Yes. We serve offices, retail units, and commercial premises across [County] and the wider London area. No call-out fee for standard visits within [Town] and surrounding [County] postcodes.',
+      },
+      {
+        q: 'What does office clearance cost in [Town] ([Postcode])?',
+        a: 'Office clearance in [Town] is priced by volume and access. Small offices typically start from £200; larger premises from £500+. We provide a fixed price before starting — no hidden extras.',
+      },
+    ],
+    relatedIds: ['house-clearance', 'end-of-tenancy-clearance', 'skip-hire-alternative'],
+  },
+
+  'end-of-tenancy-clearance': {
+    slug:        'end-of-tenancy-clearance',
+    serviceType: 'End of Tenancy Clearance Service',
+    metaTitle:   'End of Tenancy Clearance London | Landlord & Tenant Clearance | WasteWize UK',
+    metaDesc:    'EA-licensed end of tenancy clearance across London and the South East. Landlords, letting agents, and tenants — we clear rental properties same-day with full duty-of-care documentation. Call 07929 771954.',
+    heroDesc:    'WasteWize UK helps tenants and landlords clear rental properties quickly and completely at the end of a tenancy. From single items left behind to fully furnished properties requiring full clearance, our team covers London and the South East with same-day availability and full duty-of-care documentation.',
+    leadTemplate: 'WasteWize UK helps tenants and landlords in [Town] clear rental properties quickly and completely at the end of a tenancy. From single items left behind to fully furnished properties requiring full clearance, our team covers all [County] postcodes with same-day availability and full duty-of-care documentation.',
+    highlights: [
+      'Fast end of tenancy clearances across [County]',
+      'Help tenants recover deposits by clearing on time',
+      'Landlords — property cleared and ready for re-let',
+      'Single items or full property clearances',
+      'EA Licensed carrier — CBDU335711',
+      'Duty of Care documentation included',
+      'Same-day and next-day slots across [Town]',
+    ],
+    bodySections: [
+      {
+        heading: 'End of Tenancy Clearance',
+        body:    'WasteWize UK helps landlords, letting agents, and tenants clear rental properties quickly and completely. All waste types accepted, duty-of-care documentation provided, same-day availability across London and the South East.',
+      },
+    ],
+    included: [
+      'Tenant furniture and personal effects left behind',
+      'White goods and electrical appliances',
+      'Mattresses and bed frames',
+      'Bagged rubbish and general household waste',
+      'Carpets and flooring materials (where removed)',
+      'Garden waste and external clutter',
+      'Garage and storage area contents',
+      'Duty of Care Waste Transfer Note',
+    ],
+    process: [
+      { title: 'Quote',          desc: 'Describe the clearance by phone or send photos — we quote within the hour.' },
+      { title: 'Book',           desc: 'Choose a same-day, next-day, or future slot to fit around tenancy end dates and inspections.' },
+      { title: 'Attend',         desc: 'Team arrives at the agreed time — landlords and letting agents can remain on-site or provide access separately.' },
+      { title: 'Clearance',      desc: 'Property cleared room by room; items sorted for donation, recycling, or disposal.' },
+      { title: 'Documentation',  desc: 'Waste Transfer Note issued within 24 hours — suitable for deposit dispute resolution.' },
+    ],
+    compliance: [
+      {
+        badge: 'EA',
+        title: 'EA Carrier Licence CBDU335711',
+        desc:  'Registered with the Environment Agency as a licensed waste carrier — legally authorised to collect and transport residential waste.',
+        href:  'https://environment.data.gov.uk/public-register/view/search-waste-carriers-brokers',
+      },
+      {
+        badge: 'DoC',
+        title: 'Duty of Care Certificate',
+        desc:  'Waste Transfer Note issued on every clearance — useful evidence in deposit dispute resolution and landlord records.',
+      },
+      {
+        badge: '99%',
+        title: '99% Landfill Diversion',
+        desc:  'Items are sorted for donation to local charities before any disposal. Recyclables are streamed separately.',
+      },
+      {
+        badge: 'GDPR',
+        title: 'Personal Data Compliance',
+        desc:  'Any personal documents found during clearance are bagged separately and disposed of in compliance with GDPR requirements.',
+      },
+    ],
+    faqs: [
+      {
+        q: 'Can you clear a rental property the same day as the tenancy ends?',
+        a: 'Yes. We regularly work to tight tenancy handover deadlines. Call before noon for same-day availability — we can often attend within a few hours of booking for urgent clearances. Next-day bookings are almost always available.',
+      },
+      {
+        q: 'Will I get documentation for the clearance?',
+        a: 'Yes. Every end of tenancy clearance includes a Duty of Care Waste Transfer Note under the Environmental Protection Act 1990. This confirms compliant disposal and is useful evidence if a deposit is disputed regarding the property condition.',
+      },
+      {
+        q: 'What if the previous tenant has left large items like mattresses or sofas?',
+        a: 'We remove all large furniture items including mattresses, sofas, and bed frames. These are sorted for charitable donation where condition allows, or streamed to responsible recycling facilities. All items are removed in a single visit where volume allows.',
+      },
+      {
+        q: 'Do you clear properties for letting agents as well as landlords?',
+        a: 'Yes. We work regularly with letting agents and property management companies across London and the South East. We can arrange access via key safe or on-site agent, and issue documentation directly to the managing company if required.',
+      },
+    ],
+    townFaqs: [
+      {
+        q: 'How quickly can you clear a rental property in [Town]?',
+        a: 'For most standard clearances in [Town], we can attend the same day or next day. Call 07929 771954 — we confirm availability for [Town] and [County] within the hour.',
+      },
+      {
+        q: 'Do you cover all rental properties in [Town] ([Postcode])?',
+        a: 'Yes. We cover all [Postcode] postcodes and the wider [Town] area as part of our standard service area in [County]. No surcharges for [Town] locations.',
+      },
+      {
+        q: 'Can a landlord book an end of tenancy clearance in [Town] without being present?',
+        a: 'Yes. Many of our [Town] clients provide access via a key safe, managing agent, or estate agent. We attend, clear, and issue the Waste Transfer Note by email. You don\'t need to be on-site.',
+      },
+    ],
+    relatedIds: ['house-clearance', 'office-clearance', 'skip-hire-alternative'],
+  },
+
+  'fly-tipping-removal': {
+    slug:        'fly-tipping-removal',
+    serviceType: 'Fly Tipping Removal Service',
+    metaTitle:   'Fly Tipping Removal London | EA Licensed Same-Day Clearance | WasteWize UK',
+    metaDesc:    'EA-licensed fly tipping removal from private land across London and the South East. Same-day clearance, photographic evidence, duty-of-care documentation for council and insurance. Call 07929 771954.',
+    heroDesc:    'WasteWize UK provides same-day fly tipping removal from private land across London and the South East. We remove all dumped waste — furniture, rubble, mixed rubbish, and garden waste — photographing evidence before removal and issuing a full duty-of-care paper trail for council reporting and insurance purposes.',
+    leadTemplate: 'When fly-tipped waste appears on your land or property in [Town], WasteWize UK provides fast, EA-licensed fly tipping removal across [County]. We remove dumped rubbish, furniture, builders waste, and mixed waste — clearing your site the same day and issuing a full duty-of-care paper trail for insurance and council purposes.',
+    highlights: [
+      'Same-day fly tipping removal across [County]',
+      'Landowners — protect yourself from council enforcement',
+      'Full duty-of-care documentation for insurance claims',
+      'All fly-tipped waste types removed',
+      'EA Licensed carrier — CBDU335711',
+      'We photograph evidence before removal for your records',
+      'Council reporting guidance included with every job',
+    ],
+    bodySections: [
+      {
+        heading: 'Fly Tipping Removal Service',
+        body:    'WasteWize UK provides same-day fly tipping removal from private land across London and the South East. All fly-tipped waste types accepted, full duty-of-care documentation issued — protecting landowners from council enforcement.',
+      },
+    ],
+    included: [
+      'Dumped furniture, mattresses, and soft furnishings',
+      'Mixed rubbish bags and loose general waste',
+      'Builders waste and construction rubble',
+      'Electrical and white goods dumped on site',
+      'Garden waste and organic fly-tipped material',
+      'Tyres and vehicle-related waste',
+      'Pre-removal photographic evidence for records',
+      'Duty of Care Waste Transfer Note',
+    ],
+    process: [
+      { title: 'Report & Quote',    desc: 'Send us photos of the fly-tipped waste — we quote within the hour, no site visit required for most jobs.' },
+      { title: 'Same-Day Dispatch', desc: 'We aim to attend within hours of booking for urgent fly-tip clearances across London and the South East.' },
+      { title: 'Evidence Photos',   desc: 'Our team photographs all waste before removal — useful for council reporting and insurance purposes.' },
+      { title: 'Clearance',         desc: 'All fly-tipped material is loaded, segregated, and removed. Site left clear and clean.' },
+      { title: 'Documentation',     desc: 'Duty of Care Waste Transfer Note issued — suitable for council and insurance submissions.' },
+    ],
+    compliance: [
+      {
+        badge: 'EA',
+        title: 'EA Carrier Licence CBDU335711',
+        desc:  'Environment Agency registered carrier — legally authorised to remove fly-tipped and controlled waste from private and commercial land.',
+        href:  'https://environment.data.gov.uk/public-register/view/search-waste-carriers-brokers',
+      },
+      {
+        badge: 'DoC',
+        title: 'Duty of Care Certificate',
+        desc:  'Waste Transfer Note issued on every fly-tipping clearance — required evidence for council enforcement and insurance claims.',
+      },
+      {
+        badge: 'EPA',
+        title: 'Environmental Protection Act',
+        desc:  'Landowners have a duty under the Environmental Protection Act 1990 not to allow fly-tipped waste to remain on their land. Our service fulfils this obligation.',
+      },
+      {
+        badge: '99%',
+        title: '99% Landfill Diversion',
+        desc:  'Even fly-tipped waste is sorted on removal — recyclables and recoverable materials are streamed away from landfill.',
+      },
+    ],
+    faqs: [
+      {
+        q: 'Am I responsible for fly-tipped waste on my land?',
+        a: 'Yes. Under the Environmental Protection Act 1990, landowners — including private homeowners, businesses, and local authorities — are responsible for removing fly-tipped waste from their property. Failure to remove it can result in a council Fixed Penalty Notice or prosecution. WasteWize UK provides fast, compliant removal to protect you from enforcement action.',
+      },
+      {
+        q: 'Should I report fly-tipping to the council before calling you?',
+        a: 'You can report fly-tipping to your local council (or via gov.uk) for public land. For waste on private land, you are responsible for removal. We recommend reporting to the council as well as booking removal — our photographs before and after clearance provide useful evidence for any council report.',
+      },
+      {
+        q: 'Can you remove hazardous fly-tipped waste?',
+        a: 'We assess each job before quoting. We remove the majority of fly-tipped waste including mixed rubbish, furniture, builders waste, and garden waste. For certain hazardous materials (asbestos, clinical waste), we arrange specialist disposal at cost — we\'ll advise when quoting.',
+      },
+      {
+        q: 'How quickly can you remove fly-tipped waste?',
+        a: 'For most fly-tipping clearances, we can attend the same day or within 24 hours of booking. Urgent clearances — where the waste is causing a safety risk or you are under council notice — are prioritised. Call 07929 771954 for fastest response.',
+      },
+    ],
+    townFaqs: [
+      {
+        q: 'Can you clear fly-tipped waste in [Town] the same day?',
+        a: 'Yes. WasteWize UK offers same-day fly tipping removal across [Town] and the wider [County] area. Call 07929 771954 and we\'ll confirm attendance time within the hour.',
+      },
+      {
+        q: 'Who is responsible for fly-tipping on private land in [Town]?',
+        a: 'The landowner is responsible for clearing fly-tipped waste from private land in [Town], even if they didn\'t dump it. [County] councils may issue Fixed Penalty Notices to landowners who fail to remove dumped waste. We provide same-day clearance with a full duty-of-care paper trail.',
+      },
+      {
+        q: 'Will you photograph the fly-tipped waste in [Town] before removing it?',
+        a: 'Yes. For every fly-tipping clearance in [Town] ([Postcode]), our crew photographs all waste in situ before removal. This evidence is useful for reporting to the local council, insurance claims, and any subsequent enforcement action.',
+      },
+    ],
+    relatedIds: ['house-clearance', 'builders-waste-removal', 'garden-refuse'],
+  },
+
+  'skip-hire-alternative': {
+    slug:        'skip-hire-alternative',
+    serviceType: 'Wait and Load Skip Hire Alternative',
+    metaTitle:   'Skip Hire Alternative London | Wait & Load Same-Day Service | WasteWize UK',
+    metaDesc:    'No skip permit needed. WasteWize UK\'s Wait & Load service collects your waste same-day across London — faster and simpler than traditional skip hire. EA Licensed CBDU335711. Call 07929 771954.',
+    heroDesc:    'WasteWize UK\'s Wait & Load service is the flexible skip hire alternative for London — our crew arrives, waits on-site while you load, and removes waste immediately. No council permit required, no street obstruction, no 7-day hire window. Same-day availability at skip-equivalent pricing.',
+    leadTemplate: 'WasteWize UK\'s Wait & Load service is the flexible skip alternative for residents and businesses in [Town]. Our crew waits on-site while you load, removing waste immediately — no permit needed, no street obstruction, no 7-day hire window. Available same-day across [County] at skip-equivalent pricing.',
+    highlights: [
+      'No skip permit required — no council application',
+      'Same-day availability across [County]',
+      'Pay only for the space you use — no minimum fill',
+      'Crew waits while you load — faster than skip hire',
+      'Legal on all roads — no parking restrictions',
+      'EA Licensed carrier — CBDU335711',
+      'Duty of Care documentation included',
+    ],
+    bodySections: [
+      {
+        heading: 'Wait and Load Skip Alternative',
+        body:    'WasteWize UK\'s Wait & Load service provides the flexibility of a skip without the council permit, road obstruction, or hire period. Our crew arrives, waits while you load, and removes waste immediately — same-day availability across London.',
+      },
+    ],
+    included: [
+      'General household and garden waste',
+      'Furniture and white goods',
+      'Builders waste, rubble, and renovation debris',
+      'Mixed rubbish bags and loose waste',
+      'Cardboard, packaging, and recyclables',
+      'Garden waste (soil, turf, branches)',
+      'Electrical items (WEEE)',
+      'Duty of Care Waste Transfer Note',
+    ],
+    process: [
+      { title: 'Book Online or Call', desc: 'Tell us your waste types and estimated volume — we confirm a same-day or next-day slot within the hour.' },
+      { title: 'Crew Arrives',        desc: 'Our van and crew arrive at the agreed time — no skip delivery window or permit paperwork.' },
+      { title: 'You Load, We Wait',   desc: 'Load at your own pace. Our crew can assist with larger items — just let us know when booking.' },
+      { title: 'We Remove',           desc: 'Once loaded, we depart immediately — no collection booking, no waiting for a skip company.' },
+      { title: 'Documentation',       desc: 'Duty of Care Waste Transfer Note issued within 24 hours — confirming legal disposal.' },
+    ],
+    compliance: [
+      {
+        badge: 'EA',
+        title: 'EA Carrier Licence CBDU335711',
+        desc:  'Registered waste carrier licensed by the Environment Agency — all waste is transported and disposed of legally.',
+        href:  'https://environment.data.gov.uk/public-register/view/search-waste-carriers-brokers',
+      },
+      {
+        badge: 'DoC',
+        title: 'Duty of Care Certificate',
+        desc:  'Waste Transfer Note issued on every job — required for business clients and useful for homeowners as proof of compliant disposal.',
+      },
+      {
+        badge: 'NoP',
+        title: 'No Permit Required',
+        desc:  'Unlike skip hire, our Wait & Load service requires no council skip permit — saving time, council fees, and admin.',
+      },
+      {
+        badge: '99%',
+        title: '99% Landfill Diversion',
+        desc:  'All collected material is sorted and streamed to the appropriate recycling or recovery facility. Near-zero landfill on every job.',
+      },
+    ],
+    faqs: [
+      {
+        q: 'What is a Wait and Load service?',
+        a: 'A Wait & Load service is a skip alternative where our crew brings a vehicle, waits on-site while you load your waste, then removes it immediately. Unlike skip hire, you don\'t need a council permit, the vehicle doesn\'t obstruct the road for days, and you\'re only charged for the space you use — not a fixed bin hire period.',
+      },
+      {
+        q: 'Is a Wait and Load service cheaper than hiring a skip?',
+        a: 'For most residential and small commercial jobs, a Wait & Load service is comparable to or cheaper than skip hire when you factor in skip permit costs (£30–£70 for a road permit), the skip hire period, and collection fees. You also only pay for the volume you actually load — there\'s no charge for unfilled skip space.',
+      },
+      {
+        q: 'Do you need a council permit for a Wait and Load service?',
+        a: 'No. A skip placed on a public highway requires a council skip permit under the Highways Act 1980. Our Wait & Load vehicles arrive, load, and depart — they\'re not left unattended on the road, so no permit is required. This is a significant advantage over traditional skip hire in permit-restricted streets.',
+      },
+      {
+        q: 'Can your crew help with loading?',
+        a: 'Yes. We offer an assisted load option where our crew handles the loading — useful for heavy items, elderly or mobility-limited clients, or where there is no additional help available on-site. Assisted load is priced slightly higher than self-load. Ask when booking.',
+      },
+    ],
+    townFaqs: [
+      {
+        q: 'Is a Wait and Load service available in [Town] today?',
+        a: 'Yes. We offer same-day Wait & Load collections across [Town] and [County]. Call 07929 771954 before noon for same-day availability — we confirm within the hour.',
+      },
+      {
+        q: 'Why choose Wait and Load over a skip in [Town]?',
+        a: 'In [Town] ([Postcode]), many streets require a council skip permit for on-street placement — which adds cost and time. Our Wait & Load service needs no permit, arrives same-day, and removes waste immediately. For most jobs in [County], it\'s faster and simpler than traditional skip hire.',
+      },
+      {
+        q: 'What sizes of Wait and Load are available in [Town]?',
+        a: 'We price by volume — equivalent to a small skip (2 cubic yards), medium skip (4 yards), or large skip (6–8 yards). You pay for the space you use, not a fixed hire size. This makes Wait & Load flexible for jobs in [Town] where you\'re unsure of the exact waste volume.',
+      },
+    ],
+    relatedIds: ['house-clearance', 'office-clearance', 'end-of-tenancy-clearance'],
   },
 
 };
