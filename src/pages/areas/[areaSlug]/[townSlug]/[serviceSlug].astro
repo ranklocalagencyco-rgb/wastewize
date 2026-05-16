@@ -3,6 +3,7 @@ import Layout from '../../../../layouts/Layout.astro';
 import { services } from '../../../../data/services';
 import { serviceDetails } from '../../../../data/service-detail';
 import { areas } from '../../../../data/areas';
+import { townDetails } from '../../../../data/town-detail';
 
 function slugify(str: string): string {
   return str.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -43,16 +44,45 @@ interface Props {
 }
 
 const { town, areaSlug, svc } = Astro.props;
-const area    = areas.find((a) => a.slug === areaSlug)!;
-const slug    = svcSlug(svc.href);
-const detail  = serviceDetails[slug];
-const townSlug = slugify(town);
+const area      = areas.find((a) => a.slug === areaSlug)!;
+const slug      = svcSlug(svc.href);
+const detail    = serviceDetails[slug];
+const townSlug  = slugify(town);
+
+const townKey    = `${areaSlug}/${townSlug}`;
+const townDetail = townDetails[townKey] ?? null;
+const postcode   = townDetail?.postcode ?? null;
 
 const BASE    = 'https://wastewize.co.uk';
 const pageUrl = `${BASE}/areas/${areaSlug}/${townSlug}/${slug}`;
 
-const metaTitle = `${svc.title} in ${town} | WasteWize UK`;
-const metaDesc  = `EA-licensed ${svc.title.toLowerCase()} in ${town}, ${area.name}. WasteWize UK provides professional collection, disposal, and full duty-of-care documentation — same-week availability across ${town} and the surrounding area.`;
+const metaTitle = postcode
+  ? `${svc.title} in ${town} (${postcode}) | WasteWize UK`
+  : `${svc.title} in ${town} | WasteWize UK`;
+
+// Unique meta: extract town descriptor (part before "WasteWize" in the intro)
+const _introBase = townDetail?.intro?.split('WasteWize')[0]?.trim()?.replace(/[.,\s]+$/, '') ?? null;
+const _introSnip = _introBase
+  ? (_introBase.length > 110 ? _introBase.slice(0, 110).replace(/\s+\S+$/, '') + '…' : _introBase)
+  : null;
+const metaDesc = _introSnip
+  ? `${_introSnip}. EA-licensed ${svc.title.toLowerCase()} in ${postcode || town} — same-day availability, full duty-of-care documentation.`
+  : `EA-licensed ${svc.title.toLowerCase()} in ${town}, ${area.name}. Same-day availability, 99% landfill diversion, full duty-of-care documentation. EA Licence CBDU335711 · 07929 771954.`;
+
+// Price anchor from pills (used in FAQ)
+const _pricePill = svc.pills.find((p) => p.startsWith('From '));
+
+// Local FAQ answers
+const _postcodeAns = postcode
+  ? `We cover all ${postcode} postcodes${townDetail?.keyAreas?.length ? ` — including ${townDetail.keyAreas.slice(0, 4).join(', ')}` : ''} — as well as the surrounding ${area.name} area. Call 07929 771954 to confirm availability on your specific street.`
+  : `We cover all of ${town} and the wider ${area.name} area. Same-day and next-day availability on most jobs. Call 07929 771954 to confirm.`;
+
+const _localFaqQ = townDetail?.keyAreas?.length
+  ? `Do you collect from ${townDetail.keyAreas[0]} and other parts of ${town}?`
+  : `What is the fastest way to book ${svc.title.toLowerCase()} in ${town}?`;
+const _localFaqA = townDetail?.keyAreas?.length
+  ? `Yes. We serve ${townDetail.keyAreas.slice(0, 4).join(', ')}, and all surrounding streets in ${town}${postcode ? ` (${postcode})` : ''}. All jobs include EA-licensed documentation and a named point of contact from booking to completion.`
+  : `Call 07929 771954 for an instant verbal quote, or complete the online form at wastewize.co.uk/contact. We typically confirm bookings within 2 hours during business hours and can arrange same-day collection on most jobs in ${town}.`;
 
 const otherServices = services
   .filter((s) => s.id !== svc.id && serviceDetails[svcSlug(s.href)] !== undefined)
@@ -112,6 +142,58 @@ const otherServices = services
 
     <script type="application/ld+json" is:inline set:html={JSON.stringify({
       "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "WasteWize UK",
+      "url": BASE,
+      "telephone": "+447929771954",
+      "priceRange": "££",
+      "description": `EA-licensed ${svc.title.toLowerCase()} serving ${town}${postcode ? ` (${postcode})` : ''} and the wider ${area.name} area. Duty-of-care documentation on every job.`,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "9 Cordelia Court, Burns Lane",
+        "addressLocality": "London",
+        "postalCode": "NW7 2GB",
+        "addressCountry": "GB"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": town,
+          "containedInPlace": { "@type": "AdministrativeArea", "name": area.name }
+        },
+        ...(postcode ? postcode.split('/').map((pc) => ({
+          "@type": "PostalCodeArea",
+          "postalCode": pc.trim(),
+          "addressCountry": "GB"
+        })) : []),
+        ...(townDetail?.keyAreas?.map((ka) => ({ "@type": "Place", "name": `${ka}, ${town}` })) ?? [])
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": `${svc.title} in ${town}`,
+        "itemListElement": detail.included.map((item, i) => ({
+          "@type": "Offer",
+          "position": i + 1,
+          "itemOffered": { "@type": "Service", "name": item }
+        }))
+      }
+    })} />
+
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": `How to book ${svc.title} in ${town}`,
+      "description": `Step-by-step process for arranging ${svc.title.toLowerCase()} with WasteWize UK in ${town}${postcode ? ` (${postcode})` : ''}.`,
+      "step": detail.process.map((step, i) => ({
+        "@type": "HowToStep",
+        "position": i + 1,
+        "name": step.title,
+        "text": step.desc
+      }))
+    })} />
+
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [
         ...detail.faqs.map(({ q, a }) => ({
@@ -121,18 +203,20 @@ const otherServices = services
         })),
         {
           "@type": "Question",
-          "name": `Do you cover ${town} for ${svc.title.toLowerCase()}?`,
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": `Yes. WasteWize UK provides ${svc.title.toLowerCase()} throughout ${town} and the wider ${area.name} area. We hold an EA Upper-Tier Waste Carrier Licence (CBDU335711) and issue a Duty of Care Waste Transfer Note on every job. Call 07929 771954 for same-week availability.`
-          }
+          "name": `What areas of ${town} do you cover for ${svc.title.toLowerCase()}?`,
+          "acceptedAnswer": { "@type": "Answer", "text": _postcodeAns }
         },
         {
           "@type": "Question",
-          "name": `How quickly can you collect in ${town}?`,
+          "name": _localFaqQ,
+          "acceptedAnswer": { "@type": "Answer", "text": _localFaqA }
+        },
+        {
+          "@type": "Question",
+          "name": `How much does ${svc.title.toLowerCase()} cost in ${town}?`,
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": `We offer same-week availability across ${town}. In many cases next-day collection is possible — call 07929 771954 or complete the online quote form for a response within 2 hours during business hours.`
+            "text": `WasteWize UK provides fixed-price quotes for all ${svc.title.toLowerCase()} in ${town}${postcode ? ` (${postcode})` : ''}. ${_pricePill ? `Jobs typically start ${_pricePill.toLowerCase()}, depending on volume and access.` : 'Pricing depends on volume, access, and specific waste types.'} Call 07929 771954 or complete the online form for a written quote within 2 hours.`
           }
         }
       ]
@@ -162,7 +246,7 @@ const otherServices = services
     <div class="container mx-auto px-4 sm:px-6">
       <div class="max-w-3xl">
 
-        <div class="flex items-center gap-2 mb-5">
+        <div class="flex flex-wrap items-center gap-2 mb-5">
           <span class="inline-flex items-center gap-1.5 text-xs font-semibold tracking-widest
                        uppercase text-brand-lime bg-brand-lime/10 border border-brand-lime/30
                        rounded-full px-3 py-1">
@@ -173,6 +257,12 @@ const otherServices = services
             {svc.catLabel}
           </span>
           <span class="text-xs text-white/30 uppercase tracking-widest font-medium">{area.name}</span>
+          {postcode && (
+            <span class="text-[10px] font-medium bg-brand-lime/10 border border-brand-lime/20
+                         text-brand-lime rounded-full px-2 py-0.5">
+              {postcode}
+            </span>
+          )}
         </div>
 
         <h1 id="service-town-heading"
@@ -184,9 +274,14 @@ const otherServices = services
           </span>
         </h1>
 
-        <p class="text-base sm:text-lg text-white/60 leading-relaxed mb-8 max-w-2xl">
+        <p class="text-base sm:text-lg text-white/60 leading-relaxed mb-4 max-w-2xl">
           {detail.heroDesc}
         </p>
+        {townDetail?.intro && (
+          <p class="text-sm sm:text-base text-white/45 leading-relaxed mb-8 max-w-2xl">
+            {townDetail.intro}
+          </p>
+        )}
 
         <div class="flex flex-wrap gap-4 mb-10">
           <a href="/contact#quote"
@@ -211,7 +306,12 @@ const otherServices = services
         </div>
 
         <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/50">
-          {['EA Licensed · CBDU335711', 'Duty of Care Docs Included', 'Same-Week Availability', `Covers ${town} & Surrounding Area`].map((badge) => (
+          {[
+            'EA Licensed · CBDU335711',
+            'Duty of Care Docs Included',
+            'Same-Day & Next-Day',
+            postcode ? `${postcode} · ${area.name}` : `${town} · ${area.name}`,
+          ].map((badge) => (
             <span class="flex items-center gap-1.5">
               <svg class="w-4 h-4 text-brand-lime shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                 <path fill-rule="evenodd"
@@ -350,8 +450,80 @@ const otherServices = services
     </div>
   </section>
 
-  <!-- ── FAQ ── -->
+  <!-- ── Local Knowledge ── -->
   <section class="py-16 sm:py-20 bg-brand-dark border-b border-white/8"
+           aria-labelledby="local-heading">
+    <div class="container mx-auto px-4 sm:px-6">
+      <div class="grid lg:grid-cols-3 gap-10 lg:gap-16">
+
+        <div class="lg:col-span-2">
+          <span class="text-xs font-semibold tracking-widest uppercase text-brand-lime mb-3 block">
+            Local Area
+          </span>
+          <h2 id="local-heading" class="font-display text-2xl sm:text-3xl font-bold text-white mb-6">
+            {svc.title} in {town}: What You Need to Know
+          </h2>
+          <div class="prose prose-sm prose-invert max-w-none text-white/60 leading-relaxed space-y-4">
+            {townDetail?.localContext
+              ? townDetail.localContext.split('\n\n').map((para: string) => (
+                  <p>{para.trim()}</p>
+                ))
+              : townDetail?.intro
+                ? [townDetail.intro].map((para: string) => <p>{para}</p>)
+                : (
+                  <p>
+                    WasteWize UK provides EA-licensed {svc.title.toLowerCase()} across {town} and the wider {area.name} area.
+                    {area.desc} Every job includes full duty-of-care documentation under EA Waste Carrier Licence CBDU335711,
+                    and our 99% landfill diversion rate means the overwhelming majority of material is recovered rather than sent to landfill.
+                  </p>
+                )
+            }
+          </div>
+        </div>
+
+        <aside class="flex flex-col gap-8">
+          {townDetail?.keyAreas && townDetail.keyAreas.length > 0 && (
+            <div>
+              <h3 class="text-sm font-semibold text-white/80 mb-4 uppercase tracking-wider">
+                Areas &amp; Landmarks Covered
+              </h3>
+              <ul class="flex flex-col gap-2">
+                {townDetail.keyAreas.map((ka: string) => (
+                  <li class="flex items-center gap-2.5 text-sm text-white/60">
+                    <span class="w-1.5 h-1.5 rounded-full bg-brand-lime shrink-0" aria-hidden="true"/>
+                    {ka}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          <div>
+            <h3 class="text-sm font-semibold text-white/80 mb-4 uppercase tracking-wider">
+              Why Choose WasteWize in {town}
+            </h3>
+            <ul class="flex flex-col gap-3">
+              {[
+                { label: 'EA Licence', value: 'CBDU335711 — legally authorised to collect all controlled waste' },
+                { label: '99% Diversion', value: 'Near-zero landfill on every job through stream segregation' },
+                { label: 'Same-Day', value: 'Same-day and next-day availability across ' + (postcode || town) },
+                { label: 'Duty of Care', value: 'Waste Transfer Notes issued within 24 hours of every collection' },
+              ].map(({ label, value }) => (
+                <li class="flex flex-col gap-0.5">
+                  <span class="text-[11px] font-bold text-brand-lime uppercase tracking-wider">{label}</span>
+                  <span class="text-xs text-white/50 leading-snug">{value}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section class="py-16 sm:py-20 bg-brand-dark-card border-b border-white/8"
            aria-labelledby="faq-heading">
     <div class="container mx-auto px-4 sm:px-6 max-w-3xl">
       <div class="text-center mb-12">
@@ -367,12 +539,16 @@ const otherServices = services
         {[
           ...detail.faqs,
           {
-            q: `Do you cover ${town} for ${svc.title.toLowerCase()}?`,
-            a: `Yes. WasteWize UK provides ${svc.title.toLowerCase()} throughout ${town} and the wider ${area.name} area. We hold an EA Upper-Tier Waste Carrier Licence (CBDU335711) and issue a Duty of Care Waste Transfer Note on every job. Call 07929 771954 for same-week availability.`,
+            q: `What areas of ${town} do you cover for ${svc.title.toLowerCase()}?`,
+            a: _postcodeAns,
           },
           {
-            q: `How quickly can you collect in ${town}?`,
-            a: `We offer same-week availability across ${town}. In many cases next-day collection is possible — call 07929 771954 or complete the online quote form for a response within 2 hours during business hours.`,
+            q: _localFaqQ,
+            a: _localFaqA,
+          },
+          {
+            q: `How much does ${svc.title.toLowerCase()} cost in ${town}?`,
+            a: `WasteWize UK provides fixed-price quotes for all ${svc.title.toLowerCase()} in ${town}${postcode ? ` (${postcode})` : ''}. ${_pricePill ? `Jobs typically start ${_pricePill.toLowerCase()}, depending on volume and access.` : 'Pricing depends on volume, access, and specific waste types.'} Call 07929 771954 or complete the online form for a written quote within 2 hours.`,
           },
         ].map(({ q, a }) => (
           <details class="group bg-brand-dark-card border border-white/10 rounded-[12px]
