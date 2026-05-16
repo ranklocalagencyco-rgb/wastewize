@@ -14,6 +14,96 @@
       "permanent": true
     },
     {
+      "source": "/areas/middlesex/edmonton",
+      "destination": "/areas/north-london/edmonton",
+      "permanent": true
+    },
+    {
+      "source": "/areas/middlesex/edmonton/:service",
+      "destination": "/areas/north-london/edmonton/:service",
+      "permanent": true
+    },
+    {
+      "source": "/areas/middlesex/finchley",
+      "destination": "/areas/north-london/finchley",
+      "permanent": true
+    },
+    {
+      "source": "/areas/middlesex/finchley/:service",
+      "destination": "/areas/north-london/finchley/:service",
+      "permanent": true
+    },
+    {
+      "source": "/areas/middlesex/golders-green",
+      "destination": "/areas/north-london/golders-green",
+      "permanent": true
+    },
+    {
+      "source": "/areas/middlesex/golders-green/:service",
+      "destination": "/areas/north-london/golders-green/:service",
+      "permanent": true
+    },
+    {
+      "source": "/areas/middlesex/harlesden",
+      "destination": "/areas/north-london/harlesden",
+      "permanent": true
+    },
+    {
+      "source": "/areas/middlesex/harlesden/:service",
+      "destination": "/areas/north-london/harlesden/:service",
+      "permanent": true
+    },
+    {
+      "source": "/areas/middlesex/mill-hill",
+      "destination": "/areas/north-london/mill-hill",
+      "permanent": true
+    },
+    {
+      "source": "/areas/middlesex/mill-hill/:service",
+      "destination": "/areas/north-london/mill-hill/:service",
+      "permanent": true
+    },
+    {
+      "source": "/areas/middlesex/neasden",
+      "destination": "/areas/north-london/neasden",
+      "permanent": true
+    },
+    {
+      "source": "/areas/middlesex/neasden/:service",
+      "destination": "/areas/north-london/neasden/:service",
+      "permanent": true
+    },
+    {
+      "source": "/areas/middlesex/palmers-green",
+      "destination": "/areas/north-london/palmers-green",
+      "permanent": true
+    },
+    {
+      "source": "/areas/middlesex/palmers-green/:service",
+      "destination": "/areas/north-london/palmers-green/:service",
+      "permanent": true
+    },
+    {
+      "source": "/areas/middlesex/willesden",
+      "destination": "/areas/north-london/willesden",
+      "permanent": true
+    },
+    {
+      "source": "/areas/middlesex/willesden/:service",
+      "destination": "/areas/north-london/willesden/:service",
+      "permanent": true
+    },
+    {
+      "source": "/areas/middlesex/winchmore-hill",
+      "destination": "/areas/north-london/winchmore-hill",
+      "permanent": true
+    },
+    {
+      "source": "/areas/middlesex/winchmore-hill/:service",
+      "destination": "/areas/north-london/winchmore-hill/:service",
+      "permanent": true
+    },
+    {
       "source": "/services/hardcore-wood",
       "destination": "/services/rubble-wood-removal",
       "permanent": true

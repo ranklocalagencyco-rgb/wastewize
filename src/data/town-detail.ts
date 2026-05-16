@@ -348,7 +348,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     topServices: ['commercial-clearance', 'residential-waste', 'confidential-waste'],
   },
 
-  'middlesex/edmonton': {
+  'north-london/edmonton': {
     postcode: 'N9 / N18',
     metaDesc: "Industrial and commercial waste removal in Edmonton N9 and N18. WasteWize UK serves Edmonton's industrial estates — bulk clearance, scrap metal, and licensed disposal.",
     intro: "Edmonton's extensive industrial estates — including those along Meridian Way and Advent Way — are among north London's most active commercial waste generators. WasteWize UK serves Edmonton manufacturers, trade businesses, and construction sites with bulk waste removal, scrap metal collection, and fully documented commercial clearances.",
@@ -375,7 +375,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     topServices: ['commercial-clearance', 'electrical-equipment', 'builders-waste-removal'],
   },
 
-  'middlesex/finchley': {
+  'north-london/finchley': {
     postcode: 'N3 / N12',
     metaDesc: 'Commercial waste collection and office clearance in Finchley N3 and N12. WasteWize UK provides retail waste, strip-outs, and scheduled collections for Finchley businesses.',
     intro: "Finchley's established retail centres at North Finchley and Church End, combined with a dense residential hinterland, generate consistent demand for office clearance, retail waste, and domestic removals. WasteWize UK serves the full N3 and N12 postcode areas with reliable, EA-licensed waste collection tailored to Finchley's business community.",
@@ -384,7 +384,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     topServices: ['commercial-clearance', 'residential-waste', 'confidential-waste'],
   },
 
-  'middlesex/golders-green': {
+  'north-london/golders-green': {
     postcode: 'NW11',
     metaDesc: 'Commercial waste and restaurant waste collection in Golders Green NW11. WasteWize UK provides scheduled trade waste, confidential shredding, and clearance services.',
     intro: "Golders Green High Street is one of north London's most active commercial corridors, with restaurants, retailers, and professional services generating regular mixed waste and recyclables. WasteWize UK collects commercial waste from Golders Green businesses with scheduled services, confidential shredding, and on-demand clearances for end-of-tenancy and fit-out works.",
@@ -447,7 +447,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     topServices: ['commercial-clearance', 'scrap-metal-collection', 'residential-waste'],
   },
 
-  'middlesex/harlesden': {
+  'north-london/harlesden': {
     postcode: 'NW10',
     metaDesc: 'Commercial clearance and trade waste collection in Harlesden NW10. WasteWize UK provides strip-outs, bulk waste removal, and licensed collections across Harlesden.',
     intro: "Harlesden's dense commercial streets and light industrial units along the Harrow Road and Manor Park Industrial Estate generate high volumes of mixed commercial and construction waste. WasteWize UK provides responsive collections, strip-out support, and commercial clearances across Harlesden and the NW10 area.",
@@ -582,7 +582,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     topServices: ['residential-waste', 'commercial-clearance', 'garden-refuse'],
   },
 
-  'middlesex/mill-hill': {
+  'north-london/mill-hill': {
     postcode: 'NW7',
     metaDesc: 'Commercial waste collection and office clearance in Mill Hill NW7. WasteWize UK serves Mill Hill business parks and residential streets — confidential shredding and full clearances.',
     intro: "Mill Hill's mix of residential estates and business parks — including the Mill Hill East commercial zone — creates demand for both corporate waste management contracts and domestic clearance services. WasteWize UK serves Mill Hill businesses and residents with scheduled collections, confidential shredding, and full clearance services across NW7.",
@@ -591,7 +591,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     topServices: ['commercial-clearance', 'confidential-waste', 'residential-waste'],
   },
 
-  'middlesex/neasden': {
+  'north-london/neasden': {
     postcode: 'NW10',
     metaDesc: 'Industrial and commercial waste collection in Neasden NW10. WasteWize UK covers the North Circular industrial corridor — scrap metal, bulk clearance, and licensed disposal.',
     intro: "Neasden's North Circular industrial corridor is one of north-west London's most active commercial waste generation zones, with trade estates and warehousing alongside major retail. WasteWize UK provides high-capacity industrial waste collection, scrap metal removal, and commercial clearances throughout the Neasden area.",
@@ -636,7 +636,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     topServices: ['commercial-clearance', 'electrical-equipment', 'builders-waste-removal'],
   },
 
-  'middlesex/palmers-green': {
+  'north-london/palmers-green': {
     postcode: 'N13',
     metaDesc: 'Commercial waste collection and domestic clearance in Palmers Green N13. WasteWize UK provides retail waste, house clearances, and renovation disposal across Palmers Green.',
     intro: "Palmers Green's busy shopping street and surrounding residential areas in the N13 postcode generate consistent demand for retail waste collection, domestic clearances, and renovation debris disposal. WasteWize UK covers Palmers Green and the wider N13 area with reliable, EA-licensed commercial and domestic waste services.",
@@ -834,7 +834,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     topServices: ['residential-waste', 'garden-refuse', 'commercial-clearance'],
   },
 
-  'middlesex/willesden': {
+  'north-london/willesden': {
     postcode: 'NW10',
     metaDesc: 'Commercial and industrial waste collection in Willesden NW10. WasteWize UK provides scrap metal, trade waste, and construction clearances near Brent Cross and Staples Corner.',
     intro: "Willesden's mixed commercial and light industrial character — centred on the Brent Cross and Staples Corner zones — generates high volumes of trade waste, scrap metal, and construction debris. WasteWize UK provides responsive, high-capacity waste services across Willesden, with licensed operators and full compliance documentation on every job.",
@@ -843,7 +843,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     topServices: ['commercial-clearance', 'scrap-metal-collection', 'builders-waste-removal'],
   },
 
-  'middlesex/winchmore-hill': {
+  'north-london/winchmore-hill': {
     postcode: 'N21',
     metaDesc: 'Retail waste and domestic clearances in Winchmore Hill N21. WasteWize UK provides house clearances, renovation waste disposal, and commercial collections across Winchmore Hill.',
     intro: "Winchmore Hill's charming high street and leafy residential streets in the N21 area generate regular demand for retail waste collection, domestic clearances, and renovation waste disposal. WasteWize UK serves Winchmore Hill with reliable, EA-licensed waste services — same-week availability and full duty-of-care documentation on every job.",
