@@ -355,21 +355,6 @@ const otherServices = services
           ))}
         </div>
 
-        {renderedHighlights.length > 0 && (
-          <ul class="mt-8 grid sm:grid-cols-2 gap-x-8 gap-y-2">
-            {renderedHighlights.map((h) => (
-              <li class="flex items-start gap-2.5 text-sm text-white/65 leading-snug">
-                <svg class="w-4 h-4 text-brand-lime shrink-0 mt-0.5" fill="currentColor"
-                     viewBox="0 0 20 20" aria-hidden="true">
-                  <path fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"/>
-                </svg>
-                {h}
-              </li>
-            ))}
-          </ul>
-        )}
 
       </div>
     </div>
@@ -516,9 +501,7 @@ const otherServices = services
               ? townDetail.localContext.split('\n\n').map((para: string) => (
                   <p>{para.trim()}</p>
                 ))
-              : townDetail?.intro
-                ? [townDetail.intro].map((para: string) => <p>{para}</p>)
-                : (
+              : (
                   <p>
                     WasteWize UK provides EA-licensed {svc.title.toLowerCase()} across {town} and the wider {area.name} area.
                     {area.desc} Every job includes full duty-of-care documentation under EA Waste Carrier Licence CBDU335711,
