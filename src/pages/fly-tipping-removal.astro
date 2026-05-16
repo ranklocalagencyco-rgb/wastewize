@@ -19,6 +19,7 @@ const faqs = [
   {
     q: 'Do I need to report fly tipping to the council before removing it?',
     a: 'You are not legally required to report it before removing it from your own land, but reporting to your local council (or via the Flycapture database) creates an evidence trail that may be useful if the offender is later identified. We recommend photographing the waste before clearance and reporting online — we can begin clearance immediately once you have your photos.',
+    html: 'You are not legally required to report it before removing it from your own land, but <a href="https://www.gov.uk/report-flytipping" target="_blank" rel="noopener" class="text-brand-lime underline underline-offset-2">reporting to your local council</a> (or via the <a href="https://www.flycapture.com/" target="_blank" rel="noopener" class="text-brand-lime underline underline-offset-2">Flycapture database</a>) creates an evidence trail that may be useful if the offender is later identified. We recommend photographing the waste before clearance and reporting online — we can begin clearance immediately once you have your photos.',
   },
   {
     q: 'What types of fly-tipped waste can you remove?',
@@ -241,7 +242,7 @@ const whoWeHelp = [
             How It Works
           </h2>
           {[
-            { n: '01', title: 'Photograph the fly tip', desc: 'Before we arrive, photograph the waste. This evidence is useful if you wish to report the offender to your council via the Flycapture database.' },
+            { n: '01', title: 'Photograph the fly tip', desc: 'Before we arrive, photograph the waste. This evidence is useful if you wish to <a href="https://www.gov.uk/report-flytipping" target="_blank" rel="noopener" class="text-brand-lime underline underline-offset-2">report the offender to your local council</a> via the <a href="https://www.flycapture.com/" target="_blank" rel="noopener" class="text-brand-lime underline underline-offset-2">Flycapture database</a>.' },
             { n: '02', title: 'Call or send us photos', desc: 'We quote within 2 hours. For large or mixed loads a quick phone call is often faster. Same-week and next-day slots available.' },
             { n: '03', title: 'We clear in one visit',   desc: 'A two-person team arrives, loads all waste, and leaves the site clean. No skips, no permits, no return visits needed.' },
             { n: '04', title: 'You receive documentation', desc: 'A Duty of Care Waste Transfer Note is issued immediately after collection — your legal proof of compliant disposal. Keep it on file.' },
@@ -250,7 +251,7 @@ const whoWeHelp = [
               <span class="text-brand-lime font-bold text-lg shrink-0 w-8">{n}</span>
               <div>
                 <p class="text-[14px] font-semibold text-white mb-1">{title}</p>
-                <p class="text-sm text-white/50 leading-relaxed">{desc}</p>
+                <p class="text-sm text-white/50 leading-relaxed"><Fragment set:html={desc} /></p>
               </div>
             </div>
           ))}
@@ -347,13 +348,13 @@ const whoWeHelp = [
         Frequently Asked Questions
       </h2>
       <dl class="flex flex-col gap-4">
-        {faqs.map(({ q, a }) => (
+        {faqs.map((item) => (
           <div class="bg-brand-dark border border-white/10 rounded-[12px] p-6">
             <dt class="text-[15px] font-semibold text-white mb-2 flex items-start gap-3">
               <span class="text-brand-lime shrink-0 mt-0.5" aria-hidden="true">Q</span>
-              {q}
+              {item.q}
             </dt>
-            <dd class="text-sm leading-relaxed text-white/60 pl-6">{a}</dd>
+            <dd class="text-sm leading-relaxed text-white/60 pl-6" set:html={item.html ?? item.a} />
           </div>
         ))}
       </dl>
