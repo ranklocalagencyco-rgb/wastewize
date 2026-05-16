@@ -2,6 +2,7 @@
 import Layout from '../../../../layouts/Layout.astro';
 import { areas } from '../../../../data/areas';
 import { services } from '../../../../data/services';
+import { serviceDetails } from '../../../../data/service-detail';
 import { townDetails } from '../../../../data/town-detail';
 
 export function getStaticPaths() {
@@ -27,6 +28,10 @@ interface Props {
   town: string;
 }
 
+function svcSlug(href: string): string {
+  return href.startsWith('/services/') ? href.slice(10) : href.slice(1);
+}
+
 const { areaSlug } = Astro.params;
 const { town }     = Astro.props;
 
@@ -37,6 +42,16 @@ const nearbyTowns = area.towns.filter((t) => t !== town);
 
 
 const townKey     = `${areaSlug}/${slugify(town)}`;
+const townSlugStr = slugify(town);
+const svcForJs    = services.map((s) => {
+  const slug = svcSlug(s.href);
+  return {
+    ...s,
+    areaHref: serviceDetails[slug] !== undefined
+      ? `/areas/${areaSlug}/${townSlugStr}/${slug}`
+      : s.href,
+  };
+});
 const detail      = townDetails[townKey] ?? null;
 const pageTitle   = `${town} Waste Collection & Clearance | WasteWize UK`;
 const pageDescription = detail?.metaDesc
@@ -621,7 +636,7 @@ const postcode    = detail?.postcode ?? null;
 
 </Layout>
 
-<script define:vars={{ TOWN_SERVICES: services, AREA_SLUG: areaSlug, TOWN_SLUG: slugify(town) }} is:inline>
+<script define:vars={{ TOWN_SERVICES: svcForJs }} is:inline>
 
   const grid    = document.getElementById('town-svc-grid');
   const panel   = document.getElementById('town-detail-panel');
@@ -705,7 +720,7 @@ const postcode    = detail?.postcode ?? null;
     detTitle.textContent = svc.title;
     detDesc.textContent  = svc.desc;
     detPath.setAttribute('d', svc.icon);
-    detLink.href         = '/areas/' + AREA_SLUG + '/' + TOWN_SLUG + '/' + svc.href.replace('/services/', '');
+    detLink.href         = svc.areaHref;
     detPills.innerHTML   = svc.pills
       .map(function(p) { return '<span class="text-xs font-semibold px-3 py-1 rounded-full bg-brand-dark-elevated border border-brand-lime/20 text-white/60">' + p + '</span>'; })
       .join('');
