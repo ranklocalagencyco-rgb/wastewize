@@ -237,7 +237,6 @@ import Layout from '../layouts/Layout.astro';
             <form
               method="POST"
               action="#"
-              enctype="multipart/form-data"
               class="flex flex-col gap-6"
               novalidate
             >
@@ -393,37 +392,6 @@ import Layout from '../layouts/Layout.astro';
                 ></textarea>
               </div>
 
-              <!-- Image upload -->
-              <div class="flex flex-col gap-1.5">
-                <label for="images" class="text-xs font-medium text-white/60 uppercase tracking-wide">
-                  Attach Images <span class="text-white/30">(optional)</span>
-                </label>
-                <label
-                  for="images"
-                  id="contact-drop-zone"
-                  class="flex flex-col items-center justify-center gap-2 w-full
-                         border border-dashed border-white/20 rounded-[8px] px-4 py-6
-                         cursor-pointer hover:border-brand-lime/50 hover:bg-brand-lime/5
-                         transition-colors text-center"
-                >
-                  <svg class="w-7 h-7 text-white/25" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"/>
-                  </svg>
-                  <span id="contact-drop-label" class="text-xs text-white/40">
-                    Click to upload or drag &amp; drop
-                  </span>
-                  <span class="text-[10px] text-white/25">JPG, PNG, WEBP — up to 10 MB each</span>
-                </label>
-                <input
-                  id="images"
-                  name="images"
-                  type="file"
-                  multiple
-                  accept="image/jpeg,image/png,image/webp"
-                  class="sr-only"
-                />
-              </div>
-
               <!-- Submit -->
               <button
                 type="submit"
@@ -448,39 +416,3 @@ import Layout from '../layouts/Layout.astro';
 
 </Layout>
 
-<script>
-  const input    = document.getElementById('images') as HTMLInputElement;
-  const label    = document.getElementById('contact-drop-label')!;
-  const dropZone = document.getElementById('contact-drop-zone')!;
-
-  input.addEventListener('change', () => {
-    const count = input.files?.length ?? 0;
-    label.textContent = count === 0
-      ? 'Click to upload or drag & drop'
-      : count === 1
-        ? input.files![0].name
-        : `${count} images selected`;
-  });
-
-  dropZone.addEventListener('dragover', (e) => {
-    e.preventDefault();
-    dropZone.classList.add('border-brand-lime/50', 'bg-brand-lime/5');
-  });
-
-  dropZone.addEventListener('dragleave', () => {
-    dropZone.classList.remove('border-brand-lime/50', 'bg-brand-lime/5');
-  });
-
-  dropZone.addEventListener('drop', (e) => {
-    e.preventDefault();
-    dropZone.classList.remove('border-brand-lime/50', 'bg-brand-lime/5');
-    if (e.dataTransfer?.files.length) {
-      const dt = new DataTransfer();
-      Array.from(e.dataTransfer.files)
-        .filter(f => f.type.startsWith('image/'))
-        .forEach(f => dt.items.add(f));
-      input.files = dt.files;
-      input.dispatchEvent(new Event('change'));
-    }
-  });
-</script>
