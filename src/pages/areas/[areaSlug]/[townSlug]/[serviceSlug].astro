@@ -116,7 +116,7 @@ const otherServices = services
   .slice(0, 4);
 ---
 
-<Layout title={metaTitle} description={metaDesc}>
+<Layout title={metaTitle} description={metaDesc} townName={town} serviceName={svc.title}>
 
   <Fragment slot="head">
     <script type="application/ld+json" is:inline set:html={JSON.stringify({
