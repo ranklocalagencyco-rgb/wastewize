@@ -110,6 +110,7 @@ const GA_ID = 'G-8H4RV4TTPE';
       Chat with us
     </span>
     <a
+      id="whatsapp-trigger"
       href={`https://wa.me/${_waNumber}?text=${_waText}`}
       target="_blank"
       rel="noopener noreferrer"
@@ -123,6 +124,27 @@ const GA_ID = 'G-8H4RV4TTPE';
       </svg>
     </a>
   </div>
+
+  <!-- ⑤ WhatsApp lead tracking -->
+  <script is:inline define:vars={{ townName, serviceName, GA_ID }}>
+    (function () {
+      var btn = document.getElementById('whatsapp-trigger');
+      if (!btn) return;
+      btn.addEventListener('click', function () {
+        if (typeof gtag === 'undefined') return;
+        gtag('event', 'generate_lead', {
+          event_category:  'Conversion',
+          event_label:     'WhatsApp: ' + serviceName,
+          town:            townName,
+          service:         serviceName,
+          value:           50.00,
+          currency:        'GBP',
+          transport_type:  'beacon',
+        });
+        console.log('Analytics Sent: WhatsApp Lead from ' + townName + ' for ' + serviceName);
+      });
+    })();
+  </script>
 
   <script is:inline>
     (function () {
