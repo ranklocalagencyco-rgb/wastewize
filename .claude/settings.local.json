@@ -1,0 +1,48 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(git add *)",
+      "Bash(git rm *)",
+      "Bash(git commit -m ' *)",
+      "mcp__plugin_vercel_vercel__deploy_to_vercel",
+      "Bash(npx vercel *)",
+      "Bash(npm run *)",
+      "Bash(git push *)",
+      "Bash(npx astro *)",
+      "mcp__plugin_vercel_vercel__list_teams",
+      "Bash(npm uninstall *)",
+      "Bash(node -e ' *)",
+      "WebSearch",
+      "WebFetch(domain:www.junkhunters.co.uk)",
+      "WebFetch(domain:www.clearitwaste.co.uk)",
+      "WebFetch(domain:justclear.com)",
+      "WebFetch(domain:www.wastewize.co.uk)",
+      "WebFetch(domain:www.google.com)",
+      "WebFetch(domain:www.wastebook.co.uk)",
+      "WebFetch(domain:www.wastewizeuk.com)",
+      "Skill(vercel:deploy)",
+      "Skill(vercel:deploy:*)",
+      "Bash(vercel --version)",
+      "Bash(vercel whoami *)",
+      "Bash(node -e \"require\\('sharp'\\)\")",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\user\\\\wastewizeuk\" -Directory)",
+      "Bash(Select-Object Name)",
+      "Bash(find \"c:\\\\Users\\\\user\\\\wastewizeuk\\\\dist\" -name \"index.html\" | sed 's|.*dist||' | sed 's|/index.html||' | sort > /tmp/valid_routes.txt && wc -l /tmp/valid_routes.txt)",
+      "Read(//tmp/**)",
+      "Bash(sed 's/href=\"//')",
+      "Bash(grep -rh 'href=\"/' \"c:\\\\Users\\\\user\\\\wastewizeuk\\\\src\" --include=\"*.astro\" --include=\"*.ts\" --include=\"*.tsx\" --include=\"*.jsx\" --include=\"*.js\" | sed 's/.*href=\"\\\\\\([^\"]*\\\\\\).*/\\\\1/' | sort -u > /tmp/all_hrefs.txt && cat /tmp/all_hrefs.txt)",
+      "Bash(cat)",
+      "Bash(bash /tmp/check_hrefs.sh)",
+      "Bash(bash /tmp/detailed_report.sh)",
+      "Bash(bash /tmp/final_check.sh)",
+      "Bash(grep \"^/$\" /tmp/valid_routes.txt)",
+      "Bash(bash /tmp/correct_routes.sh)",
+      "Bash(index\")",
+      "Bash(grep -n \"/areas/\\\\${\" src/pages/services/\\\\[serviceSlug\\\\].astro src/pages/office-clearance.astro)"
+    ],
+    "additionalDirectories": [
+      "\\tmp"
+    ]
+  }
+}
