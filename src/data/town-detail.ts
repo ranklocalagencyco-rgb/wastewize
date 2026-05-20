@@ -923,24 +923,6 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     intro: "Marylebone's village-like high street, boutique hotels, and professional offices sit in one of London's most sought-after addresses. WasteWize UK provides scheduled waste collections, fit-out strip-outs, and end-of-tenancy clearances for Marylebone W1U businesses — managing everything from food waste segregation to confidential document destruction within Westminster's strict operating guidelines.",
   },
 
-  'west-london/mayfair-east': {
-    postcode: 'W1J',
-    metaDesc: 'Commercial waste collection and office clearance in Mayfair East W1J. WasteWize UK serves the financial, luxury retail, and hospitality sectors in East Mayfair — EA licensed.',
-    intro: "The eastern edge of Mayfair — spanning Bond Street and Berkeley Square — is home to luxury brands, private banks, and exclusive hospitality venues that require a discreet, highly professional waste management service. WasteWize UK handles W1J collections with precision scheduling, confidential shredding, and full EA compliance to meet the exacting standards of this prime London address.",
-  },
-
-  'west-london/mayfair-north': {
-    postcode: 'W1K',
-    metaDesc: 'Discreet commercial waste and office clearance in Mayfair North W1K. WasteWize UK provides confidential shredding and scheduled collections near Grosvenor Square — EA licensed.',
-    intro: "North Mayfair, centred on Grosvenor Square and the surrounding embassy district, demands waste management that prioritises discretion, security, and compliance. WasteWize UK provides confidential document shredding, secure office clearances, and scheduled commercial waste collections for W1K businesses and diplomatic premises — with full audit documentation on every job.",
-  },
-
-  'west-london/mayfair-south': {
-    postcode: 'W1J',
-    metaDesc: 'Premium waste management and office clearance in Mayfair South W1J. WasteWize UK serves the luxury hotels, galleries, and private members clubs near Piccadilly — EA licensed.',
-    intro: "South Mayfair's concentration of five-star hotels, fine dining establishments, private members clubs, and prestige retail along Piccadilly creates demanding waste management requirements. WasteWize UK provides out-of-hours collections, food waste management, confidential clearances, and WEEE recycling for Mayfair South W1J venues — with full compliance and minimal disruption.",
-  },
-
   'west-london/north-kensington': {
     postcode: 'W10',
     metaDesc: 'Commercial and residential waste collection in North Kensington W10. WasteWize UK covers the regeneration corridor from Ladbroke Grove to Kensal Rise — EA licensed, same-week service.',
@@ -969,18 +951,6 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     postcode: 'W12',
     metaDesc: "Commercial waste collection and clearance in Shepherd's Bush W12. WasteWize UK serves the Westfield retail quarter, media village, and surrounding businesses — EA licensed, same-week.",
     intro: "Shepherd's Bush combines one of London's largest urban shopping centres at Westfield with the BBC's former Television Centre media campus and a growing residential neighbourhood. WasteWize UK provides high-volume retail waste collections, office clearances, and construction waste management across W12 — supporting the area's diverse mix of commercial, creative, and residential clients.",
-  },
-
-  'west-london/soho-north-west': {
-    postcode: 'W1D',
-    metaDesc: 'Commercial waste and office clearance in Soho North West W1D. WasteWize UK serves the film, music, and hospitality sectors around Wardour Street and Carnaby — EA licensed.',
-    intro: "The north-western quarter of Soho — centred on Wardour Street's film and music industry cluster and Carnaby Street's retail hub — generates intense commercial waste volumes in a dense urban grid. WasteWize UK navigates Soho's narrow streets and Westminster's strict collection windows to provide reliable trade waste collections, fit-out strip-outs, and confidential clearances for W1D businesses.",
-  },
-
-  'west-london/soho-south-east': {
-    postcode: 'W1D',
-    metaDesc: 'Restaurant waste, commercial clearance, and office strip-outs in Soho South East W1D. WasteWize UK covers the Old Compton Street and Dean Street hospitality quarter — EA licensed.',
-    intro: "South-eastern Soho — the heart of London's restaurant and nightlife scene around Old Compton Street, Dean Street, and Frith Street — generates some of the capital's highest-density commercial waste volumes. WasteWize UK provides early-morning and out-of-hours collections, food waste management, and hospitality fit-out clearances for W1D venues, with full EA compliance and flexible scheduling.",
   },
 
   'west-london/west-ealing': {

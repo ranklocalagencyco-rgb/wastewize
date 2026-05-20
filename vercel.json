@@ -14,6 +14,56 @@
       "permanent": true
     },
     {
+      "source": "/areas/west-london/mayfair-east",
+      "destination": "/areas/west-london",
+      "permanent": true
+    },
+    {
+      "source": "/areas/west-london/mayfair-east/:service",
+      "destination": "/areas/west-london",
+      "permanent": true
+    },
+    {
+      "source": "/areas/west-london/mayfair-north",
+      "destination": "/areas/west-london",
+      "permanent": true
+    },
+    {
+      "source": "/areas/west-london/mayfair-north/:service",
+      "destination": "/areas/west-london",
+      "permanent": true
+    },
+    {
+      "source": "/areas/west-london/mayfair-south",
+      "destination": "/areas/west-london",
+      "permanent": true
+    },
+    {
+      "source": "/areas/west-london/mayfair-south/:service",
+      "destination": "/areas/west-london",
+      "permanent": true
+    },
+    {
+      "source": "/areas/west-london/soho-north-west",
+      "destination": "/areas/west-london",
+      "permanent": true
+    },
+    {
+      "source": "/areas/west-london/soho-north-west/:service",
+      "destination": "/areas/west-london",
+      "permanent": true
+    },
+    {
+      "source": "/areas/west-london/soho-south-east",
+      "destination": "/areas/west-london",
+      "permanent": true
+    },
+    {
+      "source": "/areas/west-london/soho-south-east/:service",
+      "destination": "/areas/west-london",
+      "permanent": true
+    },
+    {
       "source": "/areas/middlesex/edmonton",
       "destination": "/areas/north-london/edmonton",
       "permanent": true
