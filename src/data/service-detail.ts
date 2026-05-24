@@ -109,7 +109,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       },
       {
         q: 'Can you work outside normal business hours?',
-        a: 'Yes. We regularly work evenings and weekends to minimise disruption to neighbouring businesses or to operational areas of the building. Overtime rates may apply — confirm at the quotation stage.',
+        a: 'We regularly work evenings and weekends to minimise disruption to neighbouring businesses or to operational areas of the building. Overtime rates may apply — confirm at the quotation stage.',
       },
       {
         q: 'What happens to the materials after removal?',
@@ -119,11 +119,11 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     townFaqs: [
       {
         q: 'Can you carry out a strip-out in [Town] at short notice?',
-        a: 'Yes. We regularly take short-notice strip-out instructions in [Town] and across [County] — particularly for projects where asbestos surveys have cleared and stripping can proceed immediately. Call 07929 771954 to confirm vehicle and crew availability.',
+        a: 'Short notice is routine for us — particularly for projects where the asbestos survey has cleared and stripping can proceed immediately. Call 07929 771954 to confirm vehicle and crew availability in [Town].',
       },
       {
         q: 'Do you cover commercial and residential properties in [Town]?',
-        a: 'Yes. We carry out strip-outs across all types of premises in [Town] — offices, retail units, restaurants, and light industrial — as well as residential refurbishments. Our crew are accustomed to active-site conditions and restricted working hours across [County].',
+        a: 'We carry out strip-outs across all property types in [Town] — offices, retail units, restaurants, light industrial, and residential refurbishments. The crew are used to active-site conditions and restricted working hours across [County].',
       },
       {
         q: 'How much does a strip-out cost in [Town]?',
@@ -195,7 +195,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     faqs: [
       {
         q: 'Can you clear a commercial premises at short notice?',
-        a: 'Yes. We routinely take short-notice bookings for commercial clearances — particularly for end-of-tenancy work where lease surrender dates are fixed and non-negotiable. Call us with your deadline and we will confirm vehicle availability within the hour.',
+        a: 'Short-notice bookings are routine — particularly for end-of-tenancy work where lease surrender dates are fixed. Call us with your deadline and we will confirm vehicle availability within the hour.',
       },
       {
         q: 'Do you provide a fixed-price quote?',
@@ -213,11 +213,11 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     townFaqs: [
       {
         q: 'Can you clear a commercial premises in [Town] at short notice?',
-        a: 'Yes. We routinely carry out short-notice commercial clearances in [Town] — particularly for end-of-tenancy work with fixed lease surrender dates. Call 07929 771954 with your deadline and we confirm vehicle availability within the hour.',
+        a: 'Short-notice clearances in [Town] are routine — particularly for end-of-tenancy work where lease surrender dates are fixed. Call 07929 771954 with your deadline and we confirm vehicle availability within the hour.',
       },
       {
         q: 'Do you cover all types of commercial property in [Town]?',
-        a: 'Yes. We clear offices, retail units, warehouses, restaurants, and industrial premises across [Town] and the wider [County] area. We handle everything from standard office furniture to commercial kitchen appliances and industrial shelving.',
+        a: 'All types — offices, retail units, warehouses, restaurants, and industrial premises across [Town] and the wider [County] area. We handle everything from standard office furniture to commercial kitchen appliances and industrial shelving.',
       },
       {
         q: 'How much does commercial clearance cost in [Town]?',
@@ -293,7 +293,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       },
       {
         q: 'Can you collect from upstairs rooms or lofts?',
-        a: 'Yes. Our crew handles all carrying and lifting — including from lofts via hatch, upstairs rooms, and basement or cellar areas. There is no additional charge for upper-floor collections in most cases; if access is unusually difficult we will flag it during quoting.',
+        a: 'Our crew handles all carrying and lifting — including from lofts via hatch, upstairs rooms, and basement or cellar areas. There is no additional charge for upper-floor collections in most cases; if access is unusually difficult we will flag it during quoting.',
       },
       {
         q: 'Do I need to move items to the kerb before you arrive?',
@@ -311,11 +311,11 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     townFaqs: [
       {
         q: 'Can you collect bulky items from [Town] at short notice?',
-        a: 'Yes. We collect single bulky items and small mixed loads from [Town] with short-notice availability — often next working day. Call 07929 771954 or send a WhatsApp photo of your items for an instant fixed price.',
+        a: 'Often next working day, sometimes same day. Send a WhatsApp photo to 07929 771954 for an instant fixed price.',
       },
       {
         q: 'Do you collect from all areas of [Town]?',
-        a: 'Yes. We cover [Town] and the wider [County] area including all surrounding postcodes. There are no travel surcharges for standard residential collections within [Town]. Call 07929 771954 to confirm same-day availability.',
+        a: '[Town] and all surrounding [County] postcodes are within our standard area — no travel surcharges on residential collections. Call 07929 771954 to confirm same-day availability.',
       },
       {
         q: 'How much does residential waste removal cost in [Town]?',
@@ -387,11 +387,11 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     faqs: [
       {
         q: 'Can you remove large volumes of soil and excavated material?',
-        a: 'Yes. We collect soil, turf, and clay from garden renovation and construction projects. For volumes over one tonne, we recommend our dedicated muck-away service, which uses larger vehicles designed for excavation material. Contact us for a volume-based price.',
+        a: 'We collect soil, turf, and clay from garden renovation and construction projects. For volumes over one tonne, we recommend our dedicated muck-away service, which uses larger vehicles designed for excavation material. Contact us for a volume-based price.',
       },
       {
         q: 'Do you offer regular scheduled garden waste collections?',
-        a: 'Yes. We can arrange fortnightly or monthly collections for domestic gardeners, housing associations, schools, and landscaping contractors across London and the Home Counties. Regular clients receive a fixed rate and a priority booking slot.',
+        a: 'Fortnightly and monthly schedules are available for domestic gardeners, housing associations, schools, and landscaping contractors across London and the Home Counties. Regular clients get a fixed rate and a priority booking slot.',
       },
       {
         q: 'Can you also remove patio slabs or timber decking?',
@@ -405,11 +405,11 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     townFaqs: [
       {
         q: 'Can you collect garden waste from [Town] at short notice?',
-        a: 'Yes. We arrange short-notice garden waste collections across [Town] and the wider [County] area. Most domestic collections are booked within two working days. Call 07929 771954 with your volume estimate for a same-day fixed price.',
+        a: 'Most domestic collections in [Town] are booked within two working days. Call 07929 771954 with your volume estimate for a same-day fixed price.',
       },
       {
         q: 'Do you offer regular garden waste collections in [Town]?',
-        a: 'Yes. We provide fortnightly and monthly collection schedules for homeowners, housing associations, and landscaping contractors in [Town] and across [County]. Regular clients receive a fixed rate and a priority booking slot for seasonal surge periods.',
+        a: 'Fortnightly and monthly schedules are available for homeowners, housing associations, and landscaping contractors in [Town] and across [County]. Regular clients get a fixed rate and a priority slot for seasonal surge periods.',
       },
       {
         q: 'How much does garden waste removal cost in [Town]?',
@@ -499,11 +499,11 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     townFaqs: [
       {
         q: 'Can you collect builders waste from a [Town] site at short notice?',
-        a: 'Yes. Our on-call service means you call when your site is full and we aim to arrive within hours. We cover construction sites across [Town] and the wider [County] area — including active programmes in residential streets where skip permits are difficult to obtain.',
+        a: 'Our on-call model is built for exactly this — call when the site is full and we aim to arrive within hours. We cover [Town] and the wider [County] area, including residential streets where skip permits are hard to obtain.',
       },
       {
         q: 'Do you provide compliance documentation for [Town] construction sites?',
-        a: 'Yes. Every collection from a [Town] site includes a signed Duty of Care Waste Transfer Note, a copy of our EA Waste Carrier Licence (CBDU335711), and copies of our public liability insurance. We compile these into a single compliance pack on request for building control inspections.',
+        a: 'Every [Town] site collection includes a signed Duty of Care Waste Transfer Note, a copy of our EA Waste Carrier Licence (CBDU335711), and public liability insurance copies — compiled into a single pack on request for building control.',
       },
       {
         q: 'How much does builders waste removal cost in [Town]?',
@@ -518,8 +518,8 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     serviceType: 'WEEE Electrical Equipment Collection Service',
     metaTitle:   'WEEE Collection London | Electrical Equipment Recycling | WasteWize UK',
     metaDesc:  'WEEE-compliant electrical equipment collection and recycling for London businesses. Official WEEE transfer notes, data destruction certificates. EA and WEEE registered.',
-    heroDesc:     'WEEE-compliant collection and recycling of waste electrical and electronic equipment for businesses across London and the Home Counties. Every collection is handled by our WEEE-registered team with official WEEE Duty of Care Transfer Notes issued as standard — ensuring your business meets its full legal obligations under the UK WEEE Regulations 2013. Certified data destruction is available for computers, servers, and all data-bearing devices.',
-    leadTemplate: 'WasteWize UK provides WEEE-compliant electrical equipment collection for businesses in [Town] and across [County]. Every collection is handled by our WEEE-registered team with official WEEE Duty of Care Transfer Notes issued as standard, ensuring full legal compliance under the UK WEEE Regulations 2013. Certified data destruction available for all data-bearing devices.',
+    heroDesc:     'WEEE-compliant collection and recycling of waste electrical and electronic equipment for businesses across London and the Home Counties. Our WEEE-registered team issues official WEEE Duty of Care Transfer Notes on every collection — meeting your full legal obligations under the UK WEEE Regulations 2013. Certified data destruction is available for computers, servers, and all data-bearing devices.',
+    leadTemplate: 'WasteWize UK collects waste electrical equipment for businesses in [Town] and across [County]. Our WEEE-registered team issues official WEEE Duty of Care Transfer Notes on every collection, meeting your full legal obligations under the UK WEEE Regulations 2013. Certified data destruction is available for all data-bearing devices.',
     bodySections: [
       {
         heading: 'WEEE Compliance for London Offices and Businesses',
@@ -593,11 +593,11 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     townFaqs: [
       {
         q: 'Can you collect electrical equipment from a [Town] business at short notice?',
-        a: 'Yes. We arrange WEEE collections across [Town] and the wider [County] area with short-notice availability — particularly for office clearances, fit-out projects, and IT asset disposals where timing is fixed. Call 07929 771954 to confirm vehicle availability.',
+        a: 'Short-notice WEEE collections in [Town] are routine — particularly for office clearances and IT asset disposals where timing is fixed. Call 07929 771954 to confirm vehicle availability.',
       },
       {
         q: 'Do you provide WEEE transfer notes for collections in [Town]?',
-        a: 'Yes. Every business customer in [Town] and across [County] receives an official WEEE Duty of Care Transfer Note for every collection, listing the equipment types and quantities. Retain this for a minimum of two years as required under the WEEE Regulations 2013.',
+        a: 'Every [Town] business customer receives an official WEEE Duty of Care Transfer Note per collection, listing equipment types and quantities. Retain it for a minimum of two years as required under the WEEE Regulations 2013.',
       },
       {
         q: 'How much does WEEE collection cost in [Town]?',
@@ -683,11 +683,11 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     townFaqs: [
       {
         q: 'Can you collect confidential waste from a [Town] business at short notice?',
-        a: 'Yes. We arrange short-notice confidential waste collections across [Town] and the wider [County] area — particularly for offices relocating, closing, or responding to a compliance deadline. Call 07929 771954 to confirm vehicle availability and collection timing.',
+        a: 'Short notice is available in [Town] — particularly for offices relocating, closing, or responding to a compliance deadline. Call 07929 771954 to confirm availability and timing.',
       },
       {
         q: 'Do you provide a certificate of destruction for collections in [Town]?',
-        a: 'Yes. Every confidential waste collection from a [Town] premises is accompanied by a time-stamped certificate of destruction, issued after secure shredding at our licensed facility. This is your legal compliance evidence under UK GDPR Article 17 and the Data Protection Act 2018.',
+        a: 'Every confidential waste collection from [Town] comes with a time-stamped certificate of destruction, issued after secure shredding at our licensed facility — your compliance evidence under UK GDPR Article 17 and the Data Protection Act 2018.',
       },
       {
         q: 'How much does confidential waste disposal cost in [Town]?',
@@ -781,11 +781,11 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     townFaqs: [
       {
         q: 'Can you arrange asbestos removal in [Town] at short notice?',
-        a: 'Yes. We coordinate HSE-licensed asbestos surveys and removal for properties across [Town] and the wider [County] area. Refurbishment and demolition surveys can typically be arranged within 48 to 72 hours. Call 07929 771954 to discuss your timeline and we will confirm specialist availability.',
+        a: 'We coordinate HSE-licensed surveys and removal for properties across [Town] and [County]. Refurbishment and demolition surveys can typically be arranged within 48 to 72 hours. Call 07929 771954 to discuss your timeline.',
       },
       {
         q: 'Do you cover residential properties in [Town]?',
-        a: 'Yes. Our HSE-licensed asbestos removal partners cover residential and commercial properties across [Town] and [County]. Artex ceilings, pipe lagging, floor tiles, roof sheets, and structural panels are all within scope. A pre-removal survey is always conducted before any disturbance.',
+        a: 'Our HSE-licensed partners cover residential and commercial properties across [Town] and [County] — Artex ceilings, pipe lagging, floor tiles, roof sheets, and structural panels. A survey is always conducted before any disturbance.',
       },
       {
         q: 'How much does asbestos removal cost in [Town]?',
@@ -857,7 +857,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     faqs: [
       {
         q: 'Can you collect small amounts of rubble from a residential property?',
-        a: 'Yes. We have no minimum volume for hardcore or rubble collections from residential or commercial sites. Our minimum charge covers up to approximately 500kg — sufficient for a standard bathroom or kitchen renovation. Contact us for a volume-based price.',
+        a: 'There is no minimum volume for hardcore or rubble collections from residential or commercial sites. Our minimum charge covers up to approximately 500kg — sufficient for a standard bathroom or kitchen renovation. Contact us for a volume-based price.',
       },
       {
         q: 'Does concrete need to be separated from brick for recycling?',
@@ -875,11 +875,11 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     townFaqs: [
       {
         q: 'Can you collect rubble or timber from a [Town] site at short notice?',
-        a: 'Yes. We arrange rubble and wood removal across [Town] and the wider [County] area with short-notice availability. For active renovation sites where material accumulates quickly, we can arrange same-day or next-day collections. Call 07929 771954 to confirm vehicle availability.',
+        a: 'For active renovation sites, same-day or next-day collections are standard across [Town] and the wider [County] area. Call 07929 771954 to confirm vehicle availability.',
       },
       {
         q: 'Do you cover small renovation projects in [Town]?',
-        a: 'Yes. We collect from small domestic renovation projects in [Town] — a bathroom remodel, a garden wall demolition, a decking removal — as well as larger commercial and construction sites across [County]. There is no minimum load requirement for standard [Town] collections.',
+        a: 'Small domestic projects are fine — a bathroom remodel, a garden wall demolition, a decking removal — as well as larger commercial and construction sites across [County]. No minimum load for standard [Town] collections.',
       },
       {
         q: 'How much does rubble and wood removal cost in [Town]?',
@@ -969,7 +969,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     townFaqs: [
       {
         q: 'Can you collect scrap metal from [Town] at short notice?',
-        a: 'Yes. We collect scrap metal from commercial, industrial, and residential addresses in [Town] and the wider [County] area with short-notice availability. Call 07929 771954 with an estimate of your metal volume and type and we will confirm collection timing.',
+        a: 'Short notice is usually fine in [Town]. Call 07929 771954 with an estimate of your metal volume and type and we\'ll confirm collection timing.',
       },
       {
         q: 'What types of metal do you collect from [Town] addresses?',
@@ -1052,7 +1052,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       },
       {
         q: 'Do you clear bereavement properties?',
-        a: 'Yes. WasteWize UK handles estate and bereavement clearances with care and discretion. We work at your pace, can donate suitable items to local charities, and are experienced in liaising with probate solicitors and estate agents.',
+        a: 'WasteWize UK handles estate and bereavement clearances with care and discretion. We work at your pace, can donate suitable items to local charities, and are experienced in liaising with probate solicitors and estate agents.',
       },
       {
         q: 'Can I be present during the clearance?',
@@ -1066,7 +1066,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     townFaqs: [
       {
         q: 'Can you clear a house in [Town] at short notice?',
-        a: 'Yes. We offer same-day and next-day house clearances across [Town] and the wider [County] area. Call 07929 771954 before noon and we can typically dispatch a crew the same day for standard clearances.',
+        a: 'Same-day and next-day slots are available across [Town] and the wider [County] area. Call 07929 771954 before noon and we can typically dispatch a crew the same day.',
       },
       {
         q: 'Do you operate in all parts of [Town]?',
@@ -1149,7 +1149,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       },
       {
         q: 'Can you clear an office outside business hours?',
-        a: 'Yes. We offer early morning, evening, and weekend office clearance slots to minimise disruption to your operations or neighbouring businesses. Out-of-hours bookings are subject to availability — call 07929 771954 to confirm.',
+        a: 'Early morning, evening, and weekend slots are available to minimise disruption to your operations or neighbouring businesses. Out-of-hours bookings are subject to availability — call 07929 771954 to confirm.',
       },
       {
         q: 'Do you handle confidential documents?',
@@ -1163,11 +1163,11 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     townFaqs: [
       {
         q: 'Can you clear our office in [Town] the same day?',
-        a: 'Yes, for smaller clearances in [Town] we can often dispatch a crew the same day — call 07929 771954 before noon. Larger commercial clearances in [County] are typically scheduled within 24–48 hours.',
+        a: 'For smaller clearances in [Town] we can often dispatch a crew the same day — call 07929 771954 before noon. Larger commercial clearances in [County] are typically scheduled within 24–48 hours.',
       },
       {
         q: 'Do you cover commercial premises across [County]?',
-        a: 'Yes. We serve offices, retail units, and commercial premises across [County] and the wider London area. No call-out fee for standard visits within [Town] and surrounding [County] postcodes.',
+        a: 'Offices, retail units, and commercial premises across [County] and the wider London area — no call-out fee for standard visits within [Town] and surrounding [County] postcodes.',
       },
       {
         q: 'What does office clearance cost in [Town] ([Postcode])?',
@@ -1242,7 +1242,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     faqs: [
       {
         q: 'Can you clear a rental property the same day as the tenancy ends?',
-        a: 'Yes. We regularly work to tight tenancy handover deadlines. Call before noon for same-day availability — we can often attend within a few hours of booking for urgent clearances. Next-day bookings are almost always available.',
+        a: 'Tight tenancy handover deadlines are routine for us. Call before noon for same-day availability — we can often attend within a few hours for urgent clearances. Next-day bookings are almost always available.',
       },
       {
         q: 'Will I get documentation for the clearance?',
@@ -1254,7 +1254,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       },
       {
         q: 'Do you clear properties for letting agents as well as landlords?',
-        a: 'Yes. We work regularly with letting agents and property management companies across London and the South East. We can arrange access via key safe or on-site agent, and issue documentation directly to the managing company if required.',
+        a: 'We work regularly with letting agents and property management companies across London and the South East. Access via key safe or on-site agent is fine, and we can issue documentation directly to the managing company if required.',
       },
     ],
     townFaqs: [
@@ -1264,11 +1264,11 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       },
       {
         q: 'Do you cover all rental properties in [Town] ([Postcode])?',
-        a: 'Yes. We cover all [Postcode] postcodes and the wider [Town] area as part of our standard service area in [County]. No surcharges for [Town] locations.',
+        a: 'All [Postcode] postcodes and the wider [Town] area are within our standard [County] service area — no surcharges for [Town] locations.',
       },
       {
         q: 'Can a landlord book an end of tenancy clearance in [Town] without being present?',
-        a: 'Yes. Many of our [Town] clients provide access via a key safe, managing agent, or estate agent. We attend, clear, and issue the Waste Transfer Note by email. You don\'t need to be on-site.',
+        a: 'Many [Town] clients provide access via a key safe, managing agent, or estate agent. We attend, clear, and send the Waste Transfer Note by email — no need to be on-site.',
       },
     ],
     relatedIds: ['house-clearance', 'office-clearance', 'skip-hire-alternative'],
@@ -1357,7 +1357,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     townFaqs: [
       {
         q: 'Can you clear fly-tipped waste in [Town] the same day?',
-        a: 'Yes. WasteWize UK offers same-day fly tipping removal across [Town] and the wider [County] area. Call 07929 771954 and we\'ll confirm attendance time within the hour.',
+        a: 'Same-day fly tipping removal is standard across [Town] and the wider [County] area. Call 07929 771954 and we\'ll confirm attendance time within the hour.',
       },
       {
         q: 'Who is responsible for fly-tipping on private land in [Town]?',
@@ -1365,7 +1365,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       },
       {
         q: 'Will you photograph the fly-tipped waste in [Town] before removing it?',
-        a: 'Yes. For every fly-tipping clearance in [Town] ([Postcode]), our crew photographs all waste in situ before removal. This evidence is useful for reporting to the local council, insurance claims, and any subsequent enforcement action.',
+        a: 'For every fly-tipping clearance in [Town] ([Postcode]), our crew photographs all waste in situ before removal — useful for council reporting, insurance claims, and any subsequent enforcement.',
       },
     ],
     relatedIds: ['house-clearance', 'builders-waste-removal', 'garden-refuse'],
@@ -1448,13 +1448,13 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       },
       {
         q: 'Can your crew help with loading?',
-        a: 'Yes. We offer an assisted load option where our crew handles the loading — useful for heavy items, elderly or mobility-limited clients, or where there is no additional help available on-site. Assisted load is priced slightly higher than self-load. Ask when booking.',
+        a: 'An assisted load option is available — our crew handles the loading, which is useful for heavy items, elderly or mobility-limited clients, or where there is no additional help on-site. Assisted load is priced slightly higher than self-load. Ask when booking.',
       },
     ],
     townFaqs: [
       {
         q: 'Is a Wait and Load service available in [Town] today?',
-        a: 'Yes. We offer same-day Wait & Load collections across [Town] and [County]. Call 07929 771954 before noon for same-day availability — we confirm within the hour.',
+        a: 'Same-day Wait & Load slots are available across [Town] and [County]. Call 07929 771954 before noon — we confirm within the hour.',
       },
       {
         q: 'Why choose Wait and Load over a skip in [Town]?',

@@ -167,7 +167,7 @@ The residential market is among the most active in west London for high-value re
   'surrey/guildford': {
     postcode: 'GU1 / GU2',
     metaDesc: 'Commercial waste management and house clearances in Guildford GU1 and GU2. WasteWize UK serves Surrey\'s county town — office clearance, construction waste, and residential services.',
-    intro: "Guildford is Surrey's county town and principal commercial centre, with a thriving retail and office economy, the University of Surrey campus, and ongoing North Street regeneration. WasteWize UK provides same-week EA-licensed collections across the GU1, GU2, and GU4 areas.",
+    intro: "Guildford is Surrey's county town and principal commercial centre, with an active retail and office market, the University of Surrey campus, and ongoing North Street regeneration. WasteWize UK provides same-week EA-licensed collections across the GU1, GU2, and GU4 areas.",
     localContext: `Guildford is Surrey's county town and its most economically significant commercial centre, with a town-centre retail and office economy anchored by the High Street, the North Street regeneration zone, and the expanding commercial parks along the A3 corridor towards Godalming. The University of Surrey — with around 15,000 students and a significant research and development campus — creates recurring clearance requirements from the annual student turnover and from the university's ongoing estate development. Guildford's prosperity and its position as a commuter hub for London generates a high volume of executive residential property renovation, producing regular demand for strip-out services, garden refuse collection, and house clearances.
 
 The North Street regeneration scheme — one of the largest town-centre developments in the south east — has added significant construction waste volumes to the Guildford market. WasteWize serves Guildford businesses, contractors, and homeowners across the GU1, GU2, and GU4 postcode areas, providing same-week collections with full EA documentation and the same compliance standards we apply across our London operations.`,
@@ -306,7 +306,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
   'middlesex/cowley': {
     postcode: 'UB8',
     metaDesc: 'Commercial clearance and construction waste removal in Cowley UB8, near Uxbridge. WasteWize UK — fast skip hire and licensed waste collection for Cowley businesses.',
-    intro: "Cowley, nestled between Uxbridge town centre and the Grand Union Canal, combines light industrial units with growing residential streets. WasteWize UK provides commercial clearance, construction waste removal, and skip hire for Cowley businesses and contractors with fast turnaround from our London depot.",
+    intro: "Cowley sits between Uxbridge town centre and the Grand Union Canal, combining light industrial units with growing residential streets. WasteWize UK provides commercial clearance, construction waste removal, and skip hire for Cowley businesses and contractors with fast turnaround from our London depot.",
     localContext: `Cowley's light industrial estates along Cowley Mill Road and the Brunel Road corridor generate regular commercial clearances, construction debris, and trade waste from manufacturers, trade counters, and storage operators. WasteWize handles these with segregated collection and full EA documentation. The residential streets of Cowley Peachey generate house clearances and garden refuse demand. Fast skip hire and licensed waste collection across Cowley with same-week availability from our London depot.`,
     keyAreas:    ['Cowley High Street', 'Cowley Mill Industrial Estate', 'Grand Union Canal', 'Brunel Road', 'Cowley Peachey'],
     topServices: ['commercial-clearance', 'builders-waste-removal', 'rubble-wood-removal'],
@@ -702,8 +702,8 @@ Chelmsford's residential market — including the high-value areas of Springfiel
   'middlesex/southall': {
     postcode: 'UB1 / UB2',
     metaDesc: "High-frequency commercial waste collection in Southall UB1 and UB2. WasteWize UK provides food waste, confidential shredding, and trade collections for Southall's business community.",
-    intro: "Southall's thriving commercial quarter — spanning food manufacturing, wholesale trade, retail, and hospitality along the Broadway — generates some of the highest commercial waste volumes in outer west London. WasteWize UK provides high-frequency commercial collections, confidential shredding, and specialist disposal for Southall's diverse business community.",
-    localContext: `Southall's thriving commercial district along The Broadway and Uxbridge Road is one of outer west London's most commercially dense high streets, with food manufacturing, wholesale trade, specialist retail, and hospitality businesses generating some of the highest per-street commercial waste volumes in the region. The Western International Market at the UB1/UB2 boundary adds major food trade waste. Southall's residential neighbourhoods — Victorian terraces, interwar housing, and newer development — create house clearance and renovation waste demand alongside the predominantly commercial workload. WasteWize provides high-frequency commercial collections and specialist disposal for Southall's diverse business community.`,
+    intro: "Southall's busy commercial quarter — spanning food manufacturing, wholesale trade, retail, and hospitality along the Broadway — generates some of the highest commercial waste volumes in outer west London. WasteWize UK provides high-frequency commercial collections, confidential shredding, and specialist disposal for Southall's diverse business community.",
+    localContext: `Southall's busy commercial district along The Broadway and Uxbridge Road is one of outer west London's most commercially dense high streets, with food manufacturing, wholesale trade, specialist retail, and hospitality businesses generating some of the highest per-street commercial waste volumes in the region. The Western International Market at the UB1/UB2 boundary adds major food trade waste. Southall's residential neighbourhoods — Victorian terraces, interwar housing, and newer development — create house clearance and renovation waste demand alongside the predominantly commercial workload. WasteWize provides high-frequency commercial collections and specialist disposal for Southall's diverse business community.`,
     keyAreas:    ['The Broadway', 'Uxbridge Road', 'Southall Market', 'Western International Market', 'Norwood Road'],
     topServices: ['commercial-clearance', 'confidential-waste', 'builders-waste-removal'],
   },
@@ -774,8 +774,8 @@ Chelmsford's residential market — including the high-value areas of Springfiel
   'middlesex/teddington': {
     postcode: 'TW11',
     metaDesc: "Premium clearances and retail waste collection in Teddington TW11. WasteWize UK provides house clearances, renovation waste, and commercial collections for Teddington's riverside community.",
-    intro: "Teddington's attractive Thames-side setting and thriving local high street generate demand for retail waste collection, premium residential clearances, and renovation waste disposal from the area's sought-after housing stock. WasteWize UK provides professional, reliable waste services across Teddington and the TW11 area.",
-    localContext: `Teddington is a prosperous Thames-side town with one of outer London's most vibrant independent high streets — restaurants, boutiques, and professional services businesses along Teddington High Street generate consistent commercial waste volumes. The residential hinterland — Victorian terraces on the Kingston side and the larger properties around Bushy Park and Waldegrave Road — creates substantial house clearance demand for probate sales and renovation waste from constant refurbishment in this sought-after area. WasteWize provides Teddington's businesses and homeowners with professional, reliable waste services matched to the quality expectations of TW11.`,
+    intro: "Teddington's Thames-side setting and busy local high street generate demand for retail waste collection, premium residential clearances, and renovation waste disposal from the area's sought-after housing stock. WasteWize UK provides professional, reliable waste services across Teddington and the TW11 area.",
+    localContext: `Teddington is a prosperous Thames-side town with one of outer London's busiest independent high streets — restaurants, boutiques, and professional services businesses along Teddington High Street generate consistent commercial waste volumes. The residential hinterland — Victorian terraces on the Kingston side and the larger properties around Bushy Park and Waldegrave Road — creates substantial house clearance demand for probate sales and renovation waste from constant refurbishment in this sought-after area. WasteWize provides Teddington's businesses and homeowners with professional, reliable waste services matched to the quality expectations of TW11.`,
     keyAreas:    ['Teddington High Street', 'Waldegrave Road', 'Bushy Park', 'Teddington Lock', 'Sandy Lane'],
     topServices: ['residential-waste', 'commercial-clearance', 'garden-refuse'],
   },
@@ -994,7 +994,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
   'berkshire/caversham': {
     postcode: 'RG4',
     metaDesc: 'House clearances and commercial waste collection in Caversham RG4. WasteWize UK serves this Thames-side Reading suburb — garden waste, renovation clearance, and trade collections.',
-    intro: "Caversham's sought-after Thames-side setting north of Reading combines affluent residential streets with a vibrant local high street, generating demand for premium house clearances, garden refuse removal, and commercial waste collection. WasteWize UK provides professional, fully documented waste services across Caversham and the RG4 postcode.",
+    intro: "Caversham's sought-after Thames-side setting north of Reading combines affluent residential streets with a busy local high street, generating demand for premium house clearances, garden refuse removal, and commercial waste collection. WasteWize UK provides professional, fully documented waste services across Caversham and the RG4 postcode.",
   },
 
   'berkshire/cippenham': {
@@ -1042,7 +1042,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
   'berkshire/hungerford': {
     postcode: 'RG17',
     metaDesc: 'Commercial clearance and waste collection in Hungerford RG17. WasteWize UK serves this west Berkshire market town — trade waste, renovation clearance, and domestic services.',
-    intro: "Hungerford's thriving antiques trade, busy high street, and surrounding rural businesses generate a distinctive mix of commercial waste streams — from retail strip-outs and antique clearances to agricultural and construction debris. WasteWize UK provides tailored, EA-licensed waste services across Hungerford and the wider RG17 area.",
+    intro: "Hungerford's antiques trade, busy high street, and surrounding rural businesses generate a distinctive mix of commercial waste streams — from retail strip-outs and antique clearances to agricultural and construction debris. WasteWize UK provides tailored, EA-licensed waste services across Hungerford and the wider RG17 area.",
   },
 
   'berkshire/lambourn': {
@@ -1132,7 +1132,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
   'berkshire/twyford': {
     postcode: 'RG10',
     metaDesc: 'Domestic clearances and commercial waste collection in Twyford RG10. WasteWize UK serves this Thames Valley village and its commuter community — house clearances and trade waste.',
-    intro: "Twyford's thriving commuter village on the Thames Valley line between Reading and Maidenhead combines an active local commercial centre with affluent residential streets generating demand for quality clearance services and reliable trade waste collection. WasteWize UK covers Twyford and the RG10 area with full EA documentation.",
+    intro: "Twyford is a commuter village on the Thames Valley line between Reading and Maidenhead, with an active local commercial centre with affluent residential streets generating demand for quality clearance services and reliable trade waste collection. WasteWize UK covers Twyford and the RG10 area with full EA documentation.",
   },
 
   'berkshire/warfield': {
@@ -1188,7 +1188,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
   'buckinghamshire/buckingham': {
     postcode: 'MK18',
     metaDesc: 'Commercial waste collection and clearance in Buckingham MK18. WasteWize UK covers the market town with office clearance, construction waste, and residential collections.',
-    intro: "Buckingham is a thriving north Buckinghamshire market town with a growing commercial sector and an active construction pipeline driven by new residential development. WasteWize UK serves Buckingham and the wider MK18 area with reliable waste collection, strip-outs, and specialist disposal services backed by full EA licensing and same-week availability.",
+    intro: "Buckingham is a north Buckinghamshire market town with a growing commercial sector and an active construction pipeline driven by new residential development. WasteWize UK serves Buckingham and the wider MK18 area with reliable waste collection, strip-outs, and specialist disposal services backed by full EA licensing and same-week availability.",
   },
 
   'buckinghamshire/burnham': {
@@ -1224,7 +1224,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
   'buckinghamshire/gerrards-cross': {
     postcode: 'SL9',
     metaDesc: 'Office clearance and waste collection in Gerrards Cross SL9. WasteWize UK provides EA-licensed commercial and residential services for one of the Chilterns most affluent commuter towns.',
-    intro: "Gerrards Cross is one of Buckinghamshire's most affluent commuter towns, with high-value residential properties, a thriving retail centre, and excellent rail links into London. WasteWize UK provides discreet house clearances, office strip-outs, confidential waste shredding, and WEEE recycling across the SL9 area.",
+    intro: "Gerrards Cross is one of Buckinghamshire's most affluent commuter towns, with high-value residential properties, an active retail centre, and excellent rail links into London. WasteWize UK provides discreet house clearances, office strip-outs, confidential waste shredding, and WEEE recycling across the SL9 area.",
   },
 
   'buckinghamshire/great-missenden': {
@@ -1236,7 +1236,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
   'buckinghamshire/haddenham': {
     postcode: 'HP17',
     metaDesc: 'Residential and commercial waste collection in Haddenham HP17. WasteWize UK provides house clearances, garden refuse, and trade waste services for this large Buckinghamshire village.',
-    intro: "Haddenham is one of Buckinghamshire's largest villages, located between Aylesbury and Thame with a thriving community and growing residential base. WasteWize UK covers the HP17 area with house clearances, garden waste removal, and commercial trade collections, all completed with full EA-licensed documentation.",
+    intro: "Haddenham is one of Buckinghamshire's largest villages, located between Aylesbury and Thame with a growing residential base. WasteWize UK covers the HP17 area with house clearances, garden waste removal, and commercial trade collections, all completed with full EA-licensed documentation.",
   },
 
   'buckinghamshire/hazlemere': {
@@ -1266,13 +1266,13 @@ Chelmsford's residential market — including the high-value areas of Springfiel
   'buckinghamshire/marlow': {
     postcode: 'SL7',
     metaDesc: 'Office clearance and waste management in Marlow SL7. WasteWize UK serves this Thames-side town with commercial strip-outs, confidential shredding, WEEE recycling, and residential clearances.',
-    intro: "Marlow is a prosperous Thames-side town with a vibrant commercial centre, a significant cluster of professional services businesses, and high-value residential properties along the river. WasteWize UK provides confidential waste shredding, WEEE electrical recycling, office strip-outs, and house clearances across the SL7 area.",
+    intro: "Marlow is a prosperous Thames-side town with an active commercial centre, a significant cluster of professional services businesses, and high-value residential properties along the river. WasteWize UK provides confidential waste shredding, WEEE electrical recycling, office strip-outs, and house clearances across the SL7 area.",
   },
 
   'buckinghamshire/marlow-bottom': {
     postcode: 'SL7',
     metaDesc: 'Residential waste removal and house clearances in Marlow Bottom SL7. WasteWize UK covers this Chilterns valley village with domestic clearances, garden refuse, and bulky item collections.',
-    intro: "Marlow Bottom is a quiet valley village nestled in the Chilterns north of Marlow, with predominantly residential properties and a strong community character. WasteWize UK provides house clearances, garden waste removal, and bulky item collections throughout Marlow Bottom and the wider SL7 area, with same-week availability and full compliance paperwork.",
+    intro: "Marlow Bottom is a quiet valley village in the Chilterns north of Marlow, with predominantly residential properties and a strong community character. WasteWize UK provides house clearances, garden waste removal, and bulky item collections throughout Marlow Bottom and the wider SL7 area, with same-week availability and full compliance paperwork.",
   },
 
   'buckinghamshire/penn': {
@@ -1314,7 +1314,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
   'buckinghamshire/wendover': {
     postcode: 'HP22',
     metaDesc: 'Commercial and residential waste collection in Wendover HP22. WasteWize UK serves this Chiltern Hills market town with clearances, garden waste, and specialist waste services.',
-    intro: "Wendover is a charming market town nestled in the Chiltern Hills between Aylesbury and Great Missenden, with a mix of independent businesses, residential properties, and proximity to the Chiltern escarpment. WasteWize UK covers the HP22 area with house clearances, garden refuse collections, commercial strip-outs, and full specialist waste services.",
+    intro: "Wendover is a market town in the Chiltern Hills between Aylesbury and Great Missenden, with a mix of independent businesses, residential properties, and direct access to the Chiltern escarpment. WasteWize UK covers the HP22 area with house clearances, garden refuse collections, commercial strip-outs, and full specialist waste services.",
   },
 
   'buckinghamshire/winslow': {
