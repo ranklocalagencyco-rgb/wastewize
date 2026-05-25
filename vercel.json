@@ -14,6 +14,16 @@
       "permanent": true
     },
     {
+      "source": "/(.*)/",
+      "destination": "/$1",
+      "permanent": true
+    },
+    {
+      "source": "/areas/:area/:town//:service",
+      "destination": "/areas/:area/:town/:service",
+      "permanent": true
+    },
+    {
       "source": "/areas/west-london/mayfair-east",
       "destination": "/areas/west-london",
       "permanent": true
@@ -151,6 +161,31 @@
     {
       "source": "/areas/middlesex/winchmore-hill/:service",
       "destination": "/areas/north-london/winchmore-hill/:service",
+      "permanent": true
+    },
+    {
+      "source": "/areas/buckinghamshire/bedgrove",
+      "destination": "/areas/buckinghamshire",
+      "permanent": true
+    },
+    {
+      "source": "/areas/buckinghamshire/bedgrove/:service",
+      "destination": "/areas/buckinghamshire",
+      "permanent": true
+    },
+    {
+      "source": "/areas/buckinghamshire/micklefield",
+      "destination": "/areas/buckinghamshire",
+      "permanent": true
+    },
+    {
+      "source": "/areas/buckinghamshire/micklefield/:service",
+      "destination": "/areas/buckinghamshire",
+      "permanent": true
+    },
+    {
+      "source": "/areas/:areaSlug",
+      "destination": "/areas",
       "permanent": true
     },
     {
