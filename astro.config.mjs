@@ -8,6 +8,14 @@ export default defineConfig({
   output: 'static',
   adapter: vercel(),
   integrations: [sitemap()],
+  redirects: {
+    '/areas/west-london/great-portland-street': '/areas/central-london/great-portland-street',
+    '/areas/west-london/harley-street':          '/areas/central-london/harley-street',
+    '/areas/west-london/marylebone':             '/areas/central-london/marylebone',
+    '/areas/west-london/oxford-street':          '/areas/central-london/oxford-street',
+    '/areas/west-london/portland-place':         '/areas/central-london/portland-place',
+    '/areas/north-london/hackney':               '/areas/east-london/hackney',
+  },
   build: {
     inlineStylesheets: 'always',
   },

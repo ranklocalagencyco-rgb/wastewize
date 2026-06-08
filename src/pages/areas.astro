@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ReviewsWidget from '../components/ReviewsWidget.astro';
 import { areas } from '../data/areas';
 
 function slugify(str: string): string {
@@ -100,6 +101,8 @@ const regionIcon = {
       </div>
     </div>
   </section>
+
+  <ReviewsWidget />
 
   <!-- ── London ── -->
   <section class="py-12 sm:py-16 lg:py-20 bg-brand-dark">

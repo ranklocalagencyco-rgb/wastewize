@@ -887,7 +887,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     intro: "Fitzrovia's dense concentration of media agencies, restaurants, boutique offices, and creative studios produces diverse waste streams in a tightly constrained urban setting. WasteWize UK provides discreet, punctual collections and office clearances throughout Fitzrovia W1T, working within Westminster's strict street-access windows and compliance requirements.",
   },
 
-  'west-london/great-portland-street': {
+  'central-london/great-portland-street': {
     postcode: 'W1W',
     metaDesc: 'Office clearance and commercial waste removal on Great Portland Street W1W. WasteWize UK serves the media and professional services quarter with EA-licensed, same-week collections.',
     intro: "Great Portland Street sits at the heart of London's broadcast and media district, with television studios, post-production houses, and professional services firms lining the W1W postcode. WasteWize UK provides specialist office clearances, IT equipment recycling, and scheduled commercial waste collections for Great Portland Street businesses — with full EA compliance on every job.",
@@ -899,7 +899,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     intro: "Hanwell's residential streets and local commercial centre generate consistent demand for house clearances, end-of-tenancy waste removal, and small business trade collections. WasteWize UK covers the W7 postcode with reliable, EA-licensed waste services — including bulky item removal, garden refuse, and renovation waste disposal.",
   },
 
-  'west-london/harley-street': {
+  'central-london/harley-street': {
     postcode: 'W1G',
     metaDesc: 'Clinical and office waste management on Harley Street W1G. WasteWize UK provides confidential document shredding, office clearance, and specialist disposal for Harley Street clinics and practices.',
     intro: "Harley Street's world-renowned medical and dental practices, specialist clinics, and consulting rooms require discreet, compliant waste management handled with the utmost professionalism. WasteWize UK provides confidential shredding, sensitive office clearances, and WEEE disposal for Harley Street W1G practices — with full audit trails and EA-licensed documentation.",
@@ -917,7 +917,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     intro: "Maida Hill's diverse community of residential properties, independent businesses, and canal-side conversions generates a mix of domestic clearance and commercial waste needs. WasteWize UK provides house clearances, garden waste removal, and trade collections across the W9 postcode, with fast turnaround and full duty-of-care documentation.",
   },
 
-  'west-london/marylebone': {
+  'central-london/marylebone': {
     postcode: 'W1U',
     metaDesc: 'Office clearance and commercial waste collection in Marylebone W1U. WasteWize UK serves the boutique offices, retail, and hospitality sector in Marylebone — EA licensed, discreet.',
     intro: "Marylebone's village-like high street, boutique hotels, and professional offices sit in one of London's most sought-after addresses. WasteWize UK provides scheduled waste collections, fit-out strip-outs, and end-of-tenancy clearances for Marylebone W1U businesses — managing everything from food waste segregation to confidential document destruction within Westminster's strict operating guidelines.",
@@ -929,7 +929,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     intro: "North Kensington's ongoing regeneration — from the creative industries around Ladbroke Grove to the development activity near Kensal Rise — generates significant volumes of construction, commercial, and residential waste. WasteWize UK provides strip-outs, clearances, and scheduled collections across W10 with full EA documentation and flexible scheduling for active development sites.",
   },
 
-  'west-london/oxford-street': {
+  'central-london/oxford-street': {
     postcode: 'W1C',
     metaDesc: "High-volume commercial waste collection on Oxford Street W1C. WasteWize UK serves retail flagships, restaurants, and office tenants along Europe's busiest shopping street — EA licensed.",
     intro: "Oxford Street's flagship retailers, department stores, restaurants, and office tenants above the retail units generate enormous volumes of commercial waste that require careful scheduling, segregation, and compliance. WasteWize UK provides high-capacity collections, cardboard compaction services, and fit-out strip-outs for Oxford Street W1C businesses — coordinated within Westminster's strict delivery and collection windows.",
@@ -941,7 +941,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     intro: "Paddington Basin's modern office campus, international hotels, and the surrounding mixed-use development corridor generate substantial commercial waste requirements. WasteWize UK provides scheduled collections, office clearances, and construction waste management for Paddington W2 businesses — with easy access from our depot and full compliance documentation for the area's corporate tenants.",
   },
 
-  'west-london/portland-place': {
+  'central-london/portland-place': {
     postcode: 'W1B',
     metaDesc: 'Office clearance and commercial waste management on Portland Place W1B. WasteWize UK serves embassies, broadcasters, and professional offices near Regent Street — EA licensed.',
     intro: "Portland Place's grand Georgian townhouses now house embassies, broadcasting organisations, professional institutes, and prestige offices stretching south from Regent's Park. WasteWize UK provides discreet, compliant waste management for W1B occupants — from confidential office clearances and WEEE recycling to scheduled collections that respect the character and operational requirements of this distinguished address.",
