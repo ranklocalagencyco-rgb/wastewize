@@ -163,26 +163,48 @@
       "destination": "/areas/north-london/winchmore-hill/:service",
       "permanent": true
     },
-    {
-      "source": "/areas/buckinghamshire/bedgrove",
-      "destination": "/areas/buckinghamshire",
-      "permanent": true
-    },
-    {
-      "source": "/areas/buckinghamshire/bedgrove/:service",
-      "destination": "/areas/buckinghamshire",
-      "permanent": true
-    },
-    {
-      "source": "/areas/buckinghamshire/micklefield",
-      "destination": "/areas/buckinghamshire",
-      "permanent": true
-    },
-    {
-      "source": "/areas/buckinghamshire/micklefield/:service",
-      "destination": "/areas/buckinghamshire",
-      "permanent": true
-    },
+    { "source": "/areas/buckinghamshire/bedgrove",           "destination": "/areas/buckinghamshire/aylesbury",    "permanent": true },
+    { "source": "/areas/buckinghamshire/bedgrove/:service",   "destination": "/areas/buckinghamshire/aylesbury",    "permanent": true },
+    { "source": "/areas/buckinghamshire/micklefield",         "destination": "/areas/buckinghamshire/high-wycombe", "permanent": true },
+    { "source": "/areas/buckinghamshire/micklefield/:service","destination": "/areas/buckinghamshire/high-wycombe", "permanent": true },
+
+    { "source": "/areas/buckinghamshire/downley",             "destination": "/areas/buckinghamshire/high-wycombe", "permanent": true },
+    { "source": "/areas/buckinghamshire/downley/:service",    "destination": "/areas/buckinghamshire/high-wycombe", "permanent": true },
+    { "source": "/areas/buckinghamshire/prebendal-farm",      "destination": "/areas/buckinghamshire/high-wycombe", "permanent": true },
+    { "source": "/areas/buckinghamshire/prebendal-farm/:service", "destination": "/areas/buckinghamshire/high-wycombe", "permanent": true },
+    { "source": "/areas/buckinghamshire/sands",               "destination": "/areas/buckinghamshire/high-wycombe", "permanent": true },
+    { "source": "/areas/buckinghamshire/sands/:service",      "destination": "/areas/buckinghamshire/high-wycombe", "permanent": true },
+    { "source": "/areas/buckinghamshire/southcourt",          "destination": "/areas/buckinghamshire/aylesbury",    "permanent": true },
+    { "source": "/areas/buckinghamshire/southcourt/:service", "destination": "/areas/buckinghamshire/aylesbury",    "permanent": true },
+    { "source": "/areas/buckinghamshire/holtspur",            "destination": "/areas/buckinghamshire/beaconsfield", "permanent": true },
+    { "source": "/areas/buckinghamshire/holtspur/:service",   "destination": "/areas/buckinghamshire/beaconsfield", "permanent": true },
+    { "source": "/areas/buckinghamshire/watermead",           "destination": "/areas/buckinghamshire/aylesbury",    "permanent": true },
+    { "source": "/areas/buckinghamshire/watermead/:service",  "destination": "/areas/buckinghamshire/aylesbury",    "permanent": true },
+    { "source": "/areas/buckinghamshire/bowerdean",           "destination": "/areas/buckinghamshire/high-wycombe", "permanent": true },
+    { "source": "/areas/buckinghamshire/bowerdean/:service",  "destination": "/areas/buckinghamshire/high-wycombe", "permanent": true },
+    { "source": "/areas/buckinghamshire/castlefield",         "destination": "/areas/buckinghamshire/high-wycombe", "permanent": true },
+    { "source": "/areas/buckinghamshire/castlefield/:service","destination": "/areas/buckinghamshire/high-wycombe", "permanent": true },
+    { "source": "/areas/buckinghamshire/amersham-on-the-hill",         "destination": "/areas/buckinghamshire/amersham",     "permanent": true },
+    { "source": "/areas/buckinghamshire/amersham-on-the-hill/:service","destination": "/areas/buckinghamshire/amersham",     "permanent": true },
+    { "source": "/areas/buckinghamshire/booker",              "destination": "/areas/buckinghamshire/high-wycombe", "permanent": true },
+    { "source": "/areas/buckinghamshire/booker/:service",     "destination": "/areas/buckinghamshire/high-wycombe", "permanent": true },
+    { "source": "/areas/buckinghamshire/terriers",            "destination": "/areas/buckinghamshire/high-wycombe", "permanent": true },
+    { "source": "/areas/buckinghamshire/terriers/:service",   "destination": "/areas/buckinghamshire/high-wycombe", "permanent": true },
+    { "source": "/areas/buckinghamshire/fairford-leys",       "destination": "/areas/buckinghamshire/aylesbury",    "permanent": true },
+    { "source": "/areas/buckinghamshire/fairford-leys/:service", "destination": "/areas/buckinghamshire/aylesbury", "permanent": true },
+    { "source": "/areas/buckinghamshire/elmhurst",            "destination": "/areas/buckinghamshire/amersham",     "permanent": true },
+    { "source": "/areas/buckinghamshire/elmhurst/:service",   "destination": "/areas/buckinghamshire/amersham",     "permanent": true },
+
+    { "source": "/areas/middlesex/ealing",                    "destination": "/areas/west-london/ealing",          "permanent": true },
+    { "source": "/areas/middlesex/ealing/:service",           "destination": "/areas/west-london/ealing",          "permanent": true },
+    { "source": "/areas/middlesex/acton",                     "destination": "/areas/west-london/acton",           "permanent": true },
+    { "source": "/areas/middlesex/acton/:service",            "destination": "/areas/west-london/acton/:service",  "permanent": true },
+    { "source": "/areas/middlesex/chiswick",                  "destination": "/areas/west-london/chiswick",        "permanent": true },
+    { "source": "/areas/middlesex/chiswick/:service",         "destination": "/areas/west-london/chiswick/:service","permanent": true },
+    { "source": "/areas/middlesex/hanwell",                   "destination": "/areas/west-london/hanwell",         "permanent": true },
+    { "source": "/areas/middlesex/hanwell/:service",          "destination": "/areas/west-london/hanwell/:service","permanent": true },
+
+    { "source": "/areas/west-london/marylebone/:service",     "destination": "/areas/central-london/marylebone",   "permanent": true },
     {
       "source": "/areas/:areaSlug",
       "destination": "/areas",
