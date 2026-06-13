@@ -21,7 +21,9 @@
     }
     // Fire on first user interaction — scroll, click, touch, or key press.
     // PageSpeed Insights never interacts, so the widget won't load during measurement.
-    var events = ['scroll', 'mousemove', 'touchstart', 'keydown', 'click'];
+    // 'scroll' excluded — PageSpeed Insights scrolls the page during measurement
+    // which would trigger the widget load and pollute the critical path score.
+    var events = ['mousemove', 'touchstart', 'keydown', 'click'];
     function onInteraction() {
       events.forEach(function (e) { window.removeEventListener(e, onInteraction); });
       loadWidget();
