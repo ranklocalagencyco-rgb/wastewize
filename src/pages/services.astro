@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { services } from '../data/services';
+import ReviewsWidget from '../components/ReviewsWidget.astro';
 
 const filters = [
   { cat: 'all',          label: 'All services' },
@@ -316,6 +317,7 @@ const filters = [
     </div>
   </section>
 
+  <ReviewsWidget />
 </Layout>
 
 <script>

@@ -4,6 +4,7 @@ import { areas } from '../../../../data/areas';
 import { services } from '../../../../data/services';
 import { serviceDetails } from '../../../../data/service-detail';
 import { townDetails } from '../../../../data/town-detail';
+import ReviewsWidget from '../../../../components/ReviewsWidget.astro';
 
 export function getStaticPaths() {
   function slugify(str: string): string {
@@ -635,6 +636,7 @@ const postcode    = detail?.postcode ?? null;
     </div>
   </section>
 
+  <ReviewsWidget />
 </Layout>
 
 <script define:vars={{ TOWN_SERVICES: svcForJs }} is:inline>

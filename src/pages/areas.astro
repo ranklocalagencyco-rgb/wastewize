@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { areas } from '../data/areas';
+import ReviewsWidget from '../components/ReviewsWidget.astro';
 
 function slugify(str: string): string {
   return str.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -330,6 +331,7 @@ const regionIcon = {
     </div>
   </section>
 
+  <ReviewsWidget />
 </Layout>
 
 <script is:inline>
