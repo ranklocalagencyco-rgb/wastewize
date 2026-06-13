@@ -66,7 +66,7 @@ export const pageOverrides: Record<string, PageOverride> = {
   'middlesex/uxbridge/scrap-metal-collection': {
     localLandmarks:    ['Stockley Park Business Park', 'Cowley Mill Road Industrial Estate', 'Uxbridge Business Park'],
     localCouncil:      'London Borough of Hillingdon',
-    councilWasteUrl:   'https://www.hillingdon.gov.uk/article/2490/Fly-tipping', // TODO: confirm live URL
+    councilWasteUrl:   'https://www.hillingdon.gov.uk/report-flytipping',
     serviceArea:       'All UB8, UB9, and UB10 postcodes — including Cowley, Harefield, Ickenham, and the full Stockley Park and Uxbridge Business Park corridors',
     typicalJobExample: 'Collection of 200 kg of copper cabling and aluminium window frames from a rewiring project at a warehouse unit on Cowley Mill Road, UB8',
     responseTime:      'Same-day scrap metal collection available across Uxbridge UB8, UB9, and UB10 — call before noon for same-day attendance',
@@ -122,7 +122,7 @@ WasteWize collects all metal types across the full UB8, UB9, and UB10 postcode a
   'berkshire/thatcham/fly-tipping-removal': {
     localLandmarks:    ['Colthrop Industrial Estate', 'Kennet & Avon Canal towpath', 'Thatcham Nature Discovery Centre'],
     localCouncil:      'West Berkshire Council',
-    councilWasteUrl:   'https://www.westberks.gov.uk/reportflytipping', // TODO: confirm live URL
+    councilWasteUrl:   'https://www.westberks.gov.uk/report-litter-and-fly-tipping',
     serviceArea:       'All RG18 and RG19 postcodes — including central Thatcham, Cold Ash, Headley, Ashmore Green, and rural access lanes between Thatcham and Newbury',
     typicalJobExample: 'Emergency clearance of a mattress, three rubbish bags, and a fridge-freezer fly-tipped at the entrance to a private access lane off Colthrop Lane, RG19',
     responseTime:      'Same-day fly-tipping clearance across Thatcham RG18 and RG19 — most jobs attended within 4 hours of booking',
@@ -178,7 +178,7 @@ WasteWize provides same-day fly-tipping removal across the full Thatcham area �
   'middlesex/brentford/fly-tipping-removal': {
     localLandmarks:    ['Brentford Waterside development', 'Grand Union Canal towpath', 'Great West Road (A4) corridor'],
     localCouncil:      'London Borough of Hounslow',
-    councilWasteUrl:   'https://www.hounslow.gov.uk/info/20056/fly-tipping', // TODO: confirm live URL
+    councilWasteUrl:   'https://www.hounslow.gov.uk/street-problems/report-fly-tipping-or-illegal-waste-dumping',
     serviceArea:       'All TW8 postcodes — including Brentford town centre, Brentford Waterside, Kew Bridge, and the Grand Union Canal corridor',
     typicalJobExample: 'Emergency clearance of construction rubble and mixed rubbish bags fly-tipped against the hoarding of an active development site on Kew Bridge Road, TW8',
     responseTime:      'Same-day fly-tipping clearance across Brentford TW8 — urgent development site clearances typically attended within 2–3 hours',
@@ -234,7 +234,7 @@ WasteWize provides same-day fly-tipping removal across Brentford — photographi
   'berkshire/thatcham/scrap-metal-collection': {
     localLandmarks:    ['Colthrop Industrial Estate', 'Kennet & Avon Canal', 'A4 Bath Road corridor'],
     localCouncil:      'West Berkshire Council',
-    councilWasteUrl:   'https://www.westberks.gov.uk/waste', // TODO: confirm live URL
+    councilWasteUrl:   'https://www.westberks.gov.uk/report-litter-and-fly-tipping',
     serviceArea:       'All RG18 and RG19 postcodes — including Thatcham town centre, Colthrop Industrial Estate, Cold Ash, and the rural Kennet Valley corridor',
     typicalJobExample: 'Collection of aluminium window frames, copper plumbing pipe, and structural steel sections from a full commercial refurbishment at a unit on Colthrop Way, RG19',
     responseTime:      'Same-day scrap metal collection available across Thatcham RG18 and RG19 — call before noon for same-day attendance',
@@ -290,7 +290,7 @@ WasteWize collects all metal types from Thatcham — covering the full RG18 and 
   'middlesex/hillingdon/scrap-metal-collection': {
     localLandmarks:    ['Long Lane industrial zone', 'Hillingdon Road (A4020) corridor', 'Uxbridge town boundary'],
     localCouncil:      'London Borough of Hillingdon',
-    councilWasteUrl:   'https://www.hillingdon.gov.uk/article/2490/Fly-tipping', // TODO: confirm live URL
+    councilWasteUrl:   'https://www.hillingdon.gov.uk/report-flytipping',
     serviceArea:       'All UB10 postcodes — including Hillingdon village, Hillingdon Heath, Colham Avenue, and the Long Lane industrial zone',
     typicalJobExample: 'Collection of two tonnes of structural steel and copper pipe from a commercial strip-out at an industrial unit on Long Lane, UB10',
     responseTime:      'Same-day scrap metal collection available across Hillingdon UB10 — call before noon for same-day attendance',
