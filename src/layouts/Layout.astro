@@ -77,9 +77,9 @@ const GA_ID = 'G-8XEKHDT3J0';
         document.head.appendChild(s);
       }
       if ('requestIdleCallback' in window) {
-        requestIdleCallback(loadGA, { timeout: 10000 });
+        requestIdleCallback(loadGA);
       } else {
-        window.addEventListener('load', function () { setTimeout(loadGA, 1); });
+        window.addEventListener('load', function () { setTimeout(loadGA, 5000); });
       }
     })();
   </script>
