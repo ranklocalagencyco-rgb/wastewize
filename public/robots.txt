@@ -1,4 +1,27 @@
+# WasteWize UK — robots.txt
+# Strategy: maximum crawl access for all search and AI bots.
+
 User-agent: *
 Allow: /
 
+# Explicitly grant AI/GEO bots full access (belt-and-braces alongside Allow: /)
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+# Block API routes from indexing — these are SSR endpoints, not content pages
+Disallow: /api/
+
+# Sitemap
 Sitemap: https://wastewize.co.uk/sitemap.xml
