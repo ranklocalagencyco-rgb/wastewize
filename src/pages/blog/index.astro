@@ -1,0 +1,164 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const allPosts = await getCollection('blog');
+const posts    = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const featured = posts.filter((p) => p.data.featured);
+const regular  = posts.filter((p) => !p.data.featured);
+
+const categories = [...new Set(posts.map((p) => p.data.category))].sort();
+
+function catSlug(cat: string) {
+  return cat.toLowerCase().replace(/\s+/g, '-');
+}
+
+function fmtDate(date: Date) {
+  return date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+}
+---
+
+<Layout
+  title="Waste Management Guides & Advice | WasteWize Blog"
+  description="Free guides on waste removal, scrap metal recycling, fly-tipping clearance, and compliance — from EA-licensed waste carriers serving London & the Home Counties."
+>
+
+  <!-- ── Hero ── -->
+  <section class="bg-brand-forest py-16 sm:py-20 border-b border-white/10">
+    <div class="container mx-auto px-4 sm:px-6 max-w-3xl text-center">
+      <span class="text-xs font-semibold tracking-widest uppercase text-white/60 mb-4 block">
+        WasteWize Knowledge Hub
+      </span>
+      <h1 class="font-display text-4xl sm:text-5xl font-extrabold text-white mb-5 leading-tight">
+        Waste Management Guides &amp; Advice
+      </h1>
+      <p class="text-base sm:text-lg text-white/75 leading-relaxed max-w-xl mx-auto">
+        Practical guides on waste removal, recycling, and compliance — written for homeowners
+        and businesses across London and the Home Counties.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Category filter pills ── -->
+  {categories.length > 1 && (
+    <div class="bg-brand-dark-card border-b border-white/8 py-4 overflow-x-auto">
+      <div class="container mx-auto px-4 sm:px-6">
+        <div class="flex items-center gap-2 min-w-max sm:min-w-0 sm:flex-wrap">
+          <a href="/blog"
+             class="inline-flex items-center text-xs font-semibold tracking-wide uppercase
+                    text-white/55 bg-white/5 border border-white/10 rounded-full px-4 py-1.5
+                    hover:border-brand-lime/40 hover:text-white transition-colors">
+            All
+          </a>
+          {categories.map((cat) => (
+            <a href={`/blog#${catSlug(cat)}`}
+               class="inline-flex items-center text-xs font-semibold tracking-wide uppercase
+                      text-brand-lime/80 bg-brand-lime/5 border border-brand-lime/20
+                      rounded-full px-4 py-1.5 hover:bg-brand-lime/15 hover:text-brand-lime
+                      transition-colors whitespace-nowrap">
+              {cat}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  )}
+
+  <!-- ── Posts ── -->
+  <div class="bg-brand-dark py-14 sm:py-16">
+    <div class="container mx-auto px-4 sm:px-6 max-w-5xl">
+
+      <!-- Featured (full-width) -->
+      {featured.length > 0 && (
+        <section class="mb-12" aria-label="Featured guides">
+          <p class="text-xs font-bold text-brand-lime uppercase tracking-widest mb-6">
+            Featured {featured.length === 1 ? 'Guide' : 'Guides'}
+          </p>
+          <div class="flex flex-col gap-6">
+            {featured.map((post) => (
+              <a href={`/blog/${post.slug}`}
+                 class="group block bg-brand-dark-card border border-white/10 rounded-xl p-7
+                        hover:border-brand-lime/40 hover:-translate-y-0.5 hover:shadow-card
+                        transition-all duration-300">
+                <div class="flex flex-wrap items-center gap-3 mb-3">
+                  <span class="text-xs font-semibold uppercase tracking-widest
+                               text-brand-lime bg-brand-lime/10 border border-brand-lime/30
+                               rounded-full px-3 py-1">
+                    {post.data.category}
+                  </span>
+                  <time class="text-xs text-white/40" datetime={post.data.date.toISOString()}>
+                    {fmtDate(post.data.date)}
+                  </time>
+                </div>
+                <h2 class="font-display text-xl sm:text-2xl font-bold text-white mb-3
+                           group-hover:text-brand-lime transition-colors duration-200">
+                  {post.data.title}
+                </h2>
+                <p class="text-sm text-white/55 leading-relaxed mb-4 max-w-3xl">
+                  {post.data.description}
+                </p>
+                <span class="text-sm font-semibold text-brand-forest
+                             group-hover:text-brand-lime transition-colors">
+                  Read guide →
+                </span>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <!-- Regular grid -->
+      {regular.length > 0 && (
+        <section aria-label="All guides">
+          {featured.length > 0 && (
+            <p class="text-xs font-bold text-white/35 uppercase tracking-widest mb-6">
+              All Guides
+            </p>
+          )}
+          <div class="grid sm:grid-cols-2 gap-6">
+            {regular.map((post) => (
+              <a href={`/blog/${post.slug}`}
+                 id={catSlug(post.data.category)}
+                 class="group flex flex-col bg-brand-dark-card border border-white/10
+                        rounded-xl p-6 hover:border-brand-lime/40 hover:-translate-y-0.5
+                        hover:shadow-card transition-all duration-300">
+                <div class="flex flex-wrap items-center gap-2 mb-3">
+                  <span class="text-[10px] font-semibold uppercase tracking-widest
+                               text-brand-lime bg-brand-lime/10 border border-brand-lime/20
+                               rounded-full px-2.5 py-0.5">
+                    {post.data.category}
+                  </span>
+                  <time class="text-[11px] text-white/40" datetime={post.data.date.toISOString()}>
+                    {fmtDate(post.data.date)}
+                  </time>
+                </div>
+                <h2 class="text-[15px] font-bold text-white mb-2 leading-snug
+                           group-hover:text-brand-lime transition-colors duration-200
+                           line-clamp-2 flex-1">
+                  {post.data.title}
+                </h2>
+                <p class="text-xs text-white/50 leading-relaxed mb-4 line-clamp-2">
+                  {post.data.description}
+                </p>
+                <span class="mt-auto text-xs font-semibold text-brand-forest
+                             group-hover:text-brand-lime transition-colors">
+                  Read guide →
+                </span>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <!-- Empty state -->
+      {posts.length === 0 && (
+        <div class="text-center py-24">
+          <p class="text-white/30 text-sm">Guides coming soon — check back shortly.</p>
+        </div>
+      )}
+
+    </div>
+  </div>
+
+</Layout>

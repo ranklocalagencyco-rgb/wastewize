@@ -1,0 +1,323 @@
+---
+import Layout from './Layout.astro';
+
+interface Props {
+  title:       string;
+  description: string;
+  date:        Date;
+  category:    string;
+  tags?:       string[];
+  author?:     string;
+  slug:        string;
+  faqSchema?:  { question: string; answer: string }[];
+}
+
+const {
+  title,
+  description,
+  date,
+  category,
+  tags,
+  author     = 'WasteWize Team',
+  slug,
+  faqSchema,
+} = Astro.props;
+
+const BASE        = 'https://wastewize.co.uk';
+const pageUrl     = `${BASE}/blog/${slug}`;
+const dateDisplay = date.toLocaleDateString('en-GB', {
+  day: 'numeric', month: 'long', year: 'numeric',
+});
+const categorySlug = category.toLowerCase().replace(/\s+/g, '-');
+
+const blogPostingSchema = {
+  '@context':      'https://schema.org',
+  '@type':         'BlogPosting',
+  'headline':      title,
+  'description':   description,
+  'datePublished': date.toISOString(),
+  'dateModified':  date.toISOString(),
+  'url':           pageUrl,
+  'inLanguage':    'en-GB',
+  'author': {
+    '@type': 'Person',
+    'name':  author,
+  },
+  'publisher': {
+    '@type': 'Organization',
+    'name':  'WasteWize UK',
+    'url':   BASE,
+    'logo': {
+      '@type': 'ImageObject',
+      'url':   `${BASE}/wastewizeuk-favicon.png`,
+    },
+  },
+};
+
+const faqPageSchema = faqSchema?.length
+  ? {
+      '@context':   'https://schema.org',
+      '@type':      'FAQPage',
+      'mainEntity': faqSchema.map(({ question, answer }) => ({
+        '@type': 'Question',
+        'name':  question,
+        'acceptedAnswer': { '@type': 'Answer', 'text': answer },
+      })),
+    }
+  : null;
+---
+
+<Layout title={`${title} | WasteWize Blog`} description={description}>
+
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(blogPostingSchema)} />
+    {faqPageSchema && (
+      <script type="application/ld+json" is:inline set:html={JSON.stringify(faqPageSchema)} />
+    )}
+  </Fragment>
+
+  <!-- ── Breadcrumb ── -->
+  <nav class="bg-brand-dark border-b border-white/5 py-3 px-4" aria-label="Breadcrumb">
+    <div class="container mx-auto">
+      <ol class="flex flex-wrap items-center gap-1.5 text-xs text-white/40">
+        <li><a href="/"     class="hover:text-brand-lime transition-colors">Home</a></li>
+        <li aria-hidden="true" class="text-white/20">/</li>
+        <li><a href="/blog" class="hover:text-brand-lime transition-colors">Blog</a></li>
+        <li aria-hidden="true" class="text-white/20">/</li>
+        <li class="text-white/70 truncate max-w-[220px] sm:max-w-sm" aria-current="page">{title}</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <section class="bg-brand-dark border-b border-white/8 py-14 sm:py-20">
+    <div class="container mx-auto px-4 sm:px-6 max-w-5xl">
+      <div class="flex flex-wrap items-center gap-3 mb-6">
+        <a href={`/blog#${categorySlug}`}
+           class="inline-flex items-center text-xs font-semibold tracking-widest uppercase
+                  text-brand-lime bg-brand-lime/10 border border-brand-lime/30
+                  rounded-full px-3 py-1 hover:bg-brand-lime/20 transition-colors">
+          {category}
+        </a>
+        <time datetime={date.toISOString()} class="text-sm text-white/40">{dateDisplay}</time>
+        <span class="text-white/20" aria-hidden="true">·</span>
+        <span class="text-sm text-white/40">{author}</span>
+      </div>
+      <h1 class="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white
+                 leading-tight max-w-3xl mb-5">
+        {title}
+      </h1>
+      <p class="text-base sm:text-lg text-white/60 max-w-2xl leading-relaxed">{description}</p>
+    </div>
+  </section>
+
+  <!-- ── Two-column body ── -->
+  <div class="bg-gray-50 py-12 sm:py-16">
+    <div class="container mx-auto px-4 sm:px-6 max-w-5xl">
+      <div class="flex flex-col lg:flex-row gap-10 lg:gap-12 items-start">
+
+        <!-- Article -->
+        <article class="flex-1 min-w-0 bg-white rounded-xl shadow-sm px-8 py-10 sm:px-12">
+          <div class="prose-blog">
+            <slot />
+          </div>
+
+          <!-- Tags -->
+          {tags && tags.length > 0 && (
+            <div class="mt-10 pt-6 border-t border-gray-100">
+              <p class="text-xs font-bold uppercase tracking-wider text-brand-slate mb-3">Tags</p>
+              <div class="flex flex-wrap gap-2">
+                {tags.map((tag) => (
+                  <span class="text-xs bg-gray-100 text-brand-slate rounded-full px-3 py-1">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <!-- Was this helpful? -->
+          <div class="mt-8 p-5 bg-brand-lime-pale border border-brand-lime-light rounded-xl">
+            <p class="text-sm font-semibold text-brand-slate mb-1">Was this guide helpful?</p>
+            <p class="text-xs text-brand-slate leading-relaxed">
+              We publish free waste management guides for homeowners and businesses across
+              London and the Home Counties.{' '}
+              <a href="/blog" class="text-brand-forest underline hover:text-brand-lime transition-colors">
+                Browse all guides →
+              </a>
+            </p>
+          </div>
+
+          <!-- Author byline -->
+          <p class="mt-6 text-xs text-brand-slate/60 leading-relaxed">
+            Written by <span class="font-semibold text-brand-slate">{author}</span>
+            {' · '}WasteWize London &amp; Home Counties
+            {' · '}Environment Agency Registered Waste Carrier
+            {' · '}SafeContractor Accredited
+          </p>
+        </article>
+
+        <!-- Right rail -->
+        <aside class="w-full lg:w-72 shrink-0 flex flex-col gap-6 lg:sticky lg:top-6">
+
+          <!-- CTA card -->
+          <div class="bg-brand-forest rounded-xl p-6 text-white">
+            <p class="text-xs font-bold uppercase tracking-widest text-white/60 mb-2">
+              Need Waste Removed?
+            </p>
+            <p class="text-lg font-bold leading-tight mb-2">Get a Free Quote</p>
+            <p class="text-sm text-white/75 leading-relaxed mb-5">
+              Same-day availability across London &amp; the Home Counties.
+              EA Licence CBDU335711.
+            </p>
+            <a href="tel:+447929771954"
+               class="flex items-center gap-2 text-sm font-semibold text-white mb-4
+                      hover:text-brand-lime transition-colors">
+              <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+              </svg>
+              07929 771954
+            </a>
+            <a href="/contact#quote"
+               class="block w-full text-center bg-white text-brand-forest px-4 py-2.5
+                      rounded-lg text-sm font-bold hover:bg-brand-lime hover:text-brand-dark
+                      transition-colors duration-200">
+              Request a Callback
+            </a>
+          </div>
+
+          <!-- Related services slot -->
+          <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+            <p class="text-xs font-bold text-brand-slate uppercase tracking-wider mb-4">
+              Related Services
+            </p>
+            <slot name="related-services">
+              <ul class="space-y-2.5">
+                <li>
+                  <a href="/services/scrap-metal-collection"
+                     class="text-sm text-brand-forest underline hover:text-brand-lime transition-colors">
+                    Scrap Metal Collection
+                  </a>
+                </li>
+                <li>
+                  <a href="/services/fly-tipping-removal"
+                     class="text-sm text-brand-forest underline hover:text-brand-lime transition-colors">
+                    Fly-Tipping Removal
+                  </a>
+                </li>
+                <li>
+                  <a href="/services/house-clearance"
+                     class="text-sm text-brand-forest underline hover:text-brand-lime transition-colors">
+                    House Clearance
+                  </a>
+                </li>
+                <li>
+                  <a href="/services/builders-waste-removal"
+                     class="text-sm text-brand-forest underline hover:text-brand-lime transition-colors">
+                    Builders' Waste Removal
+                  </a>
+                </li>
+                <li>
+                  <a href="/services/office-clearance"
+                     class="text-sm text-brand-forest underline hover:text-brand-lime transition-colors">
+                    Office Clearance
+                  </a>
+                </li>
+              </ul>
+            </slot>
+          </div>
+
+        </aside>
+      </div>
+    </div>
+  </div>
+
+</Layout>
+
+<style>
+  .prose-blog :global(h2) {
+    color: #2e7d32;
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 1.3;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  .prose-blog :global(h3) {
+    color: #37474f;
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.4;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+  .prose-blog :global(p) {
+    color: #37474f;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+  .prose-blog :global(a) {
+    color: #2e7d32;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .prose-blog :global(a:hover) {
+    color: #8bc34a;
+  }
+  .prose-blog :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+    font-size: 0.875rem;
+  }
+  .prose-blog :global(th) {
+    background-color: #f3f4f6;
+    padding: 0.625rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: #37474f;
+    border-bottom: 2px solid #e5e7eb;
+  }
+  .prose-blog :global(td) {
+    padding: 0.625rem 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    color: #37474f;
+  }
+  .prose-blog :global(ul) {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .prose-blog :global(ol) {
+    list-style-type: decimal;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .prose-blog :global(li) {
+    color: #37474f;
+    margin-bottom: 0.25rem;
+    line-height: 1.6;
+  }
+  .prose-blog :global(strong) {
+    font-weight: 600;
+    color: #37474f;
+  }
+  .prose-blog :global(blockquote) {
+    border-left: 4px solid #8bc34a;
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    color: #546e7a;
+    font-style: italic;
+  }
+  .prose-blog :global(code) {
+    background-color: #f3f4f6;
+    padding: 0.125rem 0.375rem;
+    border-radius: 0.25rem;
+    font-size: 0.875em;
+    color: #37474f;
+  }
+  .prose-blog :global(hr) {
+    border-color: #e5e7eb;
+    margin: 2rem 0;
+  }
+</style>
