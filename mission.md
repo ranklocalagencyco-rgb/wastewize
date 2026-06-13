@@ -105,6 +105,7 @@ The overall palette is **dark-first**: near-black backgrounds, lime-green as the
 | Landfill diversion rate | 99% |
 | Business clients | 500+ |
 | Service area | London + Home Counties (Surrey, Essex, Hertfordshire, Berkshire, Kent) |
+| Opening hours | Monday – Sunday, 7:00am – 9:00pm |
 | Phone | 07929 771954 / 07498 363345 |
 | Email | info@wastewize.co.uk |
 | Address | 37B Euro Storage Compound, 2B Canal Way, London W10 5AY |

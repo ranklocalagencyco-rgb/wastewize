@@ -43,15 +43,9 @@ import ReviewsWidget from '../components/ReviewsWidget.astro';
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
           "opens": "07:00",
-          "closes": "18:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Saturday"],
-          "opens": "08:00",
-          "closes": "14:00"
+          "closes": "21:00"
         }
       ],
       "areaServed": [
@@ -197,9 +191,7 @@ import ReviewsWidget from '../components/ReviewsWidget.astro';
             </h3>
             <ul class="flex flex-col gap-2.5 text-sm">
               {[
-                { day: 'Monday – Friday',  hours: '7:00am – 6:00pm' },
-                { day: 'Saturday',         hours: '8:00am – 2:00pm' },
-                { day: 'Sunday',           hours: 'Emergency only'  },
+                { day: 'Monday – Sunday', hours: '7:00am – 9:00pm' },
               ].map(({ day, hours }) => (
                 <li class="flex justify-between items-center border-b border-white/6 pb-2.5 last:border-0 last:pb-0">
                   <span class="text-white/50">{day}</span>
