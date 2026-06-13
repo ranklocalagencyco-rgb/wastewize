@@ -1,31 +1,219 @@
 ---
-// src/components/ReviewsWidget.astro
+const reviews = [
+  {
+    name: 'Rob John',
+    initials: 'RJ',
+    date: 'June 2025',
+    text: 'Waste Wize are excellent, turn up at short notice and deal with everything easily.',
+  },
+  {
+    name: 'Charlie Mizzen',
+    initials: 'CM',
+    date: 'June 2025',
+    text: 'I have been using Wastewize for over 2 years now. I can\'t fault them — they have been cost effective, reliable and always professional.',
+  },
+  {
+    name: 'Amanda Gardner',
+    initials: 'AG',
+    date: 'June 2025',
+    text: 'Had a lot of rubbish picked up from my business. Very professional, trustworthy and reliable — would recommend these guys to anybody. Fantastic price and very organised. Highly recommend!',
+  },
+  {
+    name: 'Chantha Bowen',
+    initials: 'CB',
+    date: 'June 2025',
+    text: 'Excellent service from start to finish. Highly recommended.',
+  },
+  {
+    name: 'Edward Penrose',
+    initials: 'EP',
+    date: 'June 2025',
+    text: 'Spoke to Timmy and he turned up within 2 hours with the team. Will definitely use him again.',
+  },
+  {
+    name: 'Martin Bishop',
+    initials: 'MB',
+    date: 'June 2025',
+    text: 'Great service, very clean and tidy and a good rate. Will definitely use again!',
+  },
+  {
+    name: 'Jason',
+    initials: 'JA',
+    date: 'June 2025',
+    text: 'Brilliant bunch of lads. From first call to completion — done fantastic. Came on time and had the job done within the scheduled time. Highly recommend.',
+  },
+  {
+    name: 'Alan Lant',
+    initials: 'AL',
+    date: 'June 2025',
+    text: 'I\'ve used Timmy a number of times and he is always fair on pricing, on time and tidy, and always polite to my customers.',
+  },
+  {
+    name: 'Toby Bolland',
+    initials: 'TB',
+    date: 'June 2025',
+    text: 'Wastewize are very reliable — have taken all our building waste from Central London. Always available with 24 hours notice.',
+  },
+  {
+    name: 'Atmirald Alshabani',
+    initials: 'AA',
+    date: 'June 2025',
+    text: 'Best waste removal, highly recommend. Asked around for a while and they gave me the best quote. Clean, tidy, very friendly and professional.',
+  },
+  {
+    name: 'Chloe Hull',
+    initials: 'CH',
+    date: 'June 2025',
+    text: 'Quick service, very efficient and polite. Would highly recommend.',
+  },
+  {
+    name: 'Alicia Gardner',
+    initials: 'AG',
+    date: 'June 2025',
+    text: 'Excellent professional service. Will recommend 👌',
+  },
+  {
+    name: 'Jason',
+    initials: 'JA',
+    date: 'May 2025',
+    text: 'Outstanding company — very prompt and reliable and great value for money. Will definitely be using them again.',
+  },
+  {
+    name: 'Rob',
+    initials: 'RO',
+    date: 'May 2025',
+    text: 'Good clean job, would use again.',
+  },
+  {
+    name: 'Laura',
+    initials: 'LA',
+    date: 'May 2025',
+    text: 'I got three quotes and Wastewize was the best. My rubbish was gone the very same day — was very impressed 👌',
+  },
+  {
+    name: 'Phil Bartlett',
+    initials: 'PB',
+    date: 'May 2025',
+    text: 'I\'ve used Wastewize multiple times and they have always been reliable and prompt, with a very friendly team and competitive prices. Would definitely recommend and will use again.',
+  },
+  {
+    name: 'Chrise Baxter',
+    initials: 'CB',
+    date: 'May 2025',
+    text: 'Fast, effective and very reasonable. Rang for a quote, accepted it, and the rubbish was gone the same day. Couldn\'t ask for more.',
+  },
+];
 ---
-<section class="bg-brand-dark border-b border-white/8 py-8">
-  <div class="container mx-auto px-4">
-    <div class="tagembed-widget" style="width:100%;height:100%;overflow:auto;" data-widget-id="327508" data-website="1"></div>
+
+<section class="bg-brand-dark border-b border-white/8 py-14 sm:py-16 overflow-hidden">
+  <div class="container mx-auto px-4 sm:px-6 mb-8">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <!-- Google G -->
+        <svg class="w-8 h-8 shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+          <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+          <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/>
+          <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+        </svg>
+        <div>
+          <p class="text-sm font-semibold text-white">Google Reviews</p>
+          <div class="flex items-center gap-2 mt-0.5">
+            <div class="flex" aria-label="5 out of 5 stars">
+              {Array(5).fill(null).map(() => (
+                <svg class="w-4 h-4 text-[#FBBC05]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                </svg>
+              ))}
+            </div>
+            <span class="text-xs text-white/50">4.9 average · 17 reviews</span>
+          </div>
+        </div>
+      </div>
+      <a
+        href="https://www.google.com/maps/place/WasteWize+UK"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="self-start sm:self-auto inline-flex items-center gap-1.5 text-xs font-semibold text-brand-lime border border-brand-lime/30 rounded-full px-4 py-1.5 hover:bg-brand-lime/10 transition-colors"
+      >
+        See all on Google
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Marquee track — duplicated for seamless loop -->
+  <div class="reviews-outer" aria-label="Customer reviews carousel">
+    <div class="reviews-track">
+      {[...reviews, ...reviews].map((r, i) => (
+        <article
+          class="reviews-card bg-brand-dark-card border border-white/8 rounded-[12px] p-5 flex flex-col gap-3"
+          aria-hidden={i >= reviews.length ? 'true' : undefined}
+        >
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-brand-lime/15 flex items-center justify-center shrink-0">
+              <span class="text-xs font-bold text-brand-lime">{r.initials}</span>
+            </div>
+            <div class="min-w-0">
+              <p class="text-sm font-semibold text-white leading-tight">{r.name}</p>
+              <p class="text-[11px] text-white/40">{r.date}</p>
+            </div>
+            <div class="ml-auto flex shrink-0" aria-label="5 stars">
+              {Array(5).fill(null).map(() => (
+                <svg class="w-3.5 h-3.5 text-[#FBBC05]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                </svg>
+              ))}
+            </div>
+          </div>
+          <p class="text-sm text-white/60 leading-relaxed">{r.text}</p>
+        </article>
+      ))}
+    </div>
   </div>
 </section>
 
-<script is:inline>
-  (function () {
-    var loaded = false;
-    function loadWidget() {
-      if (loaded) return;
-      loaded = true;
-      var s = document.createElement('script');
-      s.src = 'https://widget.tagembed.com/embed.min.js';
-      s.type = 'text/javascript';
-      s.async = true;
-      document.head.appendChild(s);
+<style>
+  .reviews-outer {
+    overflow: hidden;
+    /* fade edges */
+    mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+  }
+
+  .reviews-track {
+    display: flex;
+    gap: 1rem;
+    width: max-content;
+    animation: reviews-scroll 55s linear infinite;
+  }
+
+  .reviews-track:hover {
+    animation-play-state: paused;
+  }
+
+  .reviews-card {
+    width: 300px;
+    flex-shrink: 0;
+  }
+
+  @media (min-width: 640px) {
+    .reviews-card {
+      width: 340px;
     }
-    // Use requestIdleCallback so the widget only loads when the browser has
-    // genuinely free time — after LCP and TTI have been recorded.
-    // The long timeout (12 s) ensures Lighthouse never captures it during measurement.
-    if ('requestIdleCallback' in window) {
-      requestIdleCallback(loadWidget, { timeout: 12000 });
-    } else {
-      setTimeout(loadWidget, 12000);
+  }
+
+  @keyframes reviews-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reviews-track {
+      animation: none;
+      flex-wrap: wrap;
     }
-  })();
-</script>
+  }
+</style>
