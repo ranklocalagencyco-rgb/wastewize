@@ -1,6 +1,5 @@
 ---
 import Layout from '../../../../layouts/Layout.astro';
-import ReviewsWidget from '../../../../components/ReviewsWidget.astro';
 import { areas } from '../../../../data/areas';
 import { services } from '../../../../data/services';
 import { serviceDetails } from '../../../../data/service-detail';
@@ -276,7 +275,6 @@ const postcode    = detail?.postcode ?? null;
     </div>
   </section>
 
-  <ReviewsWidget />
 
   <!-- ── Services grid ── -->
   <section class="py-12 sm:py-16 lg:py-20 bg-brand-dark" aria-labelledby="town-services-heading">

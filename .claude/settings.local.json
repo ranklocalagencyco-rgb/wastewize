@@ -39,7 +39,8 @@
       "Bash(grep \"^/$\" /tmp/valid_routes.txt)",
       "Bash(bash /tmp/correct_routes.sh)",
       "Bash(index\")",
-      "Bash(grep -n \"/areas/\\\\${\" src/pages/services/\\\\[serviceSlug\\\\].astro src/pages/office-clearance.astro)"
+      "Bash(grep -n \"/areas/\\\\${\" src/pages/services/\\\\[serviceSlug\\\\].astro src/pages/office-clearance.astro)",
+      "Bash(git remote *)"
     ],
     "additionalDirectories": [
       "\\tmp"
