@@ -24,6 +24,12 @@ const _waNumber = '447929771954';
 const _waText   = encodeURIComponent(`Hi WasteWize, I'm in ${townName} and I'd like a quote for ${serviceName}.`);
 
 const GA_ID = 'G-8XEKHDT3J0';
+
+// Canonical: strip trailing slash so it matches Vercel's clean-URL format.
+// Homepage stays https://wastewize.co.uk/ — all other pages have no trailing slash.
+const canonicalHref = Astro.url.pathname === '/'
+  ? new URL('/', Astro.site).href
+  : new URL(Astro.url.pathname.replace(/\/+$/, ''), Astro.site).href;
 ---
 <!DOCTYPE html>
 <html lang="en-GB" class="scroll-smooth">
@@ -35,7 +41,7 @@ const GA_ID = 'G-8XEKHDT3J0';
   <title>{title}</title>
   <meta name="description"        content={description} />
   <meta name="robots"             content="index, follow" />
-  <link rel="canonical"           href={Astro.url.href} />
+  <link rel="canonical"           href={canonicalHref} />
   <link rel="sitemap"             href="/sitemap.xml" />
 
   <!-- Open Graph -->
