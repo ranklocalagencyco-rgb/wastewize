@@ -4,6 +4,7 @@ import { services } from '../../../../data/services';
 import { serviceDetails } from '../../../../data/service-detail';
 import { areas } from '../../../../data/areas';
 import { townDetails } from '../../../../data/town-detail';
+import { pageOverrides } from '../../../../data/page-overrides';
 
 function slugify(str: string): string {
   return str.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -53,6 +54,8 @@ const townKey    = `${areaSlug}/${townSlug}`;
 const townDetail = townDetails[townKey] ?? null;
 const postcode   = townDetail?.postcode ?? null;
 
+const pageOverride = pageOverrides[`${areaSlug}/${townSlug}/${slug}`] ?? null;
+
 const BASE    = 'https://wastewize.co.uk';
 const pageUrl = `${BASE}/areas/${areaSlug}/${townSlug}/${slug}`;
 
@@ -83,18 +86,20 @@ const _suffixMap: Record<string, string> = {
   'skip-hire-alternative':    'Wait & Load Service | WasteWize UK',
 };
 const _titleSuffix = _suffixMap[slug] ?? 'WasteWize UK';
-const metaTitle = postcode
+const _defaultTitle = postcode
   ? `${svc.title} in ${town} (${postcode}) | ${_titleSuffix}`
   : `${svc.title} in ${town} | ${_titleSuffix}`;
+const metaTitle = pageOverride?.metaTitle ?? _defaultTitle;
 
 // Unique meta: extract town descriptor (part before "WasteWize" in the intro)
 const _introBase = townDetail?.intro?.split('WasteWize')[0]?.trim()?.replace(/[.,\s]+$/, '') ?? null;
 const _introSnip = _introBase
   ? (_introBase.length > 110 ? _introBase.slice(0, 110).replace(/\s+\S+$/, '') + '…' : _introBase)
   : null;
-const metaDesc = _introSnip
+const _defaultDesc = _introSnip
   ? `${_introSnip}. EA-licensed ${svc.title.toLowerCase()} in ${postcode || town} — same-day availability, full duty-of-care documentation.`
   : `EA-licensed ${svc.title.toLowerCase()} in ${town}, ${area.name}. Same-day availability, 99% landfill diversion, full duty-of-care documentation. EA Licence CBDU335711 · 07929 771954.`;
+const metaDesc = pageOverride?.metaDesc ?? _defaultDesc;
 
 // Price anchor from pills (used in FAQ)
 const _pricePill = svc.pills.find((p) => p.startsWith('From '));
@@ -114,6 +119,10 @@ const _localFaqA = townDetail?.keyAreas?.length
 const otherServices = services
   .filter((s) => s.id !== svc.id && serviceDetails[svcSlug(s.href)] !== undefined)
   .slice(0, 4);
+
+const nearbyTowns = area.towns
+  .filter((t) => slugify(t) !== townSlug)
+  .slice(0, 6);
 ---
 
 <Layout title={metaTitle} description={metaDesc} townName={town} serviceName={svc.title}>
@@ -222,36 +231,42 @@ const otherServices = services
     <script type="application/ld+json" is:inline set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "FAQPage",
-      "mainEntity": [
-        ...detail.faqs.map(({ q, a }) => ({
-          "@type": "Question",
-          "name": q,
-          "acceptedAnswer": { "@type": "Answer", "text": a }
-        })),
-        ...renderedTownFaqs.map(({ q, a }) => ({
-          "@type": "Question",
-          "name": q,
-          "acceptedAnswer": { "@type": "Answer", "text": a }
-        })),
-        {
-          "@type": "Question",
-          "name": `What areas of ${town} do you cover for ${svc.title.toLowerCase()}?`,
-          "acceptedAnswer": { "@type": "Answer", "text": _postcodeAns }
-        },
-        {
-          "@type": "Question",
-          "name": _localFaqQ,
-          "acceptedAnswer": { "@type": "Answer", "text": _localFaqA }
-        },
-        {
-          "@type": "Question",
-          "name": `How much does ${svc.title.toLowerCase()} cost in ${town}?`,
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": `WasteWize UK provides fixed-price quotes for all ${svc.title.toLowerCase()} in ${town}${postcode ? ` (${postcode})` : ''}. ${_pricePill ? `Jobs typically start ${_pricePill.toLowerCase()}, depending on volume and access.` : 'Pricing depends on volume, access, and specific waste types.'} Call 07929 771954 or complete the online form for a written quote within 2 hours.`
-          }
-        }
-      ]
+      "mainEntity": pageOverride
+        ? pageOverride.faqs.map(({ q, a }) => ({
+            "@type": "Question",
+            "name": q,
+            "acceptedAnswer": { "@type": "Answer", "text": a }
+          }))
+        : [
+            ...detail.faqs.map(({ q, a }) => ({
+              "@type": "Question",
+              "name": q,
+              "acceptedAnswer": { "@type": "Answer", "text": a }
+            })),
+            ...renderedTownFaqs.map(({ q, a }) => ({
+              "@type": "Question",
+              "name": q,
+              "acceptedAnswer": { "@type": "Answer", "text": a }
+            })),
+            {
+              "@type": "Question",
+              "name": `What areas of ${town} do you cover for ${svc.title.toLowerCase()}?`,
+              "acceptedAnswer": { "@type": "Answer", "text": _postcodeAns }
+            },
+            {
+              "@type": "Question",
+              "name": _localFaqQ,
+              "acceptedAnswer": { "@type": "Answer", "text": _localFaqA }
+            },
+            {
+              "@type": "Question",
+              "name": `How much does ${svc.title.toLowerCase()} cost in ${town}?`,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": `WasteWize UK provides fixed-price quotes for all ${svc.title.toLowerCase()} in ${town}${postcode ? ` (${postcode})` : ''}. ${_pricePill ? `Jobs typically start ${_pricePill.toLowerCase()}, depending on volume and access.` : 'Pricing depends on volume, access, and specific waste types.'} Call 07929 771954 or complete the online form for a written quote within 2 hours.`
+              }
+            }
+          ]
     })} />
   </Fragment>
 
@@ -360,6 +375,96 @@ const otherServices = services
     </div>
   </section>
 
+  <!-- ── Local Context (override data takes priority; falls back to townDetail) ── -->
+  {(pageOverride || townDetail?.localContext) && (
+    <section class="py-14 sm:py-16 bg-brand-dark-elevated border-b border-white/8"
+             aria-labelledby="local-context-heading">
+      <div class="container mx-auto px-4 sm:px-6">
+        <div class="grid lg:grid-cols-3 gap-10 lg:gap-16 items-start">
+
+          <div class="lg:col-span-2">
+            <span class="text-xs font-semibold tracking-widest uppercase text-brand-lime mb-3 block">
+              Local Area Context
+            </span>
+            <h2 id="local-context-heading"
+                class="font-display text-2xl sm:text-3xl font-bold text-white mb-6">
+              {svc.title} in {town}: Local Knowledge
+            </h2>
+            <div class="prose prose-sm prose-invert max-w-none text-white/65 leading-relaxed space-y-4">
+              {pageOverride
+                ? pageOverride.localContext.split('\n\n').map((para: string) => (
+                    <p>{para.trim()}</p>
+                  ))
+                : townDetail!.localContext!.split('\n\n').map((para: string) => (
+                    <p>{para.trim()}</p>
+                  ))
+              }
+            </div>
+          </div>
+
+          <aside class="flex flex-col gap-6">
+            {pageOverride && (
+              <>
+                <div>
+                  <h3 class="text-xs font-bold text-brand-lime uppercase tracking-wider mb-3">
+                    Area Covered
+                  </h3>
+                  <p class="text-sm text-white/60 leading-relaxed">{pageOverride.serviceArea}</p>
+                </div>
+
+                <div>
+                  <h3 class="text-xs font-bold text-brand-lime uppercase tracking-wider mb-3">
+                    Local Council
+                  </h3>
+                  <a href={pageOverride.councilWasteUrl}
+                     target="_blank" rel="noopener noreferrer"
+                     class="text-sm text-white/60 hover:text-brand-lime transition-colors underline underline-offset-2">
+                    {pageOverride.localCouncil}
+                  </a>
+                </div>
+
+                <div>
+                  <h3 class="text-xs font-bold text-brand-lime uppercase tracking-wider mb-3">
+                    Landmarks &amp; Zones Served
+                  </h3>
+                  <ul class="flex flex-col gap-2">
+                    {pageOverride.localLandmarks.map((lm: string) => (
+                      <li class="flex items-start gap-2 text-sm text-white/60">
+                        <span class="w-1.5 h-1.5 rounded-full bg-brand-lime shrink-0 mt-1.5" aria-hidden="true"/>
+                        {lm}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div class="bg-brand-dark border border-brand-lime/20 rounded-[10px] p-4">
+                  <p class="text-[11px] font-bold text-brand-lime uppercase tracking-wider mb-1">Typical Job</p>
+                  <p class="text-xs text-white/55 leading-relaxed italic">&ldquo;{pageOverride.typicalJobExample}&rdquo;</p>
+                </div>
+              </>
+            )}
+
+            {!pageOverride && townDetail?.keyAreas && (
+              <div>
+                <h3 class="text-xs font-bold text-white/60 uppercase tracking-wider mb-3">
+                  Areas &amp; Landmarks Covered
+                </h3>
+                <ul class="flex flex-col gap-2">
+                  {townDetail.keyAreas.map((ka: string) => (
+                    <li class="flex items-center gap-2 text-sm text-white/60">
+                      <span class="w-1.5 h-1.5 rounded-full bg-brand-lime shrink-0" aria-hidden="true"/>
+                      {ka}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </aside>
+        </div>
+      </div>
+    </section>
+  )}
+
   <!-- ── What's Included ── -->
   <section class="py-16 sm:py-20 bg-brand-dark-card border-b border-white/8"
            aria-labelledby="included-heading">
@@ -388,6 +493,39 @@ const otherServices = services
       </ul>
     </div>
   </section>
+
+  <!-- ── Pricing Signals ── -->
+  {(pageOverride?.pricingContext || _pricePill) && (
+    <section class="py-10 sm:py-12 bg-brand-dark border-b border-white/8">
+      <div class="container mx-auto px-4 sm:px-6">
+        <div class="flex flex-col sm:flex-row sm:items-center gap-6
+                    bg-brand-dark-card border border-brand-lime/20 rounded-[12px] p-6">
+          <div class="flex items-center justify-center w-12 h-12 rounded-[10px]
+                      bg-brand-lime/15 border border-brand-lime/30 shrink-0">
+            <svg class="w-6 h-6 text-brand-lime" fill="none" stroke="currentColor"
+                 stroke-width="1.7" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <div class="flex-1">
+            <p class="text-xs font-bold text-brand-lime uppercase tracking-wider mb-1">Pricing</p>
+            <p class="text-sm text-white/70 leading-relaxed">
+              {pageOverride?.pricingContext
+                ?? `${_pricePill} depending on volume and access. Call 07929 771954 for a fixed-price quote — usually within the hour.`}
+            </p>
+          </div>
+          <a href="/contact#quote"
+             class="inline-flex items-center gap-2 bg-brand-forest text-white px-5 py-2.5
+                    rounded-[8px] text-sm font-semibold whitespace-nowrap shrink-0
+                    hover:bg-brand-forest-dark hover:-translate-y-px hover:shadow-cta
+                    transition-all duration-200">
+            Get a Quote
+          </a>
+        </div>
+      </div>
+    </section>
+  )}
 
   <!-- ── How It Works ── -->
   <section class="py-16 sm:py-20 bg-brand-dark border-b border-white/8"
@@ -483,73 +621,26 @@ const otherServices = services
     </div>
   </section>
 
-  <!-- ── Local Knowledge ── -->
-  <section class="py-16 sm:py-20 bg-brand-dark border-b border-white/8"
-           aria-labelledby="local-heading">
+  <!-- ── Why WasteWize ── -->
+  <section class="py-14 sm:py-16 bg-brand-dark border-b border-white/8">
     <div class="container mx-auto px-4 sm:px-6">
-      <div class="grid lg:grid-cols-3 gap-10 lg:gap-16">
-
-        <div class="lg:col-span-2">
-          <span class="text-xs font-semibold tracking-widest uppercase text-brand-lime mb-3 block">
-            Local Area
-          </span>
-          <h2 id="local-heading" class="font-display text-2xl sm:text-3xl font-bold text-white mb-6">
-            {svc.title} in {town}: What You Need to Know
-          </h2>
-          <div class="prose prose-sm prose-invert max-w-none text-white/60 leading-relaxed space-y-4">
-            {townDetail?.localContext
-              ? townDetail.localContext.split('\n\n').map((para: string) => (
-                  <p>{para.trim()}</p>
-                ))
-              : (
-                  <p>
-                    WasteWize UK provides EA-licensed {svc.title.toLowerCase()} across {town} and the wider {area.name} area.
-                    {area.desc} Every job includes full duty-of-care documentation under EA Waste Carrier Licence CBDU335711,
-                    and our 99% landfill diversion rate means the overwhelming majority of material is recovered rather than sent to landfill.
-                  </p>
-                )
-            }
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {[
+          { label: 'EA Licence', value: 'CBDU335711 — legally authorised to collect all controlled waste' },
+          { label: '99% Diversion', value: 'Near-zero landfill on every job through stream segregation' },
+          { label: pageOverride?.responseTime ? 'Response' : 'Same-Day',
+            value: pageOverride?.responseTime ?? `Same-day and next-day availability across ${postcode || town}` },
+          { label: 'Duty of Care', value: 'Waste Transfer Notes issued within 24 hours of every collection' },
+        ].map(({ label, value }) => (
+          <div class="bg-brand-dark-card border border-white/8 rounded-[10px] p-5">
+            <p class="text-[11px] font-bold text-brand-lime uppercase tracking-wider mb-2">{label}</p>
+            <p class="text-xs text-white/55 leading-snug">{value}</p>
           </div>
-        </div>
-
-        <aside class="flex flex-col gap-8">
-          {townDetail?.keyAreas && townDetail.keyAreas.length > 0 && (
-            <div>
-              <h3 class="text-sm font-semibold text-white/80 mb-4 uppercase tracking-wider">
-                Areas &amp; Landmarks Covered
-              </h3>
-              <ul class="flex flex-col gap-2">
-                {townDetail.keyAreas.map((ka: string) => (
-                  <li class="flex items-center gap-2.5 text-sm text-white/60">
-                    <span class="w-1.5 h-1.5 rounded-full bg-brand-lime shrink-0" aria-hidden="true"/>
-                    {ka}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          <div>
-            <h3 class="text-sm font-semibold text-white/80 mb-4 uppercase tracking-wider">
-              Why Choose WasteWize in {town}
-            </h3>
-            <ul class="flex flex-col gap-3">
-              {[
-                { label: 'EA Licence', value: 'CBDU335711 — legally authorised to collect all controlled waste' },
-                { label: '99% Diversion', value: 'Near-zero landfill on every job through stream segregation' },
-                { label: 'Same-Day', value: 'Same-day and next-day availability across ' + (postcode || town) },
-                { label: 'Duty of Care', value: 'Waste Transfer Notes issued within 24 hours of every collection' },
-              ].map(({ label, value }) => (
-                <li class="flex flex-col gap-0.5">
-                  <span class="text-[11px] font-bold text-brand-lime uppercase tracking-wider">{label}</span>
-                  <span class="text-xs text-white/50 leading-snug">{value}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </aside>
-
+        ))}
       </div>
+      {pageOverride?.localProof && (
+        <p class="mt-5 text-center text-xs text-white/35 italic">{pageOverride.localProof}</p>
+      )}
     </div>
   </section>
 
@@ -567,22 +658,25 @@ const otherServices = services
         </h2>
       </div>
       <div class="space-y-4">
-        {[
-          ...detail.faqs,
-          ...renderedTownFaqs,
-          {
-            q: `What areas of ${town} do you cover for ${svc.title.toLowerCase()}?`,
-            a: _postcodeAns,
-          },
-          {
-            q: _localFaqQ,
-            a: _localFaqA,
-          },
-          {
-            q: `How much does ${svc.title.toLowerCase()} cost in ${town}?`,
-            a: `WasteWize UK provides fixed-price quotes for all ${svc.title.toLowerCase()} in ${town}${postcode ? ` (${postcode})` : ''}. ${_pricePill ? `Jobs typically start ${_pricePill.toLowerCase()}, depending on volume and access.` : 'Pricing depends on volume, access, and specific waste types.'} Call 07929 771954 or complete the online form for a written quote within 2 hours.`,
-          },
-        ].map(({ q, a }) => (
+        {(pageOverride
+          ? pageOverride.faqs
+          : [
+              ...detail.faqs,
+              ...renderedTownFaqs,
+              {
+                q: `What areas of ${town} do you cover for ${svc.title.toLowerCase()}?`,
+                a: _postcodeAns,
+              },
+              {
+                q: _localFaqQ,
+                a: _localFaqA,
+              },
+              {
+                q: `How much does ${svc.title.toLowerCase()} cost in ${town}?`,
+                a: `WasteWize UK provides fixed-price quotes for all ${svc.title.toLowerCase()} in ${town}${postcode ? ` (${postcode})` : ''}. ${_pricePill ? `Jobs typically start ${_pricePill.toLowerCase()}, depending on volume and access.` : 'Pricing depends on volume, access, and specific waste types.'} Call 07929 771954 or complete the online form for a written quote within 2 hours.`,
+              },
+            ]
+        ).map(({ q, a }) => (
           <details class="group bg-brand-dark-card border border-white/10 rounded-[12px]
                           overflow-hidden hover:border-brand-lime/25 transition-colors">
             <summary class="flex items-center justify-between gap-4 px-6 py-5
@@ -646,6 +740,40 @@ const otherServices = services
       </a>
     </div>
   </section>
+
+  <!-- ── Same service in nearby towns ── -->
+  {nearbyTowns.length > 0 && (
+    <section class="py-16 sm:py-20 bg-brand-dark border-b border-white/8"
+             aria-labelledby="nearby-towns-heading">
+      <div class="container mx-auto px-4 sm:px-6">
+        <div class="mb-8">
+          <span class="text-xs font-semibold tracking-widest uppercase text-brand-lime mb-3 block">
+            {area.name}
+          </span>
+          <h2 id="nearby-towns-heading"
+              class="font-display text-2xl sm:text-3xl font-bold text-white">
+            {svc.title} in Nearby {area.name} Towns
+          </h2>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {nearbyTowns.map((t) => (
+            <a href={`/areas/${areaSlug}/${slugify(t)}/${slug}`}
+               class="group flex items-center gap-3 bg-brand-dark-card border border-white/8
+                      rounded-[10px] px-5 py-4 hover:border-brand-lime/40 hover:bg-brand-lime/5
+                      transition-all duration-200">
+              <svg class="w-4 h-4 text-brand-lime shrink-0" fill="none" stroke="currentColor"
+                   stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.5 12H6.5m0 0l5-5m-5 5l5 5"/>
+              </svg>
+              <span class="text-sm font-medium text-white/70 group-hover:text-white transition-colors">
+                {svc.title} in {t}
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
 
   <!-- ── CTA ── -->
   <section class="py-20 bg-brand-dark">

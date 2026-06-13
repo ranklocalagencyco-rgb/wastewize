@@ -1108,7 +1108,12 @@ Chelmsford's residential market — including the high-value areas of Springfiel
   'berkshire/thatcham': {
     postcode: 'RG18 / RG19',
     metaDesc: 'Commercial waste collection and domestic clearances in Thatcham RG18 and RG19. WasteWize UK serves Thatcham businesses and residents near Newbury — EA licensed, same-week service.',
-    intro: "Thatcham's growing town centre and residential development adjacent to Newbury generate consistent demand for commercial waste collection, domestic clearances, and construction waste disposal. WasteWize UK provides reliable, EA-licensed waste services across Thatcham and the RG18/RG19 area with same-week availability.",
+    intro: "Thatcham's growing town centre, Colthrop Industrial Estate, and rural lanes between Newbury and Reading generate consistent demand for commercial waste management, domestic clearances, and fly-tipping removal. WasteWize UK provides EA-licensed waste services across all RG18 and RG19 postcodes with same-day availability.",
+    localContext: `Thatcham is Berkshire's fastest-growing town, expanding rapidly to the east and south of Newbury along the A4 and Kennet Valley corridor. Its economic base spans two distinct zones: the Colthrop Industrial Estate — one of the largest employment sites in West Berkshire, housing manufacturing, distribution, and engineering businesses along Colthrop Way and Colthrop Lane — and the busy town centre, which services a rapidly expanding residential population whose new-build estates, renovated Victorian properties, and interwar housing stock generate a diverse range of waste management requirements.
+
+The rural hinterland around Cold Ash, Ashmore Green, Headley, and the Kennet & Avon Canal corridor experiences regular fly-tipping incidents on private land — a pattern common to Berkshire's semi-rural zones where private access lanes and farm tracks are used as convenient dumping grounds. West Berkshire Council handles fly-tipping on public land; private landowners in the RG18 and RG19 areas are responsible for clearing their own land under the Environmental Protection Act 1990. WasteWize provides same-day fly-tipping removal with full documentation for Thatcham's rural and residential landowners, alongside scheduled commercial collections and construction waste removal from Colthrop's active industrial and trade estate.`,
+    keyAreas: ['Colthrop Industrial Estate', 'Kennet & Avon Canal', 'Cold Ash', 'Ashmore Green', 'A4 Bath Road corridor'],
+    topServices: ['fly-tipping-removal', 'scrap-metal-collection', 'commercial-clearance'],
   },
 
   'berkshire/theale': {
