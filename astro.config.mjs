@@ -17,7 +17,7 @@ export default defineConfig({
     '/areas/north-london/hackney':               '/areas/east-london/hackney',
   },
   build: {
-    inlineStylesheets: 'auto',
+    inlineStylesheets: 'always',
   },
   vite: {
     plugins: [tailwindcss()],
