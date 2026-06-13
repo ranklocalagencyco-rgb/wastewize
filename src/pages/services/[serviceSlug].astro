@@ -2,7 +2,6 @@
 import Layout from '../../layouts/Layout.astro';
 import { services } from '../../data/services';
 import { serviceDetails } from '../../data/service-detail';
-import ReviewsWidget from '../../components/ReviewsWidget.astro';
 
 export function getStaticPaths() {
   return services
@@ -523,5 +522,4 @@ const pageUrl    = `${BASE}${svc.href}`;
     </div>
   </section>
 
-  <ReviewsWidget />
 </Layout>

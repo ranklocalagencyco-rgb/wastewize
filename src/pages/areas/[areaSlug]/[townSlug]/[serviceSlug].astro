@@ -5,7 +5,6 @@ import { serviceDetails } from '../../../../data/service-detail';
 import { areas } from '../../../../data/areas';
 import { townDetails } from '../../../../data/town-detail';
 import { pageOverrides } from '../../../../data/page-overrides';
-import ReviewsWidget from '../../../../components/ReviewsWidget.astro';
 
 function slugify(str: string): string {
   return str.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -644,8 +643,6 @@ const nearbyTowns = area.towns
       )}
     </div>
   </section>
-
-  <ReviewsWidget />
 
   <!-- ── FAQ ── -->
   <section class="py-16 sm:py-20 bg-brand-dark-card border-b border-white/8"
