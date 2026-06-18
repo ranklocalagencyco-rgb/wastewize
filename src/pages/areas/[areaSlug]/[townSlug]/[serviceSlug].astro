@@ -110,8 +110,7 @@ const otherServices = services
   .slice(0, 4);
 
 const nearbyTowns = area.towns
-  .filter((t) => slugify(t) !== townSlug)
-  .slice(0, 6);
+  .filter((t) => slugify(t) !== townSlug);
 ---
 
 <Layout title={metaTitle} description={metaDesc} townName={town} serviceName={svc.title}>

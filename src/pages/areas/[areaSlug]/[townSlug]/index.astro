@@ -52,6 +52,14 @@ const svcForJs    = services.map((s) => {
       : s.href,
   };
 });
+// Static list of services that have dedicated area subpages — used for crawlable HTML links.
+const linkedSvcs = services
+  .filter((s) => serviceDetails[svcSlug(s.href)] !== undefined)
+  .map((s) => ({
+    title: s.title,
+    icon:  s.icon,
+    href:  `/areas/${areaSlug}/${townSlugStr}/${svcSlug(s.href)}`,
+  }));
 const detail      = townDetails[townKey] ?? null;
 const pageTitle   = `${town} Waste Collection & Clearance | WasteWize UK`;
 const pageDescription = detail?.metaDesc
@@ -438,6 +446,32 @@ const postcode    = detail?.postcode ?? null;
         <a href="/contact" class="text-brand-lime hover:underline underline-offset-2 ml-1">Get in touch</a>
         — we handle most specialist and mixed-load waste types.
       </p>
+    </div>
+  </section>
+
+  <!-- ── Crawlable service links — static <a> tags for all service subpages ── -->
+  <section class="py-10 sm:py-12 bg-brand-dark-card border-t border-white/8" aria-labelledby="service-links-heading">
+    <div class="container mx-auto px-4 sm:px-6">
+      <h2 id="service-links-heading" class="text-xs font-semibold tracking-widest uppercase text-brand-lime mb-5">
+        Our Services in {town}
+      </h2>
+      <ul class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-4 gap-y-2">
+        {linkedSvcs.map(({ title, icon, href }) => (
+          <li>
+            <a
+              href={href}
+              class="flex items-center gap-2 text-sm text-white/60 hover:text-brand-lime
+                     transition-colors duration-150 py-1.5 group"
+            >
+              <svg class="w-4 h-4 text-brand-lime/60 group-hover:text-brand-lime shrink-0 transition-colors"
+                   fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d={icon}/>
+              </svg>
+              <span class="leading-snug">{title}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
     </div>
   </section>
 
