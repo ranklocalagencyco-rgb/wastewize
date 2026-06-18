@@ -75,20 +75,9 @@ const renderedTownFaqs   = detail.townFaqs?.map(({ q, a }) => ({
   a: interpolate(a, _tplVars),
 })) ?? [];
 
-const _suffixMap: Record<string, string> = {
-  'rubble-wood-removal':      'Licensed Waste Clearance',
-  'scrap-metal-collection':   'Licensed Metal Recycling | WasteWize UK',
-  'builders-waste-removal':   'Construction Site Clearance | WasteWize UK',
-  'house-clearance':          'Licensed House Clearance | WasteWize UK',
-  'office-clearance':         'Commercial Clearance | WasteWize UK',
-  'end-of-tenancy-clearance': 'Landlord & Tenant Clearance | WasteWize UK',
-  'fly-tipping-removal':      'EA Licensed Fly Tip Clearance | WasteWize UK',
-  'skip-hire-alternative':    'Wait & Load Service | WasteWize UK',
-};
-const _titleSuffix = _suffixMap[slug] ?? 'WasteWize UK';
 const _defaultTitle = postcode
-  ? `${svc.title} in ${town} (${postcode}) | ${_titleSuffix}`
-  : `${svc.title} in ${town} | ${_titleSuffix}`;
+  ? `${svc.title} in ${town} (${postcode}) | EA Licensed | WasteWize UK`
+  : `${svc.title} in ${town} | EA Licensed | WasteWize UK`;
 const metaTitle = pageOverride?.metaTitle ?? _defaultTitle;
 
 // Unique meta: extract town descriptor (part before "WasteWize" in the intro)

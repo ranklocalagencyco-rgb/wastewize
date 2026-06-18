@@ -50,7 +50,7 @@ const canonicalHref = Astro.url.pathname === '/'
   <meta property="og:site_name"   content="WasteWize UK" />
   <meta property="og:title"       content={title} />
   <meta property="og:description" content={description} />
-  <meta property="og:url"         content={Astro.url} />
+  <meta property="og:url"         content={canonicalHref} />
   <meta property="og:image"       content={ogImage} />
 
   <!-- Twitter / X -->
