@@ -3,6 +3,7 @@ import TopBar         from '../components/TopBar.astro';
 import Navbar         from '../components/Navbar.astro';
 import Footer         from '../components/Footer.astro';
 import ReviewsWidget  from '../components/ReviewsWidget.astro';
+import BlogSnippet    from '../components/BlogSnippet.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -108,7 +109,10 @@ const canonicalHref = Astro.url.pathname === '/'
   <!-- ③ Reviews carousel — global -->
   <ReviewsWidget />
 
-  <!-- ④ Footer -->
+  <!-- ④ Blog snippet — global -->
+  <BlogSnippet />
+
+  <!-- ⑤ Footer -->
   <Footer />
 
   <!-- ④ WhatsApp sticky button -->
