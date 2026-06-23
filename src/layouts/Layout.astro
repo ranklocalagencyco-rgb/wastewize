@@ -7,19 +7,21 @@ import BlogSnippet    from '../components/BlogSnippet.astro';
 import '../styles/global.css';
 
 interface Props {
-  title?:       string;
-  description?: string;
-  ogImage?:     string;
-  townName?:    string;
-  serviceName?: string;
+  title?:           string;
+  description?:     string;
+  ogImage?:         string;
+  townName?:        string;
+  serviceName?:     string;
+  hideBlogSnippet?: boolean;
 }
 
 const {
-  title       = 'WasteWize UK | Waste Removal for Homeowners & Businesses — London & Home Counties',
-  description = 'EA-licensed waste removal for homeowners and businesses. 99% landfill diversion rate. House clearances, commercial collections & more across London & the Home Counties. Get a free quote today.',
-  ogImage     = '/og-image.jpg',
-  townName    = 'London',
-  serviceName = 'waste removal',
+  title           = 'WasteWize UK | Waste Removal for Homeowners & Businesses — London & Home Counties',
+  description     = 'EA-licensed waste removal for homeowners and businesses. 99% landfill diversion rate. House clearances, commercial collections & more across London & the Home Counties. Get a free quote today.',
+  ogImage         = '/og-image.jpg',
+  townName        = 'London',
+  serviceName     = 'waste removal',
+  hideBlogSnippet = false,
 } = Astro.props;
 
 const _waNumber = '447929771954';
@@ -109,8 +111,8 @@ const canonicalHref = Astro.url.pathname === '/'
   <!-- ③ Reviews carousel — global -->
   <ReviewsWidget />
 
-  <!-- ④ Blog snippet — global -->
-  <BlogSnippet />
+  <!-- ④ Blog snippet — global (suppressed on the blog index itself) -->
+  {!hideBlogSnippet && <BlogSnippet />}
 
   <!-- ⑤ Footer -->
   <Footer />

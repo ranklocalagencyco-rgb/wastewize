@@ -17,11 +17,58 @@ function catSlug(cat: string) {
 function fmtDate(date: Date) {
   return date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
 }
+
+const topics = [
+  {
+    label: 'Legal Compliance',
+    desc:  'Duty of care, waste transfer notes, digital waste tracking, and what the law actually requires.',
+    icon:  'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
+  },
+  {
+    label: 'Fly-Tipping',
+    desc:  'Who is responsible, how fines work, and how to protect yourself when waste ends up somewhere it shouldn\'t.',
+    icon:  'M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z',
+  },
+  {
+    label: 'Skip Hire & Alternatives',
+    desc:  'When a skip makes sense, when it doesn\'t, and what wait-and-load or grab lorries cost in real terms.',
+    icon:  'M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4',
+  },
+  {
+    label: 'Recycling & Landfill',
+    desc:  'How materials are processed, what 99% landfill diversion actually means, and the segregation rules that changed in 2025.',
+    icon:  'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15',
+  },
+  {
+    label: 'Contractor Guides',
+    desc:  'Practical advice for builders, fitters, and tradespeople on site waste, documentation, and avoiding enforcement.',
+    icon:  'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4',
+  },
+];
+
+const whyPoints = [
+  {
+    heading: 'Written by EA-licensed practitioners',
+    body:    'Every guide is written by the team that actually does the work — not content writers. If it\'s in here, we\'ve dealt with it on a job.',
+    icon:    'M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z',
+  },
+  {
+    heading: 'Based on real London & Home Counties jobs',
+    body:    'The scenarios, costs, and enforcement cases referenced in these guides come from actual jobs across London and the Home Counties — not generic industry copy.',
+    icon:    'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z',
+  },
+  {
+    heading: 'Legally accurate and kept current',
+    body:    'Legislation changes. The April 2025 fine increases, the October 2026 digital waste tracking deadline, the March 2025 segregation rules — we update guides when the law moves.',
+    icon:    'M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
+  },
+];
 ---
 
 <Layout
   title="Waste Management Guides & Advice | WasteWize Blog"
   description="Free guides on waste removal, scrap metal recycling, fly-tipping clearance, and compliance — from EA-licensed waste carriers serving London & the Home Counties."
+  hideBlogSnippet={true}
 >
 
   <!-- ── Hero ── -->
@@ -31,12 +78,54 @@ function fmtDate(date: Date) {
         WasteWize Knowledge Hub
       </span>
       <h1 class="font-display text-4xl sm:text-5xl font-extrabold text-white mb-5 leading-tight">
-        Waste Management Guides &amp; Advice
+        Don't Get Caught Out
       </h1>
-      <p class="text-base sm:text-lg text-white/75 leading-relaxed max-w-xl mx-auto">
-        Practical guides on waste removal, recycling, and compliance — written for homeowners
-        and businesses across London and the Home Counties.
+      <p class="text-base sm:text-lg text-white/75 leading-relaxed max-w-xl mx-auto mb-6">
+        Free, practical guides on waste removal, recycling law, and contractor compliance —
+        written for homeowners, landlords, and businesses across London and the Home Counties
+        who need straight answers, not boilerplate.
       </p>
+      <!-- Trust strip -->
+      <div class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-white/60">
+        {[
+          'EA Licence CBDU335711',
+          'Operating since 2018',
+          'SafeContractor Accredited',
+        ].map((badge) => (
+          <span class="flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 text-brand-lime shrink-0" fill="currentColor"
+                 viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"/>
+            </svg>
+            {badge}
+          </span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── What you'll find here ── -->
+  <section class="bg-brand-dark-card border-b border-white/8 py-12 sm:py-14">
+    <div class="container mx-auto px-4 sm:px-6 max-w-5xl">
+      <p class="text-xs font-semibold tracking-widest uppercase text-brand-lime mb-6 text-center">
+        What you'll find here
+      </p>
+      <ul class="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        {topics.map(({ label, desc, icon }) => (
+          <li class="bg-brand-dark border border-white/8 rounded-[14px] p-6 flex flex-col gap-3">
+            <div class="w-10 h-10 rounded-[10px] bg-brand-lime/10 flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5 text-brand-lime" fill="none" stroke="currentColor"
+                   stroke-width="1.7" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d={icon}/>
+              </svg>
+            </div>
+            <p class="text-sm font-bold text-white leading-snug">{label}</p>
+            <p class="text-xs text-white/45 leading-relaxed">{desc}</p>
+          </li>
+        ))}
+      </ul>
     </div>
   </section>
 
@@ -160,5 +249,72 @@ function fmtDate(date: Date) {
 
     </div>
   </div>
+
+  <!-- ── Why read WasteWize guides? ── -->
+  <section class="bg-brand-dark-card border-t border-white/8 py-14 sm:py-16">
+    <div class="container mx-auto px-4 sm:px-6 max-w-5xl">
+      <p class="text-xs font-semibold tracking-widest uppercase text-brand-lime mb-2 text-center">
+        Why trust these guides?
+      </p>
+      <h2 class="font-display text-2xl sm:text-3xl font-bold text-white text-center mb-10">
+        Why Read WasteWize Guides?
+      </h2>
+      <div class="grid sm:grid-cols-3 gap-6">
+        {whyPoints.map(({ heading, body, icon }) => (
+          <div class="bg-brand-dark border border-white/8 rounded-[14px] p-6 flex flex-col gap-4">
+            <div class="w-10 h-10 rounded-[10px] bg-brand-lime/10 flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5 text-brand-lime" fill="none" stroke="currentColor"
+                   stroke-width="1.7" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d={icon}/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-sm font-bold text-white mb-1.5">{heading}</h3>
+              <p class="text-xs text-white/50 leading-relaxed">{body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Bottom CTA ── -->
+  <section class="bg-brand-dark border-t border-white/8 py-14 sm:py-16">
+    <div class="container mx-auto px-4 sm:px-6 max-w-3xl text-center">
+      <p class="text-xs font-semibold tracking-widest uppercase text-brand-lime mb-3">
+        Still have a question?
+      </p>
+      <h2 class="font-display text-2xl sm:text-3xl font-bold text-white mb-4">
+        Not finding what you need?
+      </h2>
+      <p class="text-sm text-white/60 leading-relaxed mb-8 max-w-lg mx-auto">
+        Our guides cover the most common scenarios — but every job is different. Call us directly
+        and we'll give you a straight answer, no obligation.
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a href="tel:+447929771954"
+           class="inline-flex items-center gap-2 bg-brand-forest text-white
+                  px-6 py-3 rounded-[8px] text-sm font-semibold
+                  hover:bg-brand-forest-dark hover:-translate-y-0.5 hover:shadow-cta
+                  transition-all duration-200">
+          <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+          </svg>
+          Call 07929 771954
+        </a>
+        <a href="/contact#quote"
+           class="inline-flex items-center gap-2 border border-white/20 text-white
+                  px-6 py-3 rounded-[8px] text-sm font-semibold
+                  hover:border-brand-lime/50 hover:text-brand-lime hover:-translate-y-0.5
+                  transition-all duration-200">
+          Get a Free Quote
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2"
+               viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
 
 </Layout>
