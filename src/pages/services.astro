@@ -100,7 +100,7 @@ const filters = [
       <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
         <div class="max-w-xl">
           <span class="text-xs font-semibold tracking-widest uppercase text-brand-lime block mb-3">
-            10 EA-Licensed Waste Services
+            15 EA-Licensed Waste Services
           </span>
           <h1
             id="services-heading"
@@ -109,22 +109,11 @@ const filters = [
             Waste Removal Services for London &amp; the Home Counties
           </h1>
           <p class="text-[15px] text-white/60 leading-relaxed">
-            Ten specialist services covering clearance, construction, hazardous, and materials
+            Fifteen specialist services covering clearance, construction, hazardous, and materials
             streams — each backed by full EA licensing and duty-of-care documentation.
           </p>
         </div>
 
-        <!-- Live count badge -->
-        <div
-          id="svc-count"
-          class="shrink-0 flex items-center gap-2 bg-brand-lime/10 border border-brand-lime/30
-                 rounded-full px-4 py-2 text-sm font-semibold text-brand-lime self-start lg:self-auto"
-          aria-live="polite"
-          aria-atomic="true"
-        >
-          <span class="w-2 h-2 rounded-full bg-brand-lime" aria-hidden="true"/>
-          Showing all 10 services
-        </div>
       </div>
 
       <!-- Filter tabs -->
@@ -337,7 +326,6 @@ const filters = [
 
   const grid        = document.getElementById('svc-grid')!;
   const panel       = document.getElementById('detail-panel')!;
-  const countEl     = document.getElementById('svc-count')!;
   const detailTitle = document.getElementById('detail-title')!;
   const detailDesc  = document.getElementById('detail-desc')!;
   const detailPills = document.getElementById('detail-pills')!;
@@ -373,10 +361,6 @@ const filters = [
       card.style.display = show ? '' : 'none';
       if (show) visible++;
     });
-    const total = SERVICES.length;
-    countEl.innerHTML = `<span class="w-2 h-2 rounded-full bg-brand-lime inline-block mr-2" aria-hidden="true"></span>${
-      visible === total ? `Showing all ${total} services` : `Showing ${visible} of ${total} services`
-    }`;
   }
 
   function bindCards() {
