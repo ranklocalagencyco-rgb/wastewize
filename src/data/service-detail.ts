@@ -42,8 +42,8 @@ export const serviceDetails: Record<string, ServiceDetail> = {
   'strip-out-demolition': {
     slug:        'strip-out-demolition',
     serviceType: 'Strip Out and Demolition Service',
-    metaTitle:   'Strip Out & Demolition London | EA-Licensed Interior Strip-Out | WasteWize UK',
-    metaDesc:  'Professional interior strip-out and soft demolition across London and the Home Counties. EA-licensed, same-week availability, full duty-of-care documentation. Get a free quote.',
+    metaTitle:   'Strip Out & Demolition London | EA-Licensed | WasteWize',
+    metaDesc:  'Interior strip-out and soft demolition across London & Home Counties. EA-licensed, same-week availability, full duty-of-care docs. Free quote.',
     heroDesc:     'Professional interior strip-out and soft demolition for commercial and residential projects across London and the Home Counties. Our experienced crews remove fixtures, fittings, partitions, raised floors, and all non-structural elements safely and efficiently, with full waste segregation and EA-licensed disposal on every project. Every job includes duty-of-care Waste Transfer Notes delivered within 24 hours.',
     leadTemplate: 'In [Town], WasteWize UK\'s strip-out team provides EA-licensed interior strip-out and soft demolition for commercial and residential refurbishments across [County]. From partition removal and raised-floor clearance to full fixture and fitting strip-outs, we keep active sites clear with same-week scheduling and full compliance documentation on every job.',
     bodySections: [
@@ -136,8 +136,8 @@ export const serviceDetails: Record<string, ServiceDetail> = {
   'commercial-clearance': {
     slug:        'commercial-clearance',
     serviceType: 'Commercial Clearance Service',
-    metaTitle:   'Commercial Clearance London | Retail, Warehouse & Industrial | WasteWize UK',
-    metaDesc:  'EA-licensed commercial clearance for retail units, warehouses, restaurants, and industrial premises across London and the Home Counties. Fixed-price quotes, short-notice availability.',
+    metaTitle:   'Commercial Clearance London | WasteWize UK',
+    metaDesc:  'EA-licensed commercial clearance for retail, warehouses, restaurants & industrial premises across London & Home Counties. Fixed-price, short-notice.',
     heroDesc:     'EA-licensed commercial clearance for retail units, warehouses, restaurants, and industrial premises across London and the Home Counties. Property managers, landlords, and facilities teams choose WasteWize for fast end-of-tenancy turnarounds, flexible scheduling, and a complete compliance paper trail on every job. Need a dedicated office clearance? See our specialist office clearance service.',
     leadTemplate: 'WasteWize UK provides EA-licensed commercial clearance for businesses in [Town] — clearing retail units, warehouses, offices, and industrial premises with fixed-price quotes, same-week availability, and full duty-of-care documentation across [County]. From end-of-tenancy turnarounds to large-scale decommissions, we handle every size of commercial instruction.',
     bodySections: [
@@ -230,8 +230,8 @@ export const serviceDetails: Record<string, ServiceDetail> = {
   'residential-waste': {
     slug:        'residential-waste',
     serviceType: 'Residential Waste Removal Service',
-    metaTitle:   'Residential Waste Removal London | Bulky Item Collection | WasteWize UK',
-    metaDesc:  'EA-licensed residential waste removal and bulky item collection across London and the Home Counties. Single items to loft, garage, and partial room clearances. Same-week availability.',
+    metaTitle:   'Residential Waste Removal London | WasteWize UK',
+    metaDesc:  'EA-licensed residential waste removal across London & Home Counties. Single items to full room clearances. Bulky items, loft, garage. Same-week.',
     heroDesc:     'EA-licensed residential waste removal and bulky item collection for London homeowners, landlords, and residents across the Home Counties. Whether you need a single sofa collected, a garage emptied, a loft cleared after decades of accumulation, or a mixed load of household rubbish removed, WasteWize handles every size of job with a fixed-price quote, same-week availability, and a Duty of Care Waste Transfer Note on every collection. Need a full property cleared? See our dedicated house clearance service.',
     leadTemplate: 'WasteWize UK provides EA-licensed residential waste removal and bulky item collection across [Town] and the wider [County] area. From single-item pickups — sofas, mattresses, white goods — to full garage and loft clearances, we load everything ourselves with a fixed-price quote and a Duty of Care Waste Transfer Note on every job. Prices from £50.',
     bodySections: [
@@ -329,7 +329,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     slug:        'garden-refuse',
     serviceType: 'Garden Waste Removal Service',
     metaTitle:   'Garden Waste Removal London | Green Waste Collection | WasteWize UK',
-    metaDesc:  'Professional garden waste collection and green waste removal across London and the Home Counties. All material composted or recovered — zero landfill. EA licensed. Book online.',
+    metaDesc:  'Garden waste removal across London & Home Counties. All material composted or recovered — zero landfill. EA-licensed. Book online.',
     heroDesc:     'Professional garden waste collection and responsible composting for homeowners, housing associations, and landscaping contractors across London and the Home Counties. From seasonal clearances and hedge trimmings to soil removal and shed contents, our EA-licensed service collects from your garden or driveway and diverts everything to PAS 100-certified composting and biomass facilities. No landfill, no hassle, full duty-of-care documentation.',
     leadTemplate: 'WasteWize UK provides EA-licensed garden waste collection and responsible composting for homeowners and landscaping contractors across [Town] and [County]. From one-off seasonal clearances to regular scheduled collections, we collect all green waste — grass cuttings, branches, soil, and more — from your garden or driveway. From £80.',
     bodySections: [
@@ -422,8 +422,8 @@ export const serviceDetails: Record<string, ServiceDetail> = {
   'builders-waste-removal': {
     slug:        'builders-waste-removal',
     serviceType: 'Builders Waste Removal Service',
-    metaTitle:   'Builders Waste Removal London | Construction Site Clearance | WasteWize UK',
-    metaDesc:  'EA-licensed builders waste removal across London and the Home Counties. Segregated collection of construction waste and site debris — including timber, plasterboard, hardcore, and mixed loads. Muck-away, compliance docs, same-day availability.',
+    metaTitle:   'Builders Waste Removal London | WasteWize UK',
+    metaDesc:  'EA-licensed builders waste removal across London & Home Counties. Timber, plasterboard, hardcore, mixed loads. Compliance docs included. Same-day.',
     heroDesc:     'Builders waste removal and on-site construction waste management for sites of all scales across London and the Home Counties. We collect every stream of builders waste and site debris — mixed construction waste, plasterboard, hardcore, timber, and excavation material — with full site compliance documentation on every job. Our flexible, on-call model keeps active build sites clear without the cost and inflexibility of static skip hire.',
     leadTemplate: 'WasteWize UK provides on-call builders waste removal for construction sites in [Town] and across [County]. Our flexible model keeps active build programmes clear — segregated collections for timber, plasterboard, hardcore, and mixed waste — with full site compliance documentation on every load. From £150 per collection.',
     bodySections: [
@@ -517,7 +517,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     slug:        'electrical-equipment',
     serviceType: 'WEEE Electrical Equipment Collection Service',
     metaTitle:   'WEEE Collection London | Electrical Equipment Recycling | WasteWize UK',
-    metaDesc:  'WEEE-compliant electrical equipment collection and recycling for London businesses. Official WEEE transfer notes, data destruction certificates. EA and WEEE registered.',
+    metaDesc:  'WEEE-compliant electrical equipment collection for London businesses. Official WEEE transfer notes, data destruction certificates. EA & WEEE registered.',
     heroDesc:     'WEEE-compliant collection and recycling of waste electrical and electronic equipment for businesses across London and the Home Counties. Our WEEE-registered team issues official WEEE Duty of Care Transfer Notes on every collection — meeting your full legal obligations under the UK WEEE Regulations 2013. Certified data destruction is available for computers, servers, and all data-bearing devices.',
     leadTemplate: 'WasteWize UK collects waste electrical equipment for businesses in [Town] and across [County]. Our WEEE-registered team issues official WEEE Duty of Care Transfer Notes on every collection, meeting your full legal obligations under the UK WEEE Regulations 2013. Certified data destruction is available for all data-bearing devices.',
     bodySections: [
@@ -610,8 +610,8 @@ export const serviceDetails: Record<string, ServiceDetail> = {
   'confidential-waste': {
     slug:        'confidential-waste',
     serviceType: 'Confidential Waste Disposal Service',
-    metaTitle:   'Confidential Waste Disposal London | GDPR Document Shredding | WasteWize UK',
-    metaDesc:  'Secure confidential waste collection and certified destruction for London businesses. Certificate of destruction on every job. GDPR and DPA 2018 compliant. Book online.',
+    metaTitle:   'Confidential Waste Disposal London | WasteWize UK',
+    metaDesc:  'Secure confidential waste collection for London businesses. Certificate of destruction on every job. GDPR & DPA 2018 compliant. Book online.',
     heroDesc:     'Secure collection and certified destruction of confidential documents, sensitive records, and data-bearing media for businesses across London and the Home Counties. A time-stamped certificate of destruction is issued for every single collection — giving you a complete, GDPR-compliant audit trail that satisfies data protection obligations under UK GDPR and the Data Protection Act 2018. On-site shredding is available for organisations with the highest security requirements.',
     leadTemplate: 'WasteWize UK provides GDPR-compliant confidential waste collection and certified destruction for businesses in [Town] and across [County]. A time-stamped certificate of destruction is issued for every collection — your complete audit trail under UK GDPR and the Data Protection Act 2018. From £50 per collection.',
     bodySections: [
@@ -700,8 +700,8 @@ export const serviceDetails: Record<string, ServiceDetail> = {
   'asbestos-removal': {
     slug:        'asbestos-removal',
     serviceType: 'Asbestos Removal Service',
-    metaTitle:   'Asbestos Removal London | HSE-Licensed Asbestos Disposal | WasteWize UK',
-    metaDesc:  'HSE-licensed asbestos surveying, encapsulation, and removal across London and the Home Counties. Air monitoring, UKAS analyst sign-off, and waste consignment notes included.',
+    metaTitle:   'Asbestos Removal London | HSE-Licensed | WasteWize UK',
+    metaDesc:  'HSE-licensed asbestos removal across London & Home Counties. Air monitoring, UKAS analyst sign-off, waste consignment notes included. Free survey.',
     heroDesc:     'HSE-licensed asbestos surveying, encapsulation, and full removal for commercial, residential, and industrial sites across London and the Home Counties. Every project includes comprehensive air monitoring throughout, an independent UKAS-accredited analyst clearance certificate on completion, and all required hazardous waste consignment notes — covering you fully for compliance, planning, and insurance purposes. Work does not commence until a licensed survey has cleared the scope.',
     leadTemplate: 'WasteWize UK coordinates HSE-licensed asbestos removal for properties in [Town] and across [County]. Working with our certified specialist partners, we manage the full process — survey, encapsulation or removal, air monitoring, and waste consignment notes — for residential and commercial properties. Fixed-price quotations provided after survey.',
     bodySections: [
@@ -798,8 +798,8 @@ export const serviceDetails: Record<string, ServiceDetail> = {
   'rubble-wood-removal': {
     slug:        'rubble-wood-removal',
     serviceType: 'Rubble and Wood Removal Service',
-    metaTitle:   'Rubble & Wood Waste Removal London | Licensed Waste Clearance | WasteWize UK',
-    metaDesc:  'EA-licensed rubble and wood waste removal across London and the Home Counties. Includes hardcore, bricks, concrete, and timber — crushed for aggregate or chipped for biomass. Zero landfill.',
+    metaTitle:   'Rubble & Wood Removal London | WasteWize UK',
+    metaDesc:  'EA-licensed rubble & wood removal across London & Home Counties. Hardcore, bricks, concrete, timber — crushed for aggregate or biomass. Zero landfill.',
     heroDesc:     'Rubble and wood waste removal from renovation, construction, and demolition sites across London and the Home Counties. All rubble — including hardcore, bricks, and concrete — is crushed and processed for recycling as secondary aggregate, displacing virgin quarried material. Clean wood and timber is chipped and processed for biomass energy or panel board. Segregated loads attract lower rates and achieve near-zero landfill.',
     leadTemplate: 'WasteWize UK provides licensed rubble, concrete, brick, and timber removal for renovation and construction projects in [Town] and across [County]. Hardcore is crushed for secondary aggregate; timber is chipped for biomass — achieving near-zero landfill on most loads. From £100 per collection.',
     bodySections: [
@@ -892,8 +892,8 @@ export const serviceDetails: Record<string, ServiceDetail> = {
   'scrap-metal-collection': {
     slug:        'scrap-metal-collection',
     serviceType: 'Scrap Metal Collection Service',
-    metaTitle:   'Scrap Metal Collection London | Licensed Metal Recycling | WasteWize UK',
-    metaDesc:  'Ferrous and non-ferrous scrap metal collection and recycling across London and the Home Counties. Competitive rates on large volumes. Waste transfer notes included. EA licensed.',
+    metaTitle:   'Scrap Metal Collection London | WasteWize UK',
+    metaDesc:  'Free scrap metal collection across London & Home Counties. Copper, brass, aluminium & steel. Competitive rates. Waste transfer note included. EA-licensed.',
     heroDesc:     'Collection and responsible recycling of ferrous and non-ferrous scrap metal from commercial, industrial, and construction sites across London and the Home Counties. Competitive rates are available for large volumes; all collections are carried out under our Environment Agency Waste Carrier Licence with a full Duty of Care Waste Transfer Note issued as standard. We operate exclusively on a cashless basis in full compliance with the Scrap Metal Dealers Act 2013.',
     leadTemplate: 'WasteWize UK provides licensed scrap metal collection and recycling for commercial, industrial, and residential customers in [Town] and across [County]. Ferrous and non-ferrous metals collected with competitive rates and official Waste Transfer Notes included on every job. High-value metals (copper, aluminium, brass) may attract a purchase rate.',
     bodySections: [

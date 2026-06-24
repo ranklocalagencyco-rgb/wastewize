@@ -1,0 +1,281 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { areas } from '../../../data/areas';
+import { services } from '../../../data/services';
+import { serviceDetails } from '../../../data/service-detail';
+
+function slugify(str: string): string {
+  return str.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+}
+function svcSlug(href: string): string {
+  return href.startsWith('/services/') ? href.slice(10) : href.slice(1);
+}
+
+export function getStaticPaths() {
+  return areas.map((area) => ({
+    params: { areaSlug: area.slug },
+    props:  { area },
+  }));
+}
+
+interface Props {
+  area: (typeof areas)[number];
+}
+
+const { area } = Astro.props;
+
+// Services that actually have dedicated area sub-pages (the same filter the
+// [serviceSlug] route uses to build paths) — drives the real "services available" count.
+const linkedSvcs       = services.filter((s) => serviceDetails[svcSlug(s.href)] !== undefined);
+const servicesPerTown  = linkedSvcs.length;
+const townCount        = area.towns.length;
+const servicePages     = townCount * servicesPerTown;
+
+const BASE    = 'https://wastewize.co.uk';
+const pageUrl = `${BASE}/areas/${area.slug}`;
+
+const pageTitle = `Waste Collection & Removal in ${area.name} | EA Licensed | WasteWize UK`;
+const pageDesc  = `EA-licensed waste collection, clearance, and specialist disposal across ${townCount} ${area.name} towns. Same-week availability, 99% landfill diversion, full duty-of-care documentation. Call 07929 771954.`;
+---
+
+<Layout title={pageTitle} description={pageDesc} townName={area.name}>
+
+  <Fragment slot="head">
+    <!-- Breadcrumb schema: Home > Areas > County -->
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home",     "item": `${BASE}/` },
+        { "@type": "ListItem", "position": 2, "name": "Areas",    "item": `${BASE}/areas` },
+        { "@type": "ListItem", "position": 3, "name": area.name,  "item": pageUrl },
+      ]
+    })} />
+
+    <!-- LocalBusiness schema: areaServed = county -->
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": ["LocalBusiness", "WasteManagementService"],
+      "name": "WasteWize",
+      "url": pageUrl,
+      "telephone": "07929 771954",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "GB"
+      },
+      "areaServed": {
+        "@type": area.region === 'London' ? "City" : "AdministrativeArea",
+        "name": area.name
+      },
+      "accreditation": "SafeContractor",
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "licence",
+        "name": "Environment Agency Registered Waste Carrier",
+        "identifier": "CBDU335711"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": `Waste Services in ${area.name}`,
+        "itemListElement": linkedSvcs.map((s) => ({
+          "@type": "Offer",
+          "itemOffered": { "@type": "Service", "name": s.title }
+        }))
+      }
+    })} />
+  </Fragment>
+
+  <!-- ── Breadcrumb ── -->
+  <nav aria-label="Breadcrumb" class="bg-brand-dark border-b border-white/8">
+    <div class="container mx-auto px-4 sm:px-6 py-3">
+      <ol class="flex flex-wrap items-center gap-1.5 text-xs text-white/40">
+        <li><a href="/"      class="hover:text-white/70 transition-colors">Home</a></li>
+        <li aria-hidden="true" class="text-white/20">/</li>
+        <li><a href="/areas" class="hover:text-white/70 transition-colors">Areas</a></li>
+        <li aria-hidden="true" class="text-white/20">/</li>
+        <li class="text-white/70" aria-current="page">{area.name}</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <section class="bg-brand-dark py-12 sm:py-16 lg:py-20 border-b border-white/8">
+    <div class="container mx-auto px-4 sm:px-6">
+      <div class="max-w-2xl">
+        <span class="text-xs font-semibold tracking-widest uppercase text-brand-lime mb-3 block">
+          {area.region} · Coverage Zone
+        </span>
+        <h1 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
+          Waste Collection &amp; Removal in {area.name}
+        </h1>
+        <p class="text-base sm:text-[17px] leading-relaxed text-white/60 max-w-xl">
+          {area.desc} WasteWize UK serves {townCount} towns across {area.name} with EA-licensed
+          collection, clearance, and specialist disposal — every job backed by duty-of-care
+          documentation and same-week availability.
+        </p>
+
+        <div class="mt-8 flex flex-col sm:flex-row items-start gap-3">
+          <a
+            href="/contact#quote"
+            class="inline-flex items-center gap-2 bg-brand-forest text-white
+                   px-6 py-3 rounded-[8px] text-sm font-semibold
+                   hover:bg-brand-forest-dark hover:shadow-cta hover:-translate-y-0.5
+                   transition-all duration-200"
+          >
+            Get a Free Quote
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+            </svg>
+          </a>
+          <a
+            href="tel:+447929771954"
+            class="inline-flex items-center gap-2 border border-white/20 text-white/80
+                   px-6 py-3 rounded-[8px] text-sm font-semibold
+                   hover:border-brand-lime/50 hover:text-white transition-all duration-200"
+          >
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+            </svg>
+            07929 771954
+          </a>
+        </div>
+      </div>
+
+      <!-- Coverage stats -->
+      <div class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5 max-w-lg sm:max-w-none">
+        {[
+          { value: String(townCount),       label: 'Towns Covered'      },
+          { value: String(servicesPerTown), label: 'Services per Town'  },
+          { value: '99%',                   label: 'Landfill Diversion' },
+          { value: 'Same Week',             label: 'Availability'       },
+        ].map(({ value, label }) => (
+          <div class="bg-brand-dark-card border border-white/10 rounded-[10px] px-4 py-4 text-center">
+            <p class="text-base sm:text-lg font-bold text-brand-lime leading-tight">{value}</p>
+            <p class="text-[11px] text-white/50 mt-1">{label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Towns grid ── -->
+  <section class="py-12 sm:py-16 lg:py-20 bg-brand-dark" aria-labelledby="towns-heading">
+    <div class="container mx-auto px-4 sm:px-6">
+
+      <div class="max-w-xl mb-8 sm:mb-10">
+        <span class="text-xs font-semibold tracking-widest uppercase text-brand-lime mb-3 block">
+          Towns We Serve
+        </span>
+        <h2 id="towns-heading" class="text-2xl sm:text-3xl font-bold text-white mb-3">
+          {area.name} Towns &amp; Boroughs
+        </h2>
+        <p class="text-sm sm:text-base text-white/60 leading-relaxed">
+          Choose your town to see every waste service we offer locally — each with EA-licensed
+          disposal and full duty-of-care documentation.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5">
+        {area.towns.map((town) => (
+          <a
+            href={`/areas/${area.slug}/${slugify(town)}`}
+            class="group bg-brand-dark-card border border-white/10 rounded-[12px] p-5
+                   flex items-center justify-between gap-3
+                   hover:border-brand-lime/50 hover:-translate-y-1 hover:shadow-card
+                   transition-all duration-300"
+          >
+            <div class="min-w-0">
+              <h3 class="text-[15px] font-semibold text-white leading-snug
+                         group-hover:text-brand-lime transition-colors duration-200 truncate">
+                {town}
+              </h3>
+              <p class="text-[11px] text-white/45 mt-0.5">{servicesPerTown} services available</p>
+            </div>
+            <svg class="w-4 h-4 text-white/30 group-hover:text-brand-lime shrink-0 transition-all duration-200 group-hover:translate-x-0.5"
+                 fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+            </svg>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Services we offer (informational, no links) ── -->
+  <section class="py-12 sm:py-16 lg:py-20 bg-brand-dark-card border-t border-white/8" aria-labelledby="services-heading">
+    <div class="container mx-auto px-4 sm:px-6">
+
+      <div class="max-w-xl mb-8 sm:mb-10">
+        <span class="text-xs font-semibold tracking-widest uppercase text-brand-lime mb-3 block">
+          What We Offer
+        </span>
+        <h2 id="services-heading" class="text-2xl sm:text-3xl font-bold text-white mb-3">
+          Waste Services Across {area.name}
+        </h2>
+        <p class="text-sm sm:text-base text-white/60 leading-relaxed">
+          Every service below is available in all {townCount} {area.name} towns — fully EA-licensed,
+          with a 99% landfill diversion rate.
+        </p>
+      </div>
+
+      <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-3" role="list">
+        {linkedSvcs.map((svc) => (
+          <li class="flex items-start gap-3 bg-brand-dark border border-white/8 rounded-[10px] px-4 py-3" role="listitem">
+            <span class="w-9 h-9 rounded-[8px] bg-brand-lime/10 flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5 text-brand-lime" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d={svc.icon}/>
+              </svg>
+            </span>
+            <div class="min-w-0">
+              <p class="text-[14px] font-semibold text-white leading-snug">{svc.title}</p>
+              <p class="text-[12px] text-white/45 leading-snug mt-0.5">{svc.shortDesc}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── CTA (Forest Green) ── -->
+  <section class="bg-brand-forest">
+    <div class="container mx-auto px-4 sm:px-6 py-14 sm:py-20">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">
+          Get a Free Quote for {area.name}
+        </h2>
+        <p class="text-sm sm:text-base text-white/80 leading-relaxed mb-8 max-w-md mx-auto">
+          Tell us about your job and we'll provide a fixed-price quote — usually within the hour.
+          Same-week availability across all {townCount} {area.name} towns.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+          <a
+            href="/contact#quote"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2
+                   bg-white text-brand-forest px-7 py-3.5 rounded-[8px] text-sm font-semibold
+                   hover:-translate-y-0.5 hover:shadow-cta transition-all duration-200"
+          >
+            Get a Free Quote
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+            </svg>
+          </a>
+          <a
+            href="tel:+447929771954"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2
+                   border border-white/40 text-white px-7 py-3.5 rounded-[8px] text-sm font-semibold
+                   hover:bg-white/10 transition-all duration-200"
+          >
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+            </svg>
+            07929 771954
+          </a>
+        </div>
+        <p class="mt-6 text-xs text-white/60">
+          {servicePages.toLocaleString()} local service pages · EA Licence CBDU335711 · SafeContractor approved
+        </p>
+      </div>
+    </div>
+  </section>
+
+</Layout>

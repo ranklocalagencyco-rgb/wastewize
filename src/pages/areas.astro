@@ -17,46 +17,36 @@ const regionIcon = {
 
 <Layout
   title="Areas We Cover | WasteWize UK — London & Home Counties"
-  description="WasteWize UK collects commercial and residential waste across all London boroughs and the Home Counties — Surrey, Kent, Essex, Hertfordshire, Berkshire, Buckinghamshire, and Middlesex. Same-week availability."
+  description="WasteWize serves all London boroughs and the Home Counties. Berkshire, Middlesex, Buckinghamshire, Surrey, Essex & Hertfordshire. Same-week availability."
 >
 
   <Fragment slot="head">
-    <script type="application/ld+json" is:inline>
-    {
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "WasteManagementService",
-      "name": "WasteWize UK",
-      "url": "https://wastewize.co.uk",
-      "telephone": "+447929771954",
+      "@type": ["LocalBusiness", "WasteManagementService"],
+      "name": "WasteWize",
+      "url": "https://wastewize.co.uk/areas",
+      "telephone": "07929 771954",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "GB"
+      },
       "areaServed": [
-        {
-          "@type": "City",
-          "name": "London",
-          "containsPlace": [
-            { "@type": "AdministrativeArea", "name": "Central London", "description": "City of London, Westminster, Kensington, Chelsea", "identifier": "EC, WC, SW1, W1" },
-            { "@type": "AdministrativeArea", "name": "North London",   "description": "Islington, Camden, Hackney, Haringey",              "identifier": "N, NW" },
-            { "@type": "AdministrativeArea", "name": "East London",    "description": "Tower Hamlets, Newham, Waltham Forest, Redbridge",  "identifier": "E, IG" },
-            { "@type": "AdministrativeArea", "name": "South London",   "description": "Southwark, Lewisham, Greenwich, Bromley",           "identifier": "SE, BR" },
-            { "@type": "AdministrativeArea", "name": "West London",    "description": "Hammersmith, Ealing, Hounslow, Richmond",           "identifier": "W, TW" }
-          ]
-        },
-        {
-          "@type": "State",
-          "name": "Home Counties",
-          "containsPlace": [
-            { "@type": "AdministrativeArea", "name": "Surrey",           "description": "Guildford, Woking, Sutton, Epsom",                          "identifier": "GU, KT, RH, SM" },
-            { "@type": "AdministrativeArea", "name": "Kent",             "description": "Dartford, Sevenoaks, Tonbridge, Maidstone",                 "identifier": "DA, TN, ME" },
-            { "@type": "AdministrativeArea", "name": "Essex",            "description": "Romford, Basildon, Chelmsford, Brentwood",                  "identifier": "RM, SS, CM" },
-            { "@type": "AdministrativeArea", "name": "Hertfordshire",    "description": "Watford, St Albans, Hemel Hempstead, Stevenage",            "identifier": "WD, AL, HP, SG" },
-            { "@type": "AdministrativeArea", "name": "Berkshire",        "description": "Reading, Slough, Windsor, Maidenhead",                      "identifier": "RG, SL" },
-            { "@type": "AdministrativeArea", "name": "Buckinghamshire",  "description": "High Wycombe, Aylesbury, Milton Keynes, Amersham",          "identifier": "HP, MK, LU" },
-            { "@type": "AdministrativeArea", "name": "Middlesex",        "description": "Uxbridge, Staines, Feltham, Twickenham",                    "identifier": "UB, TW, HA" }
-          ]
-        }
+        { "@type": "AdministrativeArea", "name": "Middlesex" },
+        { "@type": "AdministrativeArea", "name": "Berkshire" },
+        { "@type": "AdministrativeArea", "name": "Buckinghamshire" },
+        { "@type": "AdministrativeArea", "name": "Surrey" },
+        { "@type": "AdministrativeArea", "name": "Essex" },
+        { "@type": "AdministrativeArea", "name": "Hertfordshire" },
+        { "@type": "AdministrativeArea", "name": "Greater London" }
       ],
-      "description": "WasteWize UK provides professional waste clearance and commercial waste management across all London boroughs and the Home Counties."
-    }
-    </script>
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "licence",
+        "name": "Environment Agency Registered Waste Carrier",
+        "identifier": "CBDU335711"
+      }
+    })} />
     <script type="application/ld+json" is:inline set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
@@ -124,7 +114,10 @@ const regionIcon = {
                           hover:border-brand-lime/40 hover:shadow-card hover:-translate-y-1
                           transition-all duration-300 flex flex-col gap-4">
             <h3 class="text-sm sm:text-[15px] font-semibold text-white group-hover:text-brand-lime transition-colors">
-              {area.name}
+              <a href={`/areas/${area.slug}`} class="hover:underline underline-offset-2"
+                 aria-label={`${area.name} waste collection — view all towns and services`}>
+                {area.name}
+              </a>
             </h3>
             <p class="text-xs leading-relaxed text-white/50 flex-1">
               {area.desc}
@@ -193,7 +186,10 @@ const regionIcon = {
                           hover:border-brand-lime/40 hover:shadow-card hover:-translate-y-1
                           transition-all duration-300 flex flex-col gap-4">
             <h3 class="text-sm sm:text-[15px] font-semibold text-white group-hover:text-brand-lime transition-colors">
-              {area.name}
+              <a href={`/areas/${area.slug}`} class="hover:underline underline-offset-2"
+                 aria-label={`${area.name} waste collection — view all towns and services`}>
+                {area.name}
+              </a>
             </h3>
             <p class="text-xs leading-relaxed text-white/50 flex-1">
               {area.desc}

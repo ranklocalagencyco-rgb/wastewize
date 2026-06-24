@@ -5,6 +5,7 @@ import { serviceDetails } from '../../../../data/service-detail';
 import { areas } from '../../../../data/areas';
 import { townDetails } from '../../../../data/town-detail';
 import { pageOverrides } from '../../../../data/page-overrides';
+import { buildAreaMeta, buildAreaTitle } from '../../../../utils/meta';
 
 function slugify(str: string): string {
   return str.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -75,19 +76,11 @@ const renderedTownFaqs   = detail.townFaqs?.map(({ q, a }) => ({
   a: interpolate(a, _tplVars),
 })) ?? [];
 
-const _defaultTitle = postcode
-  ? `${svc.title} in ${town} (${postcode}) | EA Licensed | WasteWize UK`
-  : `${svc.title} in ${town} | EA Licensed | WasteWize UK`;
+const _defaultTitle = buildAreaTitle(svc.title, town, postcode);
 const metaTitle = pageOverride?.metaTitle ?? _defaultTitle;
 
-// Unique meta: extract town descriptor (part before "WasteWize" in the intro)
 const _introBase = townDetail?.intro?.split('WasteWize')[0]?.trim()?.replace(/[.,\s]+$/, '') ?? null;
-const _introSnip = _introBase
-  ? (_introBase.length > 110 ? _introBase.slice(0, 110).replace(/\s+\S+$/, '') + '…' : _introBase)
-  : null;
-const _defaultDesc = _introSnip
-  ? `${_introSnip}. EA-licensed ${svc.title.toLowerCase()} in ${postcode || town} — same-day availability, full duty-of-care documentation.`
-  : `EA-licensed ${svc.title.toLowerCase()} in ${town}, ${area.name}. Same-day availability, 99% landfill diversion, full duty-of-care documentation. EA Licence CBDU335711 · 07929 771954.`;
+const _defaultDesc = buildAreaMeta(svc.title.toLowerCase(), town, postcode, _introBase);
 const metaDesc = pageOverride?.metaDesc ?? _defaultDesc;
 
 // Price anchor from pills (used in FAQ)
@@ -122,7 +115,7 @@ const nearbyTowns = area.towns
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home",        "item": `${BASE}/` },
         { "@type": "ListItem", "position": 2, "name": "Areas",       "item": `${BASE}/areas` },
-        { "@type": "ListItem", "position": 3, "name": area.name,     "item": `${BASE}/areas#${areaSlug}` },
+        { "@type": "ListItem", "position": 3, "name": area.name,     "item": `${BASE}/areas/${areaSlug}` },
         { "@type": "ListItem", "position": 4, "name": town,          "item": `${BASE}/areas/${areaSlug}/${townSlug}` },
         { "@type": "ListItem", "position": 5, "name": svc.title,     "item": pageUrl },
       ]
@@ -130,76 +123,39 @@ const nearbyTowns = area.towns
 
     <script type="application/ld+json" is:inline set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "Service",
-      "name": `${svc.title} in ${town}`,
+      "@type": ["LocalBusiness", "WasteManagementService"],
+      "name": "WasteWize",
       "url": pageUrl,
-      "description": metaDesc,
-      "serviceType": detail.serviceType ?? "Waste Management",
-      "areaServed": {
-        "@type": "City",
-        "name": town,
-        "containedInPlace": { "@type": "AdministrativeArea", "name": area.name }
-      },
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "WasteWize UK",
-        "url": BASE,
-        "telephone": "+447929771954",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "37B Euro Storage Compound, 2B Canal Way",
-          "addressLocality": "London",
-          "postalCode": "W10 5AY",
-          "addressCountry": "GB"
-        }
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": `${svc.title} — What's Included`,
-        "itemListElement": detail.included.map((item, i) => ({
-          "@type": "Offer",
-          "position": i + 1,
-          "itemOffered": { "@type": "Service", "name": item }
-        }))
-      }
-    })} />
-
-    <script type="application/ld+json" is:inline set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "WasteWize UK",
-      "url": BASE,
-      "telephone": "+447929771954",
-      "priceRange": "££",
-      "description": `EA-licensed ${svc.title.toLowerCase()} serving ${town}${postcode ? ` (${postcode})` : ''} and the wider ${area.name} area. Duty-of-care documentation on every job.`,
+      "telephone": "07929 771954",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "37B Euro Storage Compound, 2B Canal Way",
-        "addressLocality": "London",
-        "postalCode": "W10 5AY",
         "addressCountry": "GB"
       },
-      "areaServed": [
-        {
-          "@type": "City",
-          "name": town,
-          "containedInPlace": { "@type": "AdministrativeArea", "name": area.name }
-        },
-        ...(postcode ? postcode.split('/').map((pc) => ({
-          "@type": "PostalCodeArea",
-          "postalCode": pc.trim(),
-          "addressCountry": "GB"
-        })) : []),
-        ...(townDetail?.keyAreas?.map((ka) => ({ "@type": "Place", "name": `${ka}, ${town}` })) ?? [])
-      ],
+      "areaServed": {
+        "@type": "City",
+        "name": town
+      },
+      "accreditation": "SafeContractor",
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "licence",
+        "name": "Environment Agency Registered Waste Carrier",
+        "identifier": "CBDU335711"
+      },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": `${svc.title} in ${town}`,
-        "itemListElement": detail.included.map((item, i) => ({
+        "itemListElement": [{
           "@type": "Offer",
-          "position": i + 1,
-          "itemOffered": { "@type": "Service", "name": item }
-        }))
+          "itemOffered": {
+            "@type": "Service",
+            "name": svc.title,
+            "provider": {
+              "@type": ["LocalBusiness", "WasteManagementService"],
+              "name": "WasteWize"
+            }
+          }
+        }]
       }
     })} />
 
@@ -207,10 +163,9 @@ const nearbyTowns = area.towns
       "@context": "https://schema.org",
       "@type": "HowTo",
       "name": `How to book ${svc.title} in ${town}`,
-      "description": `Step-by-step process for arranging ${svc.title.toLowerCase()} with WasteWize UK in ${town}${postcode ? ` (${postcode})` : ''}.`,
-      "step": detail.process.map((step, i) => ({
+      "description": `Step-by-step process for arranging ${svc.title.toLowerCase()} with WasteWize in ${town}${postcode ? ` (${postcode})` : ''}.`,
+      "step": detail.process.map((step) => ({
         "@type": "HowToStep",
-        "position": i + 1,
         "name": step.title,
         "text": step.desc
       }))
@@ -266,7 +221,7 @@ const nearbyTowns = area.towns
         <li aria-hidden="true" class="text-white/20">/</li>
         <li><a href="/areas"                                  class="hover:text-brand-lime transition-colors">Areas</a></li>
         <li aria-hidden="true" class="text-white/20">/</li>
-        <li><a href={`/areas#${areaSlug}`}                   class="hover:text-brand-lime transition-colors">{area.name}</a></li>
+        <li><a href={`/areas/${areaSlug}`}                   class="hover:text-brand-lime transition-colors">{area.name}</a></li>
         <li aria-hidden="true" class="text-white/20">/</li>
         <li><a href={`/areas/${areaSlug}/${townSlug}`}        class="hover:text-brand-lime transition-colors">{town}</a></li>
         <li aria-hidden="true" class="text-white/20">/</li>

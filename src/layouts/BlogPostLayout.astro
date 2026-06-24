@@ -8,6 +8,7 @@ interface Props {
   category:    string;
   tags?:       string[];
   author?:     string;
+  pageTitle?:  string;
   slug:        string;
   faqSchema?:  { question: string; answer: string }[];
 }
@@ -19,6 +20,7 @@ const {
   category,
   tags,
   author     = 'WasteWize Team',
+  pageTitle,
   slug,
   faqSchema,
 } = Astro.props;
@@ -67,7 +69,7 @@ const faqPageSchema = faqSchema?.length
   : null;
 ---
 
-<Layout title={`${title} | WasteWize Blog`} description={description}>
+<Layout title={pageTitle ?? `${title} | WasteWize Blog`} description={description}>
 
   <Fragment slot="head">
     <script type="application/ld+json" is:inline set:html={JSON.stringify(blogPostingSchema)} />
@@ -254,13 +256,13 @@ const faqPageSchema = faqSchema?.length
                   </a>
                 </li>
                 <li>
-                  <a href="/services/fly-tipping-removal"
+                  <a href="/blog/fly-tipping-removal-london"
                      class="text-sm text-brand-forest underline hover:text-brand-lime transition-colors">
                     Fly-Tipping Removal
                   </a>
                 </li>
                 <li>
-                  <a href="/services/house-clearance"
+                  <a href="/house-clearance"
                      class="text-sm text-brand-forest underline hover:text-brand-lime transition-colors">
                     House Clearance
                   </a>
@@ -272,7 +274,7 @@ const faqPageSchema = faqSchema?.length
                   </a>
                 </li>
                 <li>
-                  <a href="/services/office-clearance"
+                  <a href="/office-clearance"
                      class="text-sm text-brand-forest underline hover:text-brand-lime transition-colors">
                     Office Clearance
                   </a>

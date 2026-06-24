@@ -11,6 +11,7 @@ const blog = defineCollection({
     tags:        z.array(z.string()).optional(),
     author:      z.string().default('WasteWize Team'),
     featured:    z.boolean().default(false),
+    pageTitle:   z.string().optional(),
     faqSchema:   z.array(z.object({
       question: z.string(),
       answer:   z.string(),
