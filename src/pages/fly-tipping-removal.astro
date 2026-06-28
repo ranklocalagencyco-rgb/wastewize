@@ -1,0 +1,436 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const BASE = 'https://wastewize.co.uk';
+
+const faqs = [
+  {
+    q: 'Am I legally responsible for fly-tipped waste on my private land?',
+    a: 'Yes. Under the Environmental Protection Act 1990, the landowner — not the fly-tipper — is legally responsible for removing dumped waste from their property. This applies to private driveways, gardens, commercial yards, and industrial land. Failure to remove it can result in a Fixed Penalty Notice from the council or prosecution. WasteWize provides same-day clearance with a full duty-of-care paper trail to protect you.',
+  },
+  {
+    q: 'How much does fly tipping removal cost in London?',
+    a: 'Most fly-tipping clearances across London and the Home Counties are priced between £80 and £350 depending on the volume and type of waste. A small dumped load (a few bags and a mattress) typically costs £80–£150. A large fly-tip with furniture, builders waste, and mixed rubbish is usually £200–£350. We provide a fixed quote after you send photos — no site visit needed for most jobs.',
+  },
+  {
+    q: 'Should I report fly-tipping to the council before booking clearance?',
+    a: 'For fly-tipping on public land (roadsides, parks, public car parks), report to your local council via gov.uk — they are responsible for removal. For waste on your private land, you are responsible for removal. We recommend reporting the incident to the council and police as well as booking clearance — our photographs before removal provide evidence for any council report or insurance claim.',
+  },
+  {
+    q: 'Can you remove fly-tipped waste from a private driveway or garden?',
+    a: 'Yes — private driveways, front gardens, back gardens, garages, and outbuildings are all standard jobs. We are EA-licensed to collect controlled waste from private land and provide a Waste Transfer Note confirming legal disposal. Most private residential fly-tips can be cleared same-day.',
+  },
+  {
+    q: 'Can you remove hazardous fly-tipped waste such as asbestos?',
+    a: 'We remove the vast majority of fly-tipped materials including furniture, rubble, garden waste, electrical items, and tyres. For suspected asbestos or clinical waste, we assess on-site and arrange specialist disposal at cost — we\'ll advise clearly when quoting. Never disturb suspected asbestos yourself before a licensed assessor has inspected it.',
+  },
+  {
+    q: 'How quickly can you attend a fly-tipping clearance in London?',
+    a: 'Same-day attendance is standard for most London and Home Counties fly-tip clearances — we aim to be on-site within a few hours of booking for urgent cases. For jobs under council notice or presenting a safety risk, call 07929 771954 directly and we will prioritise attendance.',
+  },
+  {
+    q: 'What documentation do I receive after fly-tipping clearance?',
+    a: 'You receive a Duty of Care Waste Transfer Note (WTN) by email immediately after clearance. This is the legal document — required under the Environmental Protection Act 1990 — proving the waste was removed and disposed of by a licensed carrier. We also send the pre-removal and post-clearance photographs. This package is accepted by councils for Fixed Penalty Notice appeals and by insurers for fly-tipping damage claims.',
+  },
+  {
+    q: 'Do you cover the whole of London and the Home Counties?',
+    a: 'Yes — we cover all London boroughs and the surrounding Home Counties including Middlesex, Surrey, Hertfordshire, Essex, Berkshire, and Buckinghamshire. Same-day attendance is available across all of these areas. Use the contact form or call 07929 771954 to confirm availability in your specific postcode.',
+  },
+];
+
+const scenarios = [
+  {
+    heading: 'Fly Tip on Your Driveway',
+    body:    'Overnight dumping on residential driveways is one of the most common fly-tipping incidents across London. Even if you didn\'t cause it, you are responsible for clearing it. We attend same-day and photograph all waste before removal for your insurance records.',
+  },
+  {
+    heading: 'Fly Tip in Your Garden or Access Way',
+    body:    'Garden fly-tipping — furniture, bags, and mixed rubbish dumped over a fence or through a side gate — is covered by the same EPA 1990 obligations. We clear all types: soft furnishings, green waste, electrical items, and mixed loads.',
+  },
+  {
+    heading: 'Commercial Yard or Car Park',
+    body:    'Business premises, car parks, and industrial yards are frequent targets for large-scale illegal dumping. We clear commercial fly-tips including builders waste, tyres, and pallets — issuing commercial Duty of Care documentation for your audit trail.',
+  },
+  {
+    heading: 'Fly Tip Under Council Notice',
+    body:    'Received a Fixed Penalty Notice or enforcement notice from the council? We prioritise urgent clearances. Our duty-of-care paper trail confirms the waste was removed legally — evidence you can submit to the council to close the notice.',
+  },
+];
+
+const included = [
+  'Dumped furniture, mattresses, and soft furnishings',
+  'Mixed rubbish bags and loose general waste',
+  'Builders waste — hardcore, plasterboard, timber, rubble',
+  'Electrical and white goods dumped on site',
+  'Garden waste and organic fly-tipped material',
+  'Tyres and vehicle-related waste',
+  'Pre-removal photographic evidence for your records',
+  'EA Duty of Care Waste Transfer Note included',
+];
+
+const steps = [
+  { title: 'Send Us Photos',    desc: 'WhatsApp or email photos of the fly-tipped waste. We provide a fixed quote within the hour — no site visit needed.' },
+  { title: 'Same-Day Booking',  desc: 'Confirm and we dispatch the same day, or next working day. Urgent council-notice jobs are prioritised.' },
+  { title: 'Evidence Photos',   desc: 'On arrival, our crew photographs all waste in situ before touching it — useful for council reports and insurance.' },
+  { title: 'Full Clearance',    desc: 'All fly-tipped material loaded, segregated, and removed. Site left clear and swept.' },
+  { title: 'WTN Issued',        desc: 'Duty of Care Waste Transfer Note emailed immediately — your legal evidence of compliant disposal.' },
+];
+---
+
+<Layout
+  title="Fly Tipping Removal London | EA Licensed Same-Day Clearance | WasteWize UK"
+  description="EA-licensed fly tipping removal across London & Home Counties. Same-day clearance, photographic evidence, duty-of-care documentation. Call 07929 771954."
+>
+
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home",                "item": `${BASE}/` },
+        { "@type": "ListItem", "position": 2, "name": "Fly Tipping Removal", "item": `${BASE}/fly-tipping-removal` },
+      ]
+    })} />
+
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": ["LocalBusiness", "WasteManagementService"],
+      "name": "WasteWize",
+      "url": `${BASE}/fly-tipping-removal`,
+      "telephone": "07929 771954",
+      "address": { "@type": "PostalAddress", "addressCountry": "GB" },
+      "areaServed": [
+        { "@type": "AdministrativeArea", "name": "Greater London" },
+        { "@type": "AdministrativeArea", "name": "Middlesex" },
+        { "@type": "AdministrativeArea", "name": "Surrey" },
+        { "@type": "AdministrativeArea", "name": "Hertfordshire" },
+        { "@type": "AdministrativeArea", "name": "Essex" },
+        { "@type": "AdministrativeArea", "name": "Berkshire" },
+        { "@type": "AdministrativeArea", "name": "Buckinghamshire" },
+      ],
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "licence",
+        "name": "Environment Agency Registered Waste Carrier",
+        "identifier": "CBDU335711"
+      }
+    })} />
+
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(({ q, a }) => ({
+        "@type": "Question",
+        "name": q,
+        "acceptedAnswer": { "@type": "Answer", "text": a }
+      }))
+    })} />
+
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to arrange fly tipping removal from private land",
+      "description": "Step-by-step process for booking EA-licensed fly tipping removal from private land in London and the Home Counties with WasteWize.",
+      "step": steps.map((s) => ({
+        "@type": "HowToStep",
+        "name": s.title,
+        "text": s.desc
+      }))
+    })} />
+  </Fragment>
+
+  <!-- Breadcrumb -->
+  <nav aria-label="Breadcrumb" class="bg-brand-dark border-b border-white/8">
+    <div class="container mx-auto px-4 sm:px-6 py-3">
+      <ol class="flex flex-wrap items-center gap-1.5 text-xs text-white/40">
+        <li><a href="/" class="hover:text-white/70 transition-colors">Home</a></li>
+        <li aria-hidden="true" class="text-white/20">/</li>
+        <li class="text-white/70" aria-current="page">Fly Tipping Removal</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="bg-brand-dark py-14 sm:py-20 lg:py-24 border-b border-white/8">
+    <div class="container mx-auto px-4 sm:px-6">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div>
+          <span class="text-xs font-semibold tracking-widest uppercase text-brand-lime mb-4 block">
+            EA Licensed · Same Day · Private Land
+          </span>
+          <h1 class="font-display text-4xl sm:text-5xl lg:text-5xl font-extrabold text-white mb-5 leading-[1.06]">
+            Fly Tipping Removal from Private Land
+          </h1>
+          <p class="text-base sm:text-lg text-white/60 leading-relaxed mb-8">
+            Landowners are legally responsible for clearing fly-tipped waste — even waste they didn't dump. WasteWize provides same-day EA-licensed fly tipping removal across London and the Home Counties, with photographic evidence and full duty-of-care documentation for council or insurance purposes.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="tel:+447929771954"
+               class="inline-flex items-center gap-2 bg-brand-forest text-white px-7 py-4 rounded-[8px] text-base font-semibold hover:bg-brand-forest-dark hover:-translate-y-0.5 hover:shadow-cta transition-all duration-200">
+              <svg class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+              </svg>
+              Call 07929 771954
+            </a>
+            <a href="/contact"
+               class="inline-flex items-center gap-2 border border-white/20 text-white/80 px-7 py-4 rounded-[8px] text-base font-semibold hover:border-brand-lime/50 hover:text-white transition-all duration-200">
+              Send Photos for a Quote →
+            </a>
+          </div>
+        </div>
+
+        <!-- Stats panel -->
+        <div class="grid grid-cols-2 gap-4">
+          {[
+            { v: 'Same Day',    l: 'Attendance',           sub: 'For most London & Home Counties jobs' },
+            { v: 'From £80',    l: 'Typical Cost',         sub: 'Fixed price after photos — no surprises' },
+            { v: 'Photos',      l: 'Before We Touch It',   sub: 'Evidence for council & insurance' },
+            { v: 'WTN',         l: 'On Every Job',         sub: 'EA Duty of Care documentation' },
+          ].map(({ v, l, sub }) => (
+            <div class="bg-brand-dark-card border border-white/10 rounded-[12px] p-5">
+              <p class="text-2xl font-extrabold text-brand-lime mb-0.5">{v}</p>
+              <p class="text-sm font-semibold text-white">{l}</p>
+              <p class="text-xs text-white/40 mt-1 leading-snug">{sub}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Common scenarios -->
+  <section class="py-14 sm:py-18 bg-brand-dark-card border-b border-white/8" aria-labelledby="scenarios-heading">
+    <div class="container mx-auto px-4 sm:px-6">
+      <div class="max-w-xl mb-10">
+        <span class="text-xs font-semibold tracking-widest uppercase text-brand-lime mb-3 block">
+          Common Situations
+        </span>
+        <h2 id="scenarios-heading" class="text-2xl sm:text-3xl font-bold text-white mb-3">
+          Where We Clear Fly-Tipped Waste
+        </h2>
+        <p class="text-white/60 leading-relaxed text-sm sm:text-base">
+          Fly-tipping happens across all types of private land. Whatever your situation, we can help.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-5">
+        {scenarios.map(({ heading, body }) => (
+          <div class="bg-brand-dark border border-white/10 rounded-[12px] p-6 lg:p-8">
+            <h3 class="text-[16px] font-semibold text-brand-lime mb-3">{heading}</h3>
+            <p class="text-sm text-white/60 leading-relaxed">{body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- What's included -->
+  <section class="py-14 sm:py-18 bg-brand-dark border-b border-white/8">
+    <div class="container mx-auto px-4 sm:px-6">
+      <div class="grid lg:grid-cols-2 gap-12 items-start">
+        <div>
+          <span class="text-xs font-semibold tracking-widest uppercase text-brand-lime mb-3 block">
+            What We Accept
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+            All Fly-Tipped Waste Types Removed
+          </h2>
+          <p class="text-white/60 leading-relaxed mb-8">
+            We take everything in a single visit — no need to sort or separate before we arrive. Every clearance is completed under EA licence CBDU335711 with a Waste Transfer Note issued on the day.
+          </p>
+          <ul class="flex flex-col gap-3" role="list">
+            {included.map((item) => (
+              <li class="flex items-start gap-3 text-sm text-white/70 leading-snug" role="listitem">
+                <svg class="w-4 h-4 text-brand-lime shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Pricing panel -->
+        <div class="bg-brand-dark-card border border-white/10 rounded-[16px] p-7 sm:p-8" id="prices">
+          <h3 class="text-lg font-bold text-white mb-1">Fly Tipping Removal Cost Guide</h3>
+          <p class="text-xs text-white/40 mb-6">Prices are indicative — fixed quote provided after photos</p>
+          <div class="flex flex-col gap-3">
+            {[
+              { load: 'Small load (a few bags + 1–2 items)',  price: '£80–£150'  },
+              { load: 'Medium load (furniture + mixed waste)', price: '£150–£250' },
+              { load: 'Large fly-tip (builders waste / bulk)', price: '£250–£400' },
+              { load: 'Commercial yard / extensive dumping',   price: 'POA'       },
+            ].map(({ load, price }) => (
+              <div class="flex items-center justify-between gap-4 border-b border-white/8 pb-3 last:border-0 last:pb-0">
+                <span class="text-sm text-white/60 leading-snug">{load}</span>
+                <span class="text-base font-bold text-brand-lime shrink-0">{price}</span>
+              </div>
+            ))}
+          </div>
+          <p class="mt-5 text-xs text-white/30">Includes collection, labour, licensed disposal & Waste Transfer Note. No VAT on residential jobs.</p>
+          <a href="/contact"
+             class="mt-5 w-full inline-flex items-center justify-center gap-2 bg-brand-forest text-white px-5 py-3 rounded-[8px] text-sm font-semibold hover:bg-brand-forest-dark transition-colors duration-200">
+            Get a Fixed Quote →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="py-16 sm:py-20 bg-brand-dark-card border-b border-white/8" aria-labelledby="process-heading">
+    <div class="container mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <span class="text-xs font-semibold tracking-widest uppercase text-brand-lime mb-3 block">Step by Step</span>
+        <h2 id="process-heading" class="font-display text-2xl sm:text-3xl font-bold text-white">
+          How Our Fly Tipping Clearance Works
+        </h2>
+      </div>
+      <div class="flex flex-col lg:flex-row gap-0 lg:gap-0 divide-y lg:divide-y-0 lg:divide-x divide-white/8 border border-white/10 rounded-[16px] overflow-hidden">
+        {steps.map(({ title, desc }, i) => (
+          <div class="flex-1 p-6 bg-brand-dark hover:bg-brand-dark-card transition-colors duration-200">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="w-8 h-8 rounded-full bg-brand-lime/10 text-brand-lime text-xs font-bold
+                           flex items-center justify-center shrink-0">
+                {i + 1}
+              </span>
+              <h3 class="text-[14px] font-semibold text-white">{title}</h3>
+            </div>
+            <p class="text-xs text-white/50 leading-relaxed">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Legal duty -->
+  <section class="py-14 sm:py-18 bg-brand-dark border-b border-white/8">
+    <div class="container mx-auto px-4 sm:px-6">
+      <div class="max-w-3xl">
+        <span class="text-xs font-semibold tracking-widest uppercase text-brand-lime mb-3 block">
+          The Law
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white mb-6">
+          Who Is Responsible for Fly Tipping on Private Land?
+        </h2>
+        <div class="flex flex-col gap-5 text-white/60 text-sm sm:text-base leading-relaxed">
+          <p>
+            Under the <strong class="text-white/80">Environmental Protection Act 1990 (Section 34)</strong>, the legal duty to remove fly-tipped waste from private land falls on the <strong class="text-white/80">landowner</strong> — regardless of who dumped it. Local authorities can issue Fixed Penalty Notices (up to £400) or refer cases to the Magistrates' Court where fines can be unlimited.
+          </p>
+          <p>
+            This applies equally to homeowners with fly-tipped driveways or gardens, landlords with waste dumped on their rental properties, and commercial operators with fly-tipping in their car parks or yards.
+          </p>
+          <p>
+            WasteWize provides same-day clearance, photographic evidence of what was found and removed, and a Duty of Care Waste Transfer Note — the legal document proving the waste was handled correctly. This evidence is accepted by councils for Fixed Penalty Notice appeals and by insurers for fly-tipping damage claims.
+          </p>
+        </div>
+        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+          <a href="tel:+447929771954"
+             class="inline-flex items-center gap-2 bg-brand-forest text-white px-6 py-3.5 rounded-[8px] text-sm font-semibold hover:bg-brand-forest-dark transition-colors duration-200">
+            Call for Same-Day Clearance
+          </a>
+          <a href="https://www.gov.uk/guidance/fly-tipping-on-private-land"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 border border-white/20 text-white/60 px-6 py-3.5 rounded-[8px] text-sm font-semibold hover:border-white/40 hover:text-white/80 transition-all duration-200">
+            Gov.uk: Fly-Tipping on Private Land ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Council reporting guide -->
+  <section class="py-14 sm:py-18 bg-brand-dark-card border-b border-white/8" aria-labelledby="reporting-heading">
+    <div class="container mx-auto px-4 sm:px-6">
+      <div class="max-w-xl mb-10">
+        <span class="text-xs font-semibold tracking-widest uppercase text-brand-lime mb-3 block">
+          Reporting Guide
+        </span>
+        <h2 id="reporting-heading" class="text-2xl sm:text-3xl font-bold text-white mb-3">
+          How to Report Fly-Tipping in London
+        </h2>
+        <p class="text-white/60 text-sm sm:text-base leading-relaxed">
+          Reporting fly-tipping creates an official record and may deter future dumping. Here's what to do alongside booking clearance.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {[
+          {
+            step: '1',
+            title: 'Photograph the Waste',
+            desc: 'Photograph the dumped waste before anyone touches it. Include street signs or landmarks for location reference. We do this too when we arrive.',
+          },
+          {
+            step: '2',
+            title: 'Report to the Council',
+            desc: 'For waste on public land, report via your borough council website or gov.uk/report-fly-tipping. For private land, the report is optional but builds an enforcement record.',
+          },
+          {
+            step: '3',
+            title: 'Check for Evidence',
+            desc: 'Look for names, addresses, or business details in the dumped waste — this evidence can help the council trace the fly-tipper and pursue prosecution.',
+          },
+          {
+            step: '4',
+            title: 'Book Licensed Clearance',
+            desc: 'Call WasteWize on 07929 771954. We attend same-day, photograph all waste in situ, and issue a Duty of Care WTN — satisfying your EPA 1990 obligation.',
+          },
+        ].map(({ step, title, desc }) => (
+          <div class="bg-brand-dark border border-white/10 rounded-[12px] p-6">
+            <span class="inline-block w-8 h-8 rounded-full bg-brand-lime/10 text-brand-lime text-xs font-bold
+                         flex items-center justify-center mb-4">{step}</span>
+            <h3 class="text-[15px] font-semibold text-white mb-2">{title}</h3>
+            <p class="text-sm text-white/50 leading-relaxed">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-14 sm:py-18 bg-brand-dark border-b border-white/8" aria-labelledby="ft-faq-heading">
+    <div class="container mx-auto px-4 sm:px-6 max-w-2xl">
+      <h2 id="ft-faq-heading" class="font-display text-2xl sm:text-3xl font-bold text-white mb-8">
+        Fly Tipping Removal — Frequently Asked Questions
+      </h2>
+      <dl class="flex flex-col gap-4">
+        {faqs.map(({ q, a }) => (
+          <div class="bg-brand-dark border border-white/10 rounded-[12px] p-6">
+            <dt class="text-[15px] font-semibold text-white mb-2 flex items-start gap-3">
+              <span class="text-brand-lime shrink-0 mt-0.5" aria-hidden="true">Q</span>
+              {q}
+            </dt>
+            <dd class="text-sm leading-relaxed text-white/60 pl-6">{a}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-14 sm:py-20 bg-brand-forest">
+    <div class="container mx-auto px-4 sm:px-6 max-w-2xl text-center">
+      <h2 class="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3">
+        Fly Tip on Your Land? We Can Clear It Today.
+      </h2>
+      <p class="text-white/80 mb-8 leading-relaxed">
+        Send photos for a fixed quote — we respond within the hour and attend same-day across London and the Home Counties. EA-licensed, fully insured, full duty-of-care documentation on every job.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+        <a href="tel:+447929771954"
+           class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white text-brand-forest px-8 py-4 rounded-[8px] text-base font-semibold hover:-translate-y-0.5 hover:shadow-cta transition-all duration-200">
+          <svg class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+          </svg>
+          07929 771954
+        </a>
+        <a href="/contact"
+           class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-white/40 text-white px-8 py-4 rounded-[8px] text-base font-semibold hover:bg-white/10 transition-all duration-200">
+          Send Photos for a Quote →
+        </a>
+      </div>
+      <p class="mt-6 text-xs text-white/60">EA Licence CBDU335711 · Same-day attendance · Photographic evidence on every job</p>
+    </div>
+  </section>
+
+</Layout>

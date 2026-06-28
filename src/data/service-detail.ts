@@ -987,7 +987,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     slug:        'house-clearance',
     serviceType: 'House Clearance Service',
     metaTitle:   'House Clearance London | EA-Licensed Full & Part Clearances | WasteWize UK',
-    metaDesc:    'EA-licensed house clearance across London and the South East. Full and part clearances, same-day availability, duty-of-care documentation. Furniture, white goods, clutter — all accepted. Call 07929 771954.',
+    metaDesc:    'EA-licensed house clearance across London & Home Counties. Full and part clearances, same-day availability, duty-of-care documentation. Call 07929 771954.',
     heroDesc:    'WasteWize UK provides EA-licensed house clearances across London and the South East — from a single room to an entire estate. Our team handles furniture, white goods, electronics, and accumulated clutter, sorting for donation and recycling before any disposal. Full duty-of-care documentation on every job.',
     leadTemplate: 'In [Town], WasteWize UK\'s house clearance team handles full and part-clearances — from single rooms to entire estates — with same-day availability across [County]. We remove everything: furniture, white goods, personal effects, and accumulated clutter, leaving the property clean and cleared.',
     highlights: [
@@ -1084,7 +1084,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     slug:        'office-clearance',
     serviceType: 'Office Clearance Service',
     metaTitle:   'Office Clearance London | Commercial Premises Clearance | WasteWize UK',
-    metaDesc:    'EA-licensed office clearance across London and the South East. Desks, chairs, IT equipment, filing cabinets — all removed in a single visit. Full commercial duty-of-care documentation. Same-day availability. Call 07929 771954.',
+    metaDesc:    'EA-licensed office clearance across London & Home Counties. Desks, chairs, IT equipment — all removed in one visit. Duty-of-care docs. Call 07929 771954.',
     heroDesc:    'WasteWize UK provides EA-licensed office clearance for businesses relocating, downsizing, or surrendering a lease. We clear desks, chairs, IT equipment, filing cabinets, and all commercial waste — issuing full duty-of-care documentation for your business audit trail. Out-of-hours and weekend slots available.',
     leadTemplate: 'For businesses in [Town] needing to clear commercial premises — whether relocating, downsizing, or ending a lease — WasteWize UK provides same-day office clearance across [County]. We remove desks, chairs, IT equipment, filing cabinets, and all office waste, issuing full duty-of-care documentation for your commercial records.',
     highlights: [
@@ -1181,7 +1181,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     slug:        'end-of-tenancy-clearance',
     serviceType: 'End of Tenancy Clearance Service',
     metaTitle:   'End of Tenancy Clearance London | Landlord & Tenant Clearance | WasteWize UK',
-    metaDesc:    'EA-licensed end of tenancy clearance across London and the South East. Landlords, letting agents, and tenants — we clear rental properties same-day with full duty-of-care documentation. Call 07929 771954.',
+    metaDesc:    'EA-licensed end of tenancy clearance across London & Home Counties. Landlords, letting agents & tenants — same-day, duty-of-care docs. Call 07929 771954.',
     heroDesc:    'WasteWize UK helps tenants and landlords clear rental properties quickly and completely at the end of a tenancy. From single items left behind to fully furnished properties requiring full clearance, our team covers London and the South East with same-day availability and full duty-of-care documentation.',
     leadTemplate: 'WasteWize UK helps tenants and landlords in [Town] clear rental properties quickly and completely at the end of a tenancy. From single items left behind to fully furnished properties requiring full clearance, our team covers all [County] postcodes with same-day availability and full duty-of-care documentation.',
     highlights: [
@@ -1278,7 +1278,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     slug:        'fly-tipping-removal',
     serviceType: 'Fly Tipping Removal Service',
     metaTitle:   'Fly Tipping Removal London | EA Licensed Same-Day Clearance | WasteWize UK',
-    metaDesc:    'EA-licensed fly tipping removal from private land across London and the South East. Same-day clearance, photographic evidence, duty-of-care documentation for council and insurance. Call 07929 771954.',
+    metaDesc:    'EA-licensed fly tipping removal across London & Home Counties. Same-day clearance, photographic evidence, duty-of-care documentation. Call 07929 771954.',
     heroDesc:    'WasteWize UK provides same-day fly tipping removal from private land across London and the South East. We remove all dumped waste — furniture, rubble, mixed rubbish, and garden waste — photographing evidence before removal and issuing a full duty-of-care paper trail for council reporting and insurance purposes.',
     leadTemplate: 'When fly-tipped waste appears on your land or property in [Town], WasteWize UK provides fast, EA-licensed fly tipping removal across [County]. We remove dumped rubbish, furniture, builders waste, and mixed waste — clearing your site the same day and issuing a full duty-of-care paper trail for insurance and council purposes.',
     highlights: [
@@ -1375,7 +1375,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     slug:        'skip-hire-alternative',
     serviceType: 'Wait and Load Skip Hire Alternative',
     metaTitle:   'Skip Hire Alternative London | Wait & Load Same-Day Service | WasteWize UK',
-    metaDesc:    'No skip permit needed. WasteWize UK\'s Wait & Load service collects your waste same-day across London — faster and simpler than traditional skip hire. EA Licensed CBDU335711. Call 07929 771954.',
+    metaDesc:    'No skip permit needed. WasteWize\'s Wait & Load service collects your waste same-day across London — faster and simpler than traditional skip hire. EA Licensed.',
     heroDesc:    'WasteWize UK\'s Wait & Load service is the flexible skip hire alternative for London — our crew arrives, waits on-site while you load, and removes waste immediately. No council permit required, no street obstruction, no 7-day hire window. Same-day availability at skip-equivalent pricing.',
     leadTemplate: 'WasteWize UK\'s Wait & Load service is the flexible skip alternative for residents and businesses in [Town]. Our crew waits on-site while you load, removing waste immediately — no permit needed, no street obstruction, no 7-day hire window. Available same-day across [County] at skip-equivalent pricing.',
     highlights: [
