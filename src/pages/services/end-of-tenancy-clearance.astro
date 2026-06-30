@@ -1,5 +1,5 @@
-﻿---
-import Layout from '../layouts/Layout.astro';
+---
+import Layout from '../../layouts/Layout.astro';
 
 const BASE = 'https://wastewize.co.uk';
 
@@ -81,7 +81,8 @@ const steps = [
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home",                          "item": `${BASE}/` },
-        { "@type": "ListItem", "position": 2, "name": "End of Tenancy Clearance",      "item": `${BASE}/end-of-tenancy-clearance` },
+        { "@type": "ListItem", "position": 2, "name": "Services",                      "item": `${BASE}/services` },
+        { "@type": "ListItem", "position": 3, "name": "End of Tenancy Clearance",      "item": `${BASE}/services/end-of-tenancy-clearance` },
       ]
     })} />
 
@@ -89,7 +90,7 @@ const steps = [
       "@context": "https://schema.org",
       "@type": "Service",
       "name": "End of Tenancy Clearance London",
-      "url": `${BASE}/end-of-tenancy-clearance`,
+      "url": `${BASE}/services/end-of-tenancy-clearance`,
       "description": "EA-licensed end of tenancy clearance for landlords, letting agents, and tenants across London and the Home Counties. Same-week availability, Duty of Care Waste Transfer Notes included.",
       "serviceType": "End of Tenancy Clearance",
       "areaServed": [
@@ -137,6 +138,8 @@ const steps = [
     <div class="container mx-auto px-4 sm:px-6 py-3">
       <ol class="flex flex-wrap items-center gap-1.5 text-xs text-white/40">
         <li><a href="/" class="hover:text-white/70 transition-colors">Home</a></li>
+        <li aria-hidden="true" class="text-white/20">/</li>
+        <li><a href="/services" class="hover:text-white/70 transition-colors">Services</a></li>
         <li aria-hidden="true" class="text-white/20">/</li>
         <li class="text-white/70" aria-current="page">End of Tenancy Clearance</li>
       </ol>
@@ -406,9 +409,9 @@ const steps = [
       </h2>
       <div class="grid sm:grid-cols-3 gap-5">
         {[
-          { title: 'House Clearance',        href: '/house-clearance',                    desc: 'Full property clearances for probate, bereavement, and downsizing.' },
+          { title: 'House Clearance',        href: '/services/house-clearance',           desc: 'Full property clearances for probate, bereavement, and downsizing.' },
           { title: 'Commercial Clearance',   href: '/services/commercial-clearance',      desc: 'Office, retail, and warehouse clearances for businesses and property managers.' },
-          { title: 'Skip Hire Alternative',  href: '/skip-hire-alternative',              desc: 'No permits, no loading yourself — a cheaper, faster alternative to a skip.' },
+          { title: 'Skip Hire Alternative',  href: '/services/skip-hire-alternative',     desc: 'No permits, no loading yourself — a cheaper, faster alternative to a skip.' },
         ].map(({ title, href, desc }) => (
           <a href={href}
              class="group bg-brand-dark border border-white/10 rounded-[12px] p-5 flex flex-col gap-2

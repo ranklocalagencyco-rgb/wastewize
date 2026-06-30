@@ -327,10 +327,10 @@ export const serviceDetails: Record<string, ServiceDetail> = {
 
   'garden-refuse': {
     slug:        'garden-refuse',
-    serviceType: 'Garden Waste Removal Service',
-    metaTitle:   'Garden Waste Removal London | Green Waste Collection | WasteWize UK',
-    metaDesc:  'Garden waste removal across London & Home Counties. All material composted or recovered — zero landfill. EA-licensed. Book online.',
-    heroDesc:     'Professional garden waste collection and responsible composting for homeowners, housing associations, and landscaping contractors across London and the Home Counties. From seasonal clearances and hedge trimmings to soil removal and shed contents, our EA-licensed service collects from your garden or driveway and diverts everything to PAS 100-certified composting and biomass facilities. No landfill, no hassle, full duty-of-care documentation.',
+    serviceType: 'Garden Clearance & Garden Waste Removal Service',
+    metaTitle:   'Garden Clearance & Garden Refuse London | Green Waste Collection | WasteWize UK',
+    metaDesc:  'Garden clearance and garden refuse removal across London & Home Counties. Project clear-outs and regular green-waste collections. Composted, zero landfill. EA-licensed.',
+    heroDesc:     'EA-licensed garden clearance and garden refuse removal for homeowners, housing associations, and landscaping contractors across London and the Home Counties. Whether you need a full garden clearance — clearing overgrown plots, removing accumulated debris after landscaping works, or emptying a neglected garden before sale — or a regular garden refuse collection for grass cuttings, hedge trimmings, and green waste, WasteWize handles both. All material is diverted to PAS 100-certified composting and biomass facilities. No landfill, no hassle, full duty-of-care documentation.',
     leadTemplate: 'WasteWize UK provides EA-licensed garden waste collection and responsible composting for homeowners and landscaping contractors across [Town] and [County]. From one-off seasonal clearances to regular scheduled collections, we collect all green waste — grass cuttings, branches, soil, and more — from your garden or driveway. From £80.',
     bodySections: [
       {

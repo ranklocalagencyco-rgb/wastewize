@@ -20,7 +20,7 @@ export const services: Service[] = [
     shortDesc: 'Full property clearances for homeowners, landlords & estate executors. From £150.',
     desc:      'Full-property clearances for homeowners, landlords, letting agents, and estate executors. Furniture, white goods, garden waste, and accumulated clutter removed in a single visit. EA-licensed, 99% landfill diversion.',
     pills:     ['From £150', 'EA Licensed', 'Same-week availability'],
-    href:      '/house-clearance',
+    href:      '/services/house-clearance',
   },
   {
     id:        'office-clearance',
@@ -31,7 +31,7 @@ export const services: Service[] = [
     shortDesc: 'Full office clearances for businesses & landlords — desks, IT, filing. From £200.',
     desc:      'Full office clearances for businesses, landlords, and property managers. Desks, chairs, IT equipment, filing cabinets, and all commercial waste removed in a single visit. Out-of-hours available.',
     pills:     ['From £200', 'WEEE compliant', 'Out-of-hours available'],
-    href:      '/office-clearance',
+    href:      '/services/office-clearance',
   },
   {
     id:        'end-of-tenancy-clearance',
@@ -42,7 +42,7 @@ export const services: Service[] = [
     shortDesc: 'Fast turnaround clearances for landlords, letting agents & tenants. Same-week.',
     desc:      'End-of-tenancy property clearances for landlords, letting agents, and tenants. Fast turnaround so your property is back on the market. All furniture, white goods, and left-behind items removed.',
     pills:     ['Same-week turnaround', 'Landlord accounts', 'WTN issued'],
-    href:      '/end-of-tenancy-clearance',
+    href:      '/services/end-of-tenancy-clearance',
   },
   {
     id:        'fly-tipping',
@@ -53,7 +53,7 @@ export const services: Service[] = [
     shortDesc: 'Licensed removal of illegally dumped waste from private land & commercial sites.',
     desc:      'Licensed collection and disposal of fly-tipped waste from private land, car parks, and commercial sites. We segregate, document, and responsibly dispose of all materials with full compliance paperwork.',
     pills:     ['EA Licensed', 'Private land', 'Evidence documentation'],
-    href:      '/fly-tipping-removal',
+    href:      '/services/fly-tipping-removal',
   },
   {
     id:        'skip-hire-alternative',
@@ -64,7 +64,7 @@ export const services: Service[] = [
     shortDesc: 'No permit, no waiting — we load & go. Often cheaper than hiring a skip.',
     desc:      'A faster, greener alternative to skip hire. No permit required, no vehicle access issues, and we load everything ourselves. Often cheaper than a skip with a 99% landfill diversion rate.',
     pills:     ['No permit needed', 'We load for you', '99% diversion rate'],
-    href:      '/skip-hire-alternative',
+    href:      '/services/skip-hire-alternative',
   },
   {
     id:        'strip-out',
@@ -90,7 +90,7 @@ export const services: Service[] = [
   },
   {
     id:        'residential-waste',
-    title:     'Residential Waste',
+    title:     'Residential Waste Removal',
     cat:       'clearance',
     catLabel:  'Clearance',
     icon:      'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6',
@@ -101,7 +101,7 @@ export const services: Service[] = [
   },
   {
     id:        'garden-refuse',
-    title:     'Garden Refuse',
+    title:     'Garden Clearance & Garden Refuse',
     cat:       'clearance',
     catLabel:  'Clearance',
     icon:      'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z',
