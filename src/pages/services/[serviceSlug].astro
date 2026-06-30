@@ -4,8 +4,15 @@ import { services } from '../../data/services';
 import { serviceDetails } from '../../data/service-detail';
 
 export function getStaticPaths() {
+  const STANDALONE_SLUGS = new Set([
+    'house-clearance',
+    'office-clearance',
+    'end-of-tenancy-clearance',
+    'fly-tipping-removal',
+    'skip-hire-alternative',
+  ]);
   return services
-    .filter((svc) => svc.href.startsWith('/services/'))
+    .filter((svc) => svc.href.startsWith('/services/') && !STANDALONE_SLUGS.has(svc.href.slice(10)))
     .map((svc) => ({
       params: { serviceSlug: svc.href.slice(10) },
       props:  { svc },

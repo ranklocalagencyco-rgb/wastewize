@@ -175,7 +175,7 @@ WasteWize provides same-day fly-tipping removal across the full Thatcham area �
      GSC: 81 impressions, avg position 11.31
   ───────────────────────────────────────────────────────────────────── */
 
-  'middlesex/brentford/fly-tipping-removal': {
+  'west-london/brentford/fly-tipping-removal': {
     localLandmarks:    ['Brentford Waterside development', 'Grand Union Canal towpath', 'Great West Road (A4) corridor'],
     localCouncil:      'London Borough of Hounslow',
     councilWasteUrl:   'https://www.hounslow.gov.uk/street-problems/report-fly-tipping-or-illegal-waste-dumping',

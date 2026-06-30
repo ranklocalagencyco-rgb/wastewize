@@ -258,7 +258,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     topServices: ['commercial-clearance', 'builders-waste-removal', 'residential-waste'],
   },
 
-  'middlesex/alperton': {
+  'west-london/alperton': {
     postcode: 'HA0',
     metaDesc: 'Waste collection and clearance services in Alperton HA0. WasteWize UK provides commercial clearance, construction waste, and skip hire near Wembley — EA licensed.',
     intro: "Alperton's industrial estates and commercial parks off the North Circular generate steady demand for construction and commercial waste services. With Wembley's continued growth pushing development into surrounding areas, WasteWize UK supports Alperton businesses with flexible skip hire, segregated collections, and full duty-of-care documentation.",
@@ -285,7 +285,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     topServices: ['commercial-clearance', 'electrical-equipment', 'confidential-waste'],
   },
 
-  'middlesex/brentford': {
+  'west-london/brentford': {
     postcode: 'TW8',
     metaDesc: 'Waste management for Brentford TW8 development sites and businesses. WasteWize UK — strip-out, construction waste, commercial clearance along the Thames and Canal corridor.',
     intro: "Brentford is one of west London's fastest-growing regeneration zones, with major mixed-use developments along the Grand Union Canal and Thames waterfront transforming former industrial land. WasteWize UK supports Brentford's construction teams, strip-out contractors, and commercial tenants with compliant, efficient waste management throughout the development corridor.",
@@ -339,7 +339,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     topServices: ['residential-waste', 'garden-refuse', 'asbestos-removal'],
   },
 
-  'middlesex/edgware': {
+  'north-london/edgware': {
     postcode: 'HA8',
     metaDesc: 'Commercial waste collection, retail clearance, and skip hire in Edgware HA8. WasteWize UK covers all of Edgware — EA licensed with same-week availability.',
     intro: "Edgware's position at the northern end of the Northern line makes it a busy local commercial hub, with a high street, retail parks, and residential developments generating mixed waste streams. WasteWize UK collects commercial, construction, and specialist waste from Edgware businesses across the HA8 area, with full EA licensing and same-week availability.",
@@ -501,7 +501,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     topServices: ['commercial-clearance', 'scrap-metal-collection', 'builders-waste-removal'],
   },
 
-  'middlesex/hendon': {
+  'north-london/hendon': {
     postcode: 'NW4',
     metaDesc: 'Commercial waste collection and confidential shredding in Hendon NW4. WasteWize UK serves the A1/A41 corridor — strip-outs, scheduled trade waste, and office clearance.',
     intro: "Hendon's location along the A1/A41 corridor and its concentration of retail parks, car dealerships, and commercial premises generate diverse waste streams requiring reliable licensed collection. WasteWize UK collects commercial waste from across Hendon and the NW4 area, including scheduled trade waste, strip-out clearances, and confidential document shredding.",
@@ -573,7 +573,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     topServices: ['residential-waste', 'garden-refuse', 'commercial-clearance'],
   },
 
-  'middlesex/kingsbury': {
+  'west-london/kingsbury': {
     postcode: 'NW9',
     metaDesc: 'Commercial waste and domestic clearance services in Kingsbury NW9. WasteWize UK provides office clearances, retail strip-outs, and scheduled trade waste collection.',
     intro: "Kingsbury's dense residential area and busy commercial strip along Kingsbury Road generate mixed waste streams that require both scheduled commercial collection and on-demand clearance services. WasteWize UK provides flexible waste solutions across Kingsbury — including office clearances, retail strip-outs, and domestic removals.",
@@ -681,7 +681,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     topServices: ['residential-waste', 'garden-refuse', 'asbestos-removal'],
   },
 
-  'middlesex/shepperton': {
+  'surrey/shepperton': {
     postcode: 'TW17',
     metaDesc: 'Commercial clearance and domestic waste services in Shepperton TW17. WasteWize UK serves Shepperton Studios and riverside businesses — strip-outs, clearances, and licensed disposal.',
     intro: "Shepperton's famous film studios and Thames-side residential streets create a distinctive mix of specialist and domestic waste management requirements — from large-scale set clearances to house and garden refuse collection. WasteWize UK is experienced in handling both commercial strip-outs and residential clearances across the Shepperton area.",
@@ -708,7 +708,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     topServices: ['commercial-clearance', 'confidential-waste', 'builders-waste-removal'],
   },
 
-  'middlesex/southgate': {
+  'north-london/southgate': {
     postcode: 'N14',
     metaDesc: 'Commercial waste collection and domestic clearance in Southgate N14. WasteWize UK provides retail waste, house clearances, and renovation disposal for Southgate businesses and residents.',
     intro: "Southgate's busy high street and residential suburbs in the N14 area generate a consistent mix of retail waste, domestic clearances, and renovation debris. WasteWize UK serves Southgate businesses and residents with reliable, EA-licensed collections and full duty-of-care documentation on every job.",
@@ -726,7 +726,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     topServices: ['residential-waste', 'garden-refuse', 'commercial-clearance'],
   },
 
-  'middlesex/staines-upon-thames': {
+  'surrey/staines-upon-thames': {
     postcode: 'TW18 / TW19',
     metaDesc: 'Commercial waste management in Staines-upon-Thames TW18 and TW19. WasteWize UK provides scheduled trade collections, office clearances, and specialist disposal for Staines businesses.',
     intro: "Staines-upon-Thames is one of Surrey and Middlesex's largest commercial centres, with a busy town centre retail district, office parks, and light industrial estates generating diverse commercial waste streams. WasteWize UK provides comprehensive waste management across Staines — from scheduled trade collections and office clearances to construction waste and specialist disposal.",
@@ -744,7 +744,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     topServices: ['residential-waste', 'garden-refuse', 'commercial-clearance'],
   },
 
-  'middlesex/stanwell': {
+  'surrey/stanwell': {
     postcode: 'TW19',
     metaDesc: 'Logistics and commercial waste management in Stanwell TW19. WasteWize UK covers the Heathrow perimeter — bulk waste, WEEE recycling, and hazardous waste disposal.',
     intro: "Stanwell's position within the Heathrow perimeter makes it a busy logistics and aviation services hub, with warehousing and trade businesses generating substantial volumes of commercial and specialist waste. WasteWize UK provides reliable waste management across Stanwell — including bulk collections, WEEE recycling, and hazardous waste disposal with full compliance documentation.",
@@ -753,7 +753,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     topServices: ['commercial-clearance', 'electrical-equipment', 'confidential-waste'],
   },
 
-  'middlesex/sudbury': {
+  'west-london/sudbury': {
     postcode: 'HA0',
     metaDesc: 'Domestic clearances and commercial waste services in Sudbury HA0. WasteWize UK provides flexible waste solutions near Wembley for Sudbury residents and businesses.',
     intro: "Sudbury's residential streets and proximity to Wembley's major development zone generate mixed demand for domestic clearances and commercial waste services linked to the area's ongoing construction activity. WasteWize UK covers Sudbury with flexible, licensed waste solutions and fast response times from our London depot.",
@@ -762,7 +762,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     topServices: ['residential-waste', 'commercial-clearance', 'builders-waste-removal'],
   },
 
-  'middlesex/sunbury-on-thames': {
+  'surrey/sunbury-on-thames': {
     postcode: 'TW16',
     metaDesc: 'House clearances and commercial waste collection in Sunbury-on-Thames TW16. WasteWize UK provides domestic clearances, construction waste, and garden refuse services near the M3.',
     intro: "Sunbury-on-Thames combines riverside residential streets with a local commercial centre and proximity to the M3 corridor, creating demand for both domestic clearances and commercial waste services. WasteWize UK serves Sunbury with efficient, EA-licensed collections — from house clearances to construction waste and garden refuse disposal.",
@@ -807,7 +807,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     topServices: ['commercial-clearance', 'builders-waste-removal', 'scrap-metal-collection'],
   },
 
-  'middlesex/wembley': {
+  'west-london/wembley': {
     postcode: 'HA9 / HA0',
     metaDesc: "Construction and commercial waste management in Wembley HA9 and HA0. WasteWize UK supports Wembley's development corridor — strip-outs, muck-away, and high-frequency collections.",
     intro: "Wembley's transformation into one of London's largest mixed-use developments — centred on the stadium district — has created enormous demand for construction waste management, commercial clearances, and specialist disposal services. WasteWize UK is an active partner for Wembley contractors and businesses, handling everything from muck-away and strip-outs to high-frequency commercial waste contracts.",
