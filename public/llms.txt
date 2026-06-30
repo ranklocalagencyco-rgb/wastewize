@@ -20,21 +20,23 @@ Primary tagline: "One Call Takes It All"
 
 ## Services
 
-- [House Clearance](https://wastewize.co.uk/house-clearance) — Full property clearances for homeowners, landlords and estate executors. From £150.
-- [Office Clearance](https://wastewize.co.uk/office-clearance) — Desks, IT equipment, filing and all commercial waste removed. WEEE compliant. From £200.
-- [End of Tenancy Clearance](https://wastewize.co.uk/end-of-tenancy-clearance) — Fast turnaround for landlords, letting agents and tenants. Same-week availability.
-- [Skip Hire Alternative](https://wastewize.co.uk/skip-hire-alternative) — No council permit required, we load everything and leave the area clean. Often cheaper than a skip. From £150.
+All service pages now live under /services/:
+
+- [House Clearance](https://wastewize.co.uk/services/house-clearance) — Full property clearances for homeowners, landlords and estate executors. From £150.
+- [Office Clearance](https://wastewize.co.uk/services/office-clearance) — Desks, IT equipment, filing and all commercial waste removed. WEEE compliant. From £200.
+- [End of Tenancy Clearance](https://wastewize.co.uk/services/end-of-tenancy-clearance) — Fast turnaround for landlords, letting agents and tenants. Same-week availability.
+- [Skip Hire Alternative](https://wastewize.co.uk/services/skip-hire-alternative) — No council permit required, we load everything and leave the area clean. Often cheaper than a skip. From £150.
+- [Fly Tipping Removal](https://wastewize.co.uk/services/fly-tipping-removal) — Licensed removal of illegally dumped waste from private land and commercial sites.
 - [Builders Waste Removal](https://wastewize.co.uk/services/builders-waste-removal) — Segregated site collections, muck-away, plasterboard, timber and hardcore. Full site compliance documentation. From £150.
-- [Fly Tipping Removal](https://wastewize.co.uk/fly-tipping-removal) — Licensed removal of illegally dumped waste from private land and commercial sites.
-- [Electrical Equipment (WEEE)](https://wastewize.co.uk/services/electrical-waste-weee) — WEEE-compliant recycling with transfer notes and certified data destruction. From £75.
+- [Electrical Equipment (WEEE)](https://wastewize.co.uk/services/electrical-equipment) — WEEE-compliant recycling with transfer notes and certified data destruction. From £75.
 - [Confidential Waste](https://wastewize.co.uk/services/confidential-waste) — Secure document shredding with certificate of destruction. GDPR compliant. From £50.
 - [Asbestos Removal](https://wastewize.co.uk/services/asbestos-removal) — Via HSE-licensed contractors. Air monitoring, analyst sign-off and consignment notes included.
 - [Strip Out & Demolition](https://wastewize.co.uk/services/strip-out-demolition) — Interior strip-outs and soft demolition with full waste transfer documentation. From £500.
 - [Commercial Clearance](https://wastewize.co.uk/services/commercial-clearance) — Retail units, warehouses and commercial premises of any size. Fully insured. From £200.
-- [Residential Waste](https://wastewize.co.uk/services/residential-waste) — Single-item pickups to full property clearances. From £50.
-- [Garden Refuse](https://wastewize.co.uk/services/garden-refuse) — Green waste collection and composting for domestic and landscaping jobs. From £80.
+- [Residential Waste Removal](https://wastewize.co.uk/services/residential-waste) — Single-item pickups to full property clearances. From £50.
+- [Garden Clearance & Garden Refuse](https://wastewize.co.uk/services/garden-refuse) — Full garden clearances and regular green waste collection for domestic and landscaping jobs. Composted, zero landfill. From £80.
 - [Rubble & Wood Removal](https://wastewize.co.uk/services/rubble-wood-removal) — Hardcore crushed for secondary aggregate; timber chipped for biomass. From £100.
-- [Scrap Metal Collection](https://wastewize.co.uk/services/scrap-metal) — Ferrous and non-ferrous at competitive rates. Transfer notes included.
+- [Scrap Metal Collection](https://wastewize.co.uk/services/scrap-metal-collection) — Ferrous and non-ferrous at competitive rates. Transfer notes included.
 
 ## Key Pages
 
@@ -49,14 +51,33 @@ Primary tagline: "One Call Takes It All"
 
 ## Service Area
 
-London (all boroughs) and the Home Counties. Key areas include:
+London (all boroughs) and the Home Counties. Area pages follow the pattern /areas/[region]/[town].
 
-**London:** Acton, Barnet, Bromley, Camden, Chelsea, Chiswick, City of London, Croydon, Ealing, Enfield, Greenwich, Hackney, Hammersmith, Haringey, Havering, Islington, Kensington, Lambeth, Lewisham, Mayfair, Newham, Notting Hill, Paddington, Shepherd's Bush, Southwark, Stratford, Tower Hamlets, Waltham Forest, Wandsworth, Westminster
+**Central London:** Chelsea, City of London, Fitzrovia, Great Portland Street, Harley Street, Holborn, Kensington, Marylebone, Mayfair, Oxford Street, Portland Place, Soho, Westminster
 
-> North London: Barnet, Camden, Enfield, Haringey, Islington, Tottenham
-> East London: Barking, Hackney, Havering, Newham, Stratford, Tower Hamlets, Waltham Forest
+**North London:** Barnet, Camden, Edgware, Edmonton, Enfield, Finchley, Golders Green, Haringey, Harlesden, Hendon, Islington, Mill Hill, Neasden, Palmers Green, Southgate, Tottenham, Willesden, Winchmore Hill
 
-**Home Counties:** Surrey, Kent, Essex, Hertfordshire, Berkshire, Buckinghamshire, Middlesex — 200+ towns and localities
+**East London:** Barking, Hackney, Havering, Newham, Redbridge, Stratford, Tower Hamlets, Waltham Forest
+
+**South London:** Bromley, Croydon, Greenwich, Lambeth, Lewisham, Southwark, Wandsworth
+
+**West London:** Acton, Alperton, Brentford, Chiswick, Ealing, Hammersmith, Hanwell, Kensal Green, Kensington, Kilburn, Kingsbury, Maida Hill, Maida Vale, North Kensington, Notting Hill, Paddington, Queens Park, Shepherd's Bush, Sudbury, Wembley, West Ealing, West Kensington
+
+**Surrey:** Camberley, Epsom, Farnham, Guildford, Reigate, Shepperton, Staines-upon-Thames, Stanwell, Sunbury-on-Thames, Sutton, Woking
+
+**Kent:** Bromley, Dartford, Gravesend, Maidstone, Sevenoaks, Swanley, Tonbridge
+
+**Essex:** Basildon, Brentwood, Chelmsford, Grays, Harlow, Romford, Southend
+
+**Hertfordshire:** Cheshunt, Hatfield, Hemel Hempstead, St Albans, Stevenage, Watford, Welwyn
+
+**Berkshire:** Ascot, Bracknell, Maidenhead, Newbury, Reading, Slough, Windsor, Wokingham (and 25+ other towns)
+
+**Buckinghamshire:** Amersham, Aylesbury, Beaconsfield, Chesham, Gerrards Cross, High Wycombe, Marlow (and 20+ other towns)
+
+**Middlesex:** Ashford, Bedfont, Cranford, Eastcote, Feltham, Greenford, Hampton, Harefield, Harlington, Harrow, Hayes, Heston, Hillingdon, Hounslow, Ickenham, Isleworth, Kenton, Northolt, Northwood, Osterley, Perivale, Pinner, Ruislip, Southall, Stanmore, Teddington, Twickenham, Uxbridge, Wealdstone, West Drayton (and more)
+
+Each town has a hub page and 15 service-specific sub-pages (e.g. /areas/west-london/kilburn/house-clearance).
 
 ## Pricing
 
