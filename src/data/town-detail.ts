@@ -965,6 +965,44 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     intro: "West Kensington's W14 postcode bridges the corporate activity around Olympia with a dense residential neighbourhood of period conversions and modern apartments. WasteWize UK provides commercial clearances, renovation waste disposal, and scheduled trade collections for West Kensington businesses and property managers — with quick access from our depot and full duty-of-care compliance on every job.",
   },
 
+  /* ── West London — new depot-adjacent towns ─────────────────────────── */
+
+  'west-london/kilburn': {
+    postcode: 'NW6 / NW2',
+    metaDesc: 'End-of-tenancy clearance, commercial waste, and strip-outs in Kilburn NW6 and NW2. WasteWize UK covers Kilburn High Road and surrounding streets — EA licensed, same-week service.',
+    intro: "Kilburn's two-kilometre high street and dense Victorian and Edwardian housing stock — split across the London Boroughs of Brent and Camden — generate some of north-west London's busiest demand for end-of-tenancy clearances, renovation waste, and high-street commercial collections. WasteWize UK provides responsive, EA-licensed waste management across the NW6 and NW2 postcode areas.",
+    localContext: `Kilburn High Road is one of London's longest unbroken high streets — a two-kilometre stretch running from Brondesbury in the north to Maida Vale in the south — lined with independent food businesses, off-licences, charity shops, and convenience retail generating consistent commercial waste volumes. The residential hinterland on both sides of the High Road is dominated by large Victorian terraces and Edwardian mansion conversions, many subdivided into flats and HMOs, creating an exceptionally high frequency of end-of-tenancy clearances. Properties along Iverson Road, Loveridge Road, and the streets around Kilburn Park station contain pre-1980 construction materials and regularly require asbestos surveys before loft conversions and kitchen refurbishments can proceed. WasteWize collects across Brent and Camden without borough restrictions — a key advantage in an area that straddles local authority boundaries — and provides full EA documentation accepted by both councils' licensed waste requirements.`,
+    keyAreas:    ['Kilburn High Road', 'Kilburn Park', 'Brondesbury', 'Iverson Road', 'Kiln Theatre'],
+    topServices: ['end-of-tenancy-clearance', 'residential-waste', 'commercial-clearance'],
+  },
+
+  'west-london/maida-vale': {
+    postcode: 'W9',
+    metaDesc: 'Discreet clearances and specialist waste management in Maida Vale W9. WasteWize UK serves the Edwardian mansion blocks, Little Venice, and conservation streets — EA licensed.',
+    intro: "Maida Vale's wide tree-lined avenues of Edwardian mansion blocks and its Little Venice canalside quarter rank among Westminster's most prestigious residential addresses. WasteWize UK provides discreet, fully compliant waste management for Maida Vale W9 — covering mansion flat clearances, high-value renovation strip-outs, and WEEE recycling for the area's demanding residential and commercial clients.",
+    localContext: `Maida Vale's residential character is defined by the grand Edwardian mansion blocks lining Elgin Avenue, Castellain Road, Randolph Avenue, and Clifton Gardens — among London's most desirable flats, occupied by long-term residents and high-value lettings alike. The constant turnover of mansion flat tenancies generates a sustained stream of end-of-tenancy clearances, probate removals, and renovation strip-outs from properties with pre-1980 construction that often contain asbestos-containing materials in floor tiles, ceiling tiles, and pipe lagging. Little Venice — where the Grand Union Canal meets Regent's Canal at Browning's Pool — draws a specific community of canal boat operators whose waste management requirements differ from the surrounding residential profile. Westminster City Council's conservation area designations across much of Maida Vale restrict working hours and vehicle access on residential streets. WasteWize's ULEZ-compliant fleet and out-of-hours availability are well suited to Maida Vale's requirements for discreet, scheduled collections that do not disrupt the character of the neighbourhood.`,
+    keyAreas:    ['Elgin Avenue', 'Castellain Road', 'Little Venice', 'Randolph Avenue', 'Warwick Avenue'],
+    topServices: ['end-of-tenancy-clearance', 'strip-out-demolition', 'residential-waste'],
+  },
+
+  'west-london/queens-park': {
+    postcode: 'NW6 / W10',
+    metaDesc: 'House clearances, renovation waste, and commercial collections in Queens Park NW6 and W10. WasteWize UK covers Salusbury Road and surrounding streets — EA licensed, same-week.',
+    intro: "Queens Park's Victorian streets, centred on the 30-acre Royal park and Salusbury Road's independent high street, have seen significant residential renovation activity as the area has gentrified over the past decade. WasteWize UK serves Queens Park homeowners, landlords, and Salusbury Road businesses with house clearances, builders' waste, and trade collections — covering both the NW6 and W10 postcode areas.",
+    localContext: `Queens Park's stock of solid Victorian terraces — predominantly four- and five-bedroom houses along Chevening Road, Harvist Road, and the streets surrounding the park — are being renovated at an unusually high rate for a London residential area, generating consistent demand for loft conversion waste, kitchen strip-out clearances, and garden refuse removal from the substantial rear gardens typical of this building period. The park itself — one of the City of London Corporation's open spaces — draws families and dog owners to the surrounding streets, reinforcing the neighbourhood's residential character and limiting commercial vehicle access during peak hours on the narrower residential streets. Salusbury Road's independent cafés, restaurants, and boutiques generate regular commercial waste from a relatively small number of high-turnover food businesses. The NW6/W10 boundary area around Chamberlayne Road connects Queens Park to the Kensal Rise and Kensal Green corridor — WasteWize covers the full zone without cross-boundary delays.`,
+    keyAreas:    ["Queen's Park", 'Salusbury Road', 'Chamberlayne Road', 'Harvist Road', 'Chevening Road'],
+    topServices: ['residential-waste', 'builders-waste-removal', 'garden-refuse'],
+  },
+
+  'west-london/kensal-green': {
+    postcode: 'NW10 / W10',
+    metaDesc: 'Construction waste, commercial clearance, and industrial collections in Kensal Green NW10 and W10. WasteWize UK covers the canal corridor and Ladbroke Grove — EA licensed.',
+    intro: "Kensal Green's canal corridor — running along the Grand Union Canal from Ladbroke Grove to Harrow Road — combines Victorian-era industrial units with one of London's fastest-growing residential regeneration zones. WasteWize UK provides construction waste management, commercial clearances, and strip-out services for Kensal Green's active development pipeline as well as domestic collections for the area's growing residential community.",
+    localContext: `Kensal Green straddles the London Borough of Brent and the Royal Borough of Kensington & Chelsea — a post-industrial zone being transformed by residential development along the Grand Union Canal corridor. The Canalside Activity Zone between Ladbroke Grove and the North Circular contains light industrial units, builders' merchants, and small manufacturing businesses generating regular scrap metal, bulk commercial waste, and industrial clearances at scale. Kensal Green Cemetery — one of London's Magnificent Seven Victorian cemeteries and a Grade II listed landscape — dominates the northern half of the district, while residential development is concentrating south of Harrow Road in new mixed-use schemes. The streets around Chamberlayne Road and Kensal Road have a growing food and creative business community alongside Victorian terraces undergoing conversion and renovation. WasteWize's proximity to the Ladbroke Grove and Harrow Road corridors allows same-week clearances across the NW10 and W10 postcodes — spanning both Brent and RBKC — without cross-borough scheduling delays.`,
+    keyAreas:    ['Kensal Green Cemetery', 'Ladbroke Grove', 'Grand Union Canal', 'Chamberlayne Road', 'Harrow Road'],
+    topServices: ['builders-waste-removal', 'commercial-clearance', 'strip-out-demolition'],
+  },
+
   /* ── Berkshire (additional towns) ───────────────────────────────────── */
 
   'berkshire/ascot': {
