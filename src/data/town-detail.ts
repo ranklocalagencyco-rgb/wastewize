@@ -357,7 +357,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     topServices: ['commercial-clearance', 'scrap-metal-collection', 'builders-waste-removal'],
   },
 
-  'middlesex/enfield': {
+  'north-london/enfield': {
     postcode: 'EN1 / EN2 / EN3',
     metaDesc: 'Commercial and industrial waste management across Enfield EN1, EN2, EN3. WasteWize UK covers Enfield town centre and Brimsdown industrial estates — EA licensed.',
     intro: "Enfield spans a wide area from its busy town centre retail district to the industrial estates of Brimsdown and Innova Park, each with distinct waste management requirements. WasteWize UK provides tailored collections across all Enfield postcode areas — from confidential shredding for high street offices to bulk clearances on major industrial sites.",
@@ -881,7 +881,7 @@ Chelmsford's residential market — including the high-value areas of Springfiel
     intro: "Ealing's busy town centre, retail parks, and surrounding commercial estates generate consistent demand for reliable, compliant waste management. WasteWize UK supports Ealing W5 businesses, fit-out contractors, and property managers with comprehensive services ranging from regular trade waste collections to full strip-out and commercial clearance.",
   },
 
-  'west-london/fitzrovia': {
+  'central-london/fitzrovia': {
     postcode: 'W1T',
     metaDesc: 'Commercial waste collection and office clearance in Fitzrovia W1T. WasteWize UK serves media companies, restaurants, and creative studios in Fitzrovia — EA licensed, discreet service.',
     intro: "Fitzrovia's dense concentration of media agencies, restaurants, boutique offices, and creative studios produces diverse waste streams in a tightly constrained urban setting. WasteWize UK provides discreet, punctual collections and office clearances throughout Fitzrovia W1T, working within Westminster's strict street-access windows and compliance requirements.",
